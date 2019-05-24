@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "Open Sans";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/opensans.woff2") format("woff2"), url("../fonts/opensans.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/opensanslight.woff2") format("woff2"), url("../fonts/opensanslight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/opensansbold.woff2") format("woff2"), url("../fonts/opensansbold.woff") format("woff");
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  margin: 0;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: normal;
+  line-height: $line-height;
+  color: $color-main;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  word-wrap: break-word;
+}
+
+h2 {
+  font-size: $font-size--large;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: $font-size--larger;
+  font-weight: 700;
+  color: #000000;
+}
+
+h4 {
+  font-size: $font-size--large;
+  font-weight: 700;
+  color: #000000;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
