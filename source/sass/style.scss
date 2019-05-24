@@ -3,5 +3,7 @@
 //===
 @import "blocks/global.scss";
 //===
-// импорт остальных блоков
-
+@import "blocks/block-library.scss";
+@import "blocks/field-checkbox.scss";
+@import "blocks/page-content.scss";
+@import "blocks/page-main.scss";
