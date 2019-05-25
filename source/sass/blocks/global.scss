@@ -84,6 +84,12 @@ fieldset {
   padding: 0;
 }
 
+code {
+  padding: 4px;
+  background-color: $gray--light;
+  border-radius: 4px;
+}
+
 .visually-hidden:not(:focus):not(:active) {
   position: absolute;
 

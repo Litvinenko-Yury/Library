@@ -1,0 +1,27 @@
+.field-text__name {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.field-text__input {
+  width: 100%;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $color-hover;
+    box-shadow: 0 0 7px #000000;
+  }
+}
+
+.field-text__input-wrap {
+  width: 100%;
+}
+
+.field-text__help-text {
+  display: block;
+  font-size: $font-size--smaller;
+  color: $gray;
+}
