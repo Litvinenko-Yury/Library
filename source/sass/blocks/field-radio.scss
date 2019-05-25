@@ -1,30 +1,30 @@
-.field-checkbox {
+.field-radio {
   margin-bottom: 1em;
 }
 
-.field-checkbox__input-wrap {
+.field-radio__input-wrap {
   margin-bottom: 0.5em;
   outline: 1px dotted $gray;
 }
 
-.field-сheckbox__title {
+.field-radio__title {
   font-weight: bold;
 }
 
-.field-checkbox__help-text {
+.field-radio__help-text {
   padding-left: 2em;
   font-size: $font-size--smaller;
   color: $gray;
 }
 
 /*===стилизация чек-бокс===*/
-.field-сheckbox__input {
+.field-radio__input {
   /*прячем стандартный чек-бокс без потери доступности*/
   position: absolute;
   opacity: 0;
 }
 
-.field-сheckbox__label {
+.field-radio__label {
   /*подготовка места для кастом-чек-бокса = стилизация label*/
   position: relative;
   display: block;
@@ -32,13 +32,13 @@
   cursor: pointer;
 }
 
-.field-checkbox__name-text::before {
+.field-radio__name-text::before {
   /*стилизация фона checkbox*/
   content: "";
   width: 20px;
   height: 20px;
   border: 3px solid $gray;
-  border-radius: 5px;
+  border-radius: 10px;
   background: #ffffff;
 
   position: absolute;
@@ -46,29 +46,34 @@
   left: 0;
 }
 
-.field-checkbox__name-text:hover::before {
+.field-radio__name-text:hover::before {
   border-color: $color-hover;
 }
 
-.field-checkbox__name-text:active::before {
+.field-radio__name-text:active::before {
   border-color: $color-active;
 }
 
 /*переключение состояния чек-бокса*/
-.field-сheckbox__input:checked ~ .field-checkbox__name-text::after {
+.field-radio__input:checked ~ .field-radio__name-text::after {
   /*стилизация активного чек-бокса*/
   content: "";
-  width: 22px;
-  height: 16px;
-  background: url("../img/icon-yes-pink.svg") no-repeat center;
-
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: $color-main;
   position: absolute;
-  top: 3px;
-  left: 3px;
+  top: 11px;
+  left: 6px;
+
+  /*стилизация для использования картинки*/
+  /* width: 22px;
+  height: 16px;
+  background: url("../img/icon-yes-pink.svg") no-repeat center; */
 }
 
 /*делаем чек-бокс доступным с клавиатуры*/
-.field-сheckbox__input:focus ~ .field-checkbox__name-text::before {
+.field-radio__input:focus ~ .field-radio__name-text::before {
   border-color: $color-hover;
   box-shadow: 0 0 7px #000000;
 }
