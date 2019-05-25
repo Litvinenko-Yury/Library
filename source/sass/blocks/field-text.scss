@@ -1,3 +1,7 @@
+.field-text {
+  margin-bottom: 1em;
+}
+
 .field-text__name {
   display: block;
   margin-bottom: 0.5em;
@@ -7,6 +11,7 @@
 .field-text__input {
   width: 100%;
   padding: 0.5em 1em;
+  border: 1px solid $gray;
   border-radius: 5px;
 
   &:focus {
@@ -17,11 +22,13 @@
 }
 
 .field-text__input-wrap {
+  display: block;
   width: 100%;
 }
 
 .field-text__help-text {
   display: block;
+  margin-bottom: 1em;
   font-size: $font-size--smaller;
   color: $gray;
 }

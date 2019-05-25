@@ -94,16 +94,39 @@
 
       <section class="block-library">
         <h2 class="block-library__header">Текстовое поле</h2>
-        <p>Текстовое поле <code>textarea</code>.<br> Для <code>textarea</code> полезно использовать <a href="https://github.com/jackmoore/autosize">autosize</a>.</p>
+        <p>Текстовые поля <code>textarea</code> и <code>input</code>.<br> Для <code>textarea</code> полезно использовать <a href="https://github.com/jackmoore/autosize">autosize</a>.</p>
 
         <label class="field-text">
-          <span class="field-text__name">Текстовое поле</span>
+          <span class="field-text__name">Текстовое поле <code>textarea</code></span>
           <span class="field-text__input-wrap">
             <textarea class="field-text__input" name="message" rows="5" placeholder="Подсказка">Текст внутри</textarea>
             <span class="field-text__help-text">Подсказка под полем</span>
           </span>
         </label>
 
+        <label class="field-text">
+            <span class="field-text__name">Текстовое поле <code>input type="text"</code></span>
+            <span class="field-text__input-wrap">
+                <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
+              <span class="field-text__help-text">Подсказка под полем</span>
+            </span>
+          </label>
+
+          <label class="field-text">
+              <span class="field-text__name">Текстовое поле <code>input type="tel"</code></span>
+              <span class="field-text__input-wrap">
+                  <input class="field-text__input" type="tel" name="tel" placeholder="Подсказка">
+                <span class="field-text__help-text">Подсказка под полем</span>
+              </span>
+            </label>
+
+            <label class="field-text">
+                <span class="field-text__name">Текстовое поле <code>input type="email"</code></span>
+                <span class="field-text__input-wrap">
+                    <input class="field-text__input" type="email" name="email" placeholder="Подсказка">
+                  <span class="field-text__help-text">Подсказка под полем</span>
+                </span>
+              </label>
 
       </section>
 
