@@ -1,0 +1,40 @@
+.btn {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0;
+  border-radius: $border-radius;
+  // border: 1px solid $gray-lighter;
+  border: 0;
+  padding: $field-padding-vertical  $field-padding-horizontal;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  text-align: center;
+  font-size: 1em;
+  font-family: inherit;
+  line-height: $line-height;
+  text-decoration: none;
+  text-transform: none;
+  color: $color-main;
+  background-color: $gray--light;
+  background-image: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+    //color: $text-color;
+    background-color: darken($gray--light, 10%);
+  }
+
+  &:focus {
+    //color: $text-color;
+    background-color: darken($gray--light, 10%);
+  }
+
+  &:active {
+    color: $color-active;
+  }
+}

@@ -26,7 +26,7 @@
   <main class="page-main">
     <div class="page-content">
       <section class="block-library">
-        <h2 class="block-library__header">Флажок/чекбокс</h2>
+        <h2 class="block-library__title">Флажок/чекбокс</h2>
         <p>В стилевом файле см. реализацию замены нативного элемента своим (svg).</p>
 
         <div class="field-checkbox">
@@ -61,7 +61,7 @@
       </section>
 
       <section class="block-library">
-        <h2 class="block-library__header">Радиокнопки</h2>
+        <h2 class="block-library__title">Радиокнопки</h2>
         <p>В стилевом файле есть закомментированные фрагменты для замены нативного элемента своим (svg).</p>
 
         <div class="field-radio">
@@ -93,7 +93,7 @@
       </section>
 
       <section class="block-library">
-        <h2 class="block-library__header">Текстовое поле</h2>
+        <h2 class="block-library__title">Текстовое поле</h2>
         <p>Текстовые поля <code>textarea</code> и <code>input</code>.<br> Для <code>textarea</code> полезно использовать <a href="https://github.com/jackmoore/autosize">autosize</a>.</p>
 
         <label class="field-text">
@@ -105,31 +105,70 @@
         </label>
 
         <label class="field-text">
-            <span class="field-text__name">Текстовое поле <code>input type="text"</code></span>
-            <span class="field-text__input-wrap">
-                <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
-              <span class="field-text__help-text">Подсказка под полем</span>
-            </span>
-          </label>
+          <span class="field-text__name">Текстовое поле <code>input type="text"</code></span>
+          <span class="field-text__input-wrap">
+            <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
+            <span class="field-text__help-text">Подсказка под полем</span>
+          </span>
+        </label>
 
-          <label class="field-text">
-              <span class="field-text__name">Текстовое поле <code>input type="tel"</code></span>
+        <label class="field-text">
+          <span class="field-text__name">Текстовое поле <code>input type="tel"</code></span>
+          <span class="field-text__input-wrap">
+            <input class="field-text__input" type="tel" name="tel" placeholder="Подсказка">
+            <span class="field-text__help-text">Подсказка под полем</span>
+          </span>
+        </label>
+
+        <label class="field-text">
+          <span class="field-text__name">Текстовое поле <code>input type="email"</code></span>
+          <span class="field-text__input-wrap">
+            <input class="field-text__input" type="email" name="email" placeholder="Подсказка">
+            <span class="field-text__help-text">Подсказка под полем</span>
+          </span>
+        </label>
+
+      </section>
+
+      <section class="block-library">
+        <h2 class="block-library__title">Форма</h2>
+
+        <form class="form">
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Название1</legend>
+            <label class="field-text">
               <span class="field-text__input-wrap">
-                  <input class="field-text__input" type="tel" name="tel" placeholder="Подсказка">
+                <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
                 <span class="field-text__help-text">Подсказка под полем</span>
               </span>
             </label>
 
             <label class="field-text">
-                <span class="field-text__name">Текстовое поле <code>input type="email"</code></span>
                 <span class="field-text__input-wrap">
-                    <input class="field-text__input" type="email" name="email" placeholder="Подсказка">
+                  <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
                   <span class="field-text__help-text">Подсказка под полем</span>
                 </span>
               </label>
+          </fieldset>
+
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Название2</legend>
+            <label class="field-text">
+              <span class="field-text__input-wrap">
+                <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
+                <span class="field-text__help-text">Подсказка под полем</span>
+              </span>
+            </label>
+          </fieldset>
+
+          <div class="field-actions">
+            <button class="btn  btn--primary">
+              Отправить 
+            </button>
+          </div>
+        </form>
 
       </section>
-
 
     </div>
   </main>
