@@ -29,6 +29,6 @@
 .field-text__help-text {
   display: block;
   margin-bottom: 1em;
-  font-size: $font-size--smaller;
-  color: $gray;
+
+  @include field-help-text;
 }

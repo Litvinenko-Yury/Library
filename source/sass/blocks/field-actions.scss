@@ -3,3 +3,9 @@
   margin-top: $typo-margin-vertical;
   margin-bottom: $typo-margin-vertical;
 }
+
+.field-actions__help-text {
+  margin-bottom: 1em;
+
+  @include field-help-text;
+}
