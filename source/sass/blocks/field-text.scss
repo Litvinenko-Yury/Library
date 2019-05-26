@@ -14,10 +14,20 @@
   border: 1px solid $gray;
   border-radius: $border-radius;
 
+  &:hover {
+    border-color: $color-main;
+  }
+
   &:focus {
     outline: none;
     border: 1px solid $color-hover;
     box-shadow: 0 0 7px #000000;
+  }
+
+  &::placeholder {
+    //font-size: $font-size--larger;
+    //line-height: 1em;
+    color: $gray;
   }
 }
 
