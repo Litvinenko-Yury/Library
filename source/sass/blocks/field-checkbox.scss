@@ -14,8 +14,8 @@
 
 .field-checkbox__help-text {
   padding-left: 2em;
-  font-size: $font-size--smaller;
-  color: $gray;
+
+  @include field-help-text;
 }
 
 /*===стилизация чек-бокс===*/
