@@ -14,6 +14,7 @@ $line-height: 2em;
 //================
 $color-main: #283645;
 $color-secondary: #d22856;
+$color-third: coral;
 
 $color-hover: #d22856;
 $color-active: #2856d2;
@@ -24,13 +25,16 @@ $gray: #8e8e8e;
 $opacity: 0.4;
 
 //================
-$border-radius: 5px;
+$border-radius: 4px;
 $fieldset-border-radius: 10px;
 
 $typo-margin-vertical: 1em;
 
 $field-padding-vertical: 5px;
 $field-padding-horizontal: 12px;
+
+//================
+$transition-time: 0.5s;
 
 //================
 $tablet-width: 660px;

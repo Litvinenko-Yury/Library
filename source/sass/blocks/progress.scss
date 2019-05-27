@@ -1,0 +1,21 @@
+.progress {
+  margin-top: $typo-margin-vertical;
+  margin-bottom: $typo-margin-vertical;
+  border: 1px solid $gray;
+  border-radius: $border-radius;
+  text-align: center;
+}
+
+.progress__bar {
+  background-color: $color-third;
+  border-radius: $border-radius;
+  max-width: 100%;
+  min-height: 1px;
+  white-space: nowrap;
+  transition: width $transition-time;
+}
+
+.progress__bartext {
+  display: inline-block;
+  padding: 0.5em;
+}
