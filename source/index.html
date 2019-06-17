@@ -29,7 +29,7 @@
       <section class="block-library">
         <h2 class="block-library__title">Кнопка</h2>
         <a class="btn" href="/">Кнопка-ссылка</a>
-        <button class="btn  btn--main">Кнопка-button</button>
+        <button class="btn">Кнопка-button</button>
         <input class="btn" value="Кнопка-input" type="button" name="submit">
       </section>
 
@@ -288,9 +288,47 @@
       </section>
 
       <section class="block-library">
-        <h2 class="block-library__title">Модальное окно</h2>
-        <p>Использованы <code>id</code> и <code>JS</code>.</p>
+        <h2 class="block-library__title">Модальное окно-1</h2>
+        <p>Использован <code>JS</code>.</p>
+        <p>1. При нажатии на кнопку "открыть..." - открывается модальное окно и затеняется фон.</p>
+        <p>2. Закрытие модального окна:</p>
+        <ul>
+          <li>Нажатием на кнопку "закрыть..."</li>
+          <li>При нажатии свободное пространство (затененный фон).</li>
+          <li>При нажатии на клавиатуре Esc.</li>
+        </ul>
+        <p>В проекте использовать нужный механизм закрытия, лишнее удалить.</p>
 
+        <div class="modal-1">
+          <button class="btn btn-modal-open">Открыть модальное окно</button>
+          <div class="modal-1__bg"></div>
+          <div class="modal-1__content">
+            <h3>Модальное окно</h3>
+            <p>Пример модального окна, которое создано с использованием <code>JS</code>.</p>
+            <p>Его можно использовать в широком диапазоне, начиная от вывода сообщений и заканчивая формой регистрации.</p>
+            <button class="btn  btn-modal-close">Закрыть модальное окно</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="block-library">
+        <h2 class="block-library__title">Модальное окно-2</h2>
+        <p>HTML-Academy.</p>
+        <span>Почитать здесь:</span>
+        <a href="http://prgssr.ru/development/oformlenie-modalnyh-okon.html">http://prgssr.ru/development/oformlenie-modalnyh-okon.html</a>
+      </section>
+
+      <section class="block-library">
+        <h2 class="block-library__title">Модальное окно-3</h2>
+        <span>Почитать здесь:</span>
+        <a href="http://prgssr.ru/development/oformlenie-modalnyh-okon.html">http://prgssr.ru/development/oformlenie-modalnyh-okon.html</a>
+      </section>
+
+      <section class="block-library">
+        <h2 class="block-library__title">Модальное окно-4</h2>
+        <p>С доступностью.</p>
+        <span>Почитать здесь:</span>
+        <a href="https://github.com/gdkraus/accessible-modal-dialog">https://github.com/gdkraus/accessible-modal-dialog</a>
       </section>
 
     </div>
@@ -300,6 +338,7 @@
   </footer>
 
   <!-- <script src="js/script.js"></script> -->
+  <script src="js/modal-1.js"></script>
 </body>
 
 </html>
