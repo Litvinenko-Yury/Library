@@ -1,4 +1,4 @@
-.modal-1__bg {
+.modal__bg {
   position: fixed;
   top: 0;
   right: 0;
@@ -10,7 +10,7 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.modal-1__content {
+.modal__content {
   position: fixed;
   top: 0;
   right: 0;
@@ -29,11 +29,11 @@
   background-color: $color-third;
 }
 
-.modal-1__content--show {
+.modal__content--show {
   display: block;
 }
 
-.modal-1__bg--show {
+.modal__bg--show {
   display: block;
 }
 

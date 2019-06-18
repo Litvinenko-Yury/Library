@@ -143,7 +143,7 @@
 
         <div class="field-actions">
           <div class="field-actions__help-text">* — обязательные поля</div>
-          <button class="btn">Отправить</button>
+          <button class="btn" type="submit">Отправить</button>
         </div>
       </section>
 
@@ -179,7 +179,7 @@
           </fieldset>
 
           <div class="field-actions">
-            <button class="btn">Отправить</button>
+            <button class="btn" type="submit">Отправить</button>
           </div>
         </form>
       </section>
@@ -288,7 +288,7 @@
       </section>
 
       <section class="block-library">
-        <h2 class="block-library__title">Модальное окно-1</h2>
+        <h2 class="block-library__title">Модальное окно - базовый шаблон</h2>
         <p>Использован <code>JS</code>.</p>
         <p>1. При нажатии на кнопку "открыть..." - открывается модальное окно и затеняется фон.</p>
         <p>2. Закрытие модального окна:</p>
@@ -299,10 +299,10 @@
         </ul>
         <p>В проекте использовать нужный механизм закрытия, лишнее удалить.</p>
 
-        <div class="modal-1">
-          <button class="btn btn-modal-open">Открыть модальное окно</button>
-          <div class="modal-1__bg"></div>
-          <div class="modal-1__content">
+        <div class="modal">
+          <button class="btn  btn-modal-open">Открыть модальное окно</button>
+          <div class="modal__bg"></div>
+          <div class="modal__content">
             <h3>Модальное окно</h3>
             <p>Пример модального окна, которое создано с использованием <code>JS</code>.</p>
             <p>Его можно использовать в широком диапазоне, начиная от вывода сообщений и заканчивая формой регистрации.</p>
@@ -312,23 +312,63 @@
       </section>
 
       <section class="block-library">
-        <h2 class="block-library__title">Модальное окно-2</h2>
-        <p>HTML-Academy.</p>
-        <span>Почитать здесь:</span>
-        <a href="http://prgssr.ru/development/oformlenie-modalnyh-okon.html">http://prgssr.ru/development/oformlenie-modalnyh-okon.html</a>
+        <h2 class="block-library__title">Модальное окно - форма входа</h2>
+        <p>HTML-Academy - базовый интенсив.</p>
+        <p>Использован <code>JS</code>.</p>
+        <p>1. При нажатии на кнопку "открыть..." - открывается модальное окно и затеняется фон.</p>
+        <p>2. Добавлен фокус на поле ввода.</p>
+        <p>3. Добавлена проверка на пустые поля.</p>
+        <p>4. Добавлено хранение данных пользователя в <code>localStorage</code>.</p>
+        <p>5. Закрытие модального окна:</p>
+        <ul>
+          <li>Нажатием на кнопку "закрыть..."</li>
+          <li>При нажатии свободное пространство (затененный фон).</li>
+          <li>При нажатии на клавиатуре Esc.</li>
+        </ul>
+        <p>5. Добавлена анимация:.</p>
+        <ul>
+            <li>Форма опускается сверху вниз</li>
+            <li>Тряска формы при вводе пользователем неправильных данных.</li>
+          </ul>
+        <p>В проекте использовать нужный механизм закрытия, лишнее удалить.</p>
+
+        <div class="modal-2">
+            <button class="btn  btn-modal-2-open">Открыть модальное окно</button>
+            <div class="modal-2__bg"></div>
+            <div class="modal-2__content">
+              <h3>Модальное окно</h3>
+              <p>Пример модального окна, которое создано с использованием <code>JS</code>.</p>
+              <p>Его можно использовать в широком диапазоне, начиная от вывода сообщений и заканчивая формой регистрации.</p>
+              <form class="form">
+                <fieldset class="form__fieldset">
+                  <legend class="form__legend">Название1</legend>
+                  <label class="field-text">
+                    <span class="field-text__input-wrap">
+                      <input class="field-text__input" type="text" name="login" placeholder="Логин" required>
+                      <span class="field-text__help-text">Подсказка под полем</span>
+                    </span>
+                  </label>
+
+                  <label class="field-text">
+                    <span class="field-text__input-wrap">
+                      <input class="field-text__input" type="text" name="password" placeholder="Пароль" required>
+                      <span class="field-text__help-text">Подсказка под полем</span>
+                    </span>
+                  </label>
+                </fieldset>
+
+                <div class="field-actions">
+                  <button class="btn" type="submit">Отправить</button>
+                </div>
+              </form>
+            </div>
+          </div>
       </section>
 
       <section class="block-library">
         <h2 class="block-library__title">Модальное окно-3</h2>
         <span>Почитать здесь:</span>
         <a href="http://prgssr.ru/development/oformlenie-modalnyh-okon.html">http://prgssr.ru/development/oformlenie-modalnyh-okon.html</a>
-      </section>
-
-      <section class="block-library">
-        <h2 class="block-library__title">Модальное окно-4</h2>
-        <p>С доступностью.</p>
-        <span>Почитать здесь:</span>
-        <a href="https://github.com/gdkraus/accessible-modal-dialog">https://github.com/gdkraus/accessible-modal-dialog</a>
       </section>
 
     </div>
@@ -338,7 +378,8 @@
   </footer>
 
   <!-- <script src="js/script.js"></script> -->
-  <script src="js/modal-1.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/modal-2.js"></script>
 </body>
 
 </html>
