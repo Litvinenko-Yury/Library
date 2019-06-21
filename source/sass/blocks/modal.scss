@@ -1,4 +1,4 @@
-.modal__bg {
+.modal__overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -24,7 +24,7 @@
 
   /*это стилизация сообщения*/
   box-sizing: border-box;
-  width: 750px;
+  width: 650px;
   padding: 20px;
   background-color: $color-third;
 }
@@ -33,7 +33,7 @@
   display: block;
 }
 
-.modal__bg--show {
+.modal__overlay--show {
   display: block;
 }
 

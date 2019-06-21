@@ -1,4 +1,4 @@
-.modal-2__bg {
+.modal-2__overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -51,7 +51,7 @@
   }
 }
 
-.modal-2__bg--show {
+.modal-2__overlay--show {
   display: block;
 }
 

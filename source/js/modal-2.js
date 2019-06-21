@@ -1,7 +1,7 @@
 var btnModal_2 = document.querySelector(".btn-modal-2-open");
 console.log("нашел кнопку открыть мо-2");
 var popup_2 = document.querySelector(".modal-2__content");
-var modalBg_2 = document.querySelector(".modal-2__bg");
+var modalOverlay_2 = document.querySelector(".modal-2__overlay");
 var formModal_2 =  document.querySelector(".form--modal-2");
 // console.log(formModal_2);
 var login = popup_2.querySelector("[name=login]");  /*находим input c name="login" внутри переменной popup_2 (это .modal-2__content, т.е. модальное окно, и записываем в переменную.) */
@@ -14,7 +14,7 @@ btnModal_2.addEventListener("click", function(event) {
   event.preventDefault();
   console.log("клик на кнопке открыть мо-2");
   popup_2.classList.add("modal-2__content--show");
-  modalBg_2.classList.add("modal-2__bg--show");
+  modalOverlay_2.classList.add("modal-2__overlay--show");
   login.focus();  /*установить фокус в найденное поле c name="login"*/
 
   if (storage) { /*если значение внутри storage - есть*/
@@ -27,10 +27,10 @@ btnModal_2.addEventListener("click", function(event) {
 
 /*===1-Закрыть модальное окно:===*/
 /*события по клику на затененный фон*/
-modalBg_2.addEventListener("click", function(event) {
+modalOverlay_2.addEventListener("click", function(event) {
   event.preventDefault();
   popup_2.classList.remove("modal-2__content--show");
-  modalBg_2.classList.remove("modal-2__bg--show");
+  modalOverlay_2.classList.remove("modal-2__overlay--show");
   popup_2.classList.remove("modal-2--error");
 });
 
@@ -40,7 +40,7 @@ window.addEventListener("keydown", function(event) {
   if (event.keyCode === 27) {
     if (popup_2.classList.contains("modal-2__content--show")) {
       popup_2.classList.remove("modal-2__content--show");
-      modalBg_2.classList.remove("modal-2__bg--show");
+      modalOverlay_2.classList.remove("modal-2__overlay--show");
       popup_2.classList.remove("modal-2--error");
     }
   }
