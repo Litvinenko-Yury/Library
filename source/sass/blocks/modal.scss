@@ -12,19 +12,19 @@
 
 .modal__content {
   position: fixed;
-  top: 0;
-  right: 0;
-  //bottom: 0;
-  left: 0;
+
+  /*такой вид центрования подходит только для фиксированного расположения МО, при анимации МО - не подходит.*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   z-index: 20;
 
   display: none;
 
   /*это стилизация сообщения*/
   box-sizing: border-box;
-  width: 650px;
-  margin: 0 auto;
-  margin-top: 3em;
+  width: 750px;
   padding: 20px;
   background-color: $color-third;
 }
