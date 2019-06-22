@@ -1,0 +1,76 @@
+/* Базовый контейнер табов */
+.tabs-2 {
+  min-width: 320px;
+  max-width: 800px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Стили секций с содержанием */
+.tabs-2 > section {
+  display: none;
+  padding: 15px;
+  border: 1px solid $gray--light;
+}
+
+.tabs-2 > section > p {
+  margin: 0 0 5px;
+
+  /*Анимация*/
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+}
+
+/* Описываем анимацию свойства opacity */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Прячем чекбоксы */
+.tabs-2 > .tabs-2__input {
+  display: none;
+  position: absolute;
+}
+
+/* Стили переключателей вкладок (табов) */
+.tabs-2 > .tabs-2__label {
+  display: inline-block;
+  margin: 0 0 -1px 0; /*смещение вкладок на толщину рамки, чтобы на активной вкладке убрать нижний border*/
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: $gray;
+  border: 1px solid $gray--light;
+  border-width: 1px 1px 1px 1px;
+  background: $gray--light;
+  border-radius: 5px 5px 0 0;
+}
+
+/* Изменения стиля переключателей вкладок при наведении */
+.tabs-2 > .tabs-2__label:hover {
+  color: $color-main;
+  cursor: pointer;
+}
+
+/* Стили для активной вкладки */
+.tabs-2 > .tabs-2__input:checked + .tabs-2__label {
+  color: $color-main;
+  border-top: 1px solid #009933;
+  border-bottom: 1px solid #ffffff;
+  background: #ffffff;
+}
+/* Активация секций с помощью псевдокласса :checked */
+/* stylelint-disable-next-line*/
+#tabs-2__tab1:checked ~ #tabs-2__content-tab1,
+#tabs-2__tab2:checked ~ #tabs-2__content-tab2,
+#tabs-2__tab3:checked ~ #tabs-2__content-tab3,
+#tabs-2__tab4:checked ~ #tabs-2__content-tab4 {
+  display: block;
+}

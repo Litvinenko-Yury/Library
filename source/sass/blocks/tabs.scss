@@ -1,0 +1,50 @@
+.tabs {
+  outline: 1px dotted red;
+  width: 600px;
+}
+
+.tabs__input {
+  display: none;
+}
+
+.tabs__label {
+  display: inline-block;
+  margin-right: -4px;
+  padding: 15px 20px;
+  transition: background-color 0.4s;
+
+  &--last-child {
+    margin-right: 0;
+  }
+}
+
+
+.tabs__label:hover,
+.tabs__input:checked + .tabs__label {
+  background: black;
+  color: white;
+}
+
+.tabs__content-wrap {
+  /*clear: both;*/
+  outline: 1px dotted blue;
+  position: relative;
+  border-top: 2px solid black;
+}
+
+.tabs__content {
+  outline: 1px dotted green;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s;
+  transform: translateY(5px);
+}
+
+/* stylelint-disable-next-line */
+#tab-nav-1:checked ~ .tabs__content-wrap > .tabs__content:nth-child(1),
+#tab-nav-2:checked ~ .tabs__content-wrap > .tabs__content:nth-child(2),
+#tab-nav-3:checked ~ .tabs__content-wrap > .tabs__content:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s linear 0.1s;
+}
