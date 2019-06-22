@@ -1,22 +1,21 @@
 /* Базовый контейнер табов */
 .tabs-2 {
+  outline: 1px dotted red;
   min-width: 320px;
   max-width: 800px;
   padding: 0;
-  margin: 0 auto;
 }
 
 /* Стили секций с содержанием */
-.tabs-2 > section {
+.tabs-2__content {
   display: none;
   padding: 15px;
   border: 1px solid $gray--light;
 }
 
-.tabs-2 > section > p {
-  margin: 0 0 5px;
-
+.tabs-2__content-item {
   /*Анимация*/
+
   animation-duration: 1s;
   animation-fill-mode: both;
   animation-name: fadeIn;
@@ -40,7 +39,7 @@
 }
 
 /* Стили переключателей вкладок (табов) */
-.tabs-2 > .tabs-2__label {
+.tabs-2__label {
   display: inline-block;
   margin: 0 0 -1px 0; /*смещение вкладок на толщину рамки, чтобы на активной вкладке убрать нижний border*/
   padding: 15px 25px;
@@ -54,15 +53,15 @@
 }
 
 /* Изменения стиля переключателей вкладок при наведении */
-.tabs-2 > .tabs-2__label:hover {
+.tabs-2__label:hover {
   color: $color-main;
   cursor: pointer;
 }
 
 /* Стили для активной вкладки */
-.tabs-2 > .tabs-2__input:checked + .tabs-2__label {
+.tabs-2__input:checked + .tabs-2__label {
   color: $color-main;
-  border-top: 1px solid #009933;
+  border-top: 2px solid #009933;
   border-bottom: 1px solid #ffffff;
   background: #ffffff;
 }

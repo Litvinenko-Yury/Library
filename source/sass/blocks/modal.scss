@@ -7,7 +7,19 @@
   z-index: 10;
 
   display: none;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.65);
+
+  animation: fade 0.6s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .modal__content {
@@ -17,9 +29,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   z-index: 20;
-
   display: none;
 
   /*это стилизация сообщения*/
@@ -27,6 +37,9 @@
   width: 650px;
   padding: 20px;
   background-color: $color-third;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.22), 0 19px 60px rgba(0, 0, 0, 0.3);
+
+  animation: fade 0.6s;
 }
 
 .modal__content--show {
