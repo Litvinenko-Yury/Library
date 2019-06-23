@@ -9,10 +9,10 @@
   display: none;
   background-color: rgba(0, 0, 0, 0.65);
 
-  animation: fade 0.6s;
+  animation: modal-2__fade 0.6s;
 }
 
-@keyframes fade {
+@keyframes modal-2__fade {
   from {
     opacity: 0;
   }
@@ -43,11 +43,11 @@
 
 .modal-2__content--show {
   display: block;
-  animation: bounce 0.6s;
+  animation: modal-2__bounce 0.6s;
 }
 
 /* animation bounce-top*/
-@keyframes bounce {
+@keyframes modal-2__bounce {
   0% {
     transform: translateY(-65px);
     animation-timing-function: ease-in;
@@ -99,10 +99,10 @@
 
 /*===трясем форму при вводе пользователем неправильных данных===*/
 .modal-2--error {
-  animation: shake 0.6s;
+  animation: modal-2__shake 0.6s;
 }
 
-@keyframes shake {
+@keyframes modal-2__shake {
   0%,
   100% {
     transform: translateX(0);

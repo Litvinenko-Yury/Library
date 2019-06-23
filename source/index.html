@@ -368,8 +368,46 @@
         </div>
       </section>
 
-      <!-- <section class="block-library">
-        <h2 class="block-library__title">Табы - Громов - на JS</h2>
+      <section class="block-library">
+        <h2 class="block-library__title">Табы на CSS <small><code>(.tabs-2)</code></small></h2>
+        <div class="tabs-2">
+          <input class="tabs-2__input" id="tabs-2__tab1" type="radio" name="tabs" checked>
+          <label class="tabs-2__label" for="tabs-2__tab1" title="Вкладка 1">Вкладка 1</label>
+
+          <input class="tabs-2__input" id="tabs-2__tab2" type="radio" name="tabs">
+          <label class="tabs-2__label" for="tabs-2__tab2" title="Вкладка 2">Вкладка 2</label>
+
+          <input class="tabs-2__input" id="tabs-2__tab3" type="radio" name="tabs">
+          <label class="tabs-2__label" for="tabs-2__tab3" title="Вкладка 3">Вкладка 3</label>
+
+          <input class="tabs-2__input" id="tabs-2__tab4" type="radio" name="tabs">
+          <label class="tabs-2__label" for="tabs-2__tab4" title="Вкладка 4">Вкладка 4</label>
+
+          <section class="tabs-2__content" id="tabs-2__content-tab1">
+            <h3>Вкладка 1</h3>
+            <p class="tabs-2__content-item">Здесь размещаете любое содержание.... 1</p>
+          </section>
+          <section class="tabs-2__content" id="tabs-2__content-tab2">
+            <h3>Вкладка 2</h3>
+            <p class="tabs-2__content-item">Здесь размещаете любое содержание.... 2</p>
+          </section>
+          <section class="tabs-2__content" id="tabs-2__content-tab3">
+            <h3>Вкладка 3</h3>
+            <p class="tabs-2__content-item">Здесь размещаете любое содержание.... 3</p>
+          </section>
+          <section class="tabs-2__content" id="tabs-2__content-tab4">
+            <h3>Вкладка 4</h3>
+            <p class="tabs-2__content-item">Здесь размещаете любое содержание.... 4</p>
+            <p class="tabs-2__content-item">Здесь размещаете любое содержание.... 4</p>
+            <p class="tabs-2__content-item">Здесь размещаете любое содержание.... 4</p>
+            <p class="tabs-2__content-item">Здесь размещаете любое содержание.... 4</p>
+            <p class="tabs-2__content-item">Здесь размещаете любое содержание.... 4</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="block-library">
+        <h2 class="block-library__title">Табы - Громов - на JS <small><code>(.tabs)</code></small></h2>
         <div class="tabs  tabs--some-mod">
 
           <ul class="tabs__links" role="tablist">
@@ -388,95 +426,37 @@
           </ul>
 
           <div class="tabs__content-wrapper">
-            <div class="tabs__content-item  tabs__content-item--some-mod" id="tab00" role="tabpanel">
-              <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.0</p>
+            <div class="tabs__content-item" id="tab00" role="tabpanel">
+              <p>0. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
             </div>
             <div class="tabs__content-item  tabs__content-item--active" id="tab01" role="tabpanel">
-              <p>За словесными горами в стране, гласных и согласных живут рыбные тексты.1</p>
+              <p>1. За словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
             </div>
             <div class="tabs__content-item" id="tab02" role="tabpanel">
-              <p>Словесными горами в стране, гласных и согласных живут рыбные тексты.2</p>
+              <p>2.Словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
             </div>
             <div class="tabs__content-item" id="tab03" role="tabpanel">
-              <p>Горами в стране, гласных и согласных живут рыбные тексты.3</p>
+              <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
+              <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
+              <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
+              <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
+              <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
+              <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
             </div>
           </div>
-        </div>
-      </section> -->
-
-      <!-- <section class="block-library">
-        <h2 class="block-library__title">Табы на CSS</h2>
-        <p>Плохой шаблон, и вот почему:</p>
-        <p> - позиционирование содержимого вкладки - абсолютное, <br> соответственно при наполнении вкладки контентом, нужно в CSS менять высоту вкладки, что в реальной жизни не-применимо.</p>
-
-        <div class="tabs">
-
-          <input class="tabs__input" type="radio" name="tabs" id="tab-nav-1" checked />
-          <label class="tabs__label" for="tab-nav-1">HTML</label>
-
-          <input class="tabs__input" type="radio" name="tabs" id="tab-nav-2" />
-          <label class="tabs__label" for="tab-nav-2">CSS</label>
-
-          <input class="tabs__input" type="radio" name="tabs" id="tab-nav-3" />
-          <label class="tabs__label  tabs__label--last-child" for="tab-nav-3">JavaScript</label>
-
-          <div class="tabs__content-wrap">
-            <div class="tabs__content">
-              <h3>HTML</h3>
-              <p>Вкладка о HTML.</p>
-            </div>
-            <div class="tabs__content">
-              <h3>CSS</h3>
-              <p>Теперь вкладка о CSS.</p>
-            </div>
-            <div class="tabs__content">
-              <h3>Javascript</h3>
-              <p>О боже, вкладка о Javascript!</p>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-      <section class="block-library">
-        <h2 class="block-library__title">Табы на CSS</h2>
-        <div class="tabs-2">
-          <input class="tabs-2__input" id="tabs-2__tab1" type="radio" name="tabs" checked>
-          <label class="tabs-2__label" for="tabs-2__tab1" title="Вкладка 1">Вкладка 1</label>
-
-          <input class="tabs-2__input" id="tabs-2__tab2" type="radio" name="tabs">
-          <label class="tabs-2__label" for="tabs-2__tab2" title="Вкладка 2">Вкладка 2</label>
-
-          <input class="tabs-2__input" id="tabs-2__tab3" type="radio" name="tabs">
-          <label class="tabs-2__label" for="tabs-2__tab3" title="Вкладка 3">Вкладка 3</label>
-
-          <input class="tabs-2__input" id="tabs-2__tab4" type="radio" name="tabs">
-          <label class="tabs-2__label" for="tabs-2__tab4" title="Вкладка 4">Вкладка 4</label>
-
-          <section class="tabs-2__content" id="tabs-2__content-tab1">
-            <p class="tabs-2__content-item">Здесь размещаете любое содержание.... 1</p>
-          </section>
-          <section class="tabs-2__content" id="tabs-2__content-tab2">
-            <p class="tabs-2__content-item">Здесь размещаете любое содержание.... 2</p>
-          </section>
-          <section class="tabs-2__content" id="tabs-2__content-tab3">
-            <p class="tabs-2__content-item">Здесь размещаете любое содержание.... 3</p>
-          </section>
-          <section class="tabs-2__content" id="tabs-2__content-tab4">
-            <p class="tabs-2__content-item">Здесь размещаете любое содержание.... 4</p>
-          </section>
         </div>
       </section>
-
 
     </div>
   </main>
 
-  <footer class="page-foote">
+  <footer class="page-footer">
   </footer>
 
   <!-- <script src="js/script.js"></script> -->
   <script src="js/modal.js"></script>
   <script src="js/modal-2.js"></script>
+  <script src="js/tab.js"></script>
 </body>
 
 </html>
