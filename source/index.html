@@ -19,7 +19,7 @@
   <!--  <div style="display: none;">
     <include src="build/img/svg_sprite.svg"></include>
   </div> -->
-
+  <noscript>У вас отключен JavaScript. Это пугает.</noscript>
   <header class="page-header">
   </header>
 
@@ -247,7 +247,8 @@
         </div>
 
         <div class="progress">
-          <div class="progress__bar" role="progressbar" style="width: 10%; height: 50px;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress__bar" role="progressbar" style="width: 10%;
+          height: 50px;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </section>
 
@@ -408,7 +409,7 @@
 
       <section class="block-library">
         <h2 class="block-library__title">Табы - Громов - на JS <small><code>(.tabs)</code></small></h2>
-        <div class="tabs  tabs--some-mod">
+        <div class="tabs">
 
           <ul class="tabs__links" role="tablist">
             <li class="tabs__link-wrap" role="presentation">
@@ -447,6 +448,33 @@
         </div>
       </section>
 
+      <section class="block-library">
+        <h2 class="block-library__title">Боковое меню</h2>
+        <p>На <code>CSS</code></p>
+        <input type="checkbox" id="nav-toggle" hidden>
+      </section>
+
+      <section class="block-library">
+        <h2 class="block-library__title">Бургер</h2>
+        <p>Анимированное превращение в крестик по добавлению модификатора.</p>
+        <p>JS блока по клику на бургере, добавляет в класс на элемент.</p>
+        <p><small><i>Более проработано см. в библиотеке Н.Громова:</i></small></p>
+        <p><small><i>JS блока берет переданный в data-атрибуте идентификатор и, по клику на бургере, добавляет переданный в data-атрибуте класс на элемент с этим модификатором.</i></small></p>
+
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="burger-code" data-target-class-toggle="blocks-library__code--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="block-library__inner-wrapper">
+          <div class="blocks-library__inner" id="burger-code">
+            <p>Здесь может быть что угодно</p>
+            <p>Здесь может быть что угодно</p>
+            <p>Здесь может быть что угодно</p>
+          </div>
+        </div>
+      </section>
+
     </div>
   </main>
 
@@ -457,6 +485,7 @@
   <script src="js/modal.js"></script>
   <script src="js/modal-2.js"></script>
   <script src="js/tab.js"></script>
+  <script src="js/burger.js"></script>
 </body>
 
 </html>

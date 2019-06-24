@@ -6,7 +6,6 @@ var btnModalClose = document.querySelector(".btn-modal-close");
 /*события по кнопке "открыть модальное окно"*/
 btnModal.addEventListener("click", function(event) {
   event.preventDefault();
-  console.log("клик по .btn-modal-open");
   popup.classList.add("modal__content--show");
   modalOverlay.classList.add("modal__overlay--show");
 });
@@ -15,7 +14,6 @@ btnModal.addEventListener("click", function(event) {
 /*события по кнопке "закрыть модальное окно"*/
 btnModalClose.addEventListener("click", function(event) {
   event.preventDefault();
-  console.log("клик по .btn-modal-close");
   popup.classList.remove("modal__content--show");
   modalOverlay.classList.remove("modal__overlay--show");
 });
@@ -24,7 +22,6 @@ btnModalClose.addEventListener("click", function(event) {
 /*события по клику на затененный фон*/
 modalOverlay.addEventListener("click", function(event) {
   event.preventDefault();
-  console.log("клик по .modal__overlay");
   popup.classList.remove("modal__content--show");
   modalOverlay.classList.remove("modal__overlay--show");
 });
