@@ -17,3 +17,20 @@
 .block-library ul {
   margin-top: -10px;
 }
+
+.blocks-library__example {
+  max-height: 0;
+  overflow: hidden;
+
+
+  &--shown {
+    max-height: 400px;
+    margin: $typo-margin-vertical 0;
+    padding: $field-padding-vertical $field-padding-horizontal;
+    transition: max-height $transition-time--show;
+    transition-timing-function: ease-out;
+    background: $gray--light;
+    border: 2px solid $gray;
+    border-radius: $border-radius;
+  }
+}

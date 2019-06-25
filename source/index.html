@@ -458,16 +458,19 @@
         <h2 class="block-library__title">Бургер</h2>
         <p>Анимированное превращение в крестик по добавлению модификатора.</p>
         <p>JS блока по клику на бургере, добавляет в класс на элемент.</p>
-        <p><small><i>Более проработано см. в библиотеке Н.Громова:</i></small></p>
-        <p><small><i>JS блока берет переданный в data-атрибуте идентификатор и, по клику на бургере, добавляет переданный в data-атрибуте класс на элемент с этим модификатором.</i></small></p>
+        <p>Реализация открытия другого блока по клику на бургеге:</p>
+        <p> - JS блока берет переданный в data-атрибуте <code>data-target-id</code> идентификатор <code>id</code> и, по клику на бургере, добавляет переданный в data-атрибуте <code>data-target-class-toggle</code> класс на элемент с этим идентификатором <code>id</code>.</p>
 
         <div>
-          <button class="burger" aria-label="Показать пример кода" data-target-id="burger-code" data-target-class-toggle="blocks-library__code--shown">
+          <button class="burger" aria-label="Показать пример кода" data-target-id="burger-code" data-target-class-toggle="blocks-library__example--shown">
             <span>Показать что-либо</span>
           </button>
         </div>
-        <div class="block-library__inner-wrapper">
-          <div class="blocks-library__inner" id="burger-code">
+        <div class="blocks-library__example" id="burger-code">
+          <div>
+            <p>Здесь может быть что угодно</p>
+            <p>Здесь может быть что угодно</p>
+            <p>Здесь может быть что угодно</p>
             <p>Здесь может быть что угодно</p>
             <p>Здесь может быть что угодно</p>
             <p>Здесь может быть что угодно</p>
