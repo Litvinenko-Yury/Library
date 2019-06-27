@@ -449,12 +449,6 @@
       </section>
 
       <section class="block-library">
-        <h2 class="block-library__title">Боковое меню</h2>
-        <p>На <code>CSS</code></p>
-        <input type="checkbox" id="nav-toggle" hidden>
-      </section>
-
-      <section class="block-library">
         <h2 class="block-library__title">Бургер</h2>
         <p>Анимированное превращение в крестик по добавлению модификатора.</p>
         <p>JS блока по клику на бургере, добавляет в класс на элемент.</p>
@@ -478,6 +472,45 @@
         </div>
       </section>
 
+      <section class="block-library">
+        <h2 class="block-library__title">Главная навигация (меню)</h2>
+        <p class="block-library__need-modify">Требует доработки:</p>
+        <p class="block-library__need-modify">На малых ширинах преобразуется в мобильный вид, скрывается/показывается по клику на бургер, если JS включен (на <code>html</code> есть класс <code>js</code>).</p>
+
+        <nav class="main-nav" id="nav">
+
+          <button class="burger" aria-label="Показать главное меню" data-target-id="nav" data-target-class-toggle="main-nav--open">
+            <span>Показать главное меню</span>
+          </button>
+
+          <ul class="main-nav__list">
+
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Главная страница</a>
+            </li>
+            <li class="main-nav__item  main-nav__item--has-child">
+              <a class="main-nav__link" href="#">Страницы</a>
+              <div class="main-nav__sublist-wrapper  main-nav__sublist-wrapper--lvl-2">
+                <ul class="main-nav__list  main-nav__list--lvl-2">
+                  <li class="main-nav__item  main-nav__item--lvl-2">
+                    <a class="main-nav__link  main-nav__link--lvl-2" href="#">О компании</a>
+                  </li>
+                  <li class="main-nav__item  main-nav__item--has-child  main-nav__item--lvl-2">
+                    <a class="main-nav__link  main-nav__link--lvl-2" href="#">Услуги</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Еще страница</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Контакты автора</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
     </div>
   </main>
 
@@ -488,7 +521,8 @@
   <script src="js/modal.js"></script>
   <script src="js/modal-2.js"></script>
   <script src="js/tab.js"></script>
-  <script src="js/burger.js"></script>
+  <!-- <script src="js/burger.js"></script> -->
+  <script src="js/burger-test.js"></script>
 </body>
 
 </html>

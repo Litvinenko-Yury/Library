@@ -11,6 +11,7 @@ var tab03Content = document.querySelector("#tab03");
 
 /*======*/
 var tabsLinkWrap = document.querySelectorAll(".tabs__link-wrap");
+var tabsContentItem = document.querySelectorAll(".tabs__content-item");
 
 /*=========================*/
 /*события по клику на вкладку*/
