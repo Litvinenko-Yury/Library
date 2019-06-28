@@ -76,5 +76,5 @@
 /*делаем чек-бокс доступным с клавиатуры*/
 .field-radio__input:focus ~ .field-radio__name-text::before {
   border-color: $color-hover;
-  box-shadow: 0 0 7px #000000;
+  box-shadow: $box-shadow;
 }

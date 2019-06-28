@@ -186,20 +186,26 @@
 
       <section class="block-library">
         <h2 class="block-library__title">Псевдоэлемент: порядок свойств</h2>
-        <h2 class="block-library__title">Код</h2>
-        <div class="code">
-          <code>::before {</code>
-          <code>  content: "";</code>
-          <code>  position: absolute;</code>
-          <code>  top: 0;</code>
-          <code>  left: 0;</code>
-          <code>  width: 30px;</code>
-          <code>  height: 30px;</code>
-          <code>  margin-top: -10px;</code>
-          <code>  background-image: url("../img/icon-yes.svg");</code>
-          <code>  background-repeat: no-repeat;</code>
-          <code>  background-size: contain;</code>
-          <code>  }</code>
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="pseudo-code" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="pseudo-code">
+          <div class="code">
+            <code>::before {</code>
+            <code>  content: "";</code>
+            <code>  position: absolute;</code>
+            <code>  top: 0;</code>
+            <code>  left: 0;</code>
+            <code>  width: 30px;</code>
+            <code>  height: 30px;</code>
+            <code>  margin-top: -10px;</code>
+            <code>  background-image: url("../img/icon-yes.svg");</code>
+            <code>  background-repeat: no-repeat;</code>
+            <code>  background-size: contain;</code>
+            <code>  };</code>
+          </div>
         </div>
       </section>
 
@@ -450,24 +456,104 @@
 
       <section class="block-library">
         <h2 class="block-library__title">Бургер</h2>
-        <p>Анимированное превращение в крестик по добавлению модификатора.</p>
-        <p>JS блока по клику на бургере, добавляет в класс на элемент.</p>
-        <p>Реализация открытия другого блока по клику на бургеге:</p>
-        <p> - JS блока берет переданный в data-атрибуте <code>data-target-id</code> идентификатор <code>id</code> и, по клику на бургере, добавляет переданный в data-атрибуте <code>data-target-class-toggle</code> класс на элемент с этим идентификатором <code>id</code>.</p>
+        <p>Простое, на первый взгляд, написание БЭМ-блока для бургера, закончилось полной "чехардой с синкопой", т.е. чехардой с делегированием со всплытием.</p>
+        <p>Итак, что же выяснила следственная группа?</p>
+        <p>1. На странице может быть один или несколько бургеров.</p>
+        <p>2. Бургер может просто анимироваться или также открывать <i>другой</i> блок по клику на бургер.</p>
 
+        <hr>
+        <h3 class="block-library__title">1. Бургер одинокий <small>- один на странице.</small></h3>
+        <p><b>Анимированное превращение в крестик по добавлению модификатора:</b></p>
+        <p>JS блока <code>burger.js</code> по клику на бургере, добавляет модификатор бургеру.</p>
+        <p>По клику на бургер, расположенный ниже, представлен код такого простейшего случая.</p>
         <div>
           <button class="burger" aria-label="Показать пример кода" data-target-id="burger-code" data-target-class-toggle="blocks-library__example--shown">
             <span>Показать что-либо</span>
           </button>
         </div>
         <div class="blocks-library__example" id="burger-code">
-          <div>
-            <p>Здесь может быть что угодно</p>
-            <p>Здесь может быть что угодно</p>
-            <p>Здесь может быть что угодно</p>
-            <p>Здесь может быть что угодно</p>
-            <p>Здесь может быть что угодно</p>
-            <p>Здесь может быть что угодно</p>
+          <div class="code">
+            <code>var burger = document.querySelector(".burger");</code>
+            <small><code> </code></small>
+            <small><code>/*события по клику на burger*/</code></small>
+            <small><code>/*=========================*/</code></small>
+            <code>burger.addEventListener("click", function (event) {</code>
+            <code>  event.preventDefault();</code>
+            <small><code> </code></small>
+            <small><code>/* добавляем модификатор на burger, бургер анимируется в крестик */</code></small>
+            <code>  burger.classList.toggle("burger--close");</code>
+            <code>});</code>
+          </div>
+        </div>
+
+        <hr>
+        <h3 class="block-library__title">2. Бургер одинокий<small> - открывает/закрывает другой блок, н-р. меню или блок с кодом.</small></h3>
+        <p><b>Анимированное превращение в крестик по добавлению модификатора:</b></p>
+        <p>JS блока <code>burger.js</code> по клику на бургере, добавляет модификатор бургеру.</p>
+        <p><b>Открытие другого блока по клику на бургере:</b></p>
+        <p>JS блока <code>burger.js</code> по клику на бургере, переключает класс на нужном элементе.</p>
+        <p>По клику на бургер, расположенный ниже, представлен код такого простейшего случая.</p>
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="burger-code2" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="burger-code2">
+          <div class="code">
+            <code>var burger = document.querySelector(".burger");</code>
+            <code>var element = document.querySelector(".ИмяКласса");</code>
+            <small><code> </code></small>
+            <small><code>/*события по клику на burger*/</code></small>
+            <small><code>/*=========================*/</code></small>
+            <code>burger.addEventListener("click", function (event) {</code>
+            <code>  event.preventDefault();</code>
+            <small><code> </code></small>
+            <small><code>/* добавляем модификатор на burger, бургер анимируется в крестик */</code></small>
+            <code>  burger.classList.toggle("burger--close");</code>
+            <small><code>/* добавляем модификатор на element, блок ИмяКласса откр/закр */</code></small>
+            <code> element.classList.toggle("ИмяКласса--shown");</code>
+            <code>});</code>
+          </div>
+        </div>
+
+        <hr>
+        <h3 class="block-library__title">3. Бургеров > одного <small> - открывает/закрывает другой блок, н-р. меню или блок с кодом.</small></h3>
+        <p>JS блока <code>burger-test.js</code></p>
+        <p>Так как бугреров > 1, то механизм работы несколько иной.</p>
+
+        <p>В начале нужно определить, на каком именно бургере произошел клик.</p>
+        <p>Для этого вешаем единый обработчик на элемент document: <code>document.onclick = function (event) {...}</code></p>
+        <p>Далее проверяем, где произошел клик, и если на каком-либо из бургеров, то выполняем следующие действия для <i> этого</i> бургера:</p>
+        <ul>
+          <li>
+            <ul>
+              <p><b>Анимированное превращение в крестик по добавлению модификатора:</b></p>
+              <li>
+                <p>Добавляем модификатор для анимации к этому бургеру: <code>target.classList.toggle("burger--close");</code></p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <p><b>Реализация открытия <i>другого</i> блока по клику на бургере:</b></p>
+              <li>
+                <p>По клику на бургер, JS блока <code>burger-test.js</code>: </p>
+                <p> - записывает в переменную-1 идентификатор <code>id</code>, переданный в data-атрибуте <code>data-target-id</code>;</p>
+                <p> - записывает в переменную-2 имя класса, переданное в data-атрибуте <code>data-target-class-toggle</code>;</p>
+                <p> - находит в документе элемент с нужным <code>id</code> и переключает (добавляет/удаляет) на этом элементе класс. Имя класса берет из переменной-2.</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="burger-code3" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="burger-code3">
+          <div class="code">
+            <code> /* см. содержимое файла burger-test.js; */</code>
+            <code> </code>
           </div>
         </div>
       </section>

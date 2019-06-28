@@ -26,18 +26,20 @@ $color-fb: #3a5998;
 
 $opacity: 0.4;
 
-//================
-$border-radius: 4px;
-$fieldset-border-radius: 10px;
+$box-shadow: 0 0 7px #000000;
 
+//================
 $typo-margin-vertical: 1em;
 
 $field-padding-vertical: 5px;
 $field-padding-horizontal: 12px;
 
+$border-radius: 4px;
+$fieldset-border-radius: 10px;
+
 //================
-$transition-time: 0.3s;
-$transition-time--show: 0.9s;
+$transition-time: 0.2s;
+$transition-time--show: 0.6s;
 
 //================
 $tablet-width: 660px;
