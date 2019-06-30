@@ -14,10 +14,6 @@
   margin-bottom: 0.5em;
 }
 
-.block-library ul {
-  //margin-top: -10px;
-}
-
 .blocks-library__example {
   max-height: 0;
   overflow: hidden;
@@ -27,7 +23,6 @@
   &--shown {
     max-height: 450px;
     margin: $typo-margin-vertical 0;
-    padding: $field-padding-vertical $field-padding-horizontal;
     transition: max-height $transition-time--show;
     transition-timing-function: cubic-bezier(0, 0.85, 0.5, 1);
     background: $gray--light;
@@ -38,4 +33,10 @@
 
 .block-library__need-modify {
   color: $color-third;
+}
+
+.block-library__wrap-aside {
+  outline: 1px dotted red;
+  position: relative;
+  height: 200px;
 }
