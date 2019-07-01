@@ -5,17 +5,32 @@
 
 .off-canvas__aside {
   outline: 1px dotted red;
-  background: #ffd750;
   position: fixed;
   z-index: 2;
   width: 250px;
   height: 100%;
-  padding: $field-padding-vertical $field-padding-horizontal;
+  padding-top: $field-padding-vertical*3;
+  padding-bottom: $field-padding-vertical*3;
   overflow-y: auto;
+  background-color: $gray--darken;
 }
 
 .off-canvas__menu {
   margin: 0;
   padding-left: 0;
   list-style: none;
+}
+
+.off-canvas__menu-link {
+  display: block;
+  padding-top: $field-padding-vertical;
+  padding-right: $field-padding-horizontal;
+  padding-left: $field-padding-horizontal;
+  color: $gray--light;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: $gray;
+  }
 }

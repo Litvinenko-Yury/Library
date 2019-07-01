@@ -28,7 +28,8 @@
   /*такой вид центрования подходит только для фиксированного расположения МО, при анимации МО - не подходит.*/
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  //transform: translate(-50%, -50%);
+  transform: translate(-50%, 100%); //?
   z-index: 20;
   display: none;
 

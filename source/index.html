@@ -78,7 +78,7 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#aside-nav" data-scroll-link>Боковое меню</a>
         </li>
-      
+
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Тест</a>
         </li>
@@ -719,18 +719,17 @@
 
         <section class="block-library" id="aside-nav">
           <h2 class="block-library__title">Боковое меню</h2>
-          <p>По умолчанию скрыто. <br>На декстопной ширине постоянно открыто.</p>
-          <p><b>Важно!</b></p>
-          <p>Можно использовать только в случае дизайна, в котором меню уходит полностью за край видимой области (вьюпорта), т.е. при полноэкранном дизайне.</p>
+          <p>По умолчанию скрыто. <br>На декстопной ширине <code>@media (min-width: $desktop-width) {...}</code> постоянно открыто, <code>width: 300px;</code>.</p>
+          <p><b>Важно!</b> Можно использовать только в случае дизайна, в котором меню уходит полностью за край видимой области (вьюпорта), т.е. при полноэкранном дизайне.</p>
           <i>
-            <p>Идея <a href="https://resume.html-css.pro/index.html">https://resume.html-css.pro/index.html</a></p>
+            <p>Идея дизайна <a href="https://resume.html-css.pro/index.html">https://resume.html-css.pro/index.html</a></p>
           </i>
 
           <div class="block-library__wrap-aside">
-            <button class="burger  burger--close" aria-label="Открыть боковое меню" data-target-id="burger-left-menu" data-target-class-toggle="aside-test--shown">
+            <button class="burger" aria-label="Открыть боковое меню" data-target-id="burger-left-menu" data-target-class-toggle="aside-test--shown">
               <span>Показать что-либо</span>
             </button>
-            <aside class="aside-test aside-test--shown " aria-label="Меню" id="burger-left-menu">
+            <aside class="aside-test" aria-label="Меню" id="burger-left-menu">
               <ul class="aside-test__menu">
                 <li class="aside-test__menu-item"><a class="aside-test__menu-link" href="#">Главная страница</a></li>
                 <li class="aside-test__menu-item"><a class="aside-test__menu-link" href="#">Страницы</a></li>
