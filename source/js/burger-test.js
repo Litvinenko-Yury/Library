@@ -16,7 +16,7 @@ document.onclick = function (event) { /*1. вешаем единый обраб�
 
       var elementClassToggle = document.getElementById(burgerDataID); /* 9. находим элемент с нужным ID*/
       console.log("нашел элемент с нужным ID = " + elementClassToggle);
-      
+
       elementClassToggle.classList.toggle(burgerDataClassToggle);/* 10. Элементу с нужным ID меняем класс на переданный в data-target-class-toggle*/
 
       break;

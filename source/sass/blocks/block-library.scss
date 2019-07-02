@@ -19,7 +19,6 @@
   overflow: hidden;
   box-shadow: $box-shadow;
 
-
   &--shown {
     max-height: 450px;
     margin: $typo-margin-vertical 0;
@@ -31,12 +30,33 @@
   }
 }
 
-.block-library__need-modify {
-  color: $color-third;
-}
-
 .block-library__wrap-aside {
   outline: 1px dotted red;
   position: relative;
   height: 200px;
+}
+
+.block-library table {
+  width: 100%;
+  margin-bottom: 5em;
+  border-collapse: collapse;
+}
+
+.block-library__table-head {
+  background: $gray--light;
+}
+
+.block-library td {
+  padding: 0 0.5em;
+  text-align: right;
+  vertical-align: top;
+  border: 1px solid $gray;
+
+  &:first-child {
+    width: 15%;
+  }
+
+  &:nth-child(2) {
+    width: 25%;
+  }
 }

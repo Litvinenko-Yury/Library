@@ -21,6 +21,14 @@
   list-style: none;
 }
 
+.off-canvas__menu-item {
+  &--separator {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $gray;
+  }
+}
+
 .off-canvas__menu-link {
   display: block;
   padding-top: $field-padding-vertical;

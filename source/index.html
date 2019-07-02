@@ -36,7 +36,7 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#field-actions" data-scroll-link>Действия формы</a>
         </li>
-        <li class="off-canvas__menu-item">
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#form" data-scroll-link>Форма</a>
         </li>
         <li class="off-canvas__menu-item">
@@ -54,19 +54,19 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#progress" data-scroll-link>Прогресс - progressbar</a>
         </li>
-        <li class="off-canvas__menu-item">
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#social" data-scroll-link>Социальные ссылки</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#modal-basic" data-scroll-link>Модальное окно1 - базовый шаблон</a>
         </li>
-        <li class="off-canvas__menu-item">
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#modal-form-animalion" data-scroll-link>Модальное окно2 - форма входа + анимация</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#tabs-css" data-scroll-link>Табы на CSS</a>
         </li>
-        <li class="off-canvas__menu-item">
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#tabs-js" data-scroll-link>Табы на JS</a>
         </li>
         <li class="off-canvas__menu-item">
@@ -75,7 +75,7 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#main-nav" data-scroll-link>Главная навигация (меню)</a>
         </li>
-        <li class="off-canvas__menu-item">
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#aside-nav" data-scroll-link>Боковое меню</a>
         </li>
 
@@ -678,40 +678,65 @@
           </div>
         </section>
 
-        <section class="block-library  block-library__need-modify" id="main-nav">
+        <section class="block-library" id="main-nav">
           <h2 class="block-library__title">Главная навигация (меню)</h2>
-          <p>Требует доработки:</p>
           <p>На малых ширинах преобразуется в мобильный вид, скрывается/показывается по клику на бургер, если JS включен (на <code>html</code> есть класс <code>js</code>).</p>
+          <p>Изменение значка бургер и открытие/закрытие меню на mob - скрипт <code>burger-test.js</code></p>
+          <p>Простое, на первый взгляд, написание БЭМ-блока для главного меню, закончилось вот такими открытиями... имеем два основных состояния меню:</p>
+          <ul>
+            <li>Исходное состояние меню: без включенного JS;</li>
+            <li>Cостояние меню с включенным JS: скриптом изменяем состояние меню до нужного вида.</li>
+            <li>На десктопной ширине бургер - скрыт, меню принимает горизонтальный вид.</li>
+
+          </ul>
+
+          <table>
+            <tbody class="block-library__table-head">
+              <tr>
+                <td></td>
+                <td><small>исх. состояние</small></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b>нет JS</b></td>
+                <td><b>есть JS</b></td>
+              </tr>
+            </tbody>
+            <tr>
+              <td>бургер</td>
+              <td>скрыт,<br><small>в разметку добавлен .burger--no-js</small></td>
+              <td>виден,<br><small>JS-блока,<code>main-nav.js</code>, удаляет <code>.burger--no-js</code>. <br>Бургер становится виден.</td>
+            </tr>
+            <tr>
+              <td>меню</td>
+              <td>открыто</td>
+              <td>закрыто,<br><small>JS-блока, <code>main-nav.js</code>, добавляет к <code>.main-nav__list</code>  модификатор <code>.main-nav__list--js</code>. который делает высоту <code>.main-nav__list</code> = 0</small></td>
+            </tr>
+            <tr>
+                <td>клик на бургер</td>
+                <td>-</td>
+                <td>меню открывается по клику на бургер:<br><small>по клику на бургер, <code> burger-test.js</code> добавляет к <code>.main-nav__list</code> модификатор <code>.main-nav__list--show</code>, который увеличивает высоту <code>.main-nav__list</code></small></td>
+              </tr>
+          </table>
 
           <nav class="main-nav" id="nav">
-
-            <button class="burger" aria-label="Показать главное меню" data-target-id="nav" data-target-class-toggle="main-nav--open">
+            <button class="burger  burger--no-js" aria-label="Показать главное меню" data-target-id="main-nav__list" data-target-class-toggle="main-nav__list--show">
               <span>Показать главное меню</span>
             </button>
 
-            <ul class="main-nav__list">
-
+            <ul class="main-nav__list" id="main-nav__list">
               <li class="main-nav__item">
-                <a class="main-nav__link" href="#">Главная страница</a>
-              </li>
-              <li class="main-nav__item  main-nav__item--has-child">
-                <a class="main-nav__link" href="#">Страницы</a>
-                <div class="main-nav__sublist-wrapper  main-nav__sublist-wrapper--lvl-2">
-                  <ul class="main-nav__list  main-nav__list--lvl-2">
-                    <li class="main-nav__item  main-nav__item--lvl-2">
-                      <a class="main-nav__link  main-nav__link--lvl-2" href="#">О компании</a>
-                    </li>
-                    <li class="main-nav__item  main-nav__item--has-child  main-nav__item--lvl-2">
-                      <a class="main-nav__link  main-nav__link--lvl-2" href="#">Услуги</a>
-                    </li>
-                  </ul>
-                </div>
+                <a class="main-nav__link" href="#">Пункт меню 1</a>
               </li>
               <li class="main-nav__item">
-                <a class="main-nav__link" href="#">Еще страница</a>
+                <a class="main-nav__link" href="#">Пункт меню 2</a>
               </li>
               <li class="main-nav__item">
-                <a class="main-nav__link" href="#">Контакты автора</a>
+                <a class="main-nav__link" href="#">Пункт меню 3</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="#">Пункт меню 4</a>
               </li>
             </ul>
           </nav>
@@ -743,9 +768,9 @@
 
         <section class="block-library" id="logo">
           <h2 class="block-library__title">Логотип</h2>
-            <a class="logo" href="#!">
-              <img src="img/logo-demo.svg" alt="Logo" width="64" height="15">
-            </a>
+          <a class="logo" href="#!">
+            <img src="img/logo-demo.svg" alt="Logo" width="64" height="15">
+          </a>
         </section>
 
       </div>
@@ -758,6 +783,7 @@
   <script src="js/tab.js"></script>
   <!-- <script src="js/burger.js"></script> -->
   <script src="js/burger-test.js"></script>
+  <script src="js/main-nav.js"></script>
 </body>
 
 </html>

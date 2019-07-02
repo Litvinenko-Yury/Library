@@ -11,6 +11,7 @@
   cursor: pointer;
 
   > span { // stylelint-disable-line  selector-combinator-blacklist
+    /*это центральная полоса бургера*/
     display: inline-block;
     position: relative;
     width: 100%;
@@ -62,5 +63,9 @@
         transform: rotate3d(0, 0, 1, -45deg);
       }
     }
+  }
+
+  &--no-js {
+    display: none;
   }
 }
