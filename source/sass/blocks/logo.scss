@@ -1,0 +1,9 @@
+.logo {
+  outline: 1px dotted $color-secondary;
+  display: inline-block;
+  white-space: nowrap;
+
+  img {
+    display: block;
+  }
+}

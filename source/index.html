@@ -83,7 +83,7 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#logo" data-scroll-link>Логотип</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Тест</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#pagination" data-scroll-link>Пагинация</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Тест</a>
@@ -711,13 +711,13 @@
             <tr>
               <td>меню</td>
               <td>открыто</td>
-              <td>закрыто,<br><small>JS-блока, <code>main-nav.js</code>, добавляет к <code>.main-nav__list</code>  модификатор <code>.main-nav__list--js</code>. который делает высоту <code>.main-nav__list</code> = 0</small></td>
+              <td>закрыто,<br><small>JS-блока, <code>main-nav.js</code>, добавляет к <code>.main-nav__list</code> модификатор <code>.main-nav__list--js</code>. который делает высоту <code>.main-nav__list</code> = 0</small></td>
             </tr>
             <tr>
-                <td>клик на бургер</td>
-                <td>-</td>
-                <td>меню открывается по клику на бургер:<br><small>по клику на бургер, <code> burger-test.js</code> добавляет к <code>.main-nav__list</code> модификатор <code>.main-nav__list--show</code>, который увеличивает высоту <code>.main-nav__list</code></small></td>
-              </tr>
+              <td>клик на бургер</td>
+              <td>-</td>
+              <td>меню открывается по клику на бургер:<br><small>по клику на бургер, <code> burger-test.js</code> добавляет к <code>.main-nav__list</code> модификатор <code>.main-nav__list--show</code>, который увеличивает высоту <code>.main-nav__list</code></small></td>
+            </tr>
           </table>
 
           <nav class="main-nav" id="nav">
@@ -773,6 +773,18 @@
           </a>
         </section>
 
+        <section class="block-library" id="pagination">
+          <h2 class="block-library__title">Пагинация</h2>
+          <div class="pagination" aria-label="Page navigation">
+            <a class="pagination__item" href="#!">1</a>
+            <span class="pagination__item">...</span>
+            <a class="pagination__item" href="#!">4</a>
+            <a class="pagination__item  pagination__item--active" href="#!">5</a>
+            <a class="pagination__item" href="#!">6</a>
+            <span class="pagination__item">...</span>
+            <a class="pagination__item" href="#!">999</a>
+          </div>
+        </section>
       </div>
     </main>
   </div>

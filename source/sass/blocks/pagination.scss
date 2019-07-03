@@ -1,0 +1,28 @@
+.pagination {
+  outline: 1px dotted $color-secondary;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: $typo-margin-vertical;
+  margin-bottom: $typo-margin-vertical;
+}
+
+.pagination__item {
+  display: block;
+  min-width: 2em;
+  //border: 1px solid $gray;
+  padding: 0.3em 0.6em;
+  text-decoration: none;
+  text-align: center;
+  color: $color-main;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $color-hover;
+    background-color: $gray--light;
+  }
+
+  &--active {
+    background-color: $gray--light;
+  }
+}
