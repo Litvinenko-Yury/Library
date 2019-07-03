@@ -1,0 +1,31 @@
+.breadcrumbs {
+  outline: 1px dotted $color-secondary;
+  margin-top: $typo-margin-vertical;
+  margin-bottom: $typo-margin-vertical;
+  padding-left: 0;
+  list-style: none;
+
+  a {
+    color: $color-main;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $color-main;
+      text-decoration: none;
+    }
+  }
+}
+
+.breadcrumbs__item {
+  display: inline-block;
+  margin-right: 0.5em;
+  white-space: nowrap;
+
+  &:not(:last-child)::after {
+    content: ">";
+    display: inline-block;
+    margin-left: 0.8em;
+    color: $gray;
+  }
+}
