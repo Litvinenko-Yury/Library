@@ -46,7 +46,7 @@
     height: 0.75em;
     border-radius: 5px;
     background: coral;
-    border: 2px solid $gray;
+    border: 2px solid $border-color;
   }
 
   // Увы, тут похожие наборы свойств приходится писать порознь.
@@ -69,7 +69,7 @@
     box-sizing: border-box;
     width: 2em;
     height: 2em;
-    border: 2px solid $gray;
+    border: 2px solid $border-color;
     border-radius: 1em;
     padding: 0;
     box-shadow: none;

@@ -1,0 +1,45 @@
+.slider {
+  outline: 1px dotted red;
+  position: relative;
+}
+
+/*это кадр слайдера*/
+.slider__list-item {
+  display: none;
+
+  &--active {
+    display: block;
+    background: $gray--light;
+
+    @media (min-width: $tablet-width) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+/*кнопки туда-сюда*/
+.slider__prev,
+.slider__next {
+  position: absolute;
+  padding: 0;
+  //border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/*обертка трех круглых кнопок*/
+.slider__toggles {
+  display: flex;
+
+  // @media (min-width: $desktop-width) {
+  //   display: none;
+  // }
+}
+
+/*это три круглых кнопки*/
+.slider__toggle {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}

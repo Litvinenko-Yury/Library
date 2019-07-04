@@ -1,0 +1,43 @@
+.block-content__text {
+  text-align: center;
+}
+
+/*расположение кнопок слайдера prev-next*/
+.block-content__btn-prev,
+.block-content__btn-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.block-content__btn-next {
+  right: 0;
+}
+
+/*расположение кнопок слайдера "1-2-3-..." */
+.block-content__toggles {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*стилизация кнопок слайдера "1-2-3-..." */
+.block-content__btn-toggles {
+  width: 20px;
+  height: 20px;
+  background: $slider-toggle;
+  border: 2px solid $slider-toggle;
+  border-radius: 10px;
+
+  &--active {
+    border-color: $color-main;
+  }
+
+  &:hover {
+    border-color: $slider-toggle--hover;
+  }
+
+  &:active {
+    border-color: $slider-toggle--down;
+  }
+}

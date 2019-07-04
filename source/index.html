@@ -89,10 +89,10 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#breadcrumbs" data-scroll-link>Хлебные крошки</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Тест</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#table" data-scroll-link>Таблица</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Тест</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#slider" data-scroll-link>Слайдер</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Тест</a>
@@ -801,7 +801,93 @@
           </ul>
         </section>
 
-      </div>
+        <section class="block-library" id="table">
+          <h2 class="block-library__title">Таблица</h2>
+          <p>Не адаптивная.</p>
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Отчество</th>
+                <th>Статус</th>
+              </tr>
+              <tr>
+                <td>Иван</td>
+                <td>Иванов</td>
+                <td>Иванович</td>
+                <td>Большой</td>
+              </tr>
+              <tr>
+                <td>Петр</td>
+                <td>Петров</td>
+                <td>Петрович</td>
+                <td>По-меньше</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="block-library" id="slider">
+          <h2 class="block-library__title">Слайдер</h2>
+          <p>Адаптивность делать медиаусловиями.</p>
+          <p>Состоит из двух ключевых сущностей:<br><code>.slider</code> - "скелет" слайдера. Содержит:</p>
+          <ol>
+            <li>обертку кадров слайдера <code>.slider__list</code>;</li>
+            <li>кадры слайдера <code>.slider__list-item</code>;</li>
+            <li>две кнопки: "назад" - <code>.slider__prev</code>, и "вперед" - <code>.slider__next</code>;</li>
+            <li>обертку кнопок "1-2-3-..." <code>.slider__toggles</code>;</li>
+            <li>сами кнопки "1-2-3-..." <code>.slider__toggle</code>.</li>
+          </ol>
+          <p><code>.block-content</code> - контентный блок страницы, в котором находится слайдер.<br>Стили этого блока задают внешний вид и расположение кнопок слайдера.</p>
+          <p>Переключение слайдов, при необходимости, делать на JS.</p>
+
+          <section class="block-content  slider">
+              <h2 class="visually-hidden">Отзывы пользователей</h2>
+              <div class="block-content__list  slider__list">
+                <div class="block-content__item  slider__list-item  slider__list-item--active">
+                  <p class="block-content__text">Кадр слайдера №1</p>
+                  <p class="block-content__text">Кадр слайдера №1</p>
+                  <p class="block-content__text">Кадр слайдера №1</p>
+                  <p class="block-content__text">Кадр слайдера №1</p>
+                </div>
+
+                <div class="block-content__item  slider__list-item">
+                  <p class="block-content__text">Кадр слайдера №2</p>
+                  <p class="block-content__text">Кадр слайдера №2</p>
+                  <p class="block-content__text">Кадр слайдера №2</p>
+                </div>
+
+                <div class="block-content__item  slider__list-item">
+                  <p class="block-content__text">Кадр слайдера №3</p>
+                  <p class="block-content__text">Кадр слайдера №3</p>
+                </div>
+
+              <button class="block-content__btn-prev  slider__prev" type="button" aria-label="Предыдущий кадр">
+                <svg role="presentation" width="22" height="42" aria-hidden="true" role="presentation">
+                  <use xlink:href="#icon-review-arrow-left" />
+                </svg>
+              </button>
+              <button class="block-content__btn-next  slider__next" type="button" aria-label="Следующий кадр">
+                <svg role="presentation" width="22" height="42" aria-hidden="true" role="presentation">
+                  <use xlink:href="#icon-review-arrow-right" />
+                </svg>
+              </button>
+
+              <div class="block-content__toggles  slider__toggles">
+                <button class="block-content__btn-toggles  block-content__btn-toggles--active  slider__toggle" type="button">
+                  <span class="visually-hidden">1</span>
+                </button>
+                <button class="block-content__btn-toggles  slider__toggle" type="button">
+                  <span class="visually-hidden">2</span>
+                </button>
+                <button class="block-content__btn-toggles  slider__toggle" type="button">
+                  <span class="visually-hidden">3</span>
+                </button>
+              </div>
+            </div>
+          </section>
+        </section>
     </main>
   </div>
 

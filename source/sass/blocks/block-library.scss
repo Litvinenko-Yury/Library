@@ -25,7 +25,7 @@
     transition: max-height $transition-time--show;
     transition-timing-function: cubic-bezier(0, 0.85, 0.5, 1);
     background: $gray--light;
-    border: 1px solid $gray;
+    border: 1px solid $border-color;
     border-radius: $border-radius;
   }
 }
@@ -50,7 +50,7 @@
   padding: 0 0.5em;
   text-align: right;
   vertical-align: top;
-  border: 1px solid $gray;
+  border: 1px solid $border-color;
 
   &:first-child {
     width: 15%;

@@ -10,7 +10,7 @@
 /*вкладка, */
 .tabs__link-wrap {
   color: $gray;
-  border: 1px solid $gray;
+  border: 1px solid $border-color;
 
   &:not(:last-child) {
     border-right: none;
@@ -21,6 +21,7 @@
     border-bottom: 1px solid transparent;
   }
 }
+
 /*текст вкладки*/
 .tabs__link {
   display: block;
@@ -39,7 +40,7 @@
   display: block;
   margin-top: -2px;
   padding: $field-padding-vertical $field-padding-horizontal;
-  border: 1px solid $gray;
+  border: 1px solid $border-color;
 }
 
 .tabs__content-item {
