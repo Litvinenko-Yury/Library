@@ -1,3 +1,15 @@
+/*===============*/
+/*перед использованием удалить*/
+#slider li {  /* stylelint-disable-line */
+  background: #e0decc;
+}
+
+#slider li:nth-child(4) {  /* stylelint-disable-line */
+  background: #ffffff;
+}
+/*===============*/
+
+
 .slider {
   outline: 1px dotted red;
   position: relative;
@@ -6,10 +18,10 @@
 /*это кадр слайдера*/
 .slider__list-item {
   display: none;
+  background: $gray--light;
 
   &--active {
     display: block;
-    background: $gray--light;
 
     @media (min-width: $tablet-width) {
       display: flex;
@@ -18,7 +30,7 @@
   }
 }
 
-/*кнопки туда-сюда*/
+/*кнопки prev-next*/
 .slider__prev,
 .slider__next {
   position: absolute;
@@ -28,7 +40,7 @@
   cursor: pointer;
 }
 
-/*обертка трех круглых кнопок*/
+/*обертка кнопок-индикаторов*/
 .slider__toggles {
   display: flex;
 
@@ -37,7 +49,7 @@
   // }
 }
 
-/*это три круглых кнопки*/
+/*это кнопки-индикаторы*/
 .slider__toggle {
   margin: 0;
   padding: 0;

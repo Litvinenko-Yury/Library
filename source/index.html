@@ -831,15 +831,16 @@
         <section class="block-library" id="slider">
           <h2 class="block-library__title">Слайдер</h2>
           <p>Адаптивность делать медиаусловиями.</p>
-          <p>Состоит из двух ключевых сущностей:<br><code>.slider</code> - "скелет" слайдера. Содержит:</p>
+          <p><b>Состоит из двух ключевых сущностей:</b><br><code><b>.slider</b></code> - "скелет" слайдера. Содержит:</p>
           <ol>
-            <li>обертку кадров слайдера <code>.slider__list</code>;</li>
-            <li>кадры слайдера <code>.slider__list-item</code>;</li>
-            <li>две кнопки: "назад" - <code>.slider__prev</code>, и "вперед" - <code>.slider__next</code>;</li>
-            <li>обертку кнопок "1-2-3-..." <code>.slider__toggles</code>;</li>
-            <li>сами кнопки "1-2-3-..." <code>.slider__toggle</code>.</li>
+            <li>обертку-контейнер всех кадров слайдера <code>.slider__list</code>;</li>
+            <li>отдельный кадр слайдера <code>.slider__list-item</code>;</li>
+            <li>по умолчанию кадры скрыты <code>.slider__list-item {display: none;}</code>, показ кадров при добавлении модификатора <code>.slider__list-item--active {display: block;} </code>;</li>
+            <li>две кнопки: "назад" - <code>.slider__prev</code>, и "вперед" - <code>.slider__next</code>; - позиционируются относительно контейнера.</li>
+            <li>обертка-контейнер кнопок-индикаторов "1-2-3-..." <code>.slider__toggles</code>;</li>
+            <li>сами кнопки-индикаторы "1-2-3-..." <code>.slider__toggle</code>.</li>
           </ol>
-          <p><code>.block-content</code> - контентный блок страницы, в котором находится слайдер.<br>Стили этого блока задают внешний вид и расположение кнопок слайдера.</p>
+          <p><code><b>.block-content</b></code> - контентный блок страницы, в котором находится слайдер.<br>Стили этого блока задают внешний вид и расположение кнопок слайдера.</p>
           <p>Переключение слайдов, при необходимости, делать на JS.</p>
 
           <section class="block-content  slider">
@@ -885,6 +886,7 @@
                   <span class="visually-hidden">3</span>
                 </button>
               </div>
+
             </div>
           </section>
         </section>
