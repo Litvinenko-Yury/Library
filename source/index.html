@@ -49,6 +49,9 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#bg-adaptive" data-scroll-link>Adaptive background</a>
         </li>
         <li class="off-canvas__menu-item">
+            <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#background" data-scroll-link>Background</a>
+          </li>
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#field-range" data-scroll-link>Ползунок - range</a>
         </li>
         <li class="off-canvas__menu-item">
@@ -317,18 +320,20 @@
           </div>
           <div class="blocks-library__example" id="pseudo-code">
             <pre class="code">
-              <code>::before {</code>
-              <code>content: "";</code>
-              <code>position: absolute;</code>
-              <code>top: 0;</code>
-              <code>left: 0;</code>
-              <code>width: 30px;</code>
-              <code>height: 30px;</code>
-              <code>margin-top: -10px;</code>
-              <code>background-image: url("../img/icon-yes.svg");</code>
-              <code>background-repeat: no-repeat;</code>
-              <code>background-size: contain;</code>
-              <code>};</code>
+                <div class="code_inner">
+::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  margin-top: -10px;
+  background-image: url("../img/icon-yes.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+};
+              </div>
             </pre>
           </div>
         </section>
@@ -356,6 +361,34 @@
           <p>Шаблон css-свойств для адаптивного фона блока.</p>
           <div class="bg-adaptive"></div>
         </section>
+
+        <section class="block-library" id="background">
+          <h2 class="block-library__title">Background: порядок свойств</h2>
+          <div>
+            <button class="burger" aria-label="Показать пример кода" data-target-id="background-code" data-target-class-toggle="blocks-library__example--shown">
+              <span>Показать что-либо</span>
+            </button>
+          </div>
+          <div class="blocks-library__example" id="background-code">
+            <pre class="code">
+              <div class="code_inner">
+.имя-блока {
+  min-height: px;
+  padding-top: px;
+  padding-bottom: px;
+  background-color: $color-second;
+  background-image: url("../img/photo-нужное.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+            </div>
+            </pre>
+          </div>
+        </section>
+
+
+
 
         <section class="block-library" id="field-range">
           <h2 class="block-library__title">Ползунок</h2>
