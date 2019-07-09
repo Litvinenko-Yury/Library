@@ -14,16 +14,22 @@
   margin-bottom: 0.5em;
 }
 
+.block-library__span {
+  display: inline-block;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}
+
 .blocks-library__example {
   max-height: 0;
   overflow: hidden;
   box-shadow: $box-shadow;
 
   &--shown {
-    max-height: 450px;
+    max-height: 1100px;
     margin: $typo-margin-vertical 0;
     transition: max-height $transition-time--show;
-    transition-timing-function: cubic-bezier(0, 0.85, 0.5, 1);
+    transition-timing-function: linear;
     background: $gray--light;
     border: 1px solid $border-color;
     border-radius: $border-radius;
