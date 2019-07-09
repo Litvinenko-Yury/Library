@@ -21,6 +21,9 @@
   <div class="off-canvas" id="off-canvas">
     <aside class="off-canvas__aside" aria-label="Меню">
       <ul class="off-canvas__menu" id="off-canvas-menu">
+          <li class="off-canvas__menu-item">
+              <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#font" data-scroll-link>Шрифт</a>
+            </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#btn" data-scroll-link>Кнопка</a>
         </li>
@@ -49,8 +52,8 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#bg-adaptive" data-scroll-link>Adaptive background</a>
         </li>
         <li class="off-canvas__menu-item">
-            <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#background" data-scroll-link>Background</a>
-          </li>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#background" data-scroll-link>Background</a>
+        </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#field-range" data-scroll-link>Ползунок - range</a>
         </li>
@@ -127,6 +130,45 @@
     <main class="page-main">
       <div class="page-content">
 
+        <section class="block-library" id="font">
+          <h2 class="block-library__title">Подключение шрифтов</h2>
+
+          <p><b>Как подключить несколько файлов одного шрифта и использовать одно название шрифта.<b></p>
+          <p>Нередко, веб-шрифт — это несколько файлов: один файл — одно начертание:</p>
+          <ul>
+            <li>файл_1 — плотность 400, нормальный;</li>
+            <li>файл_2 — плотность 400, италик, и так далее.</li>
+          </ul>
+          <p>А хочется везде при указании шрифта использовать одно его название, без упоминания в названии слов <code>normal</code>, <code>italic</code>, <code>light</code> и т.п., а указывать это в соответствующих CSS-свойствах.</p>
+          <p>Подключаем кучу файлов шрифта с указанием одного и того же имени, но разных <code>font-weight</code> и <code>font-style</code>:</p>
+          <div>
+            <button class="burger" aria-label="Показать пример кода" data-target-id="font-code" data-target-class-toggle="blocks-library__example--shown">
+              <span>Показать что-либо</span>
+            </button>
+          </div>
+          <div class="blocks-library__example" id="font-code">
+            <pre class="code">
+                <div class="code_inner">
+@font-face {
+  font-family: 'Web font';           /* название одно */
+  src: url('**webfont8321.woff2**'); /* разные файлы */
+  font-weight: **400**;              /* разная плотность */
+  font-style: normal;
+ }
+
+ @font-face {
+  font-family: 'Web font';           /* название одно */
+  src: url('**webfont___1.woff2**'); /* разные файлы */
+  font-weight: **700**;              /* разная плотность */
+  font-style: normal;
+}
+              </div>
+              </pre>
+          </div>
+          <hr>
+<p>И далее при указании селекторам шрифта и плотности, можно использовать одно имя, но разные плотности.</p>
+        </section>
+
         <section class="block-library" id="btn">
           <h2 class="block-library__title">Кнопка</h2>
           <a class="btn" href="#">Кнопка-ссылка</a>
@@ -151,11 +193,10 @@
               <small><code>/*вложенность (но не больше 1 уровня)*/</code></small>
               <code>.header .btn {...}</code>
               <code> </code>
-            <small><code>/*сделать элемент для стилизации этого блока*/</code></small>
+            <small><code>/*сделать элемент для стилизации этого блока - это миксование БЭМ-блока  БЭМ-элементом*/</code></small>
             <code>.header__btn {...}</code>
             <code>  .btn {...} /*кнопка, которая может использоваться где угодно на сайте*/</code>
             <code> </code>
-
           </pre>
           </div>
         </section>
