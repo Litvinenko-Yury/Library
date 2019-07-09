@@ -141,7 +141,7 @@
           <p>А хочется везде при указании шрифта использовать одно его название, без упоминания в названии слов <code>normal</code>, <code>italic</code>, <code>light</code> и т.п., а указывать это в соответствующих CSS-свойствах.</p>
           <p>Подключаем кучу файлов шрифта с указанием одного и того же имени, но разных <code>font-weight</code> и <code>font-style</code>:</p>
           <div>
-            <span class="block-library__span">Пример-1</span>
+            <span class="block-library__span">Пример-1 - <b>теория:</b></span>
             <button class="burger" aria-label="Показать пример кода" data-target-id="font-code-1" data-target-class-toggle="blocks-library__example--shown">
               <span>Показать что-либо</span>
             </button>
@@ -167,7 +167,7 @@
           </div>
 
           <div>
-            <span class="block-library__span">Пример-2</span>
+            <span class="block-library__span">Пример-2 - <b>normal 200/300/...</b></span>
             <button class="burger" aria-label="Показать пример кода" data-target-id="font-code-2" data-target-class-toggle="blocks-library__example--shown">
               <span>Показать что-либо</span>
             </button>
@@ -175,38 +175,47 @@
           <div class="blocks-library__example" id="font-code-2">
             <pre class="code">
               <div class="code_inner">
+/* montserrat-200 - latin */
 @font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/opensanslight.woff2") format("woff2"),
-          url("../fonts/opensanslight.woff") format("woff");
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local("Montserrat ExtraLight"),
+    local("Montserrat-ExtraLight"),
+    url("../fonts/montserrat-v13-latin-200.woff2") format("woff2"),
+    url("../fonts/montserrat-v13-latin-200.woff") format("woff");
+  }
+
+/* montserrat-300 - latin */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
   font-weight: 300;
-  font-style: normal;
   font-display: swap;
-}
+  src: local("Montserrat Light"),
+    local("Montserrat-Light"),
+    url("../fonts/montserrat-v13-latin-300.woff2") format("woff2"),
+    url("../fonts/montserrat-v13-latin-300.woff") format("woff");
+  }
 
+/* montserrat-400 - latin */
 @font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/opensans.woff2") format("woff2"),
-          url("../fonts/opensans.woff") format("woff");
+  font-family: "Montserrat";
+  font-style: normal;
   font-weight: 400;
-  font-style: normal;
   font-display: swap;
-}
-
-@font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/opensansbold.woff2") format("woff2"),
-          url("../fonts/opensansbold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+  src: local("Montserrat Regular"),
+    local("Montserrat-Regular"),
+    url("../fonts/montserrat-v13-latin-regular.woff2") format("woff2"),
+    url("../fonts/montserrat-v13-latin-regular.woff") format("woff");
+  }
             </div>
             </pre>
           </div>
 
           <div>
-            <span class="block-library__span">Пример-3</span>
+            <span class="block-library__span">Пример-3 - <b>normal / italic 200/300/...</b></span>
             <button class="burger" aria-label="Показать пример кода" data-target-id="font-code-3" data-target-class-toggle="blocks-library__example--shown">
               <span>Показать что-либо</span>
             </button>
@@ -214,43 +223,37 @@
           <div class="blocks-library__example" id="font-code-3">
             <pre class="code">
               <div class="code_inner">
-/*===normal and italic ===*/
+/* montserrat-200 - latin */
 @font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/opensanslight.woff2") format("woff2"),
-          url("../fonts/opensanslight.woff") format("woff");
-  font-weight: 300;
+  font-family: "Montserrat";
   font-style: normal;
+  font-weight: 200;
   font-display: swap;
-}
+  src: local("Montserrat ExtraLight"),
+    local("Montserrat-ExtraLight"),
+    url("../fonts/montserrat-v13-latin-200.woff2") format("woff2"),
+    url("../fonts/montserrat-v13-latin-200.woff") format("woff");
+  }
 
+/* montserrat-200italic - latin */
 @font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/opensanslightiralic.woff2") format("woff2"),
-          url("../fonts/opensanslightiralic.woff") format("woff");
-  font-weight: 300;
-  font-style: italic;
+  font-family: "Montserrat";
+  font-style:  italic;
+  font-weight: 200;
   font-display: swap;
-}
+  src: local("Montserrat ExtraLight Italic"),
+    local("Montserrat-ExtraLightItalic"),
+    url("../fonts/montserrat-v13-latin-200italic.woff2") format("woff2"),
+    url("../fonts/montserrat-v13-latin-200italic.woff") format("woff");
+  }
 
-@font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/opensans.woff2") format("woff2"),
-          url("../fonts/opensans.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+/* montserrat-300 - latin */
+@font-face {...}
 
-@font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/opensansitalic.woff2") format("woff2"),
-          url("../fonts/opensansitalic.woff") format("woff");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-и т.д. @font-face {...}
+/* montserrat-300italic - latin */
+@font-face {...}
+
+и т.д. ...
             </div>
             </pre>
           </div>
@@ -258,7 +261,7 @@
           <hr>
           <p>И далее при указании селекторам шрифта и плотности, можно использовать одно имя, но разные плотности.</p>
           <hr>
-          <p>Где брать шрифты / проверять лицензию?</p>
+          <p><b>Где брать шрифты / проверять лицензию?</b></p>
             <ul>
               <li>здесь, бесплатно, в .woff2 / .woff: <a href="https://google-webfonts-helper.herokuapp.com/fonts"> google-webfonts-helper</a></li>
               <li>бесплатно, в .woff2 / .woff: <a href="https://transfonter.org/">transfonter</a><br></li>
