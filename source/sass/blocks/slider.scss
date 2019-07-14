@@ -9,14 +9,17 @@
 }
 /*===============*/
 
-
 .slider {
-  outline: 1px dotted red;
+  outline: 2px dotted red;
+  background:#007f66; /*перед использованием удалить*/
   position: relative;
 }
 
 /*это кадр слайдера*/
 .slider__list-item {
+  width: 80%; /*при необходимости удалить удалить*/
+  margin: 0 auto;
+
   display: none;
   background: $gray--light;
 
