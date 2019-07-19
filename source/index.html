@@ -525,25 +525,30 @@
               <img class="projects__img" src="img/image-project_06@1x.jpg" srcset="img/image-project_06@2x.jpg 2x" alt="Phone">
             </div>
           </div>
-
         </section>
 
         <section class="block-library" id="img-adaptive">
           <h2 class="block-library__title">Разметка адаптивных контентных изображений</h2>
           <h2 class="block-library__title"><code>picture</code></h2>
           <p>Шаблон разметки <b>адаптивных контентных</b> изображений.</p>
-          <p>Использовать <b>picturefill.js</b> для браузеров, которые нe понимают тег <code>picture</code></p>
+          <p><b>Важно!</b> Использовать <b>picturefill.js</b> для браузеров, которые нe понимают тег <code>picture</code>.</p>
+          <p><code>picturefill.js</code> вписан в Startkit.</p>
           <p>Это IE, Opera mini, Blackberry Browser, IE Mobile.</p>
+          <p><b>Важно-2!</b> Для правильного маштабирования <code>img</code> в IE, использовать <code>object-fit-polyfill</code>.</p>
+          <p><code>object-fit-polyfill</code> вписан в Startkit.</p>
+          <p>Пример разметки и стилей находится в папке <b>test-object-fit-manual.</b></p>
 
-          <picture>
-            <source type="image/webp" media="(min-width: 960px)" srcset="img/panorama-desktop@1x.webp 1x, img/panorama-desktop@2x.webp 2x">
-            <source type="image/webp" media="(min-width: 660px)" srcset="img/panorama-tablet@1x.webp 1x, img/panorama-tablet@2x.webp 2x">
-            <source type="image/webp" srcset="img/panorama-mobile@1x.webp 1x, img/panorama-mobile@2x.webp 2x">
+          <div class="photo">
+            <picture>
+              <source type="image/webp" media="(min-width: 960px)" srcset="img/panorama-desktop@1x.webp 1x, img/panorama-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 660px)" srcset="img/panorama-tablet@1x.webp 1x, img/panorama-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/panorama-mobile@1x.webp 1x, img/panorama-mobile@2x.webp 2x">
 
-            <source media="(min-width: 960px)" srcset="img/panorama-desktop@1x.jpg 1x, img/panorama-desktop@2x.jpg 2x">
-            <source media="(min-width: 660px)" srcset="img/panorama-tablet@1x.jpg 1x, img/panorama-tablet@2x.jpg 2x">
-            <img class="foto__img" src="img/panorama-mobile@1x.jpg" srcset="img/panorama-mobile@2x.jpg 2x" alt="Панорама гористой местности.">
-          </picture>
+              <source media="(min-width: 960px)" srcset="img/panorama-desktop@1x.jpg 1x, img/panorama-desktop@2x.jpg 2x">
+              <source media="(min-width: 660px)" srcset="img/panorama-tablet@1x.jpg 1x, img/panorama-tablet@2x.jpg 2x">
+              <img class="photo__img" src="img/panorama-mobile@1x.jpg" srcset="img/panorama-mobile@2x.jpg 2x" alt="Панорама гористой местности.">
+            </picture>
+          </div>
         </section>
 
         <section class="block-library" id="bg-adaptive">
@@ -1222,6 +1227,7 @@
   </div>
 
   <!-- <script src="js/script.js"></script> -->
+  <script src="js/objectFitPolyfill.basic.js"></script>
   <script src="js/modal.js"></script>
   <script src="js/modal-2.js"></script>
   <script src="js/tab.js"></script>

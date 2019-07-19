@@ -1,0 +1,19 @@
+.photo {
+  outline: 2px dotted blue;
+  //box-sizing: border-box;
+  //width: 100%;
+  height: 300px;
+}
+
+.photo__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*так же для <picture> в global.scss должно быть прописано:*/
+// picture {
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+// }
