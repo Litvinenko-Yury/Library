@@ -536,9 +536,11 @@
           <p>Это IE, Opera mini, Blackberry Browser, IE Mobile.</p>
           <p><b>Важно-2!</b> Для правильного маштабирования <code>img</code> в IE, использовать <code>object-fit-polyfill</code>.</p>
           <p><code>object-fit-polyfill</code> вписан в Startkit.</p>
+          <p>Почитать здесь: <a href="https://github.com/constancecchen/object-fit-polyfill"> object-fit-polyfill</a></p>
           <p>Пример разметки и стилей находится в папке <b>test-object-fit-manual.</b></p>
+          <p>Не забывать дописывать в тег <code>img</code>  свойство <code>data-object-fit</code>!</p>
 
-          <div class="photo">
+          <div class="container">
             <picture>
               <source type="image/webp" media="(min-width: 960px)" srcset="img/panorama-desktop@1x.webp 1x, img/panorama-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 660px)" srcset="img/panorama-tablet@1x.webp 1x, img/panorama-tablet@2x.webp 2x">
@@ -546,7 +548,7 @@
 
               <source media="(min-width: 960px)" srcset="img/panorama-desktop@1x.jpg 1x, img/panorama-desktop@2x.jpg 2x">
               <source media="(min-width: 660px)" srcset="img/panorama-tablet@1x.jpg 1x, img/panorama-tablet@2x.jpg 2x">
-              <img class="photo__img" src="img/panorama-mobile@1x.jpg" srcset="img/panorama-mobile@2x.jpg 2x" alt="Панорама гористой местности.">
+              <img class="container__img" src="img/panorama-mobile@1x.jpg" srcset="img/panorama-mobile@2x.jpg 2x" alt="Панорама гористой местности." data-object-fit>
             </picture>
           </div>
         </section>
