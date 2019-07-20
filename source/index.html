@@ -497,32 +497,35 @@
             <li><span>IE требует явно прописывать ячейки грида.</span></li>
             <li><span><b>Важно!</b> IE кладёт все элементы grid-контейнера в самую первую ячейку, то есть значения <code>-ms-grid-column: 1</code> и <code>-ms-grid-row: 1</code> для каждой ячейки в IE стоят по умолчанию.</span></li>
             <li><span>Для объединения ячеек надо использовать <code>-span</code> в соответствующем виде.</span></li>
+            <li><span><b>Важно!</b> <code>grid</code> + <code>picture</code> + какой-либо полифил, типа <code>object-fit-polyfill</code> или <code>objectFitImages</code>, в IE не работает корректно. <br> Это связано видимо, с рассчетом размеров контейнера, которые IE не может корректно рассчитать. Из-за этого изображения либо нет  - полифил <code>object-fit-polyfill</code>) , либо нарушается grid-сетка - полифил <code>objectFitImages</code>. <br> <b>Решение:</b> если нужна grid-сетка для для IE + изображения в ячейках, тогда в ячейках не использовать <code>picture</code>, а ложить изображения фоном.</span></li>
           </ul>
           <p><b>Пример grid-сетки для IE:</b></p>
 
           <div class="projects">
             <div class="projects__card  projects__card1">
-              <img class="projects__img" data-object-fit="cover" src="img/image-project_01@1x.jpg" srcset="img/image-project_01@2x.jpg 2x" alt="Notebook">
+              <picture>
+                <img class="projects__img" data-object-fit="cover" src="img/image-project_01@1x.jpg" srcset="img/image-project_01@2x.jpg 2x" alt="Notebook">
+              </picture>
             </div>
 
             <div class="projects__card  projects__card2">
-              <img class="projects__img" src="img/image-project_02@1x.jpg" srcset="img/image-project_04@2x.jpg 2x" alt="Badge">
+              <img class="projects__img" data-object-fit="cover" src="img/image-project_02@1x.jpg" srcset="img/image-project_04@2x.jpg 2x" alt="Badge">
             </div>
 
             <div class="projects__card  projects__card3">
-              <img class="projects__img" src="img/image-project_03@1x.jpg" srcset="img/image-project_03@2x.jpg 2x" alt="Book">
+              <img class="projects__img" data-object-fit="cover"src="img/image-project_03@1x.jpg" srcset="img/image-project_03@2x.jpg 2x" alt="Book">
             </div>
 
             <div class="projects__card  projects__card4">
-              <img class="projects__img" src="img/image-project_04@1x.jpg" srcset="img/image-project_04@2x.jpg 2x" alt="Book">
+              <img class="projects__img" data-object-fit="cover" src="img/image-project_04@1x.jpg" srcset="img/image-project_04@2x.jpg 2x" alt="Book">
             </div>
 
             <div class="projects__card  projects__card5">
-              <img class="projects__img" src="img/image-project_05@1x.jpg" srcset="img/image-project_05@2x.jpg 2x" alt="Screen phone">
+              <img class="projects__img" data-object-fit="cover" src="img/image-project_05@1x.jpg" srcset="img/image-project_05@2x.jpg 2x" alt="Screen phone">
             </div>
 
             <div class="projects__card  projects__card6">
-              <img class="projects__img" src="img/image-project_06@1x.jpg" srcset="img/image-project_06@2x.jpg 2x" alt="Phone">
+              <img class="projects__img" data-object-fit="cover" src="img/image-project_06@1x.jpg" srcset="img/image-project_06@2x.jpg 2x" alt="Phone">
             </div>
           </div>
         </section>
@@ -538,7 +541,7 @@
           <p><code>object-fit-polyfill</code> вписан в Startkit.</p>
           <p>Почитать здесь: <a href="https://github.com/constancecchen/object-fit-polyfill"> object-fit-polyfill</a></p>
           <p>Пример разметки и стилей находится в папке <b>test-object-fit-manual.</b></p>
-          <p>Не забывать дописывать в тег <code>img</code>  свойство <code>data-object-fit</code>!</p>
+          <p>Не забывать дописывать в тег <code>img</code> свойство <code>data-object-fit</code>!</p>
 
           <div class="container">
             <picture>
