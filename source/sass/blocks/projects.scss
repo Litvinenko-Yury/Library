@@ -4,8 +4,8 @@
   grid-template-rows: 240px 150px;
 
   display: -ms-grid; /* stylelint-disable-line */
-  grid-columns: 25% 25% 25% 25%; /* stylelint-disable-line */
-  grid-rows: 240px 150px; /* stylelint-disable-line */
+  -ms-grid-columns: 25% 25% 25% 25%; /* stylelint-disable-line */
+  -ms-grid-rows: 240px 150px; /* stylelint-disable-line */
 }
 
 .projects__card {

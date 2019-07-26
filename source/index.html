@@ -16,6 +16,10 @@
 </head>
 
 <body>
+  <div style="display: none;">
+    <include src="build/img/svg_sprite.svg"></include>
+  </div>
+
   <noscript>У вас отключен JavaScript. Это пугает.</noscript>
 
   <div class="off-canvas" id="off-canvas">
@@ -41,6 +45,9 @@
         </li>
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#form" data-scroll-link>Форма</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#phone-mailto" data-scroll-link>Контакты с phone / email</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#pseudo" data-scroll-link>Псевдоэлемент</a>
@@ -107,6 +114,9 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#card" data-scroll-link>Карточка товара</a>
         </li>
         <li class="off-canvas__menu-item">
+            <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#card-preview" data-scroll-link>Карточка preview<small>-нужна ли?</small></a>
+          </li>
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#svg-use" data-scroll-link>svg > use</a>
         </li>
         <li class="off-canvas__menu-item">
@@ -135,7 +145,7 @@
 
         <section class="block-library" id="font">
           <h2 class="block-library__title">Подключение шрифтов</h2>
-          <p><b>Как подключить несколько файлов одного шрифта и использовать одно название шрифта.<b></p>
+          <p><b>Как подключить несколько файлов одного шрифта и использовать одно название шрифта.</b></p>
           <p>Нередко, веб-шрифт — это несколько файлов: один файл — одно начертание:</p>
           <ul>
             <li>файл_1 — плотность 400, нормальный;</li>
@@ -151,7 +161,7 @@
           </div>
           <div class="blocks-library__example" id="font-code-1">
             <pre class="code">
-                <div class="code_inner">
+                <span class="code_inner">
 @font-face {
   font-family: 'Web font';           /* название одно */
   src: url('**webfont8321.woff2**'); /* разные файлы */
@@ -165,7 +175,7 @@
   font-weight: **700**;              /* разная плотность */
   font-style: normal;
 }
-              </div>
+</span>
               </pre>
           </div>
 
@@ -177,7 +187,7 @@
           </div>
           <div class="blocks-library__example" id="font-code-2">
             <pre class="code">
-              <div class="code_inner">
+              <span class="code_inner">
 /* montserrat-200 - latin */
 @font-face {
   font-family: "Montserrat";
@@ -213,7 +223,7 @@
     url("../fonts/montserrat-v13-latin-regular.woff2") format("woff2"),
     url("../fonts/montserrat-v13-latin-regular.woff") format("woff");
   }
-            </div>
+</span>
             </pre>
           </div>
 
@@ -225,7 +235,7 @@
           </div>
           <div class="blocks-library__example" id="font-code-3">
             <pre class="code">
-              <div class="code_inner">
+              <span class="code_inner">
 /* montserrat-200 - latin */
 @font-face {
   font-family: "Montserrat";
@@ -257,7 +267,7 @@
 @font-face {...}
 
 и т.д. ...
-            </div>
+</span>
             </pre>
           </div>
 
@@ -456,6 +466,19 @@
           </form>
         </section>
 
+        <section class="block-library" id="phone-mailto">
+          <h2 class="block-library__title">Номер телефона и электро-почта</h2>
+          <div>
+            <span class="contacts__text">Phone:</span>
+            <a class="contacts__content" href="tel:880056789011">8 800 567.890.11</a>
+          </div>
+
+          <div>
+            <span class="visually-hidden">E-mail</span>
+            <a class="contacts__content  contacts__content--link" href="mailto:support@albedo.com">support@albedo.com</a>
+          </div>
+        </section>
+
         <section class="block-library" id="pseudo">
           <h2 class="block-library__title">Псевдоэлемент: порядок свойств</h2>
           <div>
@@ -465,7 +488,7 @@
           </div>
           <div class="blocks-library__example" id="pseudo-code">
             <pre class="code">
-                <div class="code_inner">
+                <span class="code_inner">
 ::before {
   content: "";
   position: absolute;
@@ -478,7 +501,7 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
-              </div>
+</span>
             </pre>
           </div>
         </section>
@@ -497,7 +520,7 @@
             <li><span>IE требует явно прописывать ячейки грида.</span></li>
             <li><span><b>Важно!</b> IE кладёт все элементы grid-контейнера в самую первую ячейку, то есть значения <code>-ms-grid-column: 1</code> и <code>-ms-grid-row: 1</code> для каждой ячейки в IE стоят по умолчанию.</span></li>
             <li><span>Для объединения ячеек надо использовать <code>-span</code> в соответствующем виде.</span></li>
-            <li><span><b>Важно!</b> <code>grid</code> + <code>picture</code> + какой-либо полифил, типа <code>object-fit-polyfill</code> или <code>objectFitImages</code>, в IE не работает корректно. <br> Это связано видимо, с рассчетом размеров контейнера, которые IE не может корректно рассчитать. Из-за этого изображения либо нет  - полифил <code>object-fit-polyfill</code>) , либо нарушается grid-сетка - полифил <code>objectFitImages</code>. <br> <b>Решение:</b> если нужна grid-сетка для для IE + изображения в ячейках, тогда в ячейках не использовать <code>picture</code>, а ложить изображения фоном.</span></li>
+            <li><span><b>Важно!</b> <code>grid</code> + <code>picture</code> + какой-либо полифил, типа <code>object-fit-polyfill</code> или <code>objectFitImages</code>, в IE не работает корректно. <br> Это связано видимо, с рассчетом размеров контейнера, которые IE не может корректно рассчитать. Из-за этого изображения либо нет - полифил <code>object-fit-polyfill</code>) , либо нарушается grid-сетка - полифил <code>objectFitImages</code>. <br> <b>Решение:</b> если нужна grid-сетка для для IE + изображения в ячейках, тогда в ячейках не использовать <code>picture</code>, а ложить изображения фоном.</span></li>
           </ul>
           <p><b>Пример grid-сетки для IE:</b></p>
 
@@ -513,7 +536,7 @@
             </div>
 
             <div class="projects__card  projects__card3">
-              <img class="projects__img" data-object-fit="cover"src="img/image-project_03@1x.jpg" srcset="img/image-project_03@2x.jpg 2x" alt="Book">
+              <img class="projects__img" data-object-fit="cover" src="img/image-project_03@1x.jpg" srcset="img/image-project_03@2x.jpg 2x" alt="Book">
             </div>
 
             <div class="projects__card  projects__card4">
@@ -571,7 +594,7 @@
           </div>
           <div class="blocks-library__example" id="background-code">
             <pre class="code">
-              <div class="code_inner">
+              <span class="code_inner">
 .имя-блока {
   min-height: px;
   padding-top: px;
@@ -582,7 +605,7 @@
   background-position: center;
   background-size: cover;
 }
-            </div>
+</span>
             </pre>
           </div>
         </section>
@@ -1006,7 +1029,6 @@
             <li>Исходное состояние меню: без включенного JS;</li>
             <li>Cостояние меню с включенным JS: скриптом изменяем состояние меню до нужного вида.</li>
             <li>На десктопной ширине бургер - скрыт, меню принимает горизонтальный вид.</li>
-
           </ul>
 
           <table>
@@ -1025,7 +1047,7 @@
             <tr>
               <td>бургер</td>
               <td>скрыт,<br><small>в разметку добавлен .burger--no-js</small></td>
-              <td>виден,<br><small>JS-блока,<code>main-nav.js</code>, удаляет <code>.burger--no-js</code>. <br>Бургер становится виден.</td>
+              <td>виден,<br><small>JS-блока,<code>main-nav.js</code>, удаляет <code>.burger--no-js</code>. <br>Бургер становится виден.</small></td>
             </tr>
             <tr>
               <td>меню</td>
@@ -1065,9 +1087,8 @@
           <h2 class="block-library__title">Боковое меню</h2>
           <p>По умолчанию скрыто. <br>На декстопной ширине <code>@media (min-width: $desktop-width) {...}</code> постоянно открыто, <code>width: 300px;</code>.</p>
           <p><b>Важно!</b> Можно использовать только в случае дизайна, в котором меню уходит полностью за край видимой области (вьюпорта), т.е. при полноэкранном дизайне.</p>
-          <i>
-            <p>Идея дизайна <a href="https://resume.html-css.pro/index.html">https://resume.html-css.pro/index.html</a></p>
-          </i>
+
+          <p>Идея дизайна <a href="https://resume.html-css.pro/index.html">https://resume.html-css.pro/index.html</a></p>
 
           <div class="block-library__wrap-aside">
             <button class="burger" aria-label="Открыть боковое меню" data-target-id="burger-left-menu" data-target-class-toggle="aside-test--shown">
@@ -1107,7 +1128,7 @@
 
         <section class="block-library" id="breadcrumbs">
           <h2 class="block-library__title">Хлебные крошки</h2>
-          <ul class="breadcrumbs" aria-label="Breadcrumb" role="navigation">
+          <ul class="breadcrumbs" aria-label="Breadcrumb">
             <li class="breadcrumbs__item">
               <a href="#!">Главная</a>
             </li>
@@ -1214,20 +1235,97 @@
         <section class="block-library" id="card">
           <h2 class="block-library__title">Карточка товара</h2>
 
+          <div class="cards-list" style="display: flex; flex-wrap: wrap;">
+            <article class="card">
+              <div class="card__inner">
+                <span class="card__img-wrap">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-product1@1x.webp 1x">
+                    <img class="card__img" src="img/img-product1@1x.jpg" alt="Товар1">
+                  </picture>
+                </span>
+                <h3 class="card__title">Товар1</h3>
+                <p class="card__descr">Простая карточка товара</p>
+                <p class="card__price">50&nbsp;₽</p>
+              </div>
+              <button class="btn card__buy">Купить</button>
+            </article>
+
+            <article class="card">
+              <div class="card__banner">Новинка!</div>
+              <div class="card__inner">
+                <a class="card__img-wrap" href="good01">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-product2@1x.webp 1x">
+                    <img class="card__img" src="img/img-product2@1x.jpg" alt="Товар2">
+                  </picture>
+                </a>
+                <h3 class="card__title">
+                  <a href="good01">Товар2</a>
+                </h3>
+                <p class="card__descr">Карточка товара со ссылкой </p>
+                <p class="card__price">70&nbsp;₽</p>
+              </div>
+              <button class="btn card__buy">Купить</button>
+            </article>
+
+            <article class="card">
+              <div class="card__inner">
+                <span class="card__img-wrap">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-product3@1x.webp 1x">
+                    <img class="card__img" src="img/img-product3@1x.jpg" alt="Товар3">
+                  </picture>
+                </span>
+                <div class="card__overlay">
+                  <div class="card__overlay-wrapper">
+                    <p class="card__overlay-title">Вкусно и полезно</p>
+                    <p class="card__overlay-text">Прямые поставки из Н.Зелландии</p>
+                    <div class="card__overlay-wrap">
+                      <button class="card__overlay-btn" type="button" aria-label="Go to ...">
+                        <svg width="25" height="25" role="img">
+                          <use xlink:href="#icon-link" />
+                        </svg>
+                      </button>
+                      <a class="card__overlay-link" href="#!" aria-label="link to view">
+                        <svg width="25" height="25" role="img">
+                          <use xlink:href="#icon-lupa" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <h3 class="card__title">Товар3</h3>
+                <p class="card__descr">Карточка с overlay и кнопками поверх</p>
+                <p class="card__price">50&nbsp;₽</p>
+              </div>
+              <button class="btn card__buy">Купить</button>
+            </article>
+
+            <p><b>Касательно overlay для карточки №3:</b></p>
+            <p>В зависимости от макета, отредактировать поведение и размеры <code>.card__overlay</code>.</p>
+          </div>
+        </section>
+
+        <section class="block-library" id="card-preview">
+            <h2 class="block-library__title">Карточка previw - нужна?</h2>
+            <p>вот в чем вопрос...</p>
         </section>
 
         <section class="block-library" id="svg-use">
           <h2 class="block-library__title">svg > use</h2>
-          <div class="blocks-library__example  blocks-library__example--shown" id="font-code-1">
+          <div class="blocks-library__example  blocks-library__example--shown">
             <pre class="code">
-                <div class="code_inner">
+                <span class="code_inner">
 &lt;svg width="18" height="24">
   &lt;use xlink:href="#icon-cart"/>
 &lt;/svg>
-              </div>
+                </span>
               </pre>
           </div>
         </section>
+
+      </div>
     </main>
   </div>
 
@@ -1241,4 +1339,4 @@
   <script src="js/main-nav.js"></script>
 </body>
 
-</html>>
+</html>

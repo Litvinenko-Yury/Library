@@ -1,5 +1,6 @@
 $font-family: "Open Sans",  "Arial", sans-serif;
 
+
 $font-size--smaller: 12px;
 $font-size: 16px;
 $font-size--larger: 20px;
@@ -15,6 +16,7 @@ $line-height: 2em;
 $color-main: #283645;
 $color-secondary: #d22856;
 $color-third: coral;
+$color-success: #66b266;
 
 $color-hover: #d22856;
 $color-active: #2856d2;
@@ -44,6 +46,37 @@ $field-padding-horizontal: 12px;
 
 $border-radius: 4px;
 $fieldset-border-radius: 10px;
+
+//=============================
+//===Buttons===
+//=============================
+$btn-padding-vertical: 5px;
+$btn-padding-horizontal: 12px;
+
+$btn-padding-horizontal--portfolio: 58px;
+
+//$btn-font-size: $font-size--small - 2px;
+$btn-line-height: 2.5714em;
+
+//$btn-color-base: $color-second;
+$btn-color--portfolio: #1cbbb4;
+
+$btn-border-radius-base: 4px;
+
+$btn-bg-base: transparent;
+
+//$btn-border-color-base: $color-second;
+$btn-border-color--portfolio: #1cbbb4;
+
+
+//=============================
+//===Links====
+//=============================
+//$link-color: ;
+//$link-color--active: ;
+//$link-color--hover: ;
+$link-color--down: $color-active;
+
 
 //================
 $transition-time: 0.2s;
