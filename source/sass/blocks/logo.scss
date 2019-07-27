@@ -1,9 +1,27 @@
+/*если лого как img*/
 .logo {
   outline: 1px dotted $color-secondary;
-  display: inline-block;
-  white-space: nowrap;
 
-  img {
-    display: block;
+  /*если лого как img.*/
+  /*Можно и нужно использовать в разметке без модификатора.*/
+  &--img {
+    display: inline-block;
+    white-space: nowrap;
+
+    img {
+      display: block;
+    }
+  }
+
+  /*если лого как svg > use*/
+  &--svg {
+    display: flex; /*для позиционирования svg внутри <a>*/
+    width: 50px;
+    height: 50px;
+
+    & svg {
+      margin: auto; /*для позиционирования svg внутри <a>*/
+      background: #000000;
+    }
   }
 }

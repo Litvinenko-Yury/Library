@@ -1106,9 +1106,19 @@
         </section>
 
         <section class="block-library" id="logo">
-          <h2 class="block-library__title">Логотип</h2>
-          <a class="logo" href="#!">
+          <h2 class="block-library__title">Логотип </h2>
+          <p>как <code>img</code></p>
+          <a class="logo  logo-img" href="#!">
             <img src="img/logo-demo.svg" alt="Logo" width="64" height="15">
+          </a>
+
+          <hr>
+
+          <p>как <code>svg > use</code></p>
+          <a class="logo  logo--svg" href="#!" aria-label="Переход на главную страницу">
+            <svg width="32" height="32" role="img">
+              <use xlink:href="#icon-cart" />
+            </svg>
           </a>
         </section>
 
