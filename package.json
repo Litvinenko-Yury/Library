@@ -5,13 +5,13 @@
   "description": "Личная библиотека компонентов",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
-    "autoprefixer": "9.5.x",
-    "browser-sync": "2.26.x",
-    "del": "^4.0.0",
-    "gulp": "4.0.x",
+    "autoprefixer": "^9.6.1",
+    "browser-sync": "^2.26.7",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
     "gulp-csso": "^3.0.1",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^5.0.3",
+    "gulp-imagemin": "^6.0.0",
     "gulp-plumber": "1.2.x",
     "gulp-postcss": "8.0.x",
     "gulp-posthtml": "^3.0.4",
@@ -22,8 +22,8 @@
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
     "posthtml-include": "^1.2.0",
-    "stylelint": "^9.10.1",
-    "stylelint-config-htmlacademy": "0.1.x"
+    "stylelint": "^10.1.0",
+    "stylelint-config-htmlacademy": "^0.1.4"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
@@ -47,5 +47,6 @@
   ],
   "engines": {
     "node": "8.15"
-  }
+  },
+  "dependencies": {}
 }
