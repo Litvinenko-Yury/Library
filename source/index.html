@@ -1121,17 +1121,35 @@
 
         <section class="block-library" id="logo">
           <h2 class="block-library__title">Логотип </h2>
-          <p>как <code>img</code></p>
+          <p>как ссылка с <code>img</code>:</p>
           <a class="logo  logo-img" href="#!">
             <img src="img/logo-demo.svg" alt="Logo" width="64" height="15">
           </a>
 
           <hr>
 
-          <p>как <code>svg > use</code></p>
+          <p>как ссылка с <code>svg > use</code>:</p>
           <a class="logo  logo--svg" href="#!" aria-label="Переход на главную страницу">
             <svg width="32" height="32" role="img">
               <use xlink:href="#icon-cart" />
+            </svg>
+          </a>
+
+          <hr>
+
+          <p>как ссылка с разными <code>svg > use</code> для разных ширин экранов:</p>
+          <a class="logo  logo--svg">
+            <svg class="main-nav__inner-logo-img" width="75" height="22" role="img">
+              <title>Логотип PINK</title>
+              <use xlink:href="#icon-pink-white-mobile" />
+            </svg>
+            <svg class="main-nav__inner-logo-img  main-nav__inner-logo-img--tab" width="147" height="41" role="img">
+              <title>Логотип PINK</title>
+              <use xlink:href="#icon-pink-white-tablet" />
+            </svg>
+            <svg class="main-nav__inner-logo-img  main-nav__inner-logo-img--desk" width="147" height="41" role="img">
+              <title>Логотип PINK</title>
+              <use xlink:href="#icon-pink-white-desktop" />
             </svg>
           </a>
         </section>
@@ -1327,6 +1345,8 @@
 
             <p><b>Касательно overlay для карточки №3:</b></p>
             <p>В зависимости от макета, отредактировать поведение и размеры <code>.card__overlay</code>.</p>
+            <p>Простые карточки в bootstrap, примеры разметки: </p>
+            <a href="https://getbootstrap.com/docs/4.0/components/card/" target="_blank"> сюда</a>
           </div>
         </section>
 
