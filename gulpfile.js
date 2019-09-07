@@ -17,6 +17,8 @@ var include = require("posthtml-include");
 var del = require("del");
 var htmlmin = require("gulp-htmlmin");
 var uglify = require("gulp-uglify");
+const ghPages = require('gh-pages');
+const path = require('path');
 
 //копируем папки из папки source в папку build.
 gulp.task("copyFolderBuild", function () {
@@ -25,8 +27,8 @@ gulp.task("copyFolderBuild", function () {
     "source/img/**",
     "source/js/**"
   ], {
-      base: "source"
-    })
+    base: "source"
+  })
     .pipe(gulp.dest("build"));
 });
 
@@ -49,7 +51,7 @@ gulp.task("css", function () {
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
-    // .pipe(server.stream());
+  // .pipe(server.stream());
 });
 
 //собрать svg-спрайт (gulp-svgstore), переименовать спрайт в "svg_sprite.svg" (gulp-rename), и сохранить в build/img.
@@ -138,3 +140,9 @@ gulp.task("webp", function () {
     .pipe(webp({ quality: 75 }))
     .pipe(gulp.dest("source/img"));
 });
+
+//задача публикации на gh-pages
+function deploy(cb) {
+  ghPages.publish(path.join(process.cwd(), './build'), cb);
+}
+exports.deploy = deploy;

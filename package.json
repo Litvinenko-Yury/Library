@@ -1,5 +1,10 @@
 {
   "name": "library",
+  "author": {
+    "name": "Litvinenko Yuriy",
+    "email": "litvinenko-don@ukr.net",
+    "url": "https://litvinenko-yury.github.io/Personal-Page/"
+  },
   "version": "1.0.0",
   "private": true,
   "description": "Личная библиотека компонентов",
@@ -8,6 +13,7 @@
     "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",
     "del": "^5.0.0",
+    "gh-pages": "^2.0.1",
     "gulp": "^4.0.2",
     "gulp-csso": "^3.0.1",
     "gulp-htmlmin": "^5.0.1",
@@ -30,7 +36,8 @@
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
-    "start": "gulp start"
+    "start": "gulp start",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     "last 2 versions",
@@ -46,7 +53,7 @@
     "source/sass/**/*.{sass,scss}"
   ],
   "engines": {
-    "node": "8.15"
+    "node": "10.16"
   },
   "dependencies": {}
 }
