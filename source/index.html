@@ -126,7 +126,7 @@
         </li>
 
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Тест</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#scrollbar" data-scroll-link>scrollbar, hidden</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Тест</a>
@@ -895,7 +895,7 @@
         </section>
 
         <section class="block-library" id="tabs-js">
-          <h2 class="block-library__title">Табы на JS - Громов<small><code>(.tabs)</code></small></h2>
+          <h2 class="block-library__title">Табы на JS - Н.Громов<small><code>(.tabs)</code></small></h2>
           <div class="tabs">
 
             <ul class="tabs__links" role="tablist">
@@ -1386,6 +1386,29 @@
           <h2 class="block-library__title">stylelint</h2>
           <a href="https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configuration.md">stylelint</a>
           <p><code>/* stylelint-disable-line */</code></p>
+        </section>
+
+        <section class="block-library" id="scrollbar">
+          <h2 class="block-library__title">как скрыть scrollbar</h2>
+          <p>Как скрыть ползунок прокрутки, но сохраняя при этом саму прокрутку</p>
+          <div>
+            <button class="burger" aria-label="Показать пример кода" data-target-id="scrollbar-code" data-target-class-toggle="blocks-library__example--shown">
+              <span>Показать что-либо</span>
+            </button>
+          </div>
+
+          <div class="blocks-library__example" id="scrollbar-code">
+            <pre class="code">
+                <span class="code_inner">
+-ms-overflow-style: none; // IE 10+
+scrollbar-width: none; // Firefox
+
+&::-webkit-scrollbar { /* WebKit */
+width: 0;
+}
+                </span>
+              </pre>
+          </div>
         </section>
 
       </div>
