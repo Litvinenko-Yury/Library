@@ -1500,6 +1500,8 @@ hr {
   .off-canvas__menu-link:hover, .off-canvas__menu-link:focus {
     text-decoration: none;
     background-color: #8e8e8e; }
+  .off-canvas__menu-link--personal {
+    color: #00dbe1; }
 
 .page-content {
   max-width: 750px;
