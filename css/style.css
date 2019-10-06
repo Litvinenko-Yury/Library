@@ -426,6 +426,9 @@ hr {
   text-decoration: none;
   white-space: nowrap; }
 
+.attention {
+  background: #fdecc6; }
+
 .bg-adaptive {
   width: 100%;
   min-height: 400px;
