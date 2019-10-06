@@ -338,7 +338,7 @@ body {
   font-family: "Open Sans", "Arial", sans-serif;
   font-size: 16px;
   font-weight: normal;
-  line-height: 2em;
+  line-height: 1.75em;
   color: #283645; }
 
 img {
@@ -603,7 +603,7 @@ hr {
           user-select: none;
   font-family: inherit;
   font-size: 1em;
-  line-height: 2em;
+  line-height: 1.75em;
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
@@ -793,7 +793,7 @@ hr {
 .card__overlay-title {
   margin-bottom: 30px;
   font-weight: 600;
-  line-height: 2em;
+  line-height: 1.75em;
   color: #ffffff; }
 
 .card__overlay-text {
@@ -845,7 +845,7 @@ hr {
 
 .code {
   padding: 0.5em 2em;
-  line-height: 0.5em; }
+  line-height: 0.4375em; }
   .code code {
     display: block;
     padding: 0;
