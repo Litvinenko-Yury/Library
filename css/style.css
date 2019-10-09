@@ -966,21 +966,21 @@ hr {
   line-height: 1.2em;
   color: #8e8e8e; }
 
-/*===стилизация чек-бокс===*/
+/*===стилизация radio===*/
 .field-radio__input {
-  /*прячем стандартный чек-бокс без потери доступности*/
+  /*прячем стандартный radio без потери доступности*/
   position: absolute;
   opacity: 0; }
 
 .field-radio__label {
-  /*подготовка места для кастом-чек-бокса = стилизация label*/
+  /*подготовка места для кастом-radio = стилизация label*/
   position: relative;
   display: block;
   padding-left: 1.5em;
   cursor: pointer; }
 
 .field-radio__name-text::before {
-  /*стилизация фона checkbox*/
+  /*стилизация фона radio*/
   content: "";
   width: 20px;
   height: 20px;
@@ -997,9 +997,9 @@ hr {
 .field-radio__name-text:active::before {
   border-color: #2856d2; }
 
-/*переключение состояния чек-бокса*/
+/*переключение состояния radio*/
 .field-radio__input:checked ~ .field-radio__name-text::after {
-  /*стилизация активного чек-бокса*/
+  /*стилизация активного radio*/
   content: "";
   width: 8px;
   height: 8px;
@@ -1013,7 +1013,7 @@ hr {
   height: 16px;
   background: url("../img/icon-yes-pink.svg") no-repeat center; */ }
 
-/*делаем чек-бокс доступным с клавиатуры*/
+/*делаем radio доступным с клавиатуры*/
 .field-radio__input:focus ~ .field-radio__name-text::before {
   border-color: #d22856;
   -webkit-box-shadow: 0 0 7px #000000;
