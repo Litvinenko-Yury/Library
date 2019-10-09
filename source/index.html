@@ -20,11 +20,14 @@
     <include src="build/img/svg_sprite.svg"></include>
   </div>
 
-  <noscript>У вас отключен JavaScript. Это пугает.</noscript>
+  <noscript>У вас отключен JavaScript.</noscript>
 
   <div class="off-canvas" id="off-canvas">
     <aside class="off-canvas__aside" aria-label="Меню">
       <ul class="off-canvas__menu" id="off-canvas-menu">
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--personal" href="https://litvinenko-yury.pro" rel="noopener">litvinenko-yury.pro</a>
+        </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#font" data-scroll-link>Шрифт</a>
         </li>
@@ -129,10 +132,10 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#scrollbar" data-scroll-link>scrollbar, hidden</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Тест</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#yandex-map" data-scroll-link>Яндекс.Карты</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Тест</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#compare" data-scroll-link>Ползунок сравнения изображений</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Тест</a>
@@ -1388,7 +1391,7 @@
 
         <section class="block-library" id="scrollbar">
           <h2 class="block-library__title">как скрыть scrollbar</h2>
-          <p>Как скрыть ползунок прокрутки, но сохраняя при этом саму прокрутку</p>
+          <p>Как скрыть ползунок прокрутки, но сохраняя при этом саму прокрутку.</p>
           <div>
             <button class="burger" aria-label="Показать пример кода" data-target-id="scrollbar-code" data-target-class-toggle="blocks-library__example--shown">
               <span>Показать что-либо</span>
@@ -1409,6 +1412,22 @@ width: 0;
           </div>
         </section>
 
+        <section class="block-library  attention" id="yandex-map">
+          <h2 class="block-library__title">Яндекс.Карты</h2>
+          <p>Как добавить Яндекс.Карту на страницу.</p>
+          <div>
+            <span>Быстрый старт: </span>
+            <a href="https://tech.yandex.ru/maps/jsapi/doc/2.1/quick-start/index-docpage/#create_map_container" rel="noopener">Документация Яндекс</a>
+          </div>
+          <br>
+          <span>Пример JS-кода для создания экземпляра карты.<br> Изменяет координаты центра и картинку метки в зависимости от ширины окна браузера: </span><a href="https://tech.yandex.ru/maps/jsapi/doc/2.1/quick-start/index-docpage/#create_map_container" rel="noopener">здесь будет ссылка на script-map.js Cat Energy</a>
+        </section>
+
+        <section class="block-library  attention" id="compare">
+          <h2 class="block-library__title">Ползунок сравнения изображений</h2>
+          <p>Создание ползунка, сравнивающий два изображения.</p>
+
+        </section>
       </div>
     </main>
   </div>
