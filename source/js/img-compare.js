@@ -16,13 +16,9 @@ function initComparisons() {
     /*получить width и height элемента img:*/
     w = img.offsetWidth;
     h = img.offsetHeight;
-    console.log("ширина: " + w);
-    console.log("высота: " + h);
 
     /*установить width для img = 50%*/
     img.style.width = (w / 2) + "px";
-    var w2 = w / 2;
-    console.log("установил ширину: " + w2);
 
     /*создание ползунка:*/
     /*ползунок добавляется JS-ом, т.к. если нет JS, то и не будет показан ползунок :-)*/
