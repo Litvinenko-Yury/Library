@@ -128,11 +128,14 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#stylelint" data-scroll-link>stylelint</a>
         </li>
 
-        <li class="off-canvas__menu-item">
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#scrollbar" data-scroll-link>scrollbar, hidden</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#yandex-map" data-scroll-link>Яндекс.Карты</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#yandex-map" data-scroll-link>Яндекс.Карты - JS</a>
+        </li>
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#google-map" data-scroll-link>Google Maps - JS</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#compare" data-scroll-link>Ползунок сравнения изображений</a>
@@ -1412,7 +1415,7 @@ width: 0;
           </div>
         </section>
 
-        <section class="block-library  attention" id="yandex-map">
+        <section class="block-library" id="yandex-map">
           <h2 class="block-library__title">Яндекс.Карты</h2>
           <p>Как добавить Яндекс.Карту на страницу.</p>
           <div>
@@ -1420,7 +1423,28 @@ width: 0;
             <a href="https://tech.yandex.ru/maps/jsapi/doc/2.1/quick-start/index-docpage/#create_map_container" rel="noopener">Документация Яндекс</a>
           </div>
           <br>
-          <span>Пример JS-кода для создания экземпляра карты.<br> Изменяет координаты центра и картинку метки в зависимости от ширины окна браузера: </span><a href="https://tech.yandex.ru/maps/jsapi/doc/2.1/quick-start/index-docpage/#create_map_container" rel="noopener">здесь будет ссылка на script-map.js Cat Energy</a>
+          <span><i>Пример JS-кода для создания экземпляра карты.</i><br> Изменяет координаты центра и картинку метки в зависимости от ширины окна браузера: <code>script-map.js</code></span>
+        </section>
+
+        <section class="block-library" id="google-map">
+          <h2 class="block-library__title">Google Maps</h2>
+          <p>Как добавить Google Maps на страницу.</p>
+          <div>
+            <span>Быстрый старт: </span>
+            <a href="https://support.google.com/maps/answer/144361?hl=ru&ref_topic=3093585" rel="noopener">Документация Google</a>
+          </div>
+          <div>
+            <span>API: </span>
+            <a href="https://developers.google.com/maps/documentation/javascript/tutorial" rel="noopener">Документация Google</a>
+          </div>
+          <div>
+            <span>Статья на Хабре: </span>
+            <a href="https://habr.com/ru/post/324880/" rel="noopener">Хабр</a>
+          </div>
+          <div>
+            <span>Стилизация: </span>
+            <a href="https://mapstyle.withgoogle.com/" rel="noopener">https://mapstyle.withgoogle.com/</a>
+          </div>
         </section>
 
         <section class="block-library  attention" id="compare">
