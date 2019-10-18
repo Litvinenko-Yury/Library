@@ -902,7 +902,7 @@ hr {
   color: #8e8e8e; }
 
 /*===стилизация чек-бокс===*/
-.field-сheckbox__input {
+.field-checkbox__input {
   /*прячем стандартный чек-бокс без потери доступности*/
   position: absolute;
   opacity: 0; }
