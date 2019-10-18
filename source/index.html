@@ -1451,6 +1451,36 @@ width: 0;
           <h2 class="block-library__title">Ползунок сравнения изображений</h2>
           <p>Создание ползунка, сравнивающий два изображения.</p>
 
+          <div class="img-comp-container">
+            <div class="img-comp-img">
+              <img src="img/img-forest.jpg" width="500" height="300">
+            </div>
+            <div class="img-comp-img img-comp-overlay">
+              <img src="img/img-desert.jpg" width="500" height="300">
+            </div>
+          </div>
+          <hr>
+          <p>Важно!</p>
+          <p>Для корректной работы ползунка сравнения, в global.scss нужно закомментировать:</p>
+          <div>
+            <button class="burger" aria-label="Показать пример кода" data-target-id="img-compare-code" data-target-class-toggle="blocks-library__example--shown">
+              <span>Показать что-либо</span>
+            </button>
+          </div>
+
+          <div class="blocks-library__example" id="img-compare-code">
+            <pre class="code">
+            <span class="code_inner">
+// img {
+//   max-width: 100%;
+//   height: auto;
+// }
+            </span>
+          </pre>
+          </div>
+
+          <p>И соответственно, продумать, как добавить для всех остальных <code>img</code> эти важные стили.</p>
+          <p>Как вариант: для <code>img</code> задать <code>object-fit</code></p>
         </section>
       </div>
     </main>
@@ -1466,6 +1496,11 @@ width: 0;
   <!-- <script src="js/burger.js"></script> -->
   <script src="js/burger-test.js" async></script>
   <script src="js/main-nav.js" async></script>
+  <!-- подключение скрипта для ползунка сравнения -->
+  <script src="js/img-compare.js"></script>
+  <script>
+    initComparisons();
+  </script>
 </body>
 
 </html>
