@@ -1185,12 +1185,12 @@ hr {
 .img-comp-slider {
   /*стилизация ползунка*/
   position: absolute;
-  z-index: 9;
-  width: 40px;
-  height: 40px;
-  background-color: #2196f3;
-  opacity: 0.7;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  background-color: red;
+  opacity: 0.6;
   cursor: ew-resize; }
 
 /*если лого как img*/
@@ -1870,3 +1870,7 @@ th {
   display: none; }
   .tabs__content-item--active {
     display: block; }
+
+.warning {
+  font-weight: 600;
+  color: red; }
