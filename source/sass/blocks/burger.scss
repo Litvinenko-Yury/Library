@@ -21,7 +21,7 @@
     font-size: 0;
     color: transparent;
     background: $color-main;
-    transition: background $transition-time $transition-time;
+    transition: background $transition-time--burger $transition-time--burger;
 
     &::before,
     &::after {
@@ -32,7 +32,7 @@
       height: 3px;
       background: $color-main;
       transform-origin: 50% 50%;
-      transition: top $transition-time $transition-time, transform $transition-time;
+      transition: top $transition-time--burger $transition-time--burger, transform $transition-time--burger;
     }
 
     &::before {
@@ -46,13 +46,13 @@
 
   &--close {
     > span { // stylelint-disable-line  selector-combinator-blacklist
-      transition: background $transition-time 0s;
+      transition: background $transition-time--burger 0s;
       background: transparent;
 
       &::before,
       &::after {
         top: 0;
-        transition: top $transition-time, transform $transition-time $transition-time;
+        transition: top $transition-time--burger, transform $transition-time--burger $transition-time--burger;
       }
 
       &::before {
