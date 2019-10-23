@@ -612,7 +612,8 @@ hr {
   background-image: none;
   border-radius: 4px;
   border: 0;
-  cursor: pointer; }
+  cursor: pointer;
+  /*используется для оформления svg в кнопке только для Библитеки*/ }
   .btn:hover {
     text-decoration: none;
     background-color: #d5d5d5; }
@@ -620,6 +621,8 @@ hr {
     background-color: #d5d5d5; }
   .btn:active {
     color: #2856d2; }
+  .btn > svg {
+    background: #000000; }
 
 .burger {
   display: inline-block;
