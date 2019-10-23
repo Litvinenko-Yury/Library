@@ -4,9 +4,6 @@
   max-width: 100%;
   overflow: hidden;
   margin: 0;
-  border-radius: $btn-border-radius-base;
-  // border: 1px solid $gray-lighter;
-  border: 0;
   padding: $btn-padding-vertical $btn-padding-horizontal;
   white-space: nowrap;
   user-select: none;
@@ -22,6 +19,9 @@
   color: $color-main;
   background-color: $gray--light;
   background-image: none;
+  border-radius: $btn-border-radius-base;
+  // border: 1px solid $gray-lighter;
+  border: 0;
   cursor: pointer;
 
   &:hover {
