@@ -9,8 +9,11 @@
 }
 
 .social__link-wrap {
-  margin-right: 10px;
   background-color: $gray;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
 
   &--fb {
     background-color: $color-fb;
