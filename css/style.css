@@ -1725,8 +1725,9 @@ hr {
   list-style: none; }
 
 .social__link-wrap {
-  margin-right: 10px;
   background-color: #8e8e8e; }
+  .social__link-wrap:not(:last-child) {
+    margin-right: 10px; }
   .social__link-wrap--fb {
     background-color: #3a5998; }
 
