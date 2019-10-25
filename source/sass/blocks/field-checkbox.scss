@@ -1,14 +1,19 @@
 .field-checkbox {
-  margin-bottom: 1em;
+  margin-top: 0; //если .field-radio в виде списка
+  //margin-bottom: 0; //если .field-radio в виде списка ul
+  padding-left: 0; //если .field-radio в виде списка ul
+  margin-bottom: 1em; // для Library
 }
 
 .field-checkbox__input-wrap {
-  margin-bottom: 0.5em;
   outline: 1px dotted $gray;
+
+  margin-bottom: 0.5em; // для Library
+  list-style: none; //если .field-radio в виде списка ul
 }
 
-.field-сheckbox__title {
-  margin-bottom: 0.5em;
+.field-checkbox__title {
+  margin-bottom: 0.5em; // для Library
   font-weight: bold;
 }
 
@@ -25,7 +30,7 @@
   opacity: 0;
 }
 
-.field-сheckbox__label {
+.field-checkbox__label {
   /*подготовка места для кастом-чек-бокса = стилизация label*/
   position: relative;
   display: block;
@@ -56,7 +61,7 @@
 }
 
 /*переключение состояния чек-бокса*/
-.field-сheckbox__input:checked ~ .field-checkbox__name-text::after {
+.field-checkbox__input:checked ~ .field-checkbox__name-text::after {
   /*стилизация активного чек-бокса*/
   content: "";
   width: 22px;
@@ -69,7 +74,7 @@
 }
 
 /*делаем чек-бокс доступным с клавиатуры*/
-.field-сheckbox__input:focus ~ .field-checkbox__name-text::before {
+.field-checkbox__input:focus ~ .field-checkbox__name-text::before {
   border-color: $color-hover;
   box-shadow: $box-shadow;
 }
