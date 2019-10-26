@@ -8,6 +8,11 @@
   font-weight: bold;
 }
 
+.field-text__input-wrap {
+  display: block;
+  width: 100%;
+}
+
 .field-text__input {
   width: 100%;
   padding: 0.5em 1em;
@@ -29,11 +34,6 @@
     //line-height: 1em;
     color: $gray;
   }
-}
-
-.field-text__input-wrap {
-  display: block;
-  width: 100%;
 }
 
 .field-text__help-text {
