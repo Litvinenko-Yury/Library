@@ -338,14 +338,11 @@
 
         <section class="block-library" id="field-checkbox">
           <h2 class="block-library__title">Флажок/чекбокс</h2>
-          <div class="good">
-            <p>Здесь группа чекбоксов на <code>div</code> без <code>fieldset/legend</code></p>
-            <p>Группу на <code>ul</code> c <code>fieldset/legend</code> смотри в <a href="#form"> Форма</a></p>
-          </div>
-
+          <p class="attention">Здесь группа чекбоксов на <code>div</code> без <code>fieldset/legend</code></p>
+          <p class="good">Группу на <code>ul</code> c <code>fieldset/legend</code> смотри в <a href="#form"> Форма</a></p>
           <p>В стилевом файле см. реализацию замены нативного элемента своим (svg).</p>
 
-          <div class="field-checkbox">
+          <div class="field-checkbox  good">
             <div class="field-checkbox__input-wrap">
               <label class="field-checkbox__label">
                 <input class="field-checkbox__input" type="checkbox" name="checkbox-field1" value="+">
@@ -378,17 +375,15 @@
 
         <section class="block-library" id="field-radio">
           <h2 class="block-library__title">Радиокнопки</h2>
-          <div class="good">
-            <p>Здесь группа радиокнопок на <code>div</code> без <code>fieldset/legend</code></p>
-            <p>Группу радио на <code>ul</code> c <code>fieldset/legend</code> смотри в <a href="#form"> Форма</a></p>
-          </div>
+          <p class="attention">Здесь группа радиокнопок на <code>div</code> без <code>fieldset/legend</code></p>
+          <p class="good">Группу радио на <code>ul</code> c <code>fieldset/legend</code> смотри в <a href=" #form"> Форма</a></p>
           <p>В стилевом файле есть закомментированные фрагменты для замены нативного элемента своим (svg).</p>
 
           <div class="field-radio">
             <div class="field-radio__title">Общее необязательное название</div>
             <div class="field-radio__input-wrap">
               <label class="field-radio__label">
-                <input class="field-radio__input" type="radio" name="radio-field" value="+">
+                <input class="field-radio__input  visually" type="radio" name="radio-field" value="+" checked>
                 <span class="field-radio__name-text">Радиокнопка с группой, первая</span>
               </label>
               <div class="field-radio__help-text">Радиокнопка в группе</div>
@@ -396,7 +391,7 @@
 
             <div class="field-radio__input-wrap">
               <label class="field-radio__label">
-                <input class="field-radio__input" type="radio" name="radio-field" value="+">
+                <input class="field-radio__input  visually" type="radio" name="radio-field" value="+">
                 <span class="field-radio__name-text">Радиокнопка с группой, последующая</span>
               </label>
               <div class="field-radio__help-text">Радиокнопка в группе</div>
@@ -404,7 +399,7 @@
 
             <div class="field-radio__input-wrap">
               <label class="field-radio__label">
-                <input class="field-radio__input" type="radio" name="radio-field" value="+">
+                <input class="field-radio__input  visually" type="radio" name="radio-field" value="+">
                 <span class="field-radio__name-text">Радиокнопка с группой, последующая</span>
               </label>
               <div class="field-radio__help-text">Радиокнопка в группе</div>
@@ -506,21 +501,21 @@
                 <div class="field-radio__title">Общее необязательное название</div>
                 <li class="field-radio__input-wrap">
                   <label class="field-radio__label">
-                    <input class="field-radio__input" type="radio" name="radio-field" value="+">
+                    <input class="field-radio__input  visually" type="radio" name="radio-field" value="+">
                     <span class="field-radio__name-text">Радиокнопка с группой, первая</span>
                   </label>
                   <div class="field-radio__help-text">Радиокнопка в группе</div>
                 </li>
                 <li class="field-radio__input-wrap">
                   <label class="field-radio__label">
-                    <input class="field-radio__input" type="radio" name="radio-field" value="+">
+                    <input class="field-radio__input  visually" type="radio" name="radio-field" value="+">
                     <span class="field-radio__name-text">Радиокнопка с группой, вторая</span>
                   </label>
                   <div class="field-radio__help-text">Радиокнопка в группе</div>
                 </li>
                 <li class="field-radio__input-wrap">
                   <label class="field-radio__label">
-                    <input class="field-radio__input" type="radio" name="radio-field" value="+">
+                    <input class="field-radio__input  visually" type="radio" name="radio-field" value="+">
                     <span class="field-radio__name-text">Радиокнопка с группой, третья</span>
                   </label>
                   <div class="field-radio__help-text">Радиокнопка в группе</div>
@@ -529,26 +524,26 @@
             </fieldset>
 
             <fieldset class="form__fieldset">
-              <legend class="form__legend">Чекбокс на <code>ul</code></legend>
+              <legend class="form__legend">Чекбоксы на <code>ul</code></legend>
               <ul class="field-checkbox">
                 <div class="field-checkbox__title">Общее необязательное название</div>
                 <li class="field-checkbox__input-wrap">
                   <label class="field-checkbox__label">
-                    <input class="field-checkbox__input" type="checkbox" name="checkbox-field1" value="+" checked>
+                    <input class="field-checkbox__input  visually" type="checkbox" name="checkbox-field1" value="+" checked>
                     <span class="field-checkbox__name-text">Чекбокс с группой, первый</span>
                   </label>
                   <div class="field-checkbox__help-text">Чекбокс в группе</div>
                 </li>
                 <li class="field-checkbox__input-wrap">
                   <label class="field-checkbox__label">
-                    <input class="field-checkbox__input" type="checkbox" name="checkbox-field2" value="+">
+                    <input class="field-checkbox__input  visually" type="checkbox" name="checkbox-field2" value="+">
                     <span class="field-checkbox__name-text">Чекбокс с группой, второй</span>
                   </label>
                   <div class="field-checkbox__help-text">Чекбокс в группе</div>
                 </li>
                 <li class="field-checkbox__input-wrap">
                   <label class="field-checkbox__label">
-                    <input class="field-checkbox__input" type="checkbox" name="checkbox-field3" value="+">
+                    <input class="field-checkbox__input  visually" type="checkbox" name="checkbox-field3" value="+">
                     <span class="field-checkbox__name-text">Чекбокс с группой, третий</span>
                   </label>
                   <div class="field-checkbox__help-text">Чекбокс в группе</div>
