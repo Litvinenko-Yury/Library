@@ -884,13 +884,16 @@ hr {
   color: #8e8e8e; }
 
 .field-checkbox {
+  margin-top: 0;
+  padding-left: 0;
   margin-bottom: 1em; }
 
 .field-checkbox__input-wrap {
+  outline: 1px dotted #8e8e8e;
   margin-bottom: 0.5em;
-  outline: 1px dotted #8e8e8e; }
+  list-style: none; }
 
-.field-сheckbox__title {
+.field-checkbox__title {
   margin-bottom: 0.5em;
   font-weight: bold; }
 
@@ -906,7 +909,7 @@ hr {
   position: absolute;
   opacity: 0; }
 
-.field-сheckbox__label {
+.field-checkbox__label {
   /*подготовка места для кастом-чек-бокса = стилизация label*/
   position: relative;
   display: block;
@@ -932,7 +935,7 @@ hr {
   border-color: #2856d2; }
 
 /*переключение состояния чек-бокса*/
-.field-сheckbox__input:checked ~ .field-checkbox__name-text::after {
+.field-checkbox__input:checked ~ .field-checkbox__name-text::after {
   /*стилизация активного чек-бокса*/
   content: "";
   width: 22px;
@@ -943,17 +946,20 @@ hr {
   left: 3px; }
 
 /*делаем чек-бокс доступным с клавиатуры*/
-.field-сheckbox__input:focus ~ .field-checkbox__name-text::before {
+.field-checkbox__input:focus ~ .field-checkbox__name-text::before {
   border-color: #d22856;
   -webkit-box-shadow: 0 0 7px #000000;
           box-shadow: 0 0 7px #000000; }
 
 .field-radio {
+  margin-top: 0;
+  padding-left: 0;
   margin-bottom: 1em; }
 
 .field-radio__input-wrap {
+  outline: 1px dotted #8e8e8e;
   margin-bottom: 0.5em;
-  outline: 1px dotted #8e8e8e; }
+  list-style: none; }
 
 .field-radio__title {
   margin-bottom: 0.5em;
@@ -1169,6 +1175,9 @@ hr {
   padding-right: 0.5em;
   font-size: 20px;
   font-weight: bold; }
+
+.good {
+  background: #b4e6d2; }
 
 .img-comp-container {
   position: relative;
