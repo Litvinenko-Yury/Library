@@ -365,6 +365,9 @@ a {
   text-decoration: none;
   cursor: pointer; }
 
+li {
+  margin-bottom: 15px; }
+
 fieldset {
   margin: 0;
   padding: 0; }
