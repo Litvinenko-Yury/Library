@@ -1489,6 +1489,7 @@ width: 0;
         <section class="block-library" id="yandex-map">
           <h2 class="block-library__title">Яндекс.Карты</h2>
           <p>Как добавить Яндекс.Карту на страницу.</p>
+          <p><b>Внимание!</b><br>API-key у владельца сайта должен быть свой.</p>
           <div>
             <span>Быстрый старт: </span>
             <a href="https://tech.yandex.ru/maps/jsapi/doc/2.1/quick-start/index-docpage/#create_map_container" rel="noopener">Документация Яндекс</a>
@@ -1500,18 +1501,22 @@ width: 0;
         <section class="block-library" id="google-map">
           <h2 class="block-library__title">Google Maps</h2>
           <p>Как добавить Google Maps на страницу.</p>
-          <div>
-            <span>Быстрый старт: </span>
-            <a href="https://support.google.com/maps/answer/144361?hl=ru&ref_topic=3093585" rel="noopener">Документация Google</a>
-          </div>
-          <div>
-            <span><b>With API-key: </b></span>
-            <a href="https://developers.google.com/maps/documentation/javascript/tutorial" rel="noopener">Документация Google</a>
-          </div>
-          <div>
-            <span>Статья на Хабре: </span>
-            <a href="https://habr.com/ru/post/324880/" rel="noopener">Хабр</a>
-          </div>
+
+          <ul>
+            <li>
+              <span>если просто карту с дефолтным маркером - использовать <code>iframe</code><br></span>
+              <!-- <div> -->
+              <span> Быстрый старт: </span>
+              <a href="https://support.google.com/maps/answer/144361?hl=ru&ref_topic=3093585" rel="noopener">Документация Google width iframe</a>
+              <!-- </div> -->
+            </li>
+            <li>
+              <span>если карту с кастом-маркером, маштабом и т.д. <code>API-key + JS</code><br></span>
+              <span>Быстрый старт: </span>
+              <a href="https://developers.google.com/maps/documentation/javascript/tutorial" rel="noopener">Документация Google width API-KEY</a>
+              <p><b>Внимание!</b><br>При добавлении Google Maps на страницу, помимо API-key, нужно привязать платежную карту.<br>Поэтому, API-key у владельца сайта должен быть свой.</p>
+            </li>
+          </ul>
           <div>
             <span>Стилизация: </span>
             <a href="https://mapstyle.withgoogle.com/" rel="noopener">https://mapstyle.withgoogle.com/</a>
