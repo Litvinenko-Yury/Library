@@ -1,5 +1,5 @@
 .rhombus__wrap {
-  outline: 1px dotted $color-secondary;
+  outline: 1px dotted coral;
 
   width: 200px;
   margin: 0 auto;
@@ -15,7 +15,7 @@
 }
 
 .rhombus__list-item {
-  display: flex; /*для выравния child*/
+  display: flex; /*для выравнивания child*/
   width: 100px;
   height: 100px;
 
@@ -38,17 +38,16 @@
 }
 
 .rhombus__list-inner {
-  display: flex; /*для выравниявания ребенка*/
+  display: flex; /*для выравниявания child*/
 
   width: calc(100px / 1.42);
   height: calc(100px / 1.42);
   transform: rotate(45deg);
 
-  margin: auto; /*выровнять элемент по центру родителя*/
+  margin: auto; /*выровнять элемент по центру parent*/
 
   font-size: 26px;
-
-  outline: 1px solid $color-main;
+  background: $gray;
 }
 
 .rhombus__item-text {
@@ -57,5 +56,6 @@
 }
 
 .rhombus__list-inner:hover {
-  background: $gray;
+  color: #ffffff;
+  background: $gray--darken;
 }

@@ -1,0 +1,65 @@
+.hexagon {
+  outline: 1px dotted coral;
+  width: 660px;
+  margin: 0 auto;
+  margin-top: 20%;
+  text-align: center;
+}
+
+.hexagon__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+
+  font-size: 18px;
+}
+
+.hexagon__item {
+  position: relative;
+  width: 150px;
+  height: 86px;
+
+  margin-bottom: 60px;
+  padding: 15px;
+
+  background: $gray;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    transform: rotate(60deg);
+    background: inherit;
+  }
+
+  /* stylelint-disable-next-line*/
+  &:after {
+    transform: rotate(120deg);
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: #ffffff;
+    background: $gray--darken;
+  }
+}
+
+.list__item--ml {
+  margin-left: 85px;
+  /*эта величина равна ширине list__item + половине ширины между этими элементами*/
+  /*при необходимости, можно сделать формулу для автоматического вычисления margin-left / margin-right в зависимости от ширины контейнера и ширины list__item*/
+}
+
+.list__item--mr {
+  margin-right: 85px;
+  /*эта величина равна ширине list__item + половине ширины между этими элементами*/
+  /*при необходимости, можно сделать формулу для автоматического вычисления margin-left / margin-right в зависимости от ширины контейнера и ширины list__item*/
+}
