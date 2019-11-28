@@ -136,11 +136,17 @@
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#google-map" data-scroll-link>Google Maps - JS</a>
         </li>
-        <li class="off-canvas__menu-item">
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#compare" data-scroll-link>Ползунок сравнения изображений</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Тест</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#rhombus" data-scroll-link>Поток ромбов</a>
+        </li>
+        <li class="off-canvas__menu-item  attention">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Поток hexagon</a>
+        </li>
+        <li class="off-canvas__menu-item  attention">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#" data-scroll-link>Поток треугольников</a>
         </li>
       </ul>
     </aside>
@@ -1558,6 +1564,33 @@ width: 0;
 
           <p>И соответственно, продумать, как добавить для всех остальных <code>img</code> эти важные стили.</p>
           <p>Как вариант: для <code>img</code> задать <code>object-fit</code></p>
+        </section>
+
+        <section class="block-library" id="rhombus">
+          <h2 class="block-library__title">Поток ромбов</h2>
+          <p>Как разметить и стилизовать блоки-ромбы.</p>
+          <p>Принцип прост и понятен из scss для блока .rhombus</p>
+          <p>В зависимости от поставленной задачи по поведению блоков, добавить нужные стили для расположения блоков.</p>
+          <div class="rhombus__wrap">
+            <ul class="rhombus__list">
+              <li class="rhombus__list-item  rhombus__list-item--1">
+                <div class="rhombus__list-inner">
+                  <span class="rhombus__item-text">1</span>
+              </li>
+              <li class="rhombus__list-item  rhombus__list-item--2">
+                <div class="rhombus__list-inner">
+                  <span class="rhombus__item-text">2</span>
+              </li>
+              <li class="rhombus__list-item  rhombus__list-item--3">
+                <div class="rhombus__list-inner">
+                  <span class="rhombus__item-text">3</span>
+              </li>
+              <li class="rhombus__list-item  rhombus__list-item--4">
+                <div class="rhombus__list-inner">
+                  <span class="rhombus__item-text">4</span>
+              </li>
+            </ul>
+          </div>
         </section>
       </div>
     </main>

@@ -1,0 +1,61 @@
+.rhombus__wrap {
+  outline: 1px dotted $color-secondary;
+
+  width: 200px;
+  margin: 0 auto;
+}
+
+.rhombus__list {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.rhombus__list-item {
+  display: flex; /*для выравния child*/
+  width: 100px;
+  height: 100px;
+
+  &--1 {
+    margin-left: 50px;
+  }
+
+  &--2 {
+    margin-top: -50px;
+  }
+
+  &--3 {
+    margin-top: -50px;
+  }
+
+  &--4 {
+    margin-top: -50px;
+    margin-left: 50px;
+  }
+}
+
+.rhombus__list-inner {
+  display: flex; /*для выравниявания ребенка*/
+
+  width: calc(100px / 1.42);
+  height: calc(100px / 1.42);
+  transform: rotate(45deg);
+
+  margin: auto; /*выровнять элемент по центру родителя*/
+
+  font-size: 26px;
+
+  outline: 1px solid $color-main;
+}
+
+.rhombus__item-text {
+  margin: auto;
+  transform: rotate(-45deg);
+}
+
+.rhombus__list-inner:hover {
+  background: $gray;
+}
