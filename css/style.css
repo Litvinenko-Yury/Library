@@ -1567,15 +1567,18 @@ hr {
   z-index: 2;
   width: 250px;
   height: 100%;
-  padding-top: 15px;
   padding-bottom: 15px;
   overflow-y: auto;
   background-color: #303030; }
 
 .off-canvas__menu {
+  position: relative;
   margin: 0;
   padding-left: 0;
   list-style: none; }
+
+.off-canvas__menu-item--second {
+  padding-top: 50px; }
 
 .off-canvas__menu-item--separator {
   margin-bottom: 10px;
@@ -1592,7 +1595,11 @@ hr {
     text-decoration: none;
     background-color: #8e8e8e; }
   .off-canvas__menu-link--personal {
-    color: #00dbe1; }
+    position: fixed;
+    width: 250px;
+    padding-bottom: 20px;
+    color: #00dbe1;
+    background-color: #303030; }
 
 .page-content {
   max-width: 750px;
