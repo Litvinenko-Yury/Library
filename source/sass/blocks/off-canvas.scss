@@ -9,19 +9,24 @@
   z-index: 2;
   width: 250px;
   height: 100%;
-  padding-top: $field-padding-vertical*3;
-  padding-bottom: $field-padding-vertical*3;
+  //padding-top: $field-padding-vertical * 3;
+  padding-bottom: $field-padding-vertical * 3;
   overflow-y: auto;
   background-color: $gray--darken;
 }
 
 .off-canvas__menu {
+  position: relative;
   margin: 0;
   padding-left: 0;
   list-style: none;
 }
 
 .off-canvas__menu-item {
+  &--second {
+    padding-top: 50px;
+  }
+
   &--separator {
     margin-bottom: 10px;
     padding-bottom: 10px;
@@ -43,6 +48,10 @@
   }
 
   &--personal {
+    position: fixed;
+    width: 250px;
+    padding-bottom: $field-padding-vertical *4;
     color: #00dbe1;
+    background-color: $gray--darken;
   }
 }
