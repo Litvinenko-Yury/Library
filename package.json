@@ -9,7 +9,6 @@
   "private": true,
   "description": "Личная библиотека компонентов",
   "devDependencies": {
-    "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "^9.7.3",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
@@ -54,5 +53,6 @@
   ],
   "engines": {
     "node": "10.17"
-  }
+  },
+  "dependencies": {}
 }
