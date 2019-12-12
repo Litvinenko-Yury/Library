@@ -703,8 +703,8 @@ hr {
           align-items: center;
   min-width: 200px;
   width: 200px;
-  padding: 0 15px;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  padding: 0 15px; }
   .card:hover .card__overlay {
     opacity: 1;
     -webkit-transition: opacity 0.2s;
@@ -756,6 +756,9 @@ hr {
   height: 125px;
   -o-object-fit: cover;
      object-fit: cover; }
+
+.card__body {
+  text-align: center; }
 
 .card__title {
   margin: 0 0 20px; }
