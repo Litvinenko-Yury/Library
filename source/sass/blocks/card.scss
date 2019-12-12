@@ -6,8 +6,8 @@
   align-items: center;
   min-width: 200px;
   width: 200px;
-  padding: 0 15px;
   margin-bottom: 30px;
+  padding: 0 15px;
 
   &:hover .card__overlay {
     //display: block;
@@ -20,27 +20,6 @@
     transition: opacity $transition-time;
   }
 }
-
-// .card__overlay {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   display: none;
-//   width: 100%;
-//   height: 100%;
-//   //background: $color-overlay;
-//   background: rgba(15, 18, 24, 0.8);
-// }
-
-// .card__overlay-wrapper {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   width: 270px;
-//   transform: translate(-50%, -50%);
-//   text-align: center;
-// }
-
 
 .card__banner {
   position: absolute;
@@ -77,6 +56,10 @@
   width: 100%;
   height: 125px;
   object-fit: cover;
+}
+
+.card__body {
+  text-align: center;
 }
 
 .card__title {
@@ -170,4 +153,3 @@
     fill: $gray;
   }
 }
-

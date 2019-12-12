@@ -1397,8 +1397,8 @@
                 <source type="image/webp" srcset="img/img-product0@1x.webp 1x, img/img-product0@2x.webp 2x">
                 <img class="card__img" src="img/img-product0@1x.jpg" srcset="img/img-product0@2x.jpg 2x" alt="Товар0">
               </picture>
-              <div class="card-body">
-                <h3 class="card-title">Card title</h3>
+              <div class="card__body">
+                <h3 class="card__title">Card title</h3>
                 <p class="card__descr">ОЧЕНЬ простая карточка товара.</p>
                 <a href="#" class="btn card__buy">Купить</a>
               </div>
@@ -1412,9 +1412,11 @@
                     <img class="card__img" src="img/img-product1@1x.jpg" srcset="img/img-product1@2x.jpg 2x" alt="Товар1">
                   </picture>
                 </span>
-                <h3 class="card__title">Товар1</h3>
-                <p class="card__descr">Простая карточка товара</p>
-                <p class="card__price">50&nbsp;₽</p>
+                <div class="card__body">
+                  <h3 class="card__title">Товар1</h3>
+                  <p class="card__descr">Простая карточка товара</p>
+                  <p class="card__price">50&nbsp;₽</p>
+                </div>
               </div>
               <button class="btn card__buy">Купить</button>
             </article>
@@ -1428,11 +1430,13 @@
                     <img class="card__img" src="img/img-product2@1x.jpg" srcset="img/img-product2@2x.jpg 2x" alt="Товар2">
                   </picture>
                 </a>
-                <h3 class="card__title">
-                  <a href="good01">Товар2</a>
-                </h3>
-                <p class="card__descr">Карточка товара со ссылкой </p>
-                <p class="card__price">70&nbsp;₽</p>
+                <div class="card__body">
+                  <h3 class="card__title">
+                    <a href="good01">Товар2</a>
+                  </h3>
+                  <p class="card__descr">Карточка товара со ссылкой </p>
+                  <p class="card__price">70&nbsp;₽</p>
+                </div>
               </div>
               <button class="btn card__buy">Купить</button>
             </article>
@@ -1463,14 +1467,16 @@
                     </div>
                   </div>
                 </div>
-                <h3 class="card__title">Товар3</h3>
-                <p class="card__descr">Карточка с overlay и кнопками поверх</p>
-                <p class="card__price">50&nbsp;₽</p>
+                <div class="card__body">
+                  <h3 class="card__title">Товар3</h3>
+                  <p class="card__descr">Карточка с overlay и кнопками поверх</p>
+                  <p class="card__price">50&nbsp;₽</p>
+                </div>
+                <button class="btn card__buy">Купить</button>
               </div>
-              <button class="btn card__buy">Купить</button>
             </article>
           </div>
-          S
+
           <p><b>Касательно overlay для карточки №3:</b></p>
           <p>В зависимости от макета, отредактировать поведение и размеры <code>.card__overlay</code>.</p>
           <p>Простые карточки в bootstrap, примеры разметки: </p>
