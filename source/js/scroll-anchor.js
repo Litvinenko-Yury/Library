@@ -20,7 +20,7 @@ function easeInOutQuad(t, b, c, d) {
 }
 
 function smoothScrollTo(element, to, duration) {
-  
+
     isScrolling = true;
     var start = element.scrollTop,
         change = to - start,
@@ -33,7 +33,6 @@ function smoothScrollTo(element, to, duration) {
         window.pageYOffset = val;
        // document.documentElement.scrollTop = val;
         window.scroll(0, val);
-        console.log(val);
         if (currentTime < duration) {
             setTimeout(animateScroll, increment);
         }
@@ -52,15 +51,14 @@ function scrollAnimate(el) {
 var links = document.getElementsByTagName('a');
 
 for (var i = 0; i < links.length; i++) {
-    console.log("yay")
     if (links[i].hasAttribute("href")) {
         if (links[i].getAttribute("href").startsWith("#")) {
-            
+
             links[i].addEventListener("click", function (e) {
-                
+
                 var elem = event.target;
                 e.preventDefault();
-                
+
                 var el = document.getElementById(elem.getAttribute("href").substring(1));
 
                 if (el != null) {
