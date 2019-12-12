@@ -64,6 +64,9 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#img-adaptive" data-scroll-link>Adaptive img</a>
         </li>
         <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#lazyload" data-scroll-link>lazyload</a>
+        </li>
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#bg-adaptive" data-scroll-link>Adaptive background</a>
         </li>
         <li class="off-canvas__menu-item">
@@ -679,6 +682,58 @@
               <source media="(min-width: 660px)" srcset="img/panorama-tablet@1x.jpg 1x, img/panorama-tablet@2x.jpg 2x">
               <img class="container__img" src="img/panorama-mobile@1x.jpg" srcset="img/panorama-mobile@2x.jpg 2x" alt="Панорама гористой местности.">
             </picture>
+          </div>
+        </section>
+
+        <section class="block-library" id="lazyload">
+          <h2 class="block-library__title">lazyload images</h2>
+          <ul>
+            <span><b>Почитать здесь:</b></span>
+            <li>здесь:
+              <a href="https://web.dev/native-lazy-loading/" rel="noopener"> native lazy-loading</a> </li>
+            <li>и здесь:
+              <a href="https://web.dev/use-lazysizes-to-lazyload-images/" rel="noopener"> use lazysizes.js to lazyload images</a></li>
+            <li> демо паттерн:
+              <a href="https://lazy-loading.firebaseapp.com/lazy_loading_native.html" rel="noopener"> demo pattern</a></li>
+          </ul>
+
+          <p><b>Итак:</b><br>
+            По состоянию на 2019-12-12 только в Хроме есть реализация lazyload в браузере.<br>
+            Остальным нужена JS-библиотека <code> lazysizes.js</code>.
+          </p>
+
+          <p><b>Поэтому можно использовать такой паттерн:</b><br>
+            Мы можем обнаружить поддержку атрибута loading браузером, а в качестве резервной библиотеки использовать lazysizes.js тогда, когда загрузка не поддерживается.<br>
+            Oбщая схема: </p>
+
+          <button class="burger" aria-label="Показать пример кода" data-target-id="lazyload-code" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+
+          <div class="blocks-library__example" id="lazyload-code">
+            <pre class="code">
+                <span class="code_inner">
+    if ('loading' in HTMLImageElement.prototype) {
+      // supported in browser
+    } else {
+      // fetch polyfill/third-party library
+    }
+                </span>
+              </pre>
+          </div>
+          <hr>
+
+          <p>Это работает следующим образом.<br>
+            1. Делаем такую разметку:<br>
+            2. Внизу страницы добавляем скрипт, который загрузит lazysizes.min.js при необходимости.
+          </p>
+
+          <button class="burger" aria-label="Показать пример кода" data-target-id="lazyload-code-pattern" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+
+          <div class="blocks-library__example" id="lazyload-code-pattern">
+            <img class="container__img" src="img/img-lazyload.png" alt="скрипт lazysizes.min.js">
           </div>
         </section>
 
