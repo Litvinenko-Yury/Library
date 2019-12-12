@@ -53,6 +53,5 @@
   ],
   "engines": {
     "node": "10.17"
-  },
-  "dependencies": {}
+  }
 }

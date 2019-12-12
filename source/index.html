@@ -99,8 +99,11 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#aside-nav" data-scroll-link>Боковое меню</a>
         </li>
-        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#scroll-achor" data-scroll-link>Плавный скролл к якорю</a>
+        </li>
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#scroll-add-class" data-scroll-link>Доб .class к объекту при прокрутке страницы на JS</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#logo" data-scroll-link>Логотип</a>
@@ -1207,16 +1210,28 @@
           <p>Делаем классическую разметку с <code>href="#некий_id"</code> + плюс расставляем в нужных местах эти <code>id</code>.</p>
           <p>Далее два варианта:</p>
           <hr>
-          <p><b>Вариант 1:</b> использовать CSS - свойство <code>scroll-behavior: smooth;</code>
-            <br><span class="attention">Не работает в IE + EDGE.</span> Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
+          <p><b>Вариант 1:</b><br> использовать CSS - свойство <code>scroll-behavior: smooth;</code>
+            <br><span class="attention">Не работает в IE + EDGE.</span><br> Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
           <hr>
-          <p><b>Вариант 2:</b> использовать <code>JS</code>
+          <p><b>Вариант 2:</b><br> использовать <code>JS</code>.
             <br><span class="good">Работает в IE & EDGE.</span><br>Скрипт: <code>scroll-anchor.js</code></p>
           <p>Как использовать <code>scroll-anchor.js</code>: <br>
             - разметку делаем как указано выше;<br>
             - подключаем скрипт; <br>
             - все.
           </p>
+        </section>
+
+        <section class="block-library" id="scroll-add-class">
+          <h2 class="block-library__title">Добавить класс при скроле, JS.</h2>
+          <p>Все делает скрипт <code>scroll-add-class.js</code>.</p>
+          <ul>Принцип:
+            <li>Отлавливаем событие по скролу.</li>
+            <li>Если скролл > ...px, то доб. требуемый класс к нужному элементу.</li>
+            <li>Иначе, удаляем этот же класс у элемента.</li>
+            <li>Все.</li>
+          </ul>
+
         </section>
 
         <section class="block-library" id="logo">
