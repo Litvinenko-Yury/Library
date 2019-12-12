@@ -79,6 +79,14 @@ $transition-time: 0.2s;
 $transition-time--burger: 0.2s;
 $transition-time--show: 0.6s;
 
-//================
+//=============================
+//===Media queries breakpoints===
+//=============================
 $tablet-width: 660px;
 $desktop-width: 1200px;
+
+//=============================
+//===Retina queries breakpoints===
+//=============================
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
