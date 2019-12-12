@@ -1,0 +1,60 @@
+.video {
+  position: relative;
+  background-color: $gray--light;
+}
+
+.video__title-wrap {
+  padding: 25px 30px;
+}
+
+.video__wrap {
+  display: block;
+  width: 100%;
+  height: 511px; /*нужно указать высоту видеоролика при определенной ширине в макете*/
+  //background-color: #cccccc;
+}
+
+.video__btn {
+  position: absolute;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: transparent;
+  }
+
+  & > svg {
+    margin: auto;
+    $width: 50px; // переменная, чтобы можно было увеличить ширину на 20%
+    $height: 50px; // переменная, чтобы можно было увеличить ширину на 20%
+
+    &:hover,
+    &:focus {
+      width: $width * 1.2;
+      height: $height * 1.2;
+      transition: 0.15s;
+    }
+
+    &:active {
+      width: $width * 1.15;
+      height: $height * 1.15;
+      transition: 0s;
+    }
+  }
+}
+
+.video__body {
+  padding: 10px 30px;
+}
+
+.video__descr {
+  margin-bottom: 25px;
+  padding-right: 10px;
+}

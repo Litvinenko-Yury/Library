@@ -76,6 +76,9 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#background" data-scroll-link>Background</a>
         </li>
         <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#video" data-scroll-link>video</a>
+        </li>
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#field-range" data-scroll-link>Ползунок - range</a>
         </li>
         <li class="off-canvas__menu-item">
@@ -775,6 +778,60 @@
 </span>
             </pre>
           </div>
+        </section>
+
+        <section class="block-library" id="video">
+          <h2 class="block-library__title">Видео</h2>
+          <p>Обязательно проверять кросс-браузерность.<br> В списке подозреваемых: IE + EDGE.</p>
+
+          <article class="video">
+            <div class="video__title-wrap">
+              <h2 class="video__title">Заголовок</h2>
+              <p class="video__text">Вот так выглядит стандартный плеер</p>
+            </div>
+
+
+            <video class="video__wrap" poster="img/video/video__poster.jpg" controls="controls" preload="none">
+              <!-- <source src="img/video/video__test.webm" type="video/webm"> -->
+              <source src="img/video/video__test.mp4" type="video/mp4">
+              <!-- <source src="img/video/video__test.ogg" type="video/ogg"> -->
+              Элемент video не поддерживается вашим браузером.
+            </video>
+
+
+            <div class="video__body">
+              <p class="video__descr">Трудолюбивый человек, что тут сказать -))) </p>
+            </div>
+          </article>
+
+          <hr>
+
+          <article class="video">
+            <div class="video__title-wrap">
+              <h2 class="video__title">Заголовок</h2>
+              <p class="video__text">А вот так выглядит custom-плеер</p>
+            </div>
+
+            <div class="video__wrap">
+              <video poster="video/duel.jpg" preload="none">
+                <source src="img/video/Кто_хочет_поработать.webm" type="video/webm">
+                <source src="img/video/Кто_хочет_поработать.mp4" type="video/mp4">
+                <source src="img/video/Кто_хочет_поработать.mp4" type="video/ogg">
+                Элемент video не поддерживается вашим браузером.
+              </video>
+
+              <button class="btn video__btn" aria-label="Воспроизвести видеоролик">
+                <svg width="50" height="50" role="img">
+                  <use xlink:href="#icon-play" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="video__body">
+              <p class="video__descr">По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары. </p>
+            </div>
+          </article>
+
         </section>
 
         <section class="block-library" id="field-range">
