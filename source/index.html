@@ -48,8 +48,11 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#field-actions" data-scroll-link>Действия формы</a>
         </li>
-        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#form" data-scroll-link>Форма</a>
+        </li>
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#del-bg-click" data-scroll-link>Del синий фон при клике</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#phone-mailto" data-scroll-link>Контакты с phone / email</a>
@@ -572,6 +575,12 @@
               <button class="btn" type="submit">Отправить</button>
             </div>
           </form>
+        </section>
+
+        <section class="block-library" id="del-bg-click">
+          <h2 class="block-library__title">Как убрать синий фон при клике на элемент?</h2>
+          <p>Применить к проблемным элементам:<br><code>webkit-tap-highlight-color: rgba(0, 0, 0, 0);</code> </p>
+          <span>Почитать: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-tap-highlight-color" rel="noopener"> MDN</a></span>
         </section>
 
         <section class="block-library" id="phone-mailto">
