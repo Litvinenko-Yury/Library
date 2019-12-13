@@ -11,7 +11,7 @@
   display: block;
   width: 100%;
   height: 511px; /*нужно указать высоту видеоролика при определенной ширине в макете*/
-  //background-color: #cccccc;
+  border: 3px solid $color-active;
 }
 
 .video__btn {
@@ -32,13 +32,13 @@
 
   & > svg {
     margin: auto;
-    $width: 50px; // переменная, чтобы можно было увеличить ширину на 20%
-    $height: 50px; // переменная, чтобы можно было увеличить ширину на 20%
+    $width: 75px; // переменная, чтобы можно было увеличить ширину на 20%
+    $height: 75px; // переменная, чтобы можно было увеличить ширину на 20%
 
     &:hover,
     &:focus {
-      width: $width * 1.2;
-      height: $height * 1.2;
+      width: $width * 1.1;
+      height: $height * 1.1;
       transition: 0.15s;
     }
 
