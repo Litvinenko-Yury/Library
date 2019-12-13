@@ -51,6 +51,9 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#form" data-scroll-link>Форма</a>
         </li>
+        <li class="off-canvas__menu-item  attention">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#form-validation" data-scroll-link>Валидация формы</a>
+        </li>
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#del-bg-click" data-scroll-link>Del синий фон при клике</a>
         </li>
@@ -460,14 +463,9 @@
             <span class="field-text__name">Текстовое поле <code>input type="tel"</code></span>
             <span class="field-text__input-wrap">
               <input class="field-text__input" type="tel" name="tel" placeholder="Подсказка">
-              <span class="field-text__help-text">Подсказка под полем</span>
-            </span>
-          </label>
-
-          <label class="field-text">
-            <span class="field-text__name">Текстовое поле <code>input type="email"</code></span>
-            <span class="field-text__input-wrap">
-              <input class="field-text__input" type="email" name="email" placeholder="Подсказка">
+              <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
+                <use xlink:href="#icon-phone" />
+              </svg>
               <span class="field-text__help-text">Подсказка под полем</span>
             </span>
           </label>
@@ -576,6 +574,43 @@
             <div class="field-actions">
               <div class="field-actions__help-text">* — обязательные поля</div>
               <button class="btn" type="submit">Отправить</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="block-library  attention" id="form-validation">
+          <h2 class="block-library__title">Валидация формы</h2>
+          <p>Скрипт <code>form-validation.js</code></p>
+
+          <form class="form  form--validation" action="https://echo.htmlacademy.ru" method="post">
+            <fieldset class="form__fieldset">
+              <legend class="form__legend">Название1</legend>
+              <label class="field-text">
+                <span class="field-text__name">Текстовое поле input type="text"</span>
+                <span class="field-text__input-wrap  field-text__input-wrap1">
+                  <input class="field-text__input  field-text__input--name" type="text-test" name="name" placeholder="Имя" required>
+                  <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
+                    <use xlink:href="#icon-phone" />
+                  </svg>
+                  <span class="field-text__help-text">Подсказка под полем</span>
+                </span>
+              </label>
+
+              <label class="field-text">
+                <span class="field-text__name">Текстовое поле input type="tel"</span>
+                <span class="field-text__input-wrap  field-text__input-wrap2">
+                  <input class="field-text__input  field-text__input--tel" type="tel" name="tel-test" placeholder="Телефон" required pattern="^[ 0-9]+$">
+                  <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
+                    <use xlink:href="#icon-phone" />
+                  </svg>
+                  <span class="field-text__help-text">Подсказка под полем</span>
+                </span>
+              </label>
+            </fieldset>
+
+            <div class="field-actions">
+              <div class="field-actions__help-text">* — обязательные поля</div>
+              <button class="btn  btn--validation" type="submit">Отправить</button>
             </div>
           </form>
         </section>
@@ -813,19 +848,20 @@
               <p class="video__text warning">Сделать панель управления плеером</p>
             </div>
 
+            <div class="video__container">
+              <video class="video__source" poster=" img/video/video__poster.jpg" preload="none">
+                <!-- <source src="img/video/Кто_хочет_поработать.webm" type="video/webm"> -->
+                <source src="img/video/Кто_хочет_поработать.mp4" type="video/mp4">
+                <!-- <source src="img/video/Кто_хочет_поработать.mp4" type="video/ogg"> -->
+                Элемент video не поддерживается вашим браузером.
+              </video>
 
-            <video class="video__wrap" poster=" img/video/video__poster.jpg" preload="none">
-              <!-- <source src="img/video/Кто_хочет_поработать.webm" type="video/webm"> -->
-              <source src="img/video/Кто_хочет_поработать.mp4" type="video/mp4">
-              <!-- <source src="img/video/Кто_хочет_поработать.mp4" type="video/ogg"> -->
-              Элемент video не поддерживается вашим браузером.
-            </video>
-
-            <button class="btn video__btn" aria-label="Воспроизвести видеоролик">
-              <svg width="75" height="75" role="img">
-                <use xlink:href="#icon-play" />
-              </svg>
-            </button>
+              <button class="btn video__btn" aria-label="Воспроизвести видеоролик">
+                <svg width="75" height="75" role="img">
+                  <use xlink:href="#icon-play" />
+                </svg>
+              </button>
+            </div>
 
             <div class="video__body">
               <p class="video__descr">По просьбам наших любимых подписчиков, мы сняли для вас подробное видео о том, как сделать custom-панель управления плеером. </p>
@@ -1030,7 +1066,7 @@
             <li>Тряска формы при вводе пользователем неправильных данных.</li>
           </ul>
 
-          <p>P.S. <br> При использовании в <code>input</code> атрибута <code>required</code>, форма не будет отправляться, <br> и, на кнопке формы <code>Отправить</code> не будет события <code>submit</code>. <br> Следовательно, скрипт "тряски" не будет работать. <br> Выбираем что-то одно: или скрипт "тряски", или <code>required</code>.</p>
+          <p class="attention">P.S. <br> При использовании в <code>input</code> атрибута <code>required</code>, форма не будет отправляться, <br> и, на кнопке формы <code>Отправить</code> не будет события <code>submit</code>. <br> Следовательно, скрипт "тряски" не будет работать. <br> Выбираем что-то одно: или скрипт "тряски", или <code>required</code>.</p>
 
           <div class="modal-2">
             <button class="btn  btn-modal-2-open">Открыть модальное окно</button>
@@ -1788,19 +1824,30 @@ width: 0;
 
   <script src="js/ofi.min.js"></script>
   <script>objectFitImages();</script>
-  <script src="js/modal.js" async></script>
-  <script src="js/modal-2.js" async></script>
-  <script src="js/tab.js" async></script>
+
+  <!-- <script src="js/modal.js" async></script>
+  <script src="js/modal-2.js" async></script> -->
+
+  <!-- <script src="js/tab.js" async></script> -->
+
   <!-- <script src="js/burger.js"></script> -->
-  <script src="js/burger-test.js" async></script>
-  <script src="js/main-nav.js" async></script>
-  <!-- подключение скрипта для ползунка сравнения -->
-  <script src="js/img-compare.js"></script>
-  <!-- скрипта плавного скрола к якорю -->
-  <script src="js/scroll-anchor.js"></script>
-  <script>
+  <!-- <script src="js/burger-test.js" async></script>-->
+
+  <!-- <script src="js/main-nav.js" async></script> -->
+
+  <!-- скрипт плавного скрола к якорю -->
+  <!-- <script src="js/scroll-anchor.js" async></script> -->
+
+  <!-- скрипт валидации полей формы -->
+  <script src="js/form-validation.js" async></script>
+
+<!-- подключение скрипта для ползунка сравнения -->
+  <!-- <script src="js/img-compare.js"></script> -->
+
+  <!-- запускающая функция для скрипта сравнения изображения -->
+  <!-- <script>
     initComparisons();
-  </script>
+  </script> -->
 </body>
 
 </html>

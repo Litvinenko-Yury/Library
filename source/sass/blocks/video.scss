@@ -7,7 +7,11 @@
   padding: 25px 30px;
 }
 
-.video__wrap {
+.video__container {
+  position: relative;
+}
+
+.video__source {
   display: block;
   width: 100%;
   height: 511px; /*нужно указать высоту видеоролика при определенной ширине в макете*/

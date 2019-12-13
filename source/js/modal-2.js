@@ -1,14 +1,14 @@
 var btnModal_2 = document.querySelector(".btn-modal-2-open");
 var popup_2 = document.querySelector(".modal-2__content");
 var modalOverlay_2 = document.querySelector(".modal-2__overlay");
-var formModal_2 =  document.querySelector(".form--modal-2");
+var formModal_2 = document.querySelector(".form--modal-2");
 var login = popup_2.querySelector("[name=login]");  /*находим input c name="login" внутри переменной popup_2 (это .modal-2__content, т.е. модальное окно, и записываем в переменную.) */
 var password = popup_2.querySelector("[name=password]");  /*находим input c name="password" внутри переменной popup_2 (это .modal-2__content, т.е. модальное окно, и записываем в переменную.) */
 var storage = localStorage.getItem("login");  /*взять значение из localStorage по ключу login и записать в переменную storage*/
 
 
 /*===события по кнопке "открыть модальное окно"===*/
-btnModal_2.addEventListener("click", function(event) {
+btnModal_2.addEventListener("click", function (event) {
   event.preventDefault();
   popup_2.classList.add("modal-2__content--show");
   modalOverlay_2.classList.add("modal-2__overlay--show");
@@ -24,7 +24,7 @@ btnModal_2.addEventListener("click", function(event) {
 
 /*===1-Закрыть модальное окно:===*/
 /*события по клику на затененный фон*/
-modalOverlay_2.addEventListener("click", function(event) {
+modalOverlay_2.addEventListener("click", function (event) {
   event.preventDefault();
   popup_2.classList.remove("modal-2__content--show");
   modalOverlay_2.classList.remove("modal-2__overlay--show");
@@ -33,7 +33,7 @@ modalOverlay_2.addEventListener("click", function(event) {
 
 /*===1-Закрыть модальное окно:===*/
 /*события по нажатию ESC*/
-window.addEventListener("keydown", function(event) {
+window.addEventListener("keydown", function (event) {
   if (event.keyCode === 27) {
     if (popup_2.classList.contains("modal-2__content--show")) {
       popup_2.classList.remove("modal-2__content--show");
@@ -44,7 +44,7 @@ window.addEventListener("keydown", function(event) {
 });
 
 /*===Отловить событие отправки формы submit===*/
-formModal_2.addEventListener("submit", function(event) {
+formModal_2.addEventListener("submit", function (event) {
   //event.preventDefault();
   popup_2.classList.remove("modal-2--error");
   popup_2.offsetWidth = popup_2.offsetWidth; /*костыль*/
@@ -53,7 +53,7 @@ formModal_2.addEventListener("submit", function(event) {
     event.preventDefault();
     popup_2.classList.add("modal-2--error");
 
-  }  else {
+  } else {
     localStorage.setItem("login", login.value);
   }
 });
