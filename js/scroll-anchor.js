@@ -20,7 +20,6 @@ function easeInOutQuad(t, b, c, d) {
 }
 
 function smoothScrollTo(element, to, duration) {
-
     isScrolling = true;
     var start = element.scrollTop,
         change = to - start,
