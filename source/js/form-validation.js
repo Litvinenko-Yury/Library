@@ -48,7 +48,6 @@ if (validFieldMail.hasAttribute("required")) {
 /*==============================*/
 /*==============================*/
 validFieldName.addEventListener("focus", function () {
-  console.log("поймал focus name")
   // При получении фокуса на элемент формы name удаляем сообщение об ошибке, т.к. пользователь хочет ввести данные заново
   validMessageName.classList.remove("field-text__help-text--error");
   validMessageName.innerHTML = "Подсказка под полем - ИМЯ";
@@ -56,7 +55,6 @@ validFieldName.addEventListener("focus", function () {
 /*==ок===*/
 
 validFieldTel.addEventListener("focus", function () {
-  console.log("поймал focus tel")
   // При получении фокуса на элемент формы tel удаляем сообщение об ошибке, т.к. пользователь хочет ввести данные заново
   validMessageTel.classList.remove("field-text__help-text--error");
   validMessageTel.innerHTML = "Подсказка под полем - TEL в любом формате";
@@ -64,7 +62,6 @@ validFieldTel.addEventListener("focus", function () {
 /*==ок===*/
 
 validFieldMail.addEventListener("focus", function () {
-  console.log("поймал focus email")
   // При получении фокуса на элемент формы mail удаляем сообщение об ошибке, т.к. пользователь хочет ввести данные заново
   validMessageMail.classList.remove("field-text__help-text--error");
   validMessageMail.innerHTML = "Подсказка под полем - E-MAIL";
