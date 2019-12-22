@@ -22,28 +22,24 @@ var validMessageMail = validForm.querySelector(".field-text__help-text--email");
 if (!validForm.hasAttribute("novalidate")) {
   validForm.noValidate = true;
 };
-/*==ок===*/
 
 /*проверить validFieldName на наличие атрибута required, если он есть, удалить*/
 /*т.е. отменяем встроенную проверку формы, что-бы далее делать проверку на JS*/
 if (validFieldName.hasAttribute("required")) {
   validFieldName.removeAttribute("required");
 }
-/*==ок===*/
 
 /*проверить validFieldTel на наличие атрибута required, если он есть, удалить*/
 /*т.е. отменяем встроенную проверку формы, что-бы далее делать проверку на JS*/
 if (validFieldTel.hasAttribute("required")) {
   validFieldTel.removeAttribute("required");
 }
-/*==ок===*/
 
 /*проверить validFieldMail на наличие атрибута required, если он есть, удалить*/
 /*т.е. отменяем встроенную проверку формы, что-бы далее делать проверку на JS*/
 if (validFieldMail.hasAttribute("required")) {
   validFieldMail.removeAttribute("required");
 }
-/*==ок===*/
 
 /*==============================*/
 /*==============================*/
@@ -52,24 +48,19 @@ validFieldName.addEventListener("focus", function () {
   validMessageName.classList.remove("field-text__help-text--error");
   validMessageName.innerHTML = "Подсказка под полем - ИМЯ";
 });
-/*==ок===*/
 
 validFieldTel.addEventListener("focus", function () {
   // При получении фокуса на элемент формы tel удаляем сообщение об ошибке, т.к. пользователь хочет ввести данные заново
   validMessageTel.classList.remove("field-text__help-text--error");
   validMessageTel.innerHTML = "Подсказка под полем - TEL в любом формате";
 });
-/*==ок===*/
 
 validFieldMail.addEventListener("focus", function () {
   // При получении фокуса на элемент формы mail удаляем сообщение об ошибке, т.к. пользователь хочет ввести данные заново
   validMessageMail.classList.remove("field-text__help-text--error");
   validMessageMail.innerHTML = "Подсказка под полем - E-MAIL";
 });
-/*==ок===*/
 
-
-/*=======================*/
 /*=======================*/
 validForm.addEventListener("submit", function (event) {
   /*===Проверка поля NAME===*/
