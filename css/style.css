@@ -1161,6 +1161,7 @@ hr {
 
 .field-text__input {
   width: 100%;
+  margin-bottom: 1em;
   padding: 0.5em 1em;
   border: 1px solid #8e8e8e;
   border-radius: 4px; }
@@ -1195,11 +1196,15 @@ hr {
   background: #000000; }
 
 .field-text__help-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   display: block;
-  margin-bottom: 1em;
   font-size: 12px;
   line-height: 1.2em;
   color: #8e8e8e; }
+  .field-text__help-text--error {
+    color: red; }
 
 .form__fieldset {
   margin-bottom: 2em;
