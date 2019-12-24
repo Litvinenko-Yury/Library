@@ -1141,24 +1141,6 @@ hr {
   display: block;
   width: 100%; }
 
-.field-text__input-wrap1,
-.field-text__input-wrap2 {
-  /*данный модификатор используется для скрипта form-validation.js*/ }
-  .field-text__input-wrap1--after::after,
-  .field-text__input-wrap2--after::after {
-    content: "Заполните поле";
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-    right: 15px;
-    width: auto;
-    height: auto;
-    font-size: 16px;
-    line-height: 1.2em;
-    text-align: right;
-    color: #ffffff; }
-
 .field-text__input {
   width: 100%;
   margin-bottom: 1em;
@@ -1182,10 +1164,6 @@ hr {
     color: #8e8e8e; }
   .field-text__input::placeholder {
     color: #8e8e8e; }
-  .field-text__input--notvalid {
-    position: relative;
-    background: #db7164;
-    border: 1px solid #83433c; }
 
 .field-text__icon {
   position: absolute;
