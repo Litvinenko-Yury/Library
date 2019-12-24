@@ -747,8 +747,8 @@
 
         <section class="block-library" id="lazyload">
           <h2 class="block-library__title">lazyload images</h2>
+          <span><b>Почитать здесь:</b></span>
           <ul>
-            <span><b>Почитать здесь:</b></span>
             <li>здесь:
               <a href="https://web.dev/native-lazy-loading/" rel="noopener"> native lazy-loading</a> </li>
             <li>и здесь:
@@ -1395,7 +1395,8 @@
         <section class="block-library" id="scroll-add-class">
           <h2 class="block-library__title">Добавить класс при скроле, JS.</h2>
           <p>Все делает скрипт <code>scroll-add-class.js</code>.</p>
-          <ul>Принцип:
+          <span>Принцип:</span>
+          <ul>
             <li>Отлавливаем событие по скролу.</li>
             <li>Если скролл > ...px, то доб. требуемый класс к нужному элементу.</li>
             <li>Иначе, удаляем этот же класс у элемента.</li>
@@ -1748,20 +1749,20 @@ width: 0;
               <img src="img/img-rock.jpg" width="500" height="300" alt="image1">
             </div>
             <div class="img-comp-img img-comp-overlay">
-              <img src="img/img-desert.jpg" width="500" height="300" alt="image2>
+              <img src="img/img-desert.jpg" width="500" height="300" alt="image2">
             </div>
           </div>
           <hr>
           <p>Важно!</p>
           <p>Для корректной работы ползунка сравнения, в global.scss нужно закомментировать:</p>
           <div>
-            <button class=" burger"="" aria-label="Показать пример кода" data-target-id="img-compare-code" data-target-class-toggle="blocks-library__example--shown">
+            <button class=" burger" aria-label="Показать пример кода" data-target-id="img-compare-code" data-target-class-toggle="blocks-library__example--shown">
               <span>Показать что-либо</span>
-              
-            </div>
+            </button>
+          </div>
 
-            <div class="blocks-library__example" id="img-compare-code">
-              <pre class="code">
+          <div class="blocks-library__example" id="img-compare-code">
+            <pre class="code">
             <span class="code_inner">
 // img {
 //   max-width: 100%;
@@ -1769,11 +1770,11 @@ width: 0;
 // }
             </span>
           </pre>
-            </div>
+          </div>
 
-            <p>И соответственно, продумать, как добавить для всех остальных <code>img</code> эти важные стили.</p>
-            <p>Как вариант: для <code>img</code> задать <code>object-fit</code></p>
-        </div></section>
+          <p>И соответственно, продумать, как добавить для всех остальных <code>img</code> эти важные стили.</p>
+          <p>Как вариант: для <code>img</code> задать <code>object-fit</code></p>
+        </section>
 
         <section class="block-library" id="rhombus">
           <h2 class="block-library__title">Поток ромбов</h2>
@@ -1843,7 +1844,7 @@ width: 0;
 
   <script src="js/tab.js" async=""></script>
 
-  <script src="js/burger.js"></script>
+  <script src="js/burger.js" async=""></script>
   <script src="js/burger-test.js" async=""></script>
 
   <script src="js/main-nav.js" async=""></script>
@@ -1855,7 +1856,7 @@ width: 0;
   <script src="js/form-validation.js" async=""></script>
 
   <!--cкрипт для ползунка сравнения -->
-  <script src="js/img-compare.js"></script>
+  <script src="js/img-compare.js" async=""></script>
 
   <!-- запускающая функция для скрипта сравнения изображения, должна быть ниже всех -->
   <script>
