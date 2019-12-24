@@ -15,25 +15,26 @@
   width: 100%;
 }
 
-.field-text__input-wrap1,
-.field-text__input-wrap2 {
-  /*данный модификатор используется для скрипта form-validation.js*/
-  &--after {
-    &::after {
-      content: "Заполните поле";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-100%);
-      right: 15px;
-      width: auto;
-      height: auto;
-      font-size: $font-size;
-      line-height: $line-height-auto;
-      text-align: right;
-      color: #ffffff;
-    }
-  }
-}
+// .field-text__input-wrap1,
+// .field-text__input-wrap2,
+// .field-text__input-wrap3 {
+//   /*данный модификатор МОЖЕТ использоваться для скрипта form-validation.js*/
+//   &--after {
+//     &::after {
+//       content: "Заполните поле";
+//       position: absolute;
+//       top: 50%;
+//       transform: translateY(-100%);
+//       right: 15px;
+//       width: auto;
+//       height: auto;
+//       font-size: $font-size;
+//       line-height: $line-height-auto;
+//       text-align: right;
+//       color: #ffffff;
+//     }
+//   }
+// }
 
 .field-text__input {
   width: 100%;
@@ -53,15 +54,7 @@
   }
 
   &::placeholder {
-    //font-size: $font-size--larger;
-    //line-height: 1em;
     color: $gray;
-  }
-
-  &--notvalid {
-    position: relative;
-    background: $color-error-bg;
-    border: 1px solid $color-error-border;
   }
 }
 
@@ -71,7 +64,6 @@
   top: 50%;
   transform: translateY(-50%);
 
-  //fill: $gray--darken;
   background: #000000;
 }
 

@@ -578,10 +578,11 @@
           </form>
         </section>
 
-        <section class="block-library  attention" id="form-validation">
+        <section class="block-library" id="form-validation">
           <h2 class="block-library__title">Валидация формы</h2>
           <span>Почитать: <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Forms/%D0%92%D0%B0%D0%BB%D0%B8%D0%B4%D0%B0%D1%86%D0%B8%D1%8F_%D1%84%D0%BE%D1%80%D0%BC%D1%8B" rel="noopener">MDN</a></span>
           <p>Скрипт <code>form-validation.js</code></p>
+          <p>Черные квадраты в поле <code>input</code> - заготовки для будущих <code>svg</code></p>
 
           <form class="form  form--validation" action="https://echo.htmlacademy.ru" method="post">
             <fieldset class="form__fieldset">
@@ -593,7 +594,7 @@
                   <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
                     <use xlink:href="#icon-phone" />
                   </svg>
-                  <span class="field-text__help-text  field-text__help-text--name">Подсказка под полем - ИМЯ</span>
+                  <span class="field-text__help-text  field-text__help-text--name">* - Подсказка под полем - ИМЯ</span>
                 </span>
               </label>
 
@@ -604,7 +605,7 @@
                   <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
                     <use xlink:href="#icon-phone" />
                   </svg>
-                  <span class="field-text__help-text  field-text__help-text--tel">Подсказка под полем - TEL в любом формате </span>
+                  <span class="field-text__help-text  field-text__help-text--tel">* - Подсказка под полем - TEL в любом формате </span>
                 </span>
               </label>
 
@@ -615,7 +616,7 @@
                   <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
                     <use xlink:href="#icon-phone" />
                   </svg>
-                  <span class="field-text__help-text  field-text__help-text--email">Подсказка под полем - E-MAIL </span>
+                  <span class="field-text__help-text  field-text__help-text--email">* - Подсказка под полем - E-MAIL </span>
                 </span>
               </label>
             </fieldset>
@@ -1837,15 +1838,15 @@ width: 0;
   <script src="js/ofi.min.js"></script>
   <script>objectFitImages();</script>
 
-  <!-- <script src="js/modal.js" async></script>
+  <script src="js/modal.js" async></script>
   <script src="js/modal-2.js" async></script>
 
-  <script src="js/tab.js" async></script> -->
+  <script src="js/tab.js" async></script>
 
-  <!--  <script src="js/burger.js"></script>
-  <script src="js/burger-test.js" async></script> -->
+  <script src="js/burger.js"></script>
+  <script src="js/burger-test.js" async></script>
 
-  <!-- <script src="js/main-nav.js" async></script> -->
+  <script src="js/main-nav.js" async></script>
 
   <!--скрипт плавного скрола к якорю -->
   <script src="js/scroll-anchor.js" async></script>
@@ -1853,13 +1854,13 @@ width: 0;
   <!-- скрипт валидации полей формы -->
   <script src="js/form-validation.js" async></script>
 
-  <!-- подключение скрипта для ползунка сравнения -->
-  <!-- <script src="js/img-compare.js"></script> -->
+  <!--cкрипт для ползунка сравнения -->
+  <script src="js/img-compare.js"></script>
 
-  <!-- запускающая функция для скрипта сравнения изображения -->
-  <!-- <script>
+  <!-- запускающая функция для скрипта сравнения изображения, должна быть ниже всех -->
+  <script>
     initComparisons();
-  </script> -->
+  </script>
 </body>
 
 </html>

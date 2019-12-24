@@ -46,19 +46,19 @@ if (validFieldMail.hasAttribute("required")) {
 validFieldName.addEventListener("focus", function () {
   // При получении фокуса на элемент формы name удаляем сообщение об ошибке, т.к. пользователь хочет ввести данные заново
   validMessageName.classList.remove("field-text__help-text--error");
-  validMessageName.innerHTML = "Подсказка под полем - ИМЯ";
+  validMessageName.innerHTML = "* - Подсказка под полем - ИМЯ";
 });
 
 validFieldTel.addEventListener("focus", function () {
   // При получении фокуса на элемент формы tel удаляем сообщение об ошибке, т.к. пользователь хочет ввести данные заново
   validMessageTel.classList.remove("field-text__help-text--error");
-  validMessageTel.innerHTML = "Подсказка под полем - TEL в любом формате";
+  validMessageTel.innerHTML = "* - Подсказка под полем - TEL в любом формате";
 });
 
 validFieldMail.addEventListener("focus", function () {
   // При получении фокуса на элемент формы mail удаляем сообщение об ошибке, т.к. пользователь хочет ввести данные заново
   validMessageMail.classList.remove("field-text__help-text--error");
-  validMessageMail.innerHTML = "Подсказка под полем - E-MAIL";
+  validMessageMail.innerHTML = "* - Подсказка под полем - E-MAIL";
 });
 
 /*=======================*/
@@ -113,4 +113,4 @@ validForm.addEventListener("submit", function (event) {
     event.preventDefault();// И предотвращаем отправку формы путем отмены события
   };
 
-}, false);
+});
