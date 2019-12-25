@@ -1629,8 +1629,7 @@ hr {
 .page-main {
   outline: 1px dotted blue;
   padding: 1em;
-  -webkit-transform: translateX(250px);
-          transform: translateX(250px); }
+  margin-left: 250px; }
 
 .pagination {
   outline: 1px dotted #d22856;
@@ -1979,6 +1978,48 @@ th {
 #tabs-2__tab3:checked ~ #tabs-2__content-tab3,
 #tabs-2__tab4:checked ~ #tabs-2__content-tab4 {
   display: block; }
+
+.to-top {
+  position: fixed;
+  z-index: 99;
+  right: 1rem;
+  bottom: 1rem;
+  width: 4rem;
+  height: 4rem;
+  font-size: 0;
+  color: transparent;
+  border-radius: 50%;
+  background-color: #303030;
+  opacity: 1;
+  -webkit-transition: opacity 0.6s;
+  transition: opacity 0.6s; }
+  .to-top:hover {
+    background-color: #8e8e8e; }
+  .to-top:active {
+    background-color: #2856d2; }
+  .to-top::before {
+    content: "";
+    position: absolute;
+    top: 44%;
+    left: 44%;
+    width: 20px;
+    height: 5px;
+    background-color: #eeeeee;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  .to-top::after {
+    content: "";
+    position: absolute;
+    top: 44%;
+    right: 44%;
+    width: 20px;
+    height: 5px;
+    background-color: #eeeeee;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  .to-top--no-visible {
+    visibility: hidden;
+    opacity: 0; }
 
 .tabs__links {
   display: -webkit-box;
