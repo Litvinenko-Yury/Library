@@ -114,8 +114,11 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#scroll-achor" data-scroll-link>Плавный скролл к якорю</a>
         </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#scroll-add-class" data-scroll-link>Доб .class при скролле, JS</a>
+        </li>
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#scroll-add-class" data-scroll-link>Доб .class к объекту при прокрутке страницы на JS</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#to-top" data-scroll-link>Ссылка «вверх»</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#logo" data-scroll-link>Логотип</a>
@@ -161,6 +164,9 @@
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#hexagon" data-scroll-link>Поток hexagon</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#triangle" data-scroll-link>Поток треугольников</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#triangle" data-scroll-link>Поток треугольников</a>
@@ -1402,7 +1408,21 @@
             <li>Иначе, удаляем этот же класс у элемента.</li>
             <li>Все.</li>
           </ul>
+        </section>
 
+        <section class="block-library" id="to-top">
+          <h2 class="block-library__title">Ссылка "вверх", JS.</h2>
+          <p>Ссылка «вверх» в нижнем правом углу страницы.</p>
+          <p>Cкрипт <code>to-top.js</code>.</p>
+          <span>Принцип:</span>
+          <ul>
+            <li>Если JS у пользователя не включен, тогда ссылка видна сразу;</li>
+            <li>Если JS включен, отлавливаем событие по скролу;</li>
+            <li>Если скролл больше указанного в Javascript-файле блока значения, то доб. требуемый модификатор <code>"*--visible"</code> к нужному ссылке.</li>
+            <li>Иначе, удаляем этот же класс у элемента.</li>
+            <li>Все.</li>
+          </ul>
+          <a class="to-top" id="to-top-link" href="#" aria-label="ссылка вверх страницы">↑</a>
         </section>
 
         <section class="block-library" id="logo">
@@ -1852,11 +1872,14 @@ width: 0;
   <!--скрипт плавного скрола к якорю -->
   <script src="js/scroll-anchor.js" async></script>
 
+  <!--скрипт ссылки "вверх" -->
+  <script src="js/to-top.js" async></script>
+
   <!-- скрипт валидации полей формы -->
   <script src="js/form-validation.js" async></script>
 
   <!--cкрипт для ползунка сравнения -->
-  <!--при задании async - не работает -->
+  <!--при задании async - не работает! -->
   <script src="js/img-compare.js"></script>
 
   <!-- запускающая функция для скрипта сравнения изображения, должна быть ниже всех -->

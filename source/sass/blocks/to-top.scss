@@ -1,0 +1,49 @@
+.to-top {
+  position: fixed;
+  z-index: 99;
+  right: 1rem;
+  bottom: 1rem;
+  width: 4rem;
+  height: 4rem;
+  font-size: 0;
+  color: transparent;
+  border-radius: 50%;
+  background-color: $gray--darken;
+  opacity: 1;
+  transition: opacity $transition-time--show;
+
+  &:hover {
+    background-color: $gray;
+  }
+
+  &:active {
+    background-color: $color-active;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 44%;
+    left: 44%;
+    width: 20px;
+    height: 5px;
+    background-color: $gray--light;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 44%;
+    right: 44%;
+    width: 20px;
+    height: 5px;
+    background-color: $gray--light;
+    transform: rotate(-45deg);
+  }
+
+  &--no-visible {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
