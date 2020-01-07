@@ -1,20 +1,21 @@
-"use strict";
+/*=============================*/
+/*script  form-validation.js*/
+/*author  https://github.com/Litvinenko-Yury*/
+/*=============================*/
+
+'use strict';
 
 /*=============================*/
 /*===Валидация полей формы===*/
-var validForm = document.querySelector(".form--validation");
+let validForm = document.querySelector(".form--validation");
 
-var validFieldName = validForm.querySelector(".field-text__input--name");
-var validFieldTel = validForm.querySelector(".field-text__input--tel");
-var validFieldMail = validForm.querySelector(".field-text__input--email");
+let validFieldName = validForm.querySelector(".field-text__input--name");
+let validFieldTel = validForm.querySelector(".field-text__input--tel");
+let validFieldMail = validForm.querySelector(".field-text__input--email");
 
-//var validFieldText1 = validForm.querySelector(".field-text__input-wrap1");
-//var validFieldText2 = validForm.querySelector(".field-text__input-wrap2");
-//var validFieldText3 = validForm.querySelector(".field-text__input-wrap3");
-
-var validMessageName = validForm.querySelector(".field-text__help-text--name");
-var validMessageTel = validForm.querySelector(".field-text__help-text--tel");
-var validMessageMail = validForm.querySelector(".field-text__help-text--email");
+let validMessageName = validForm.querySelector(".field-text__help-text--name");
+let validMessageTel = validForm.querySelector(".field-text__help-text--tel");
+let validMessageMail = validForm.querySelector(".field-text__help-text--email");
 
 /*=================*/
 /*для <form> добавляем атрибут novalidate для отключения автоматической валидации браузера, что позволяет скрипту контролировать валидацию. */
@@ -65,7 +66,7 @@ validFieldMail.addEventListener("focus", function () {
 validForm.addEventListener("submit", function (event) {
   /*===Проверка поля NAME===*/
   // Каждый раз, когда пользователь пытается отправить данные, мы проверяем валидность поля name.
-  var validFieldNameValue = validForm.querySelector(".field-text__input--name").value;
+  let validFieldNameValue = validForm.querySelector(".field-text__input--name").value;
 
   if (validFieldNameValue.length == 0) {
     // Проверка поля на заполненность.
@@ -76,7 +77,7 @@ validForm.addEventListener("submit", function (event) {
   };
 
   /*===Проверка поля TEL===*/
-  var validFieldTelValue = validForm.querySelector(".field-text__input--tel").value;
+  let validFieldTelValue = validForm.querySelector(".field-text__input--tel").value;
   if (validFieldTelValue.length == 0) {
     // Проверка поля на заполненность.
     // Если поле пустое, отображается пользовательское сообщение о незаполненном поле.
@@ -85,7 +86,7 @@ validForm.addEventListener("submit", function (event) {
     event.preventDefault();// И предотвращаем отправку формы путем отмены события
   };
 
-  var validFieldTel = validForm.querySelector(".field-text__input--tel");
+  let validFieldTel = validForm.querySelector(".field-text__input--tel");
   if (!validFieldTel.validity.valid) {
     // Если поле невалидно, отображается пользовательское
     // сообщение об ошибке.
@@ -95,7 +96,7 @@ validForm.addEventListener("submit", function (event) {
   };
 
   /*===Проверка поля E-MAIL===*/
-  var validFieldMailValue = validForm.querySelector(".field-text__input--email").value;
+  let validFieldMailValue = validForm.querySelector(".field-text__input--email").value;
   if (validFieldMailValue.length == 0) {
     // Проверка поля на заполненность.
     // Если поле пустое, отображается пользовательское сообщение о незаполненном поле.
@@ -104,7 +105,7 @@ validForm.addEventListener("submit", function (event) {
     event.preventDefault();// И предотвращаем отправку формы путем отмены события
   };
 
-  var validFieldMail = validForm.querySelector(".field-text__input--email");
+  let validFieldMail = validForm.querySelector(".field-text__input--email");
   if (!validFieldMail.validity.valid) {
     // Если поле невалидно, отображается пользовательское
     // сообщение об ошибке.

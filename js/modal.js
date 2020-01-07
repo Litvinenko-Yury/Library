@@ -1,7 +1,14 @@
-var btnModal = document.querySelector(".btn-modal-open");
-var popup = document.querySelector(".modal__content");
-var modalOverlay = document.querySelector(".modal__overlay");
-var btnModalClose = document.querySelector(".btn-modal-close");
+/*=============================*/
+/*script  modal.js*/
+/*author  https://github.com/Litvinenko-Yury*/
+/*=============================*/
+'use strict'
+
+
+let btnModal = document.querySelector(".btn-modal-open");
+let popup = document.querySelector(".modal__content");
+let modalOverlay = document.querySelector(".modal__overlay");
+let btnModalClose = document.querySelector(".btn-modal-close");
 
 /*события по кнопке "открыть модальное окно"*/
 btnModal.addEventListener("click", function(event) {

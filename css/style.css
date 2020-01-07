@@ -1325,18 +1325,22 @@ hr {
       display: flex;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; } }
-  @media (max-width: 1199px) {
-    .main-nav__list--js {
-      max-height: 0;
-      overflow: hidden;
-      -webkit-transition: max-height 0.2s;
-      transition: max-height 0.2s; } }
-  @media (max-width: 1199px) {
-    .main-nav__list--show {
-      max-height: 800px;
-      overflow: hidden;
-      -webkit-transition: max-height 1.2s;
-      transition: max-height 1.2s; } }
+  .main-nav__list--js {
+    /*уменьшение высоты меню*/ }
+    @media (max-width: 1199px) {
+      .main-nav__list--js {
+        max-height: 0;
+        overflow: hidden;
+        -webkit-transition: max-height 0.2s;
+        transition: max-height 0.2s; } }
+  .main-nav__list--show {
+    /*величение высоты меню*/ }
+    @media (max-width: 1199px) {
+      .main-nav__list--show {
+        max-height: 800px;
+        overflow: hidden;
+        -webkit-transition: max-height 1.2s;
+        transition: max-height 1.2s; } }
 
 .main-nav__link {
   display: block;
@@ -1535,8 +1539,8 @@ hr {
   z-index: 10;
   display: none;
   background-color: rgba(0, 0, 0, 0.65);
-  -webkit-animation: modal__fade 0.6s;
-          animation: modal__fade 0.6s; }
+  -webkit-animation: modal__fade 0.2s;
+          animation: modal__fade 0.2s; }
 
 @-webkit-keyframes modal__fade {
   from {
@@ -1555,8 +1559,8 @@ hr {
   /*такой вид центрования подходит только для фиксированного расположения МО, при анимации МО - не подходит.*/
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -250%);
-          transform: translate(-50%, -250%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 20;
   display: none;
   /*это стилизация сообщения*/
@@ -1567,8 +1571,8 @@ hr {
   background-color: coral;
   -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.22), 0 19px 60px rgba(0, 0, 0, 0.3);
           box-shadow: 0 15px 20px rgba(0, 0, 0, 0.22), 0 19px 60px rgba(0, 0, 0, 0.3);
-  -webkit-animation: modal__fade 0.6s;
-          animation: modal__fade 0.6s; }
+  -webkit-animation: modal__fade 0.3s;
+          animation: modal__fade 0.3s; }
 
 .modal__content--show {
   display: block; }

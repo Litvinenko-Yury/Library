@@ -1,10 +1,16 @@
-var btnModal_2 = document.querySelector(".btn-modal-2-open");
-var popup_2 = document.querySelector(".modal-2__content");
-var modalOverlay_2 = document.querySelector(".modal-2__overlay");
-var formModal_2 = document.querySelector(".form--modal-2");
-var login = popup_2.querySelector("[name=login]");  /*находим input c name="login" внутри переменной popup_2 (это .modal-2__content, т.е. модальное окно, и записываем в переменную.) */
-var password = popup_2.querySelector("[name=password]");  /*находим input c name="password" внутри переменной popup_2 (это .modal-2__content, т.е. модальное окно, и записываем в переменную.) */
-var storage = localStorage.getItem("login");  /*взять значение из localStorage по ключу login и записать в переменную storage*/
+/*=============================*/
+/*script  modal-2.js*/
+/*author  https://github.com/Litvinenko-Yury*/
+/*=============================*/
+'use strict'
+
+let btnModal_2 = document.querySelector(".btn-modal-2-open");
+let popup_2 = document.querySelector(".modal-2__content");
+let modalOverlay_2 = document.querySelector(".modal-2__overlay");
+let formModal_2 = document.querySelector(".form--modal-2");
+let login = popup_2.querySelector("[name=login]");  /*находим input c name="login" внутри переменной popup_2 (это .modal-2__content, т.е. модальное окно, и записываем в переменную.) */
+let password = popup_2.querySelector("[name=password]");  /*находим input c name="password" внутри переменной popup_2 (это .modal-2__content, т.е. модальное окно, и записываем в переменную.) */
+let storage = localStorage.getItem("login");  /*взять значение из localStorage по ключу login и записать в переменную storage*/
 
 
 /*===события по кнопке "открыть модальное окно"===*/
