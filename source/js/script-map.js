@@ -1,12 +1,21 @@
+/*=============================*/
+/*script  script-map.js*/
+/*author  https://github.com/Litvinenko-Yury*/
+/*=============================*/
+/*!!!!*/
+/*!!!!!   если скрипт не работает, заменить let на var*/
+
+'use strict'
+
 ymaps.ready(init);
-var myMap;
-var myPlacemark;
-var $zoom;
-var $center;
-var $iconImage;
-var $iconImageSize;
-var $iconImageOffset;
-var $width = window.innerWidth;
+let myMap;
+let myPlacemark;
+let $zoom;
+let $center;
+let $iconImage;
+let $iconImageSize;
+let $iconImageOffset;
+let $width = window.innerWidth;
 
 //задание масштаба для mob/tab/desk
 if ($width < 768) {
@@ -76,7 +85,7 @@ function init() {
     // Смещение левого верхнего угла иконки относительно
     // её "ножки" (точки привязки).
     //iconImageOffset: [-25, -55]
-    iconImageOffset:  $iconImageOffset
+    iconImageOffset: $iconImageOffset
   });
 
   // Добавление метки на карту

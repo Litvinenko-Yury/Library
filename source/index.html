@@ -1125,7 +1125,7 @@
         </section>
 
         <section class="block-library" id="tabs-css">
-          <h2 class="block-library__title">Табы на CSS <small><code>(.tabs-2)</code></small></h2>
+          <h2 class="block-library__title">Табы на CSS <small><code>.tabs-2</code></small></h2>
           <div class="tabs-2">
             <input class="tabs-2__input" id="tabs-2__tab1" type="radio" name="tabs" checked>
             <label class="tabs-2__label" for="tabs-2__tab1" title="Вкладка 1">Вкладка 1</label>
@@ -1163,7 +1163,8 @@
         </section>
 
         <section class="block-library" id="tabs-js">
-          <h2 class="block-library__title">Табы на JS - Н.Громов<small><code>(.tabs)</code></small></h2>
+          <h2 class="block-library__title">Табы на JS - <small><code>.tabs</code></small></h2>
+          <p>Скрипт <code>tab.js</code>.</p>
           <div class="tabs">
 
             <ul class="tabs__links" role="tablist">
@@ -1182,16 +1183,16 @@
             </ul>
 
             <div class="tabs__content-wrapper">
-              <div class="tabs__content-item" id="tab00" role="tabpanel">
+              <div class="tabs__content-item" id="tab00" role="tabpanel" data-noscroll>
                 <p>0. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
               </div>
-              <div class="tabs__content-item  tabs__content-item--active" id="tab01" role="tabpanel">
+              <div class="tabs__content-item  tabs__content-item--active" id="tab01" role="tabpanel" data-noscroll>
                 <p>1. За словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
               </div>
-              <div class="tabs__content-item" id="tab02" role="tabpanel">
+              <div class="tabs__content-item" id="tab02" role="tabpanel" data-noscroll>
                 <p>2.Словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
               </div>
-              <div class="tabs__content-item" id="tab03" role="tabpanel">
+              <div class="tabs__content-item" id="tab03" role="tabpanel" data-noscroll>
                 <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
                 <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
                 <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
@@ -1201,6 +1202,12 @@
               </div>
             </div>
           </div>
+          <br>
+          <p class="attention">P.S.<br>
+            Скрипт <code>scroll-anchor.js</code> так-же использует переход по ссылке к <code>id</code><br>
+            Поэтому при совместном использовании <code>tab.js</code> и <code>scroll-anchor.js</code> будет происходить "подкручивание" страницы к блоку с содержимым вкладки.<br>
+            Это bug.
+          </p>
         </section>
 
         <section class="block-library" id="burger">
@@ -1304,65 +1311,76 @@
 
         <section class="block-library" id="main-nav">
           <h2 class="block-library__title">Главная навигация (меню)</h2>
-          <p>На малых ширинах преобразуется в мобильный вид, скрывается/показывается по клику на бургер, если JS включен (на <code>html</code> есть класс <code>js</code>).</p>
-          <p>Изменение значка бургер и открытие/закрытие меню на mob - скрипт <code>burger-test.js</code></p>
-          <p>Простое, на первый взгляд, написание БЭМ-блока для главного меню, закончилось вот такими открытиями... имеем два основных состояния меню:</p>
-          <ul>
-            <li>Исходное состояние меню: без включенного JS;</li>
-            <li>Cостояние меню с включенным JS: скриптом изменяем состояние меню до нужного вида.</li>
-            <li>На десктопной ширине бургер - скрыт, меню принимает горизонтальный вид.</li>
-          </ul>
+          <p>На малых ширинах преобразуется в мобильный вид, скрывается/показывается по клику на бургер, если JS включен.</p>
+          <p>Если бургер один в проекте:<br>
+            - показать/скрыть бургер при наличии/отсутствии JS: <code>main-nav.js</code>.<br>
+            - анимация превращения бургера в крестик <code>burger.js</code>.<br>
+            - открытие/закрытие меню на mob - см. комментарий в <code>main-nav.js</code>.<p>
 
-          <table>
-            <tbody class="block-library__table-head">
-              <tr>
-                <td></td>
-                <td><small>исх. состояние</small></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td><b>нет JS</b></td>
-                <td><b>есть JS</b></td>
-              </tr>
-            </tbody>
-            <tr>
-              <td>бургер</td>
-              <td>скрыт,<br><small>в разметку добавлен .burger--no-js</small></td>
-              <td>виден,<br><small>JS-блока,<code>main-nav.js</code>, удаляет <code>.burger--no-js</code>. <br>Бургер становится виден.</small></td>
-            </tr>
-            <tr>
-              <td>меню</td>
-              <td>открыто</td>
-              <td>закрыто,<br><small>JS-блока, <code>main-nav.js</code>, добавляет к <code>.main-nav__list</code> модификатор <code>.main-nav__list--js</code>. который делает высоту <code>.main-nav__list</code> = 0</small></td>
-            </tr>
-            <tr>
-              <td>клик на бургер</td>
-              <td>-</td>
-              <td>меню открывается по клику на бургер:<br><small>по клику на бургер, <code> burger-test.js</code> добавляет к <code>.main-nav__list</code> модификатор <code>.main-nav__list--show</code>, который увеличивает высоту <code>.main-nav__list</code></small></td>
-            </tr>
-          </table>
+              <p>Если бургеров несколько в проекте:<br>
+                - скрипт <code>burgers-some.js</code>,<br> который:<br>
+                1. определяет, на каком бургере был клик;<br>
+                2. анимирует значек бургера - в "крестик";<br>
+                3.переключает класс элементу с нужным ID<br>
+              </p>
 
-          <nav class="main-nav" id="nav">
-            <button class="burger  burger--no-js" aria-label="Показать главное меню" data-target-id="main-nav__list" data-target-class-toggle="main-nav__list--show">
-              <span>Показать главное меню</span>
-            </button>
+              <p>Далее: имеем два основных состояния меню:</p>
+              <ul>
+                <li>Исходное состояние меню: без включенного JS;</li>
+                <li>Cостояние меню с включенным JS: скриптом изменяем состояние меню до нужного вида.</li>
+                <li>На десктопной ширине бургер - скрыт, меню принимает горизонтальный вид.</li>
+              </ul>
 
-            <ul class="main-nav__list" id="main-nav__list">
-              <li class="main-nav__item">
-                <a class="main-nav__link" href="#">Пункт меню 1</a>
-              </li>
-              <li class="main-nav__item">
-                <a class="main-nav__link" href="#">Пункт меню 2</a>
-              </li>
-              <li class="main-nav__item">
-                <a class="main-nav__link" href="#">Пункт меню 3</a>
-              </li>
-              <li class="main-nav__item">
-                <a class="main-nav__link" href="#">Пункт меню 4</a>
-              </li>
-            </ul>
-          </nav>
+              <table>
+                <tbody class="block-library__table-head">
+                  <tr>
+                    <td></td>
+                    <td><small>исх. состояние</small></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><b>нет JS</b></td>
+                    <td><b>есть JS</b></td>
+                  </tr>
+                </tbody>
+                <tr>
+                  <td>бургер</td>
+                  <td>скрыт,<br><small>в разметку добавлен .burger--no-js</small></td>
+                  <td>виден,<br><small>JS-блока,<code>main-nav.js</code>, удаляет <code>.burger--no-js</code>. <br>Бургер становится виден.</small></td>
+                </tr>
+                <tr>
+                  <td>меню</td>
+                  <td>открыто</td>
+                  <td>закрыто,<br><small>JS-блока, <code>main-nav.js</code>, добавляет к <code>.main-nav__list</code> модификатор <code>.main-nav__list--js</code>. который делает высоту <code>.main-nav__list</code> = 0</small></td>
+                </tr>
+                <tr>
+                  <td>клик на бургер</td>
+                  <td>-</td>
+                  <td>меню открывается по клику на бургер:<br><small>по клику на бургер, <code> burger-test.js</code> добавляет к <code>.main-nav__list</code> модификатор <code>.main-nav__list--show</code>, который увеличивает высоту <code>.main-nav__list</code></small></td>
+                </tr>
+              </table>
+
+              <nav class="main-nav" id="nav">
+                <button class="burger  burger--no-js" aria-label="Показать главное меню" data-target-id="main-nav__list" data-target-class-toggle="main-nav__list--show">
+                  <span>Показать главное меню</span>
+                </button>
+
+                <ul class="main-nav__list" id="main-nav__list">
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="#">Пункт меню 1</a>
+                  </li>
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="#">Пункт меню 2</a>
+                  </li>
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="#">Пункт меню 3</a>
+                  </li>
+                  <li class="main-nav__item">
+                    <a class="main-nav__link" href="#">Пункт меню 4</a>
+                  </li>
+                </ul>
+              </nav>
         </section>
 
         <section class="block-library" id="aside-nav">
@@ -1420,14 +1438,22 @@
           <p>Cкрипт <code>to-top.js</code>.</p>
           <span>Принцип:</span>
           <ul>
+            <li>Делаем классическую разметку для ссылки с <code>href="#некий_id"</code> + плюс расставляем в нужном месте ()ввсерху страницы) этот <code>id</code>.</li>
             <li>Если JS не включен у пользователя, тогда ссылка видна сразу.</li>
             <li>Если JS включен, добавляем модификатор <code>"*--no--visible"</code> для ссылки (ссылка не видна).</li>
             <li>Далее, отлавливаем событие по скролу.</li>
             <li>Если скролл больше указанного в Javascript-файле блока значения, то удаляем модификатор <code>"*--no--visible"</code> у ссылки.</li>
-            <li>Иначе, добавляем этот же класс элементу (т.е. ссылке).</li>
+            <li>Если скролл меньше указанного в Javascript-файле блока значения, добавляем этот же класс элементу (т.е. ссылке).</li>
             <li>Все.</li>
           </ul>
-          <a class="to-top" id="to-top-link" href="#" aria-label="ссылка вверх страницы">↑</a>
+          <p>P.S.</p>
+          <p>Можно просто сделать ссылку на <code>id</code> + использовать CSS - свойство <code>scroll-behavior: smooth;</code>.<br>
+            Но!<br>
+            <span class="attention">"Это не работает в IE + EDGE.</span><br>
+            Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
+
+
+          <a class="to-top" id="to-top-link" href="#font" aria-label="ссылка вверх страницы">↑</a>
         </section>
 
         <section class="block-library" id="logo">
@@ -1859,8 +1885,6 @@ width: 0;
     </main>
   </div>
 
-  <!-- <script src="js/script.js"></script> -->
-
   <script src="js/ofi.min.js"></script>
   <script>objectFitImages();</script>
 
@@ -1870,7 +1894,7 @@ width: 0;
   <script src="js/tab.js" async></script>
 
   <script src="js/burger.js" async></script>
-  <script src="js/burger-test.js" async></script>
+  <script src="js/burgers-some.js" async></script>
 
   <script src="js/main-nav.js" async></script>
 

@@ -20,6 +20,7 @@
   }
 
   &--js {
+    /*уменьшение высоты меню*/
     @media (max-width: $desktop-width - 1) {
       max-height: 0;
       overflow: hidden;
@@ -28,6 +29,7 @@
   }
 
   &--show {
+     /*величение высоты меню*/
     @media (max-width: $desktop-width - 1) {
       max-height: 800px;
       overflow: hidden;

@@ -1,6 +1,6 @@
 "use strict";
 
-var gulp = require("gulp");
+let gulp = require("gulp");
 var sass = require("gulp-sass");
 var plumber = require("gulp-plumber");
 var sourcemap = require("gulp-sourcemaps");
@@ -16,7 +16,6 @@ var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
 var htmlmin = require("gulp-htmlmin");
-var uglify = require("gulp-uglify");
 const ghPages = require('gh-pages');
 const path = require('path');
 
@@ -26,7 +25,8 @@ gulp.task("copyFolderBuild", function () {
     "source/favicons/**",
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
-    "source/js/**"
+    "source/js/**",
+    "!source/js/README"
   ], {
     base: "source"
   })
@@ -52,7 +52,7 @@ gulp.task("css", function () {
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
-  // .pipe(server.stream());
+    .pipe(server.stream());
 });
 
 //собрать svg-спрайт (gulp-svgstore), переименовать спрайт в "svg_sprite.svg" (gulp-rename), и сохранить в build/img.
@@ -82,12 +82,12 @@ gulp.task("minify_html", function () {
 });
 
 //минификация js-файлов
-gulp.task("minify_js", function () {
+/* gulp.task("minify_js", function () {
   return gulp.src("source/js/*.js")
     .pipe(uglify())
     .pipe(rename("script.min.js"))
     .pipe(gulp.dest("build/js"));
-});
+}); */
 
 //локальный сервер (browser-sync).
 gulp.task("server", function () {
@@ -102,7 +102,8 @@ gulp.task("server", function () {
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
   gulp.watch("source/img/icon-*.svg", gulp.series("svg_sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
-  gulp.watch("source/js/*.js", gulp.series("minify_js", "refresh"));
+  //gulp.watch("source/js/*.js", gulp.series("minify_js", "refresh"));
+  gulp.watch("source/js/*.js", gulp.series("refresh"));
 });
 
 //используем browser-sync для перезапуска страницы
@@ -117,8 +118,8 @@ gulp.task("build", gulp.series(
   "css",
   "svg_sprite",
   "html",
-  "minify_html",
-  "minify_js"
+  "minify_html"
+  //"minify_js"
 ));
 
 gulp.task("start", gulp.series("build", "server"));

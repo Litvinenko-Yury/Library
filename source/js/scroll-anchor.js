@@ -1,9 +1,12 @@
 /*=============================*/
 /*author: https://github.com/YuraVolk*/
-/*
+
+/*Скрипт плавный скрол к якорю*/
+/*=============================*/
+
 "use strict";
-*/
-var isScrolling = false;
+
+let isScrolling = false;
 
 if (!String.prototype.startsWith) {
     String.prototype.startsWith = function(searchString, position) {
@@ -21,14 +24,14 @@ function easeInOutQuad(t, b, c, d) {
 
 function smoothScrollTo(element, to, duration) {
     isScrolling = true;
-    var start = element.scrollTop,
+    let start = element.scrollTop,
         change = to - start,
         currentTime = 0,
         increment = 5;
 
-    var animateScroll = function animateScroll() {
+    let animateScroll = function animateScroll() {
         currentTime += increment;
-        var val = easeInOutQuad(currentTime, start, change, duration);
+        let val = easeInOutQuad(currentTime, start, change, duration);
         window.pageYOffset = val;
        // document.documentElement.scrollTop = val;
         window.scroll(0, val);
@@ -47,18 +50,18 @@ function scrollAnimate(el) {
     smoothScrollTo(document.documentElement, el.offsetTop, 400);
 }
 
-var links = document.getElementsByTagName('a');
+let links = document.getElementsByTagName('a');
 
-for (var i = 0; i < links.length; i++) {
+for (let i = 0; i < links.length; i++) {
     if (links[i].hasAttribute("href")) {
         if (links[i].getAttribute("href").startsWith("#")) {
 
             links[i].addEventListener("click", function (e) {
 
-                var elem = event.target;
+                let elem = event.target;
                 e.preventDefault();
 
-                var el = document.getElementById(elem.getAttribute("href").substring(1));
+                let el = document.getElementById(elem.getAttribute("href").substring(1));
 
                 if (el != null) {
                     scrollAnimate(el);
