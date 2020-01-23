@@ -121,9 +121,14 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#scroll-add-class" data-scroll-link>Доб .class при скролле, JS</a>
         </li>
-        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#to-top" data-scroll-link>Ссылка «вверх»</a>
         </li>
+
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#select" data-scroll-link>Select</a>
+        </li>
+
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#logo" data-scroll-link>Логотип</a>
         </li>
@@ -1433,12 +1438,12 @@
         </section>
 
         <section class="block-library" id="to-top">
-          <h2 class="block-library__title">Ссылка "вверх", JS.</h2>
+          <h2 class="block-library__title">Ссылка "вверх", JS</h2>
           <p>Ссылка «вверх» в нижнем правом углу страницы.</p>
           <p>Cкрипт <code>to-top.js</code>.</p>
           <span>Принцип:</span>
           <ul>
-            <li>Делаем классическую разметку для ссылки с <code>href="#некий_id"</code> + плюс расставляем в нужном месте ()ввсерху страницы) этот <code>id</code>.</li>
+            <li>Делаем классическую разметку для ссылки с <code>href="#некий_id"</code> + плюс расставляем в нужном месте (вверх страницы) этот <code>id</code>.</li>
             <li>Если JS не включен у пользователя, тогда ссылка видна сразу.</li>
             <li>Если JS включен, добавляем модификатор <code>"*--no--visible"</code> для ссылки (ссылка не видна).</li>
             <li>Далее, отлавливаем событие по скролу.</li>
@@ -1446,14 +1451,68 @@
             <li>Если скролл меньше указанного в Javascript-файле блока значения, добавляем этот же класс элементу (т.е. ссылке).</li>
             <li>Все.</li>
           </ul>
-          <p>P.S.</p>
+          <b>P.S.</b>
           <p>Можно просто сделать ссылку на <code>id</code> + использовать CSS - свойство <code>scroll-behavior: smooth;</code>.<br>
             Но!<br>
             <span class="attention">"Это не работает в IE + EDGE.</span><br>
             Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
 
-
           <a class="to-top" id="to-top-link" href="#font" aria-label="ссылка вверх страницы">↑</a>
+        </section>
+
+        <section class="block-library" id="select">
+          <h2 class="block-library__title">Custom <code>select</code>, JS</h2>
+          <p>Стилизация <code>select</code> на JS.</p>
+          <p>Автор и исходники:
+            <a href="https://github.com/YuraVolk/Js-Library" rel="noopener">https://github.com/YuraVolk/Js-Library</a>
+          </p>
+          <p>Cкрипт <code>cuctom-select.js</code>.</p>
+          <p>Принцип:</p>
+          <ul>
+
+            <li>Делаем такую разметку:<br>
+              <div class="blocks-library__example blocks-library__example--shown">
+                <pre class="code">
+&lt;div class="custom-select"&gt;<br>
+  &lt;select name="select"&gt;<br>
+    &lt;option value="test1">Test to select...&lt;/option&gt;<br>
+    &lt;option value="test2">Test 2&lt;/option&gt;<br>
+    &lt;option value="test3">Test 3&lt;/option&gt;<br>
+    &lt;option value="test4">Test 4&lt;/option&gt;<br>
+    &lt;option value="test5">Test 5&lt;/option&gt;<br>
+    &lt;option value="test6">Test 6&lt;/option&gt;<br>
+    &lt;/select&gt;<br>
+&lt;/div&gt;<br>
+             </pre>
+              </div>
+            </li>
+            <li>далее <code>cuctom-select.js</code> скрывает исходную разметку в html и добавляет новую с другими классами.</li>
+            <li>стилизация находится в <code>scss-файле</code> блока.</li>
+          </ul>
+
+          <b>P.S.</b>
+          <p>Ограничения.</p>
+          <p>Все селекты на странице будут:</p>
+          <ul>
+            <li>стилизованы одинаково </li>
+            <li>открываться вниз или вверх </li>
+            </li>
+          </ul>
+
+          <hr>
+          <br>
+
+          <div class="custom-select">
+            <select name="select">
+              <option value="test1">Test to select...</option>
+              <option value="test2">Test 2</option>
+              <option value="test3">Test 3</option>
+              <option value="test4">Test 4</option>
+              <option value="test5">Test 5</option>
+              <option value="test6">Test 6</option>
+            </select>
+          </div>
+
         </section>
 
         <section class="block-library" id="logo">
@@ -1888,24 +1947,27 @@ width: 0;
   <script src="js/ofi.min.js"></script>
   <script>objectFitImages();</script>
 
-  <script src="js/modal.js" async></script>
-  <script src="js/modal-2.js" async></script>
+  <script src="js/modal.js"></script>
+  <script src="js/modal-2.js"></script>
 
-  <script src="js/tab.js" async></script>
+  <script src="js/tab.js"></script>
 
-  <script src="js/burger.js" async></script>
-  <script src="js/burgers-some.js" async></script>
+  <script src="js/burger.js"></script>
+  <script src="js/burgers-some.js"></script>
 
-  <script src="js/main-nav.js" async></script>
+  <script src="js/main-nav.js"></script>
 
   <!--скрипт плавного скрола к якорю -->
-  <script src="js/scroll-anchor.js" async></script>
+  <script src="js/scroll-anchor.js"></script>
 
   <!--скрипт ссылки "вверх" -->
-  <script src="js/to-top.js" async></script>
+  <script src="js/to-top.js"></script>
 
   <!-- скрипт валидации полей формы -->
-  <script src="js/form-validation.js" async></script>
+  <script src="js/form-validation.js"></script>
+
+  <!-- скрипт custom-select -->
+  <script src="js/custom-select.js"></script>
 
   <!--=========================== -->
   <!--cкрипт для ползунка сравнения -->
