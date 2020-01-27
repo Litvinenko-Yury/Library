@@ -9,6 +9,7 @@
   <link rel="preload" href="fonts/opensansbold.woff2" as="font">
   <link rel="preload" href="fonts/opensanslight.woff2" as="font"> -->
   <link rel="stylesheet" href="css/style.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900&display=swap" rel="stylesheet">
 
   <!-- classic-favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
@@ -398,9 +399,11 @@
               Hover
             </a>
             <!--End of Button 3 -->
-            <a class="btn-set-1  btn-set-1__vbtn-2  btn-set-1__vbtn-2--mod  Vbtn-4" href="#">Hover</a>
+            <a class="btn-set-1  btn-set-1__vbtn-2  btn-set-1__vbtn-2--mod " href="#">Hover</a>
             <!--End of Button 4 -->
           </p>
+
+          <hr>
 
           <p class="block-library__bth-container">
             <a class="btn  btn__hoverable" href="#">
@@ -409,16 +412,27 @@
             </a>
           </p>
 
-          <p class="block-library__bth-container">
-            <a class="btn  test" href="#">Sample Button - animista</a>
+          <hr>
+
+          <p class="block-library__bth-container  block-library__bth-container--bg2">
+            <button class="btn-bubbles" style="--content: 'Hover me!';">
+              <div class="btn-bubbles__left"></div>
+              Hover me!
+              <div class="btn-bubbles__right"></div>
+            </button>
           </p>
 
+          <hr>
 
+          <p class="block-library__bth-container">
+            <p>Пример использования библиотеки <a href="https://animista.net/play/basic">animista</a></p>
+            <ul>
+              <li>В библиотеке выбрать нужный эффект анимации, скопировать CSS в отдельный класс (модификатор класса), н-р. <code>.elem--rotate-in-center</code>.</li>
+              <li>Далее скриптом добавлять класс с анимацией к нужному элементу.</li>
+            </ul>
+            <a class="btn  animista" href="#">Sample Button - animista</a>
+          </p>
         </section>
-
-
-
-
 
         <section class="block-library" id="mix">
           <h2 class="block-library__title">Когда создавать модификатор, когда — микс?</h2>
@@ -2025,6 +2039,9 @@ width: 0;
 
   <!-- скрипт custom-select -->
   <script src="js/custom-select.js"></script>
+
+  <!-- скрипт test -->
+  <script src="js/animista.js"></script>
 
   <!--=========================== -->
   <!--cкрипт для ползунка сравнения -->

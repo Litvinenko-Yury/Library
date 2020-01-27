@@ -1,0 +1,112 @@
+.btn-bubbles {
+  position: relative;
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  font-family: "Source Code Pro";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;
+  color: #ffffff;
+
+  background-color: $color-active;
+  box-shadow: $color-fb 2px 2px 22px;
+  border-radius: 10px;
+  z-index: 0;
+  overflow: hidden;
+
+  &:focus {
+    outline-color: transparent;
+    box-shadow: $color-active 2px 2px 22px;
+  }
+}
+
+.btn-bubbles__right::after,
+.btn-bubbles::after {
+  content: var(--content);
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  padding: 40px 40px;
+  pointer-events: none;
+}
+
+.btn-bubbles::after {
+  font-weight: 200;
+  top: -30px;
+  left: -20px;
+}
+
+.btn-bubbles__right,
+.btn-bubbles__left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.btn-bubbles__right {
+  left: 66%;
+}
+
+.btn-bubbles__left {
+  right: 66%;
+}
+
+.btn-bubbles__right::after {
+  top: -30px;
+  left: calc(-66% - 20px);
+
+  background-color: $gray--darken;
+  color: transparent;
+  transition: transform 0.4s ease-out;
+  transform: translate(0, -90%) rotate(0deg);
+}
+
+.btn-bubbles:hover .btn-bubbles__right::after {
+  transform: translate(0, -47%) rotate(0deg);
+}
+
+.btn-bubbles .btn-bubbles__right:hover::after {
+  transform: translate(0, -50%) rotate(-7deg);
+}
+
+.btn-bubbles .btn-bubbles__left:hover ~ .btn-bubbles__right::after {
+  transform: translate(0, -50%) rotate(7deg);
+}
+
+/* bubbles */
+.btn-bubbles::before {
+  content: "";
+  pointer-events: none;
+  opacity: 0.6;
+  background: radial-gradient(
+      circle at 20% 35%,
+      transparent 0,
+      transparent 2px,
+      #ffffff 3px,
+      #ffffff 4px,
+      transparent 4px
+    ),
+    radial-gradient(circle at 75% 44%, transparent 0, transparent 2px, #ffffff 3px, #ffffff 4px, transparent 4px),
+    radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, #ffffff 5px, #ffffff 6px, transparent 6px);
+
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: bubbles 5s linear infinite both;
+}
+
+@keyframes bubbles {
+  from {
+    transform: translate();
+  }
+
+  to {
+    transform: translate(0, -66.666%);
+  }
+}

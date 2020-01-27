@@ -83,4 +83,9 @@
   &--bg {
     background-color: $gray--light;
   }
+
+  &--bg2 {
+    padding: 2em;
+    background-color: $gray--darken;
+  }
 }
