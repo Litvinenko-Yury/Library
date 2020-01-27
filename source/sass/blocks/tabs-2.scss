@@ -15,11 +15,11 @@
   /*Анимация*/
   animation-duration: 1s;
   animation-fill-mode: both;
-  animation-name: tabs-2__fadeIn;
+  animation-name: tabs-2__tabs2;
 }
 
 /* Описываем анимацию свойства opacity */
-@keyframes tabs-2__fadeIn {
+@keyframes tabs-2__tabs2 {
   from {
     opacity: 0;
   }

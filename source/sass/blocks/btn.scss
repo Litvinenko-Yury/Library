@@ -16,7 +16,7 @@
   text-overflow: ellipsis;
   text-decoration: none;
   text-transform: none;
-  color: $color-main;
+  color: $text-color;
   background-color: $gray--light;
   background-image: none;
   border-radius: $btn-border-radius-base;
@@ -24,13 +24,9 @@
   border: 0;
   cursor: pointer;
 
-  &:hover {
-    text-decoration: none;
-    //color: $text-color;
-    background-color: darken($gray--light, 10%);
-  }
-
+  &:hover,
   &:focus {
+    text-decoration: none;
     //color: $text-color;
     background-color: darken($gray--light, 10%);
   }
@@ -39,8 +35,23 @@
     color: $color-active;
   }
 
+  &--disabled,
+  &:disabled {
+    opacity: $opacity;
+    cursor: not-allowed;
+    //pointer-events: none;
+    color: $text-color;
+    background-color: $gray--light;
+    // border-color: $gray-lighter;
+  }
+
   /*используется для оформления svg в кнопке только для Библитеки*/
   > svg {
     background: #222222;
   }
+
+  /*если в кнопке svg, задать для позиционирования svg внутри кнопки*/
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }

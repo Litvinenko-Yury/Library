@@ -38,6 +38,9 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#btn" data-scroll-link>Кнопка</a>
         </li>
         <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#btn-hover" data-scroll-link>Кнопка, Hover Effects</a>
+        </li>
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#mix" data-scroll-link>микс vs --модификатор</a>
         </li>
         <li class="off-canvas__menu-item">
@@ -329,14 +332,29 @@
 
         <section class="block-library" id="btn">
           <h2 class="block-library__title">Кнопка</h2>
-          <a class="btn" href="#">Кнопка-ссылка</a>
-          <button class="btn">Кнопка-button-с текстом</button>
-          <button class="btn" aria-label="Назначение кнопки">
-            <svg width="50" height="20" role="img">
-              <use xlink:href="#icon-cart" />
-            </svg>
-          </button>
-          <input class="btn" value="Кнопка-input" type="button" name="submit">
+          <p>
+            <a class="btn" href="#">Кнопка-ссылка</a>
+            <button class="btn">Кнопка-button-с текстом</button>
+            <button class="btn" aria-label="Назначение кнопки">
+              <svg width="50" height="20" role="img">
+                <use xlink:href="#icon-cart" />
+              </svg>
+            </button>
+            <input class="btn" value="Кнопка-input" type="button" name="submit">
+          </p>
+
+          <p>
+            <p>С модификатором --disabled</p>
+            <a class="btn  btn--disabled" href="#">Кнопка-ссылка</a>
+            <button class="btn  btn--disabled">Кнопка-button-с текстом</button>
+            <button class="btn  btn--disabled" aria-label="Назначение кнопки">
+              <svg width="50" height="20" role="img">
+                <use xlink:href="#icon-cart" />
+              </svg>
+            </button>
+            <input class="btn  btn--disabled" value="Кнопка-input" type="button" name="submit">
+          </p>
+
           <hr>
           <p>Как задавать <code>margin</code> и кастомные стили для БЭМ-блоков?</p>
           <p>Отступы и кастомные стили (очень специфичные) мы задаем <i>в зависимости</i> от родительского блока в котором находиться кнопка (например, кнопка в хедере).</p>
@@ -363,6 +381,33 @@
           </pre>
           </div>
         </section>
+
+        <section class="block-library" id="btn-hover">
+          <h2 class="block-library__title">Кнопка, Hover Effects</h2>
+          <p class="block-library__bth-container">
+            <a class="btn-set-1  Vbtn-1" href="#">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%"></rect>
+              </svg>Hover</a>
+            <!--End of Button 1 -->
+            <a class="btn-set-1  Vbtn-2" href="#">Hover</a>
+            <!--End of Button 2 -->
+            <a class="btn-set-1  Vbtn-3" href="#"><svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%"></rect>
+              </svg>
+              Hover
+            </a>
+            <!--End of Button 3 -->
+            <a class="btn-set-1  Vbtn-4" href="#">Hover</a>
+            <!--End of Button 4 -->
+          </p>
+
+
+        </section>
+
+
+
+
 
         <section class="block-library" id="mix">
           <h2 class="block-library__title">Когда создавать модификатор, когда — микс?</h2>
@@ -843,7 +888,7 @@
           </div>
         </section>
 
-        <section class="block-library" id="video">
+        <section class="block-library  attention" id="video">
           <h2 class="block-library__title">Видео</h2>
           <p>Обязательно проверять кросс-браузерность.<br> В списке подозреваемых: IE + EDGE.</p>
 
@@ -1517,6 +1562,7 @@
 
         <section class="block-library" id="logo">
           <h2 class="block-library__title">Логотип </h2>
+
           <p>как ссылка с <code>img</code>:</p>
           <a class="logo  logo-img" href="#!">
             <img src="img/logo-demo.svg" alt="Logo" width="64" height="15">
