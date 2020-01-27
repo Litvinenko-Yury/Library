@@ -5,7 +5,7 @@
 /*Закладки - табы - tabs*/
 /*=============================*/
 
-'use strict'
+'use strict';
 
 let tab00 = document.querySelector("[href='#tab00']");
 let tab01 = document.querySelector("[href='#tab01']");
