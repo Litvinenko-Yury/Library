@@ -76,4 +76,10 @@
 .block-library__bth-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0;
+  padding: 0.5em;
+
+  &--bg {
+    background-color: $gray--light;
+  }
 }
