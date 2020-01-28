@@ -605,9 +605,7 @@ hr {
   margin-bottom: 0;
   padding: 0.5em; }
   .block-library__bth-container--bg {
-    background-color: #eeeeee; }
-  .block-library__bth-container--bg2 {
-    padding: 2em;
+    padding: 3em;
     background-color: #303030; }
 
 .breadcrumbs {
@@ -862,8 +860,8 @@ hr {
   border-radius: 4px;
   border: 0;
   cursor: pointer;
-  /*используется для оформления svg в кнопке только для Библитеки*/
-  /*если в кнопке svg, задать для позиционирования svg внутри кнопки*/ }
+  /*если в кнопке svg, задать для позиционирования svg внутри кнопки*/
+  /*используется для оформления svg в кнопке только для Библитеки*/ }
   .btn--disabled, .btn:disabled {
     opacity: 0.4;
     cursor: not-allowed;
@@ -871,9 +869,56 @@ hr {
     background-color: #eeeeee; }
   .btn > svg {
     background: #222222; }
+  .btn--flare {
+    /*это эффект блика на .btn*/ }
+    .btn--flare::before {
+      content: "";
+      position: absolute;
+      left: -40px;
+      top: -100px;
+      z-index: 1;
+      display: block;
+      width: 15px;
+      height: 300px;
+      background: #ffffff;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      -webkit-transition: all;
+      transition: all;
+      -webkit-animation-name: slideme;
+              animation-name: slideme;
+      -webkit-animation-duration: 2s;
+              animation-duration: 2s;
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s;
+      -webkit-animation-timing-function: ease-in-out;
+              animation-timing-function: ease-in-out;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+
+@-webkit-keyframes slideme {
+  0% {
+    left: -30px;
+    margin-left: 0; }
+  30% {
+    left: 110%;
+    margin-left: 80px; }
+  100% {
+    left: 110%;
+    margin-left: 80px; } }
+
+@keyframes slideme {
+  0% {
+    left: -30px;
+    margin-left: 0; }
+  30% {
+    left: 110%;
+    margin-left: 80px; }
+  100% {
+    left: 110%;
+    margin-left: 80px; } }
 
 /*=========================================*/
-/*===============*/
 /**
  * ----------------------------------------
  * hover circle
