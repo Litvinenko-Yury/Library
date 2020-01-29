@@ -87,6 +87,9 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#background" data-scroll-link="">Background</a>
         </li>
         <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#drop-shadow" data-scroll-link="">filter: drop-shadow(); + clip-pach</a>
+        </li>
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  attention-menu" data-toggle-native="off-canvas" href="#video" data-scroll-link="">video</a>
         </li>
         <li class="off-canvas__menu-item">
@@ -922,6 +925,44 @@
             </pre>
           </div>
         </section>
+
+        <section class="block-library" id="drop-shadow">
+          <h2 class="block-library__title">Тень вокруг не-прямоугольного элемента</h2>
+          <h3 class="block-library__title"><code>clip-path: polygon();</code> + <code>filter: drop-shadow();</code></h3>
+          <br>
+          <p class="attention">Не поддерживается IE!</p>
+          <p><b>Принцип:</b></p>
+          <ul>
+            <li>Тень по контуру изображения: <code>filter: drop-shadow();</code><br>
+              Почитать:
+              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow">MDN drop-shadow();</a>
+            </li>
+            <li>Контур, вокруг которого будет тень, может быть любым.<br>
+              В данном примере, контур сделан с помощью<code>clip-path: polygon();</code><br>
+              Почитать:
+              <a href="https://developer.mozilla.org/ru/docs/Web/CSS/clip-path">MDN clip-path</a>
+            </li>
+          </ul>
+
+          <p><b>Как сделать:</b></p>
+          <ul>
+            <li>Задаем блоку нужный контур с помощью <code> clip-path:();</code>, например как этом примере;</li>
+            <li>Обертке задаем тень <code>filter: drop-shadow();</code></li>
+          </ul>
+          <br>
+          <div class="wrap-clip-pach">
+            <div class="wrap-clip-pach__inner">inner
+            </div>
+          </div>
+
+
+
+
+
+
+        </section>
+
+
 
         <section class="block-library  attention" id="video">
           <h2 class="block-library__title">Видео</h2>
