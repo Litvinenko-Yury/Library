@@ -1592,6 +1592,17 @@ ul {
   display: block;
   width: 100%; }
 
+.field-text__input-wrap-pseudo {
+  /*'эти стили нужны для скрипта  active-pseudo-to-input.js*/ }
+  .field-text__input-wrap-pseudo--1 {
+    position: relative; }
+    .field-text__input-wrap-pseudo--1::before {
+      content: "*";
+      position: absolute;
+      top: 0;
+      left: 5px;
+      color: red; }
+
 .field-text__input {
   width: 100%;
   margin-bottom: 1em;
@@ -2107,9 +2118,11 @@ ul {
 
 .off-canvas__menu-link {
   display: block;
-  padding-top: 5px;
+  padding-top: 7.5px;
   padding-right: 12px;
   padding-left: 12px;
+  padding-bottom: 7.5px;
+  line-height: 1.2em;
   color: #eeeeee; }
   .off-canvas__menu-link:hover, .off-canvas__menu-link:focus {
     text-decoration: none;
