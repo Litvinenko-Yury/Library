@@ -92,6 +92,10 @@ hr {
   margin-top: $typo-margin-vertical * 3;
 }
 
+ul {
+  margin-top: 0;
+}
+
 .visually-hidden:not(:focus):not(:active) {
   position: absolute;
 
