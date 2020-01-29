@@ -34,9 +34,11 @@
 
 .off-canvas__menu-link {
   display: block;
-  padding-top: $field-padding-vertical;
+  padding-top: $field-padding-vertical * 1.5;
   padding-right: $field-padding-horizontal;
   padding-left: $field-padding-horizontal;
+  padding-bottom: $field-padding-vertical * 1.5;
+  line-height: $line-height-auto;
   color: $gray--light;
 
   &:hover,

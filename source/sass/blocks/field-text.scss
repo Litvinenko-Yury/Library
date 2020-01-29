@@ -36,6 +36,22 @@
 //   }
 // }
 
+.field-text__input-wrap-pseudo {
+  /*'эти стили нужны для скрипта  active-pseudo-to-input.js*/
+  &--1 {
+    position: relative;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      top: 0;
+      left: 5px;
+      color: red;
+    }
+  }
+}
+
+
 .field-text__input {
   width: 100%;
   margin-bottom: 1em;
