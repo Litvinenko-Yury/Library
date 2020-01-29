@@ -1,3 +1,8 @@
+/*=============================*/
+/*script  active-pseudo-to-input.js*/
+/*author  https://github.com/Litvinenko-Yury*/
+/*=============================*/
+
 'use strict';
 //Скрипт для input - добавляет/убирает символ "*" в поле input
 
