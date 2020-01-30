@@ -1,3 +1,5 @@
+/*скрипт для добавления анимаций различных к элементам*/
+
 'use strict';
 
 let btnAnim = document.querySelector(".animista");

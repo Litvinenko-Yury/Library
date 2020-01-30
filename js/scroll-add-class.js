@@ -1,5 +1,5 @@
 /*=============================*/
-/*script  scroll--add-class.js*/
+/*script  scroll-add-class.js*/
 /*author  https://github.com/Litvinenko-Yury*/
 
 /*Добавление класса при скроле*/

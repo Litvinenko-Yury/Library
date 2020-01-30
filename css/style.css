@@ -1911,7 +1911,7 @@ ul {
   outline: 1px dotted #283645; }
 
 @media (min-width: 1200px) {
-  .main-nav > .burger {
+  .main-nav .burger {
     display: none; } }
 
 .main-nav__list {
