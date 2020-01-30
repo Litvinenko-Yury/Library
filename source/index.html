@@ -334,7 +334,7 @@
           <hr>
           <p><b>Где брать шрифты / проверять лицензию / конвертировать tiff → woff2/woff:</b></p>
           <ul>
-            <li>бесплатно, в .woff2 / .woff: <a href="https://google-webfonts-helper.herokuapp.com/fonts"> google-webfonts-helper</a></li>
+            <li>бесплатно, в .woff2 / .woff: <a href="https://google-webfonts-helper.herokuapp.com/fonts" rel="noopener"> google-webfonts-helper</a></li>
             <li>бесплатно, в .ttf: <a href="https://fonts.google.com/" rel="noopener">Google Fonts</a></li>
             <li>бесплатно, в .otf: <a href="https://www.fontsquirrel.com/" rel="noopener"> fontsquirrel</a></li>
             <li><span>платно: </span><a href="https://www.myfonts.com/" rel="noopener">MyFonts</a></li>
@@ -449,13 +449,13 @@
 
           <hr>
           <p class="block-library__bth-container">
-            <p>А здесь пример использования библиотеки <a href="https://animista.net">animista</a>.</p>
-            <p> Также есть библиотека <a href="http://gearmobile.github.io/css/library-animate-css/">animate.css</a>.</p>
+            <p>А здесь пример использования библиотеки <a href="https://animista.net" rel="noopener">animista</a>.</p>
+            <p> Также есть библиотека <a href="http://gearmobile.github.io/css/library-animate-css/" rel="noopener">animate.css</a>.</p>
             <ul>
               <li>В библиотеке выбрать нужный эффект анимации, скопировать CSS в отдельный класс (модификатор класса), н-р. <code>.elem--rotate-in-center</code>.</li>
               <li>Далее скриптом <code>animista.js</code> добавлять класс с анимацией к нужному элементу.</li>
             </ul>
-            <a class="btn  animista" href="#"><b>Hover me</b> - animista</a>
+            <a class="btn  animista" href="#!"><b>Hover me</b> - animista</a>
           </p>
         </section>
 
@@ -1048,6 +1048,8 @@
             <li>Задаем блоку нужный контур с помощью <code> clip-path:();</code>, например как этом примере;</li>
             <li>Обертке блока задаем тень <code>filter: drop-shadow();</code></li>
           </ul>
+          <p>Генератор clip-path: <a href="https://bennettfeely.com/clippy/" rel="noopener">СSS clip-path maker</a></p>
+
           <br>
           <div class="wrap-clip-pach">
             <div class="wrap-clip-pach__inner">inner
@@ -1547,7 +1549,7 @@
 
         <section class="block-library" id="icon-close">
           <h2 class="block-library__title">Иконка "закрыть" - Х</h2>
-          <p>Простая, не анмированная иконка.</p>
+          <p>Простая, не анимированная иконка.</p>
           <button class="icon-close" type="button" aria-label="Закрыть" title="Закрыть">
             <span>Закрыть</span>
         </section>
@@ -1557,75 +1559,79 @@
         <section class="block-library" id="main-nav">
           <h2 class="block-library__title">Главная навигация (меню)</h2>
           <p>На малых ширинах преобразуется в мобильный вид, скрывается/показывается по клику на бургер, если JS включен.</p>
-          <p>Если бургер один в проекте:<br>
-            - показать/скрыть бургер при наличии/отсутствии JS: <code>main-nav.js</code>.<br>
-            - анимация превращения бургера в крестик <code>burger.js</code>.<br>
-            - открытие/закрытие меню на mob - см. комментарий в <code>main-nav.js</code>.<p>
 
-              <p>Если бургеров несколько в проекте:<br>
-                - скрипт <code>burgers-some.js</code>,<br> который:<br>
-                1. определяет, на каком бургере был клик;<br>
-                2. анимирует значек бургера - в "крестик";<br>
-                3.переключает класс элементу с нужным ID<br>
-              </p>
+          <p><b>Состояние без включенного JS</b>:</p>
+          <ul>
+            <li>моб.меню - открыто,</li>
+            <li>бургер скрыт - в разметке есть <code>.burger--no-js</code>;</li>
+            <li>На десктопной ширине бургер - скрыт,<br> меню принимает горизонтальный вид - <code>.main-nav.scss</code></li>
+          </ul>
 
-              <p>Далее: имеем два основных состояния меню:</p>
+          <li>На десктопной ширине бургер - скрыт,<br> меню принимает горизонтальный вид - <code>.main-nav.scss</code></li>
+          <ul>
+            <li>моб.меню - скрыто, скрипт добавляет <code>.main-nav__list--js</code> </li>
+            <li>бургер - показан, - скрипт удаляет <code>.burger--no-js</code>;</li>
+            <li>по клику на бургер - скрипт изменяет высоту меню и модифицирует бургер;</li>
+            <li>На десктопной ширине бургер - скрыт,<br> меню принимает горизонтальный вид - <code>.main-nav.scss</code></li>
+          </ul>
+
+          <hr>
+          <p><b>Блоки в разметке:</b></p>
+          <ul>
+            <li>
+              <code><b>.main-nav</b></code>
               <ul>
-                <li>Исходное состояние меню: без включенного JS;</li>
-                <li>Cостояние меню с включенным JS: скриптом изменяем состояние меню до нужного вида.</li>
-                <li>На десктопной ширине бургер - скрыт, меню принимает горизонтальный вид.</li>
+                <li><b>html</b>: разметка готова в этом шаблоне <code>"main-nav"</code>;</li>
+                <li><b>css</b>: подключить <code>main-nav.scss</code>;</li>
+                <li><b>js</b>: подключить <code>main-nav.js</code></li>
               </ul>
+            </li>
+            <li>
+              <code><b>.logo</b></code>
+              <ul>
+                <li><b>html</b>: использовать нужную разметку из шаблона <code>"logo"</code>, в зависимости от макета. Подключить <code>logo.scss</code>;</li>
+                <li><b>css</b>: подключить <code>logo.scss</code>;</li>
+                <li><b>js</b>: <b> нет;</li>
+              </ul>
+            </li>
+            <li>
+              <code><b>.burger</b></code>
+              <ul>
+                <li><b>html</b>: разметка готова в этом шаблоне <code>"main-nav"</code>;</li>
+                <li><b>css</b>: подключить <code>burger.scss</code>;</li>
+                <li><b>js</b>: <b> нет!; </b> управление анимацией бургера в <code>main-nav.js</code>;</li>
+              </ul>
+            </li>
+          </ul>
 
-              <table>
-                <tbody class="block-library__table-head">
-                  <tr>
-                    <td></td>
-                    <td><small>исх. состояние</small></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td><b>нет JS</b></td>
-                    <td><b>есть JS</b></td>
-                  </tr>
-                </tbody>
-                <tr>
-                  <td>бургер</td>
-                  <td>скрыт,<br><small>в разметку добавлен .burger--no-js</small></td>
-                  <td>виден,<br><small>JS-блока,<code>main-nav.js</code>, удаляет <code>.burger--no-js</code>. <br>Бургер становится виден.</small></td>
-                </tr>
-                <tr>
-                  <td>меню</td>
-                  <td>открыто</td>
-                  <td>закрыто,<br><small>JS-блока, <code>main-nav.js</code>, добавляет к <code>.main-nav__list</code> модификатор <code>.main-nav__list--js</code>. который делает высоту <code>.main-nav__list</code> = 0</small></td>
-                </tr>
-                <tr>
-                  <td>клик на бургер</td>
-                  <td>-</td>
-                  <td>меню открывается по клику на бургер:<br><small>по клику на бургер, <code> burger-test.js</code> добавляет к <code>.main-nav__list</code> модификатор <code>.main-nav__list--show</code>, который увеличивает высоту <code>.main-nav__list</code></small></td>
-                </tr>
-              </table>
+          <hr>
 
-              <nav class="main-nav" id="nav">
-                <button class="burger  burger--no-js" aria-label="Показать главное меню" data-target-id="main-nav__list" data-target-class-toggle="main-nav__list--show">
-                  <span>Показать главное меню</span>
-                </button>
+          <nav class="main-nav">
+            <div class="main-nav__inner">
+              <a class="logo  logo--img" href="#!">
+                <img src="img/logo-demo.svg" alt="Logo" width="64" height="15">
+              </a>
 
-                <ul class="main-nav__list" id="main-nav__list">
-                  <li class="main-nav__item">
-                    <a class="main-nav__link" href="#">Пункт меню 1</a>
-                  </li>
-                  <li class="main-nav__item">
-                    <a class="main-nav__link" href="#">Пункт меню 2</a>
-                  </li>
-                  <li class="main-nav__item">
-                    <a class="main-nav__link" href="#">Пункт меню 3</a>
-                  </li>
-                  <li class="main-nav__item">
-                    <a class="main-nav__link" href="#">Пункт меню 4</a>
-                  </li>
-                </ul>
-              </nav>
+              <button class="burger  burger--no-js" aria-label="Показать главное меню">
+                <span>Показать главное меню</span>
+              </button>
+            </div>
+
+            <ul class="main-nav__list" id="main-nav__list">
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="#">Пункт меню 1</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="#">Пункт меню 2</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="#">Пункт меню 3</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="#">Пункт меню 4</a>
+              </li>
+            </ul>
+          </nav>
         </section>
 
         <!-- ============================================ -->
@@ -1771,7 +1777,7 @@
           <h2 class="block-library__title">Логотип </h2>
 
           <p>как ссылка с <code>img</code>:</p>
-          <a class="logo  logo-img" href="#!">
+          <a class="logo  logo--img" href="#!">
             <img src="img/logo-demo.svg" alt="Logo" width="64" height="15">
           </a>
 
@@ -2232,7 +2238,7 @@ width: 0;
 
   <script src="js/tab.js"></script>
 
-  <script src="js/burger.js"></script>
+  <!-- <script src="js/burger.js"></script> -->
   <script src="js/burgers-some.js"></script>
 
   <script src="js/main-nav.js"></script>

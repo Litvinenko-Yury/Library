@@ -16,8 +16,6 @@ let burger = document.querySelector(".burger");
 burger.addEventListener("click", function (event) {
   event.preventDefault();
 
-  /*добавляем модификатор на burger
-      бургер анимируется в крестик
-  */
+  //*добавляем модификатор на burger, бургер анимируется в крестик
   burger.classList.toggle("burger--close");
 });

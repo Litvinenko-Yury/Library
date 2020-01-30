@@ -2,7 +2,7 @@
   outline: 1px dotted $color-main;
 }
 
-.main-nav > .burger {
+.main-nav .burger {
   @media (min-width: $desktop-width) {
     display: none;
   }
@@ -29,7 +29,7 @@
   }
 
   &--show {
-     /*величение высоты меню*/
+    /*величение высоты меню*/
     @media (max-width: $desktop-width - 1) {
       max-height: 800px;
       overflow: hidden;

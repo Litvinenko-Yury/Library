@@ -38,6 +38,17 @@ gulp.task("cleanFolderBuild", function () {
   return del("build");
 });
 
+//копируем папку JS  из папки source в папку build.
+gulp.task("copyJsBuild", function () {
+  return gulp.src([
+    "source/js/**",
+    "!source/js/README"
+  ], {
+    base: "source"
+  })
+    .pipe(gulp.dest("build"));
+});
+
 /*делаем из scss-файлов css-файл (gulp-sass), далее расставляем префиксы (postcss + autoprefixer), далее минифицируем css-файл (gulp-csso), переименовываем (gulp-rename) его в "style.min.css", и сохраняем в build/css.*/
 gulp.task("css", function () {
   return gulp.src("source/sass/style.scss")
@@ -102,8 +113,8 @@ gulp.task("server", function () {
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
   gulp.watch("source/img/icon-*.svg", gulp.series("svg_sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
+  gulp.watch("source/js/*.js", gulp.series("copyJsBuild", "refresh"));
   //gulp.watch("source/js/*.js", gulp.series("minify_js", "refresh"));
-  gulp.watch("source/js/*.js", gulp.series("refresh"));
 });
 
 //используем browser-sync для перезапуска страницы
@@ -119,7 +130,6 @@ gulp.task("build", gulp.series(
   "svg_sprite",
   "html",
   "minify_html"
-  //"minify_js"
 ));
 
 gulp.task("start", gulp.series("build", "server"));
