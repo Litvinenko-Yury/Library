@@ -65,6 +65,9 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#active-pseudo" data-scroll-link>Активный псевдоэлемент в поле input</a>
         </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#input-motion" data-scroll-link>input motion</a>
+        </li>
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#del-bg-click" data-scroll-link>Del синий фон при клике</a>
         </li>
@@ -350,7 +353,7 @@
             <a class="btn" href="#">Кнопка-ссылка</a>
             <button class="btn">Кнопка-button-с текстом</button>
             <button class="btn" aria-label="Назначение кнопки">
-              <svg width="50" height="20" role="img">
+              <svg width="15" height="15" role="img">
                 <use xlink:href="#icon-cart" />
               </svg>
             </button>
@@ -362,7 +365,7 @@
             <a class="btn  btn--disabled" href="#">Кнопка-ссылка</a>
             <button class="btn  btn--disabled">Кнопка-button-с текстом</button>
             <button class="btn  btn--disabled" aria-label="Назначение кнопки">
-              <svg width="50" height="20" role="img">
+              <svg width="15" height="15" role="img">
                 <use xlink:href="#icon-cart" />
               </svg>
             </button>
@@ -805,6 +808,44 @@
               <span class="field-text__help-text">* - Подсказка под полем - E-MAIL</span>
             </span>
           </label>
+        </section>
+
+        <!-- ============================================ -->
+
+        <section class="block-library" id="input-motion">
+          <h2 class="block-library__title">Как сделать выдвигающийся <code>input</code></h2>
+          <p>Ниже представлен пример реализации.<br>
+            Это не готовый БЭМ-блок, а пример!</p>
+
+          <p>Принцип: по focus анимируется ширина input от 0 до заданного значения.</p>
+
+          <p>input выезжает слева:</p>
+          <div class="input-motion">
+            <form>
+              <div class="input-motion__wrap">
+                <input class="input-motion__input  input-motion__input--left" type="text" placeholder="Искать здесь...">
+                <button class="btn  input-motion__btn  input-motion__btn--left" aria-label="Назначение кнопки">
+                  <svg width="15" height="15" role="img">
+                    <use xlink:href="#icon-cart" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <p>input выезжает справа:</p>
+          <div class="input-motion">
+            <form>
+              <div class="input-motion__wrap">
+                <input class="input-motion__input  input-motion__input--right" type="text" placeholder="Искать здесь...">
+                <button class="btn  input-motion__btn  input-motion__btn--right" aria-label="Назначение кнопки">
+                  <svg width="15" height="15" role="img">
+                    <use xlink:href="#icon-cart" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
         </section>
 
         <!-- ============================================ -->
@@ -2015,7 +2056,7 @@
                     </button>
                     <a class="card__overlay-link" href="#!" aria-label="link to view">
                       <svg width="25" height="25" role="img">
-                        <use xlink:href="#icon-lupa" />
+                        <use xlink:href="#icon-magnifier" />
                       </svg>
                     </a>
                   </div>

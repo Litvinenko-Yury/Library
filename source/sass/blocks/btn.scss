@@ -26,9 +26,9 @@
   cursor: pointer;
 
   /*если в кнопке svg, задать для позиционирования svg внутри кнопки*/
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
 
   // &:hover,
   // &:focus {
@@ -57,6 +57,7 @@
   }
 
   &--flare {
+    /*======================*/
     /*это эффект блика на .btn*/
 
     &::before {

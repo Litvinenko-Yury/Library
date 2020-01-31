@@ -1,0 +1,58 @@
+.input-motion {
+  margin-bottom: 15px;
+}
+
+.input-motion__wrap {
+  position: relative;
+  width: 250px;
+  height: 42px;
+
+  outline: 1px dotted darkblue;
+}
+
+.input-motion__input {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  height: 42px;
+  width: 0;
+  padding: 0 0 0 50px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  background: transparent;
+  transition: 0.8s cubic-bezier(0, 0.8, 0.8, 1);
+  cursor: pointer;
+
+  &:focus {
+    z-index: 1;
+    width: 250px;
+    border-bottom: 2px solid red;
+  }
+
+  &--left {
+    left: 0;
+  }
+
+  &--right {
+    right: 0;
+  }
+}
+
+.input-motion__btn {
+  position: absolute;
+  top: 0;
+  height: 42px;
+  width: 42px;
+  background: #cccccc;
+  border: none;
+  cursor: pointer;
+
+  &--left {
+    left: 0;
+  }
+
+  &--right {
+    right: 0;
+  }
+}
