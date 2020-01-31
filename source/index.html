@@ -170,6 +170,9 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#svg-use" data-scroll-link>svg > use</a>
         </li>
         <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#svg-vivus" data-scroll-link>vivus.js - drawing animation on SVG</a>
+        </li>
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#stylelint" data-scroll-link>stylelint</a>
         </li>
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
@@ -1852,6 +1855,73 @@
             <use xlink:href="#icon-pink-white-desktop" />
           </svg>
         </a>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="svg-vivus">
+        <h2 class="block-library__title">Vivus.js - рисование анимации для SVG</h2>
+        <p>Начало: <a href="https://maxwellito.github.io/vivus-instant/" rel="noopener">vivus-instant</a></p>
+        <p>Документация: <a href="https://github.com/maxwellito/vivus" rel="noopener">github.com/maxwellito/vivus</a></p>
+        <p>Как использовать  <code>vivus-instant</code> для анимированного текста:</p>
+
+        <ul>
+          <li><b>в Illustrator:</b>
+            <ul>
+              <li>набрать нужный текст;</li>
+              <li>тексту задать обводку с толщиной линии и цветом;</li>
+              <li>заливку тексту задать прозрачную;</li>
+              <li>должен получиться контурный текст;</li>
+              <li>при экспорте svg указать: шрифт - преобразовать в кривые.</li>
+            </ul>
+          </li>
+          <li><b>в vivus-instant:</b>
+            <ul>
+              <li>полученный svg-файл закинуть в vivus-instant;</li>
+              <li>настроить праметры анимации</li>
+              <li>сохранить файл с анимацией в папку проекта;</li>
+            </ul>
+          </li>
+          <li><b>в разметке</b> вставить svg > use c с нужным id.</li>
+        </ul>
+
+        <p>Для просмотра анимированного SVG, обновить страницу.</p>
+
+        <p class="attention  warning">Ошибка! При встраивании на страницу через svg-sprite не работает.</p>
+
+        <div style="outline: 1px dotted #cccccc;">
+          <svg width="100%" height="200" viewBox="0 0 275 70.9">
+            <path d="M.71.71v8.21h24.07v61.28h9v-61.28h24.04v-8.21zm79.91 0v69.49h44.38v-8.2h-35.42v-25.83h35.42v-8.17h-35.42v-19h35.42v-8.29zm64.93 0l22.95 34.76-23.5 34.73h9.78l18.83-28.61 18.39 28.61h10.36l-23.23-35.15 23.27-34.34h-9.82l-18.58 28.23-18.13-28.23zm71.63 0v8.21h24.08v61.28h9v-61.28h24.08v-8.21z" stroke="#ff6347" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill="none" class="rfoHpnBw_0">
+            </path>
+            <style data-made-with="vivus-instant">
+              .rfoHpnBw_0 {
+                stroke-dasharray: 1220 1222;
+                stroke-dashoffset: 1221;
+                animation: rfoHpnBw_draw 6666ms ease-in 0ms forwards;
+              }
+
+              @keyframes rfoHpnBw_draw {
+                100% {
+                  stroke-dashoffset: 0;
+                }
+              }
+
+              @keyframes rfoHpnBw_fade {
+                0% {
+                  stroke-opacity: 1;
+                }
+
+                97.1830985915493% {
+                  stroke-opacity: 1;
+                }
+
+                100% {
+                  stroke-opacity: 0;
+                }
+              }
+            </style>
+          </svg>
+        </div>
       </section>
 
       <!-- ============================================ -->
