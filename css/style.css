@@ -1269,7 +1269,7 @@ ul {
     right: 1em;
     width: 30px;
     height: 30px;
-    background-image: url("../img/bg-arrow.svg");
+    background-image: url("../img/vector/bg-arrow.svg");
     background-repeat: no-repeat;
     background-size: contain;
     -webkit-transform: translateY(-50%) rotateX(0deg);
