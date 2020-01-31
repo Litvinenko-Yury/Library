@@ -68,12 +68,12 @@ gulp.task("css", function () {
 
 //собрать svg-спрайт (gulp-svgstore), переименовать спрайт в "svg_sprite.svg" (gulp-rename), и сохранить в build/img.
 gulp.task("svg_sprite", function () {
-  return gulp.src("source/img/icon-*.svg")
+  return gulp.src("source/img/vector/icon-*.svg")
     .pipe(svgstore({
       inlineSvg: true
     }))
     .pipe(rename("svg_sprite.svg"))
-    .pipe(gulp.dest("build/img"));
+    .pipe(gulp.dest("build/img/vector"));
 });
 
 //инклюдим svg-спрайт в разметку html-файла
