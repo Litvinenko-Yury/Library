@@ -873,6 +873,7 @@ ul {
   .btn > svg {
     background: #222222; }
   .btn--flare {
+    /*======================*/
     /*это эффект блика на .btn*/ }
     .btn--flare::before {
       content: "";
@@ -1790,6 +1791,51 @@ ul {
   opacity: 0.6;
   cursor: ew-resize; }
 
+.input-motion {
+  margin-bottom: 15px; }
+
+.input-motion__wrap {
+  position: relative;
+  width: 250px;
+  height: 42px;
+  outline: 1px dotted darkblue; }
+
+.input-motion__input {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  height: 42px;
+  width: 0;
+  padding: 0 0 0 50px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  background: transparent;
+  -webkit-transition: 0.8s cubic-bezier(0, 0.8, 0.8, 1);
+  transition: 0.8s cubic-bezier(0, 0.8, 0.8, 1);
+  cursor: pointer; }
+  .input-motion__input:focus {
+    z-index: 1;
+    width: 250px;
+    border-bottom: 2px solid red; }
+  .input-motion__input--left {
+    left: 0; }
+  .input-motion__input--right {
+    right: 0; }
+
+.input-motion__btn {
+  position: absolute;
+  top: 0;
+  height: 42px;
+  width: 42px;
+  background: #cccccc;
+  border: none;
+  cursor: pointer; }
+  .input-motion__btn--left {
+    left: 0; }
+  .input-motion__btn--right {
+    right: 0; }
+
 .input-search__d6 {
   position: relative;
   padding-top: 1em;
@@ -1838,7 +1884,7 @@ ul {
   height: 30px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-image: url("../img/icon-lupa.svg");
+  background-image: url("../img/icon-magnifier.svg");
   background-repeat: no-repeat;
   background-size: contain; }
 
