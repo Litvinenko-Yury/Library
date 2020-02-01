@@ -197,7 +197,7 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#triangle" data-scroll-link>Поток треугольников</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#triangle" data-scroll-link>Поток треугольников</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#rubber-height" data-scroll-link>Блок на всю свободную высоту</a>
         </li>
       </ul>
     </aside>
@@ -1863,7 +1863,7 @@
         <h2 class="block-library__title">Vivus.js - рисование анимации для SVG</h2>
         <p>Начало: <a href="https://maxwellito.github.io/vivus-instant/" rel="noopener">vivus-instant</a></p>
         <p>Документация: <a href="https://github.com/maxwellito/vivus" rel="noopener">github.com/maxwellito/vivus</a></p>
-        <p>Как использовать  <code>vivus-instant</code> для анимированного текста:</p>
+        <p>Как использовать <code>vivus-instant</code> для анимированного текста:</p>
 
         <ul>
           <li><b>в Illustrator:</b>
@@ -1892,7 +1892,34 @@
         <div style="margin-top: 25px; outline: 1px dotted #cccccc;">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.8 26.59">
             <path d="M20.5,7.93H12.27V30.8H8.81V7.93H.6V5.2H20.5Zm18.95,11H27.72v9.14H41.24V30.8h-17V5.2H41V7.93H27.72v8.28H39.45Zm14.12-3.74,6-10h4.18L55.6,17.89l8.3,12.9H59.77L53.63,20.64,47.48,30.8H43.3l8.3-12.9L43.47,5.2h4.15ZM85.4,7.93H77.17V30.8H73.71V7.93H65.5V5.2H85.4Z" transform="translate(-0.1 -4.7)" style="fill: none;stroke: #1d71b8;stroke-linecap: round;stroke-linejoin: round" class="WpClYHnz_0"></path>
-          <style data-made-with="vivus-instant">.WpClYHnz_0{stroke-dasharray:442 444;stroke-dashoffset:443;animation:WpClYHnz_draw 20000ms linear 0ms forwards;}@keyframes WpClYHnz_draw{100%{stroke-dashoffset:0;}}@keyframes WpClYHnz_fade{0%{stroke-opacity:1;}97.1830985915493%{stroke-opacity:1;}100%{stroke-opacity:0;}}</style></svg>
+            <style data-made-with="vivus-instant">
+              .WpClYHnz_0 {
+                stroke-dasharray: 442 444;
+                stroke-dashoffset: 443;
+                animation: WpClYHnz_draw 20000ms linear 0ms forwards;
+              }
+
+              @keyframes WpClYHnz_draw {
+                100% {
+                  stroke-dashoffset: 0;
+                }
+              }
+
+              @keyframes WpClYHnz_fade {
+                0% {
+                  stroke-opacity: 1;
+                }
+
+                97.1830985915493% {
+                  stroke-opacity: 1;
+                }
+
+                100% {
+                  stroke-opacity: 0;
+                }
+              }
+            </style>
+          </svg>
         </div>
       </section>
 
@@ -2312,6 +2339,78 @@ width: 0;
         <h2 class="block-library__title">Поток треугольников</h2>
         <p>Как разметить и стилизовать блоки-треугольники.</p>
         <p>Скоро сделаю.</p>
+      </section>
+
+      <section class="block-library" id="rubber-height">
+        <h2 class="block-library__title">Как растянуть блок на всю свободную высоту (экрана)</h2>
+        <p>Можно так:</p>
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="rubber-height-1" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="rubber-height-1">
+          <pre class="code">
+            <span class="code_inner">
+// .wrap {
+//   height: 100vh; // или нужная высота в px
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// }
+//
+// .wrap__inner2 {
+//   height: 100%;
+// }
+            </span>
+          </pre>
+        </div>
+
+        <div class="block-rubber">
+          <div class="block-rubber__1">header__блока</div>
+          <div class="block-rubber__2">
+            <p>всякое разное содержимое__блока<br><code>height: 100%;</code></p>
+          </div>
+          <div class="block-rubber__3">footer__блока</div>
+        </div>
+
+        <hr>
+
+        <p>Или так:</p>
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="rubber-height-2" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="rubber-height-2">
+          <pre class="code">
+            <span class="code_inner">
+// .wrap {
+//   height: 100vh; // или нужная высота в px
+//   display: flex;
+//   flex-direction: column;
+// }
+//
+// .wrap__inner2 {
+  //   flex-grow: 1;
+  // }
+//
+// .wrap__inner1,
+// .wrap__inner3 {
+  //  flex-shrink: 0; // норм. работает  и без него
+  // }
+            </span>
+          </pre>
+        </div>
+
+        <div class="block-rubber  block-rubber--2">
+          <div class="block-rubber__1  block-rubber__1--2">header__блока</div>
+          <div class="block-rubber__2  block-rubber__2--2">
+            <p>всякое разное содержимое__блока<br><code>flex-grow: 1;</code></p>
+          </div>
+          <div class="block-rubber__3  block-rubber__2--2">footer__блока</div>
+        </div>
+
       </section>
   </div>
   </main>
