@@ -1,0 +1,66 @@
+.counter {
+  outline: 1px dashed;
+
+  position: relative;
+  width: 150px;
+  text-align: center;
+}
+
+.counter__inner {
+  position: relative;
+  z-index: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4em;
+  height: 4em;
+
+  background-color: red;
+  border: 10px solid rgba(0, 0, 0, 0.7);
+  background-clip: content-box;
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: auto;
+    right: -20px;
+    top: 50%;
+    width: 45px;
+    height: 57px;
+    background-image: url("../img/vector/bg-bell.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    animation: wobble-hor-top 0.6s 10 both;
+
+    @keyframes wobble-hor-top {
+      0%,
+      100% {
+        transform: translateX(0%);
+        transform-origin: 50% 50%;
+      }
+
+      15% {
+        transform: translateX(-3px) rotate(6deg);
+      }
+
+      30% {
+        transform: translateX(2px) rotate(-6deg);
+      }
+
+      45% {
+        transform: translateX(-2px) rotate(3.6deg);
+      }
+
+      60% {
+        transform: translateX(2px) rotate(-2.4deg);
+      }
+
+      75% {
+        transform: translateX(-1px) rotate(1.2deg);
+      }
+    }
+  }
+}
