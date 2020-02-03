@@ -2346,11 +2346,54 @@ width: 0;
 
       <section class="block-library" id="rubber-height">
         <h2 class="block-library__title">Как растянуть блок на всю свободную высоту (экрана)</h2>
-        <p>Можно так:</p>
+
+        <p>Можно (и нужно) так:</p>
         <button class="burger" aria-label="Показать пример кода" data-target-id="rubber-height-1" data-target-class-toggle="blocks-library__example--shown">
           <span>Показать что-либо</span>
         </button>
         <div class="blocks-library__example" id="rubber-height-1">
+          <pre class="code">
+            <span class="code_inner">
+// .wrap {
+//   height: 100vh; // или нужная высота в px
+//   display: flex;
+//   flex-direction: column;
+// }
+//
+// .wrap__inner2 {
+  //   flex-grow: 1;
+  //   overflow-y: scroll;
+  // }
+//
+// .wrap__inner1,
+// .wrap__inner3 {
+  //  flex-shrink: 0;
+  // }
+            </span>
+          </pre>
+        </div>
+
+        <div class="block-rubber  block-rubber1">
+          <div class="block-rubber__1  block-rubber__1--1">header__блока</div>
+          <div class="block-rubber__2  block-rubber__2--1">
+            <p><code>flex-grow: 1;</code></p>
+            <p>всякое разное содержимое блока</p>
+            <p>всякое разное содержимое блока</p>
+            <p>всякое разное содержимое блока</p>
+            <p>всякое разное содержимое блока</p>
+            <p>всякое разное содержимое блока</p>
+            <p>всякое разное содержимое блока</p>
+          </div>
+          <div class="block-rubber__3  block-rubber__3--1">footer__блока</div>
+        </div>
+
+        <hr>
+
+        <p>Можно так:</p>
+        <button class="burger" aria-label="Показать пример кода" data-target-id="rubber-height-2" data-target-class-toggle="blocks-library__example--shown">
+          <span>Показать что-либо</span>
+        </button>
+        <div class="blocks-library__example" id="rubber-height-2">
           <pre class="code">
             <span class="code_inner">
 // .wrap {
@@ -2368,46 +2411,17 @@ width: 0;
         </div>
 
         <div class="block-rubber">
-          <div class="block-rubber__1">header__блока</div>
-          <div class="block-rubber__2">
-            <p>всякое разное содержимое__блока<br><code>height: 100%;</code></p>
-          </div>
-          <div class="block-rubber__3">footer__блока</div>
-        </div>
-
-        <hr>
-
-        <p>Или так:</p>
-        <button class="burger" aria-label="Показать пример кода" data-target-id="rubber-height-2" data-target-class-toggle="blocks-library__example--shown">
-          <span>Показать что-либо</span>
-        </button>
-        <div class="blocks-library__example" id="rubber-height-2">
-          <pre class="code">
-            <span class="code_inner">
-// .wrap {
-//   height: 100vh; // или нужная высота в px
-//   display: flex;
-//   flex-direction: column;
-// }
-//
-// .wrap__inner2 {
-  //   flex-grow: 1;
-  // }
-//
-// .wrap__inner1,
-// .wrap__inner3 {
-  //  flex-shrink: 0; // норм. работает  и без него
-  // }
-            </span>
-          </pre>
-        </div>
-
-        <div class="block-rubber  block-rubber--2">
           <div class="block-rubber__1  block-rubber__1--2">header__блока</div>
           <div class="block-rubber__2  block-rubber__2--2">
-            <p>всякое разное содержимое__блока<br><code>flex-grow: 1;</code></p>
+            <p><code>height: 100%;</code></p>
+            <p>всякое разное содержимое блока</p>
+            <p>всякое разное содержимое блока</p>
+            <p>всякое разное содержимое блока</p>
+            <p>всякое разное содержимое блока</p>
+            <p>всякое разное содержимое блока</p>
+            <p>всякое разное содержимое блока</p>
           </div>
-          <div class="block-rubber__3  block-rubber__2--2">footer__блока</div>
+          <div class="block-rubber__3  block-rubber__3--2">footer__блока</div>
         </div>
       </section>
 
