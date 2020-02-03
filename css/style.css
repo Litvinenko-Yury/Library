@@ -1323,20 +1323,20 @@ ul {
     -webkit-transform-origin: 50% 50%;
             transform-origin: 50% 50%; }
   15% {
-    -webkit-transform: translateX(-3px) rotate(6deg);
-            transform: translateX(-3px) rotate(6deg); }
+    -webkit-transform: translateX(-9px) rotate(6deg);
+            transform: translateX(-9px) rotate(6deg); }
   30% {
-    -webkit-transform: translateX(2px) rotate(-6deg);
-            transform: translateX(2px) rotate(-6deg); }
+    -webkit-transform: translateX(4px) rotate(-6deg);
+            transform: translateX(4px) rotate(-6deg); }
   45% {
-    -webkit-transform: translateX(-2px) rotate(3.6deg);
-            transform: translateX(-2px) rotate(3.6deg); }
+    -webkit-transform: translateX(-4px) rotate(3.6deg);
+            transform: translateX(-4px) rotate(3.6deg); }
   60% {
-    -webkit-transform: translateX(2px) rotate(-2.4deg);
-            transform: translateX(2px) rotate(-2.4deg); }
+    -webkit-transform: translateX(4px) rotate(-2.4deg);
+            transform: translateX(4px) rotate(-2.4deg); }
   75% {
-    -webkit-transform: translateX(-1px) rotate(1.2deg);
-            transform: translateX(-1px) rotate(1.2deg); } }
+    -webkit-transform: translateX(-2px) rotate(1.2deg);
+            transform: translateX(-2px) rotate(1.2deg); } }
 
 @keyframes wobble-hor-top {
   0%,
@@ -1346,20 +1346,20 @@ ul {
     -webkit-transform-origin: 50% 50%;
             transform-origin: 50% 50%; }
   15% {
-    -webkit-transform: translateX(-3px) rotate(6deg);
-            transform: translateX(-3px) rotate(6deg); }
+    -webkit-transform: translateX(-9px) rotate(6deg);
+            transform: translateX(-9px) rotate(6deg); }
   30% {
-    -webkit-transform: translateX(2px) rotate(-6deg);
-            transform: translateX(2px) rotate(-6deg); }
+    -webkit-transform: translateX(4px) rotate(-6deg);
+            transform: translateX(4px) rotate(-6deg); }
   45% {
-    -webkit-transform: translateX(-2px) rotate(3.6deg);
-            transform: translateX(-2px) rotate(3.6deg); }
+    -webkit-transform: translateX(-4px) rotate(3.6deg);
+            transform: translateX(-4px) rotate(3.6deg); }
   60% {
-    -webkit-transform: translateX(2px) rotate(-2.4deg);
-            transform: translateX(2px) rotate(-2.4deg); }
+    -webkit-transform: translateX(4px) rotate(-2.4deg);
+            transform: translateX(4px) rotate(-2.4deg); }
   75% {
-    -webkit-transform: translateX(-1px) rotate(1.2deg);
-            transform: translateX(-1px) rotate(1.2deg); } }
+    -webkit-transform: translateX(-2px) rotate(1.2deg);
+            transform: translateX(-2px) rotate(1.2deg); } }
 
 /*обертка для всей конструкции*/
 .custom-select {
