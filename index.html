@@ -199,7 +199,10 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#triangle" data-scroll-link="">Поток треугольников</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#rubber-height" data-scroll-link="">Блок на всю свободную высоту</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#rubber-height-v.1" data-scroll-link="">Блок на всю свободную высоту экрана или блока - v.1</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#rubber-height-v.2" data-scroll-link="">Блок внутри блока на всю свободную высоту экрана или блока - v.2</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#counter-bell" data-scroll-link="">counter + bell</a>
@@ -2176,7 +2179,6 @@
       </section>
 
       <!-- ============================================ -->
-
       <section class="block-library" id="stylelint">
         <h2 class="block-library__title">stylelint</h2>
         <a href="https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configuration.md" rel="noopener">stylelint</a>
@@ -2288,7 +2290,6 @@ width: 0;
       </section>
 
       <!-- ============================================ -->
-
       <section class="block-library" id="rhombus">
         <h2 class="block-library__title">Поток ромбов</h2>
         <p>Как разметить и стилизовать блоки-ромбы.</p>
@@ -2340,14 +2341,18 @@ width: 0;
         </div>
       </section>
 
+      <!-- ============================================ -->
+
       <section class="block-library  attention" id="triangle">
         <h2 class="block-library__title">Поток треугольников</h2>
         <p>Как разметить и стилизовать блоки-треугольники.</p>
         <p>Скоро сделаю.</p>
       </section>
 
-      <section class="block-library" id="rubber-height">
-        <h2 class="block-library__title">Как растянуть блок на всю свободную высоту экрана или блока</h2>
+      <!-- ============================================ -->
+
+      <section class="block-library" id="rubber-height-v.1">
+        <h2 class="block-library__title">Как растянуть блок на всю свободную высоту экрана или блока v.1</h2>
 
         <p><b>Можно (и нужно) так:</b></p>
         <button class="burger" aria-label="Показать пример кода" data-target-id="rubber-height-1" data-target-class-toggle="blocks-library__example--shown">
@@ -2375,7 +2380,7 @@ width: 0;
           </pre>
         </div>
 
-        <div class="block-rubber  block-rubber1">
+        <div class="block-rubber">
           <div class="block-rubber__1  block-rubber__1--1">header__блока</div>
           <div class="block-rubber__2  block-rubber__2--1">
             <p><code>flex-grow: 1;</code></p>
@@ -2426,6 +2431,43 @@ width: 0;
           <div class="block-rubber__3  block-rubber__3--2">footer__блока</div>
         </div>
       </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="rubber-height-v.2">
+        <h2 class="block-library__title">Как растянуть блок с блоком внутри на всю свободную высоту экрана или блока - v.2</h2>
+
+        <p>Используем вариант с <code>flex-grow</code> и <code>flex-shrink</code>,+ нюанс в <code>CSS</code> с высотой вложенного блока:</p>
+        <div class="block-rubber-3">
+          <div class="block-rubber-3__wrap-1">
+            header__блока block-rubber-3 / height: 100px;
+          </div>
+
+          <div class="block-rubber-3__wrap-2">
+            <header class="block-rubber-3__1">header вложенного блока / height: 50px;</header>
+            <div class="block-rubber-3__2">
+              <p><code>flex-grow: 1;</code></p>
+              <p><code>height: 0;</code></p>
+              <p>всякое разное содержимое блока</p>
+              <p>всякое разное содержимое блока</p>
+              <p>всякое разное содержимое блока</p>
+              <p>всякое разное содержимое блока</p>
+              <p>всякое разное содержимое блока</p>
+              <p>всякое разное содержимое блока</p>
+              <p>всякое разное содержимое блока</p>
+              <p>всякое разное содержимое блока</p>
+              <p>всякое разное содержимое блока</p>
+              <p>всякое разное содержимое блока</p>
+              <p>всякое разное содержимое блока</p>
+              <p>всякое разное содержимое блока</p>
+            </div>
+            <footer class="block-rubber-3__3">footer вложенного блока / height: 50px;</footer>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ============================================ -->
 
       <section class="block-library" id="counter-bell">
         <h2 class="block-library__title">counter + bell</h2>
