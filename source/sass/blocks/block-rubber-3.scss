@@ -1,0 +1,50 @@
+.block-rubber-3 {
+  //height: 100vh; /* задать нужную высоту блока*/
+  height: 600px; /*высота 600px заданна для примера*/
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  /*=== стили для оформления примера ===*/
+  text-align: center;
+  font-size: 24px;
+  border: 5px solid blueviolet;
+}
+
+.block-rubber-3__wrap-1 {
+  height: 100px;
+  flex-shrink: 0;
+
+  /*=== стили для оформления примера ===*/
+  border: 5px dotted red;
+  background: green;
+}
+
+.block-rubber-3__wrap-2 {
+  flex-grow: 1;
+  height: 0; /*без задания высоты этому блоку схема не работает*/
+
+  display: flex;
+  flex-direction: column;
+
+  /*=== стили для оформления примера ===*/
+  border: 5px dotted aquamarine;
+  background: #333333;
+}
+
+.block-rubber-3__1,
+.block-rubber-3__3 {
+  flex-shrink: 0;
+  height: 50px;
+
+  /*=== стили для оформления примера ===*/
+  background-color: #446655;
+}
+
+.block-rubber-3__2 {
+  flex-grow: 1;
+  overflow-y: auto;
+
+  /*=== стили для оформления примера ===*/
+  background: coral;
+}
