@@ -3,7 +3,8 @@
 /*author  https://github.com/Litvinenko-Yury*/
 /*=============================*/
 
-'use strict';
+"use strict";
+
 //Скрипт для input - добавляет/убирает символ "*" в поле input
 
 let fieldTextInputWrap1 = document.querySelector('.field-text__input-wrap--1');
