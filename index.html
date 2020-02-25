@@ -1719,8 +1719,9 @@
         <p>Делаем классическую разметку с <code>href="#некий_id"</code> + плюс расставляем в нужных местах эти <code>id</code>.</p>
         <p>Далее два варианта:</p>
         <hr>
-        <p><b>Вариант 1:</b><br> использовать CSS - свойство <code>scroll-behavior: smooth;</code>
-          <br><span class="attention">Не работает в IE + EDGE.</span><br> Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
+        <p><b>Вариант 1:</b><br> использовать CSS - свойство <code>scroll-behavior: smooth;</code><br>
+          Важно! <code>scroll-behavior: smooth;</code> добавлять контейнеру, внутри которого нужна прокрутка.<br><br>
+         <span class="attention">Не работает в IE + EDGE.</span><br> Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
         <hr>
         <p><b>Вариант 2:</b><br> использовать <code>JS</code>.
           <br><span class="good">Работает в IE & EDGE.</span><br>Скрипт: <code>scroll-anchor.js</code></p>
