@@ -99,7 +99,10 @@
           <a class="off-canvas__menu-link  attention-menu" data-toggle-native="off-canvas" href="#video" data-scroll-link>video</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#field-range" data-scroll-link>Ползунок - range</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#field-range" data-scroll-link>Ползунок - range - CSS</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#field-range-custom-v1" data-scroll-link>Ползунок - range v1 - JS</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#progress" data-scroll-link>Прогресс - progressbar</a>
@@ -1183,6 +1186,49 @@
         </label>
       </section>
 
+      <section class="block-library" id="field-range-custom-v1">
+        <h2 class="block-library__title">Ползунок v1 на JS</h2>
+        <p>Обязательно проверять кросс-браузерность.<br> В списке подозреваемых: IE и EDGE.</p>
+
+        <p>Все делает скрипт <code>scroll-add-class.js</code>.</p>
+
+        <span>Составные части:</span>
+        <ul>
+          <li><b>HTML</b> - добавить в проект разметку - скопировать из библиотеки;</li>
+          <li><b>CSS</b> - добавить в проект CSS-файл <code>range.scss</code>;</li>
+          <li><b>JS<b> - добавить в проект JS-файл <code>custom-range.js</code>;</li>
+          <li>Все.</li>
+        </ul>
+
+        <span>Принцип работы:</span>
+        <ul><b>JS-файл блока</b>:
+          <li>для <code>.range__input</code> добавляет <code>opacity = '0';</code></li>
+          <li>в HTML-файл, после <code>.range__input</code> добавляет разметку с классами:
+            <ul>
+
+              <li><code>.range__track</code> - фоновая линия ползунка;</li>
+              <li><code>.range__progress</code> - линия отображения <code>value</code>;</li>
+              <li><code>.range__handle</code> - перемещаемый элемент ползунка, т.е. thumb;</li>
+              <li><code>.range__wrapper</code> и <code>.range__wrap-inner</code>- обертки;</li>
+              <li></li>
+            </ul>
+          <li>JS-файл <code>custom-range1.js</code> отлавливает значение <code>value</code> у штатного <code>input</code>, <br> изменяет ширину <code>.range__progress</code> и координату по оси X для <code>.range__handle</code>;</li>
+          <li>Все.</li>
+        </ul>
+
+        <p>P.S.Ширина <code>.range__progress</code> изменяется от <u>правого</u> края. Это нужно для того, чтобы <code>.range__track</code> можно было дать заливку градиентом, и при изменении <code>value</code> была видна только часть градиента.</p>
+
+        <hr>
+
+        <div class="range">
+          <span class="range__name">Название</span>
+          <label class="range__label">
+            <input class="range__input" type="range" name="counter" min="50" max="200" value="100" step="25">
+          </label>
+          <span class="range__help-text">Подсказка</span>
+        </div>
+      </section>
+
       <!-- ============================================ -->
 
       <section class="block-library" id="progress">
@@ -1622,6 +1668,7 @@
           <li>На десктопной ширине бургер - скрыт,<br> меню принимает горизонтальный вид - <code>.main-nav.scss</code>.</li>
         </ul>
 
+        <p><b>Состояние при работе JS</b>:</p>
         <ul>
           <li>моб.меню - скрыто, скрипт добавляет <code>.main-nav__list--js</code>.</li>
           <li>бургер - показан, - скрипт удаляет <code>.burger--no-js</code>.</li>
@@ -1719,7 +1766,7 @@
         <hr>
         <p><b>Вариант 1:</b><br> использовать CSS - свойство <code>scroll-behavior: smooth;</code><br>
           Важно! <code>scroll-behavior: smooth;</code> добавлять контейнеру, внутри которого нужна прокрутка.<br><br>
-         <span class="attention">Не работает в IE + EDGE.</span><br> Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
+          <span class="attention">Не работает в IE + EDGE.</span><br> Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
         <hr>
         <p><b>Вариант 2:</b><br> использовать <code>JS</code>.
           <br><span class="good">Работает в IE & EDGE.</span><br>Скрипт: <code>scroll-anchor.js</code></p>
@@ -2518,6 +2565,9 @@ width: 0;
 
   <!-- скрипт для Яндекс-карт-->
   <script src="js/script-map.js"></script>
+
+  <!-- скрипт для range-->
+  <script src="js/custom-range.js"></script>
 
   <!--=========================== -->
   <!--cкрипт для ползунка сравнения -->
