@@ -1550,6 +1550,8 @@ ul {
 .field-checkbox__input {
   /*прячем стандартный чек-бокс без потери доступности*/
   position: absolute;
+  width: 0;
+  height: 0;
   opacity: 0; }
 
 .field-checkbox__label {
@@ -1558,6 +1560,20 @@ ul {
   display: block;
   padding-left: 1.5em;
   cursor: pointer; }
+
+.field-checkbox__label:hover .field-checkbox__name-text::before {
+  /*стилизация фона checkbox по :hover*/
+  border-color: #d22856; }
+
+.field-checkbox__label:active .field-checkbox__name-text::before {
+  /*стилизация фона checkbox в момент клика - :active*/
+  border-color: #2856d2; }
+
+.field-checkbox__name-text {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
 
 .field-checkbox__name-text::before {
   /*стилизация фона checkbox*/
@@ -1571,19 +1587,13 @@ ul {
   top: 5px;
   left: 0; }
 
-.field-checkbox__name-text:hover::before {
-  border-color: #d22856; }
-
-.field-checkbox__name-text:active::before {
-  border-color: #2856d2; }
-
 /*переключение состояния чек-бокса*/
 .field-checkbox__input:checked ~ .field-checkbox__name-text::after {
   /*стилизация активного чек-бокса*/
   content: "";
   width: 22px;
   height: 16px;
-  background: url("../img/icon-yes-pink.svg") no-repeat center;
+  background: url("../img/vector/icon-yes-pink.svg") no-repeat center;
   position: absolute;
   top: 3px;
   left: 3px; }
@@ -2583,6 +2593,91 @@ ul {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover; }
+
+/*родительский блок для позиционирования .range в потоке документа*/
+.range {
+  outline: 1px dotted red;
+  position: relative;
+  width: 800px;
+  height: 100px; }
+
+.range__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/*прозрачный input type="range"*/
+/*opacity: 0; этому элементу устанавливает script*/
+.range__input {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  /*cursor: pointer;*/
+  cursor: ew-resize; }
+
+/*обертка для "визуального" range*/
+.range__wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+/*обертка для track и progress*/
+.range__wrap-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%); }
+
+/*track*/
+.range__track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #c9c9c9;
+  background-image: -webkit-gradient(linear, left top, right top, from(#d7b2f4), to(#345996));
+  background-image: linear-gradient(90deg, #d7b2f4, #345996); }
+
+/*progress*/
+.range__progress {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background-color: #cfcfcf;
+  -webkit-transition: width 0.1s;
+  transition: width 0.1s; }
+
+/*handle - смещающийся элемент ползунка*/
+.range__handle {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: white; }
+
+.range__handle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #30c7d6; }
 
 .rhombus__wrap {
   outline: 1px dotted coral;
