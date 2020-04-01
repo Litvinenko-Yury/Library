@@ -89,3 +89,13 @@
   border-radius: 50%;
   background-color: #30c7d6;
 }
+
+.range__value {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 35px;
+  height: 35px;
+  border: 2px solid green;
+  color: coral;
+}
