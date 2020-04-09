@@ -144,9 +144,18 @@
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#to-top" data-scroll-link>Ссылка «вверх»</a>
         </li>
 
-        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#select" data-scroll-link>Select</a>
         </li>
+
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#scrollbar" data-scroll-link>scrollbar, hidden</a>
+        </li>
+
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#scrollbar-styling" data-scroll-link>scrollbar, стилизация</a>
+        </li>
+
 
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#logo" data-scroll-link>Логотип</a>
@@ -175,12 +184,10 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#svg-vivus" data-scroll-link>vivus.js - drawing animation on SVG</a>
         </li>
-        <li class="off-canvas__menu-item">
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#stylelint" data-scroll-link>stylelint</a>
         </li>
-        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#scrollbar" data-scroll-link>scrollbar, hidden</a>
-        </li>
+
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#yandex-map" data-scroll-link>Яндекс.Карты - JS</a>
         </li>
@@ -1873,6 +1880,116 @@
 
       </section>
 
+      <section class="block-library" id="scrollbar">
+        <h2 class="block-library__title">как скрыть scrollbar</h2>
+        <p>Как скрыть ползунок прокрутки, но сохраняя при этом саму прокрутку.</p>
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="scrollbar-code" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+
+        <div class="blocks-library__example" id="scrollbar-code">
+          <pre class="code">
+                <span class="code_inner">
+-ms-overflow-style: none; // IE 10+
+scrollbar-width: none; // Firefox
+
+&::-webkit-scrollbar { /* WebKit */
+width: 0;
+}
+                </span>
+              </pre>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="scrollbar-styling">
+        <h2 class="block-library__title">Стилизация скроллбара...</h2>
+        <p>По состоянию на <time>2020-04-09</time> ситуация такова:</p>
+        <p><b>Правильное решение</b> - стилизовать с помощью CSS.<br> Работает в webkit-браузеров (Ghrome / Safari / Opera / Яндекс.Браузер)</p>
+        <p>Если нужно более кросс-браузерное решение, использовать плагины.</p>
+
+        <hr>
+        <h3><b>Терминология</b></h3>
+        <img src="img/rastr/img-scrollbar@1x.png" width="498" alt="Из чего состоит скроллбар">
+        <p>Скроллбар состоит из семи различных элементов:</p>
+        <ul>
+          <li><code><span><b>::-webkit-scrollbar</b>  { /* 1 - скроллбар */ }</span></code></li>
+          <li><code><span><b>::-webkit-scrollbar-button</b>  { /* 2 - кнопка */ }</span></code></li>
+          <li><code><span><b>::-webkit-scrollbar-track</b>  { /* 3 - трек */ }</span></code></li>
+          <li><code><span><b>::-webkit-scrollbar-track-piece</b>  { /* 4 - видимая часть трека */ }</span></code></li>
+          <li><code><span><b>::-webkit-scrollbar-thumb</b>  { /* 5 - ползунок */ }</span></code></li>
+          <li><code><span><b>::-webkit-scrollbar-corner</b>  { /* 6 - уголок */ }</span></code></li>
+          <li><code><span><b>::-webkit-scrollbar-resizer</b>  { /* 7 - изменение размеров окна */ }</span></code></li>
+        </ul>
+
+        <hr>
+        <h3><b>Литература</b></h3>
+        <ul>
+          <li><a href="http://websketches.ru/blog/kastomizacia-brauzernogo-skrollbara">Хорошая статья на http://websketches.ru</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars">MDN - немного для Mozila Firefox</a></li>
+          <li><a href="https://css-tricks.com/almanac/properties/s/scrollbar/">css-tricks - scrollbar</a></li>
+          <li><a href="https://css-tricks.com/the-current-state-of-styling-scrollbars/">css-tricks - The Current State of Styling Scrollbars </a></li>
+        </ul>
+
+        <hr>
+        <h3><b>Скрипты</b></h3>
+        <br>
+
+        <h3><b>OverlayScrollbars<b></h3>
+        <ul>
+          <li>Размер js-файла = 353кб;</li>
+          <li><a href="https://github.com/KingSora/OverlayScrollbars">Исходник на npm</a></li>
+          <li><a href="https://kingsora.github.io/OverlayScrollbars/#!overview">Сайт</a></li>
+          <li>Можно ли стилизовать - ДА, полностью;</li>
+          <li>Можно ли использовать на несколько блоков - ДА.</li>
+        </ul>
+        <span><b>Резюме:<b></span>
+        <ul>
+          <li>можно и нужно использовать через подключение js-файла внизу страницы, а не через систему сборки;</li>
+          <li>стили в отдельном css-файле;</li>
+        </ul>
+
+        <hr>
+        <h3><b>Smooth Scrollbar</b></h3>
+        <ul>
+          <li>Размер js-файла = 58кб;</li>
+          <li><a href="https://www.npmjs.com/package/smooth-scrollbar/v/8.5.2">Исходник на npm</a></li>
+          <li><a href="https://idiotwu.github.io/smooth-scrollbar/">Как использовать</a></li>
+          <li>Можно ли стилизовать - НЕТ;</li>
+          <li>Можно ли использовать на несколько блоков - ДА.</li>
+        </ul>
+        <span><b>Резюме:<b></span>
+        <ul>
+          <li>удобно использовать через подключение js-файла внизу страницы, а не через систему сборки;
+            <div class="blocks-library__example  blocks-library__example--shown">
+              <pre class="code">
+                    <span class="code_inner">
+&lt;script src="smooth-scrollbar.js"&gt;&lt;/script&gt;
+&lt;script&gt; Scrollbar.initAll(); &lt;/script&gt;
+                    </span>
+                  </pre>
+            </div>
+          </li>
+        </ul>
+
+        <hr>
+        <h3><b>Perfect-Scrollbar<b></h3>
+        <ul>
+          <li>Размер js-файла = 35кб;</li>
+          <li><a href="https://www.npmjs.com/package/perfect-scrollbar">Исходник на npm</a></li>
+          <li>Можно ли стилизовать - ДА, полностью;</li>
+          <li>Можно ли использовать на несколько блоков - НЕТ. Только один блок на странице.</li>
+        </ul>
+        <span><b>Резюме:<b></span>
+        <ul>
+          <li>удобно использовать через подключение js-файла внизу страницы, а не через систему сборки;</li>
+          <li>удобно стилизовать в отдельном css-файле;</li>
+        </ul>
+      </section>
+
       <!-- ============================================ -->
 
       <section class="block-library" id="logo">
@@ -2229,45 +2346,6 @@
         <h2 class="block-library__title">stylelint</h2>
         <a href="https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configuration.md" rel="noopener">stylelint</a>
         <p><code>/* stylelint-disable-line */</code></p>
-      </section>
-
-      <!-- ============================================ -->
-
-      <section class="block-library" id="scrollbar">
-        <h2 class="block-library__title">как скрыть scrollbar</h2>
-        <p>Как скрыть ползунок прокрутки, но сохраняя при этом саму прокрутку.</p>
-        <div>
-          <button class="burger" aria-label="Показать пример кода" data-target-id="scrollbar-code" data-target-class-toggle="blocks-library__example--shown">
-            <span>Показать что-либо</span>
-          </button>
-        </div>
-
-        <div class="blocks-library__example" id="scrollbar-code">
-          <pre class="code">
-                <span class="code_inner">
--ms-overflow-style: none; // IE 10+
-scrollbar-width: none; // Firefox
-
-&::-webkit-scrollbar { /* WebKit */
-width: 0;
-}
-                </span>
-              </pre>
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-
-      <section class="block-library" id="yandex-map">
-        <h2 class="block-library__title">Яндекс.Карты</h2>
-        <p>Как добавить Яндекс.Карту на страницу.</p>
-        <p><b>Внимание!</b><br>API-key у владельца сайта должен быть свой.</p>
-        <div>
-          <span>Быстрый старт: </span>
-          <a href="https://tech.yandex.ru/maps/jsapi/doc/2.1/quick-start/index-docpage/#create_map_container" rel="noopener">Документация Яндекс</a>
-        </div>
-        <br>
-        <span><i>Пример JS-кода для создания экземпляра карты.</i><br> Изменяет координаты центра и картинку метки в зависимости от ширины окна браузера: <code>script-map.js</code></span>
       </section>
 
       <!-- ============================================ -->
