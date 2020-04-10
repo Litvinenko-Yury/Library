@@ -1776,6 +1776,9 @@ ul {
 .field-text {
   display: block;
   margin-bottom: 1em; }
+  .field-text--motion {
+    /*если используется*/
+    position: relative; }
 
 .field-text__name {
   display: block;
@@ -1821,6 +1824,8 @@ ul {
     color: #8e8e8e; }
   .field-text__input::placeholder {
     color: #8e8e8e; }
+  .field-text__input--motion {
+    margin-bottom: 0; }
 
 .field-text__icon {
   position: absolute;
@@ -1840,6 +1845,23 @@ ul {
   color: #8e8e8e; }
   .field-text__help-text--error {
     color: red; }
+
+/*===============*/
+/*для перемещения label при фокусе*/
+.field-text__label {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+.field-text__input--motion:focus ~ .field-text__label--motion,
+.field-text__input--motion:not(:focus):valid ~ .field-text__label--motion {
+  top: 10px;
+  font-size: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
 
 .form__fieldset {
   margin-bottom: 2em;
