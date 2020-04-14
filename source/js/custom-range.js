@@ -1,4 +1,5 @@
 /**================== */
+/*custom-range.js*/
 /*created by Yuri Litvinenko  https://litvinenko-yury.pro/*/
 /*checking for IE Yuri Volkovsky  https://github.com/YuraVolk*/
 /**================== */
@@ -7,7 +8,7 @@ var range = document.querySelector(".range");
 
 /*добавляем разметку для визуализации трека и ползунка*/
 range.insertAdjacentHTML('beforeend', '<div class="range__wrapper"><div class="range__wrap-inner"><div class="range__track"></div><div class="range__progress"></div></div><div class="range__handle"></div></div>');
-/*добавляем разметку отбражения значения value*/
+/*добавляем разметку отображения значения value*/
 range.insertAdjacentHTML('beforeend', '<div class="range__value">');
 
 /*================*/
@@ -23,16 +24,16 @@ var output = document.querySelector('.range__value');
 output.innerHTML = rangeInput.value; //вывоим начальное значение value
 
 var widthRange = document.querySelector('.range__wrap-inner').offsetWidth; //узнать ширину range
-console.log('widthRange = ' + widthRange);
+//console.log('widthRange = ' + widthRange);
 var widthHandle = document.querySelector('.range__handle').offsetWidth; // узнать ширину .range__handle
 
 rangeInput.style.opacity = '0'; // задать стандартному input "opacity: 0;"
 
 rangeProgress.style.width = ((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange + 'px'; // установить начальную ширину progress/
-console.log(((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange + 'px');
+//console.log(((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange + 'px');
 
 rangeHandle.style.left = (widthRange - (((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange) - (widthHandle / 2)) + 'px'; // установить начальную точку handle
-console.log((((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange - (widthHandle / 2)) + 'px');
+//console.log((((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange - (widthHandle / 2)) + 'px');
 
 // Изменить ширину .range__progress и координату handle (каждый раз когда двигаетм ползунок)  oninput/onchange
 var ua = window.navigator.userAgent;
