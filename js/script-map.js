@@ -8,14 +8,14 @@
 'use strict'
 
 ymaps.ready(init);
-let myMap;
-let myPlacemark;
-let $zoom;
-let $center;
-let $iconImage;
-let $iconImageSize;
-let $iconImageOffset;
-let $width = window.innerWidth;
+let myMap,
+  myPlacemark,
+  $zoom,
+  $center,
+  $iconImage,
+  $iconImageSize,
+  $iconImageOffset,
+  $width = window.innerWidth;
 
 //задание масштаба для mob/tab/desk
 if ($width < 768) {

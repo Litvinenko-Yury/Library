@@ -7,15 +7,13 @@
 
 /*=============================*/
 /*===Валидация полей формы===*/
-let validForm = document.querySelector(".form--validation");
-
-let validFieldName = validForm.querySelector(".field-text__input--name");
-let validFieldTel = validForm.querySelector(".field-text__input--tel");
-let validFieldMail = validForm.querySelector(".field-text__input--email");
-
-let validMessageName = validForm.querySelector(".field-text__help-text--name");
-let validMessageTel = validForm.querySelector(".field-text__help-text--tel");
-let validMessageMail = validForm.querySelector(".field-text__help-text--email");
+let validForm = document.querySelector(".form--validation"),
+  validFieldName = validForm.querySelector(".field-text__input--name"),
+  validFieldTel = validForm.querySelector(".field-text__input--tel"),
+  validFieldMail = validForm.querySelector(".field-text__input--email"),
+  validMessageName = validForm.querySelector(".field-text__help-text--name"),
+  validMessageTel = validForm.querySelector(".field-text__help-text--tel"),
+  validMessageMail = validForm.querySelector(".field-text__help-text--email");
 
 /*=================*/
 /*для <form> добавляем атрибут novalidate для отключения автоматической валидации браузера, что позволяет скрипту контролировать валидацию. */

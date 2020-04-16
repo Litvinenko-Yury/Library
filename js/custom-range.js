@@ -12,15 +12,15 @@ range.insertAdjacentHTML('beforeend', '<div class="range__wrapper"><div class="r
 range.insertAdjacentHTML('beforeend', '<div class="range__value">');
 
 /*================*/
-var rangeInput = document.querySelector(".range__input");
-var rangeInputMin = rangeInput['min'];
-var rangeInputMax = rangeInput['max'];
-var rangeMinMax = rangeInputMax - rangeInputMin; // это значение нужно, что бы корректно вычислять ширину progress и положение handle при input min отличном от 0.
+var rangeInput = document.querySelector(".range__input"),
+  rangeInputMin = rangeInput['min'],
+  rangeInputMax = rangeInput['max'],
+  rangeMinMax = rangeInputMax - rangeInputMin; // это значение нужно, что бы корректно вычислять ширину progress и положение handle при input min отличном от 0.
 
 
-var rangeProgress = document.querySelector(".range__progress");
-var rangeHandle = document.querySelector(".range__handle");
-var output = document.querySelector('.range__value');
+var rangeProgress = document.querySelector(".range__progress"),
+  rangeHandle = document.querySelector(".range__handle"),
+  output = document.querySelector('.range__value');
 output.innerHTML = rangeInput.value; //вывоим начальное значение value
 
 var widthRange = document.querySelector('.range__wrap-inner').offsetWidth; //узнать ширину range
@@ -36,8 +36,8 @@ rangeHandle.style.left = (widthRange - (((rangeInput.value - rangeInputMin) / ra
 //console.log((((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange - (widthHandle / 2)) + 'px');
 
 // Изменить ширину .range__progress и координату handle (каждый раз когда двигаетм ползунок)  oninput/onchange
-var ua = window.navigator.userAgent;
-var isIE = /MSIE|Trident/.test(ua);
+var ua = window.navigator.userAgent,
+  isIE = /MSIE|Trident/.test(ua);
 
 if (isIE) {
   rangeInput.onchange = function () {
