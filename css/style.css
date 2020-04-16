@@ -323,7 +323,8 @@ template {
 
 html {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 *,
 *::before,
@@ -2447,7 +2448,8 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden; }
+  overflow: hidden;
+  scroll-behavior: smooth; }
 
 .off-canvas__aside {
   position: fixed;
@@ -2489,10 +2491,6 @@ ul {
     padding-bottom: 20px;
     color: #00dbe1;
     background-color: #303030; }
-
-.page-content {
-  max-width: 750px;
-  margin: 0 auto; }
 
 .page-main {
   outline: 1px dotted blue;
@@ -2871,6 +2869,7 @@ ul {
 th {
   text-align: inherit; }
 
+/*'это табы на CSS*/
 /* Базовый контейнер табов */
 .tabs-2 {
   min-width: 320px;
@@ -2983,7 +2982,9 @@ th {
     visibility: hidden;
     opacity: 0; }
 
+/*это табы на JS*/
 .tabs__links {
+  /*контейнер вкладок*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2996,8 +2997,8 @@ th {
   padding: 0;
   list-style: none; }
 
-/*вкладка, */
 .tabs__link-wrap {
+  /*вкладка, класс нужен для возможной стилизации состояний*/
   color: #8e8e8e;
   border: 1px solid #8e8e8e; }
   .tabs__link-wrap:not(:last-child) {
@@ -3006,8 +3007,8 @@ th {
     color: #283645;
     border-bottom: 1px solid transparent; }
 
-/*текст вкладки*/
 .tabs__link {
+  /*текст вкладки, класс нужен для стилизации состояний*/
   display: block;
   padding: 5px 12px;
   color: inherit;
@@ -3022,10 +3023,11 @@ th {
   padding: 5px 12px;
   border: 1px solid #8e8e8e; }
 
-.tabs__content-item {
+.tabs__content-item--hide {
   display: none; }
-  .tabs__content-item--active {
-    display: block; }
+
+.tabs__content-item--show {
+  display: block; }
 
 .video {
   position: relative;
