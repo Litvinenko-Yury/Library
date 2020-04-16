@@ -7,9 +7,9 @@
 
 //Скрипт для input - добавляет/убирает символ "*" в поле input
 
-let fieldTextInputWrap1 = document.querySelector('.field-text__input-wrap--1');
-let fieldTextInputWrap2 = document.querySelector('.field-text__input-wrap--2');
-let fieldTextInputWrap3 = document.querySelector('.field-text__input-wrap--3');
+let fieldTextInputWrap1 = document.querySelector('.field-text__input-wrap--1'),
+  fieldTextInputWrap2 = document.querySelector('.field-text__input-wrap--2'),
+  fieldTextInputWrap3 = document.querySelector('.field-text__input-wrap--3');
 
 /*добавить символ "*" в поле input, перед placeholder*/
 fieldTextInputWrap1.classList.add("field-text__input-wrap-pseudo--1");
@@ -19,8 +19,8 @@ fieldTextInputWrap3.classList.add("field-text__input-wrap-pseudo--1");
 
 /*функция, навешивающая focus/blur на  .field-text__input-wrap--1/--2 и т.д.*/
 function checkInputEmtpiness(inputClass, inputWrapClass, pseudoClass) {
-  let input = document.querySelector("." + inputClass);
-  let inputWrap = document.querySelector("." + inputWrapClass);
+  let input = document.querySelector("." + inputClass),
+    inputWrap = document.querySelector("." + inputWrapClass);
 
   input.onfocus = function () {
     inputWrap.classList.remove(pseudoClass);

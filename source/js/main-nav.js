@@ -7,8 +7,8 @@
 
 'use strict'
 
-let burgerMainNav = document.querySelector('.main-nav .burger');
-let mainNavList = document.querySelector('.main-nav .main-nav__list');
+let burgerMainNav = document.querySelector('.main-nav .burger'),
+  mainNavList = document.querySelector('.main-nav .main-nav__list');
 
 /*=========================*/
 /*если JS включен:
