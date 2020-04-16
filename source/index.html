@@ -33,16 +33,16 @@
           <a class="off-canvas__menu-link  off-canvas__menu-link--personal" href="https://litvinenko-yury.pro" rel="noopener">litvinenko-yury.pro</a>
         </li>
         <li class="off-canvas__menu-item  off-canvas__menu-item--second">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#font" data-scroll-link>Шрифт</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#font">Шрифт</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#btn" data-scroll-link>Кнопка</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#btn">Кнопка</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#btn-hover" data-scroll-link>Кнопка, Hover Effects</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#btn-hover">Кнопка, Hover Effects</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#mix" data-scroll-link>микс vs --модификатор</a>
+          <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#mix">микс vs --модификатор</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" data-toggle-native="off-canvas" href="#field-checkbox" data-scroll-link>Флажок/чекбокс</a>
@@ -219,28 +219,27 @@
     </aside>
 
     <main class="page-main">
-      <div class="page-content">
 
-        <!-- ============================================ -->
+      <!-- ============================================ -->
 
-        <section class="block-library" id="font">
-          <h2 class="block-library__title">Подключение шрифтов</h2>
-          <p><b>Как подключить несколько файлов одного шрифта и использовать одно название шрифта.</b></p>
-          <p>Нередко, веб-шрифт — это несколько файлов: один файл — одно начертание:</p>
-          <ul>
-            <li>файл_1 — плотность 400, нормальный;</li>
-            <li>файл_2 — плотность 400, италик, и так далее.</li>
-          </ul>
-          <p>А хочется везде при указании шрифта использовать одно его название, без упоминания в названии слов <code>normal</code>, <code>italic</code>, <code>light</code> и т.п., а указывать это в соответствующих CSS-свойствах.</p>
-          <p>Подключаем кучу файлов шрифта с указанием одного и того же имени, но разных <code>font-weight</code> и <code>font-style</code>:</p>
-          <div>
-            <span class="block-library__span">Пример-1 - <b>теория:</b></span>
-            <button class="burger" aria-label="Показать пример кода" data-target-id="font-code-1" data-target-class-toggle="blocks-library__example--shown">
-              <span>Показать что-либо</span>
-            </button>
-          </div>
-          <div class="blocks-library__example" id="font-code-1">
-            <pre class="code">
+      <section class="block-library" id="font">
+        <h2 class="block-library__title">Подключение шрифтов</h2>
+        <p><b>Как подключить несколько файлов одного шрифта и использовать одно название шрифта.</b></p>
+        <p>Нередко, веб-шрифт — это несколько файлов: один файл — одно начертание:</p>
+        <ul>
+          <li>файл_1 — плотность 400, нормальный;</li>
+          <li>файл_2 — плотность 400, италик, и так далее.</li>
+        </ul>
+        <p>А хочется везде при указании шрифта использовать одно его название, без упоминания в названии слов <code>normal</code>, <code>italic</code>, <code>light</code> и т.п., а указывать это в соответствующих CSS-свойствах.</p>
+        <p>Подключаем кучу файлов шрифта с указанием одного и того же имени, но разных <code>font-weight</code> и <code>font-style</code>:</p>
+        <div>
+          <span class="block-library__span">Пример-1 - <b>теория:</b></span>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="font-code-1" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="font-code-1">
+          <pre class="code">
                 <span class="code_inner">
 @font-face {
   font-family: 'Web font';           /* название одно */
@@ -257,16 +256,16 @@
 }
 </span>
               </pre>
-          </div>
+        </div>
 
-          <div>
-            <span class="block-library__span">Пример-2 - <b>normal 200/300/...</b></span>
-            <button class="burger" aria-label="Показать пример кода" data-target-id="font-code-2" data-target-class-toggle="blocks-library__example--shown">
-              <span>Показать что-либо</span>
-            </button>
-          </div>
-          <div class="blocks-library__example" id="font-code-2">
-            <pre class="code">
+        <div>
+          <span class="block-library__span">Пример-2 - <b>normal 200/300/...</b></span>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="font-code-2" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="font-code-2">
+          <pre class="code">
               <span class="code_inner">
 /* montserrat-200 - latin */
 @font-face {
@@ -305,16 +304,16 @@
   }
 </span>
             </pre>
-          </div>
+        </div>
 
-          <div>
-            <span class="block-library__span">Пример-3 - <b>normal / <i>italic</i> /... 200/300/...</b></span>
-            <button class="burger" aria-label="Показать пример кода" data-target-id="font-code-3" data-target-class-toggle="blocks-library__example--shown">
-              <span>Показать что-либо</span>
-            </button>
-          </div>
-          <div class="blocks-library__example" id="font-code-3">
-            <pre class="code">
+        <div>
+          <span class="block-library__span">Пример-3 - <b>normal / <i>italic</i> /... 200/300/...</b></span>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="font-code-3" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="font-code-3">
+          <pre class="code">
               <span class="code_inner">
 /* montserrat-200 - latin */
 @font-face {
@@ -349,64 +348,64 @@
 и т.д. ...
 </span>
             </pre>
-          </div>
+        </div>
 
-          <hr>
-          <p>И далее при указании селекторам шрифта и плотности, можно использовать одно имя, но разные плотности.</p>
-          <hr>
-          <p><b>Где брать шрифты / проверять лицензию / конвертировать tiff → woff2/woff:</b></p>
-          <ul>
-            <li>бесплатно, в .woff2 / .woff: <a href="https://google-webfonts-helper.herokuapp.com/fonts" rel="noopener"> google-webfonts-helper</a></li>
-            <li>бесплатно, в .ttf: <a href="https://fonts.google.com/" rel="noopener">Google Fonts</a></li>
-            <li>бесплатно, в .otf: <a href="https://www.fontsquirrel.com/" rel="noopener"> fontsquirrel</a></li>
-            <li><span>платно: </span><a href="https://www.myfonts.com/" rel="noopener">MyFonts</a></li>
-            <li>конвертация tiff → woff2/woff: <a href="https://transfonter.org/" rel="noopener">transfonter</a><br></li>
-          </ul>
-        </section>
+        <hr>
+        <p>И далее при указании селекторам шрифта и плотности, можно использовать одно имя, но разные плотности.</p>
+        <hr>
+        <p><b>Где брать шрифты / проверять лицензию / конвертировать tiff → woff2/woff:</b></p>
+        <ul>
+          <li>бесплатно, в .woff2 / .woff: <a href="https://google-webfonts-helper.herokuapp.com/fonts" rel="noopener"> google-webfonts-helper</a></li>
+          <li>бесплатно, в .ttf: <a href="https://fonts.google.com/" rel="noopener">Google Fonts</a></li>
+          <li>бесплатно, в .otf: <a href="https://www.fontsquirrel.com/" rel="noopener"> fontsquirrel</a></li>
+          <li><span>платно: </span><a href="https://www.myfonts.com/" rel="noopener">MyFonts</a></li>
+          <li>конвертация tiff → woff2/woff: <a href="https://transfonter.org/" rel="noopener">transfonter</a><br></li>
+        </ul>
+      </section>
 
-        <!-- ============================================ -->
+      <!-- ============================================ -->
 
-        <section class="block-library" id="btn">
-          <h2 class="block-library__title">Кнопка</h2>
-          <p>
-            <a class="btn" href="#">Кнопка-ссылка</a>
-            <button class="btn">Кнопка-button-с текстом</button>
-            <button class="btn" aria-label="Назначение кнопки">
-              <svg width="15" height="15" role="img">
-                <use xlink:href="#icon-cart" />
-              </svg>
-            </button>
-            <input class="btn" value="Кнопка-input" type="button" name="submit">
-          </p>
+      <section class="block-library" id="btn">
+        <h2 class="block-library__title">Кнопка</h2>
+        <p>
+          <a class="btn" href="#">Кнопка-ссылка</a>
+          <button class="btn">Кнопка-button-с текстом</button>
+          <button class="btn" aria-label="Назначение кнопки">
+            <svg width="15" height="15" role="img">
+              <use xlink:href="#icon-cart" />
+            </svg>
+          </button>
+          <input class="btn" value="Кнопка-input" type="button" name="submit">
+        </p>
 
-          <p>
-            <p>С модификатором --disabled</p>
-            <a class="btn  btn--disabled" href="#">Кнопка-ссылка</a>
-            <button class="btn  btn--disabled">Кнопка-button-с текстом</button>
-            <button class="btn  btn--disabled" aria-label="Назначение кнопки">
-              <svg width="15" height="15" role="img">
-                <use xlink:href="#icon-cart" />
-              </svg>
-            </button>
-            <input class="btn  btn--disabled" value="Кнопка-input" type="button" name="submit">
-          </p>
+        <p>
+          <p>С модификатором--disabled</p>
+          <a class="btn  btn--disabled" href="#">Кнопка-ссылка</a>
+          <button class="btn  btn--disabled">Кнопка-button-с текстом</button>
+          <button class="btn  btn--disabled" aria-label="Назначение кнопки">
+            <svg width="15" height="15" role="img">
+              <use xlink:href="#icon-cart" />
+            </svg>
+          </button>
+          <input class="btn  btn--disabled" value="Кнопка-input" type="button" name="submit">
+        </p>
 
-          <hr>
-          <p>Как задавать <code>margin</code> и кастомные стили для БЭМ-блоков?</p>
-          <p>Отступы и кастомные стили (очень специфичные) мы задаем <i>в зависимости</i> от родительского блока в котором находиться кнопка (например, кнопка в хедере).</p>
-          <p>Основная идея:</p>
-          <ul>
-            <li>есть "базовая (голая)" кнопка;</li>
-            <li>в зависимости от родительского блока (например, кнопка в хедере), задаем oтступы и кастомные стили.</li>
-          </ul>
-          <p> Мы может сделать так:</p>
-          <div>
-            <button class="burger" aria-label="Показать пример кода" data-target-id="burger-code-margin" data-target-class-toggle="blocks-library__example--shown">
-              <span>Показать что-либо</span>
-            </button>
-          </div>
-          <div class="blocks-library__example" id="burger-code-margin">
-            <pre class="code">
+        <hr>
+        <p>Как задавать <code>margin</code> и кастомные стили для БЭМ-блоков?</p>
+        <p>Отступы и кастомные стили (очень специфичные) мы задаем <i>в зависимости</i> от родительского блока в котором находиться кнопка (например, кнопка в хедере).</p>
+        <p>Основная идея:</p>
+        <ul>
+          <li>есть "базовая (голая)" кнопка;</li>
+          <li>в зависимости от родительского блока (например, кнопка в хедере), задаем oтступы и кастомные стили.</li>
+        </ul>
+        <p> Мы может сделать так:</p>
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="burger-code-margin" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="burger-code-margin">
+          <pre class="code">
               <small><code>/*вложенность (но не больше 1 уровня)*/</code></small>
               <code>.header .btn {...}</code>
               <code> </code>
@@ -415,499 +414,499 @@
             <code>  .btn {...} /*кнопка, которая может использоваться где угодно на сайте*/</code>
             <code> </code>
           </pre>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="btn-hover">
+        <h2 class="block-library__title">Кнопка, Hover Effects</h2>
+
+        <hr>
+        <p class="block-library__bth-container">
+          <a class="btn-set-1  btn-set-1__vbtn-1" href="#">
+            <svg>
+              <rect x="0" y="0" width="100%" height="100%" fill="none"></rect>
+            </svg>Hover</a>
+          <!--End of Button 1 -->
+          <a class="btn-set-1  btn-set-1__vbtn-2" href="#">Hover</a>
+          <!--End of Button 2 -->
+          <a class="btn-set-1 btn-set-1__vbtn-1   btn-set-1__vbtn-1--mod" href="#"><svg>
+              <rect x="0" y="0" width="100%" height="100%" fill="none"></rect>
+            </svg>
+            Hover
+          </a>
+          <!--End of Button 3 -->
+          <a class="btn-set-1  btn-set-1__vbtn-2  btn-set-1__vbtn-2--mod " href="#">Hover</a>
+          <!--End of Button 4 -->
+        </p>
+
+        <hr>
+        <p>Circle</p>
+        <p class="block-library__bth-container">
+          <a class="btn  btn__hoverable" href="#">
+            <span class="btn__anim"></span>
+            <span>Sample Button</span>
+          </a>
+        </p>
+
+        <hr>
+        <p>Flare.</p>
+        <p>Представлен вариант блика с бесконечной анимацией. <br> Элементарно переделывается на блик по ховеру.</p>
+        <p class="block-library__bth-container">
+          <a class="btn  btn--flare" href="#">
+            <span>Sample Button</span>
+          </a>
+        </p>
+
+        <hr>
+        <p class="block-library__bth-container  block-library__bth-container--bg">
+          <button class="btn-bubbles" style="--content: 'Hover me!';">
+            <span class="btn-bubbles__left"></span>
+            Hover me!
+            <span class="btn-bubbles__right"></span>
+          </button>
+        </p>
+
+        <hr>
+        <p class="block-library__bth-container">
+          <p>А здесь пример использования библиотеки <a href="https://animista.net" rel="noopener">animista</a>.</p>
+          <p> Также есть библиотека <a href="http://gearmobile.github.io/css/library-animate-css/" rel="noopener">animate.css</a>.</p>
+          <ul>
+            <li>В библиотеке выбрать нужный эффект анимации, скопировать CSS в отдельный класс (модификатор класса), н-р. <code>.elem--rotate-in-center</code>.</li>
+            <li>Далее скриптом <code>animista.js</code> добавлять класс с анимацией к нужному элементу.</li>
+          </ul>
+          <a class="btn  animista" href="#!"><b>Hover me</b> - animista</a>
+        </p>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="mix">
+        <h2 class="block-library__title">Когда создавать модификатор, когда — микс?</h2>
+        <a href="https://ru.bem.info/methodology/faq/#%D0%BA%D0%B0%D0%BA-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9-%D0%B2%D0%B8%D0%B4-%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0" rel="noopener">источник - БЭМ</a>
+        <p>Внешний вид блока можно изменить при помощи модификаторов или миксов.</p>
+        <p><b>Используйте модификаторы</b><br> Если существует вероятность переиспользовать блок в данном оформлении.</p>
+        <p><b>Используйте миксы</b><br> Если блок имеет специфичное оформление только для данного окружения и не будет переиспользован на проекте.</p>
+        <a href="https://ru.bem.info/methodology/faq/#%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C-%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80-%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0--%D0%BC%D0%B8%D0%BA%D1%81" rel="noopener">подробнее</a>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="field-checkbox">
+        <h2 class="block-library__title">Флажок/чекбокс</h2>
+        <p class="attention">Здесь группа чекбоксов на <code>div</code> без <code>fieldset/legend</code></p>
+        <p class="good">Группу на <code>ul</code> c <code>fieldset/legend</code> смотри в <a href="#form"> Форма</a></p>
+        <p>В стилевом файле см. реализацию замены нативного элемента своим (svg).</p>
+
+        <div class="field-checkbox  good">
+          <div class="field-checkbox__input-wrap">
+            <label class="field-checkbox__label">
+              <input class="field-checkbox__input" type="checkbox" name="checkbox-field1" value="+">
+              <span class="field-checkbox__name-text">Чекбокс без группы</span>
+            </label>
+
+            <div class="field-checkbox__help-text">Отдельно расположенный чекбокс</div>
           </div>
-        </section>
+        </div>
 
-        <!-- ============================================ -->
+        <div class="field-checkbox">
+          <div class="field-checkbox__title">Общее необязательное название</div>
+          <div class="field-checkbox__input-wrap">
+            <label class="field-checkbox__label">
+              <input class="field-checkbox__input" type="checkbox" name="checkbox-field1" value="+" checked>
+              <span class="field-checkbox__name-text">Чекбокс с группой, первый</span>
+            </label>
+            <div class="field-checkbox__help-text">Чекбокс в группе</div>
+          </div>
 
-        <section class="block-library" id="btn-hover">
-          <h2 class="block-library__title">Кнопка, Hover Effects</h2>
+          <div class="field-checkbox__input-wrap">
+            <label class="field-checkbox__label">
+              <input class="field-checkbox__input" type="checkbox" name="checkbox-field2" value="+">
+              <span class="field-checkbox__name-text">Чекбокс с группой, последующий</span>
+            </label>
+            <div class="field-checkbox__help-text">Чекбокс в группе</div>
+          </div>
+        </div>
+      </section>
 
-          <hr>
-          <p class="block-library__bth-container">
-            <a class="btn-set-1  btn-set-1__vbtn-1" href="#">
-              <svg>
-                <rect x="0" y="0" width="100%" height="100%" fill="none"></rect>
-              </svg>Hover</a>
-            <!--End of Button 1 -->
-            <a class="btn-set-1  btn-set-1__vbtn-2" href="#">Hover</a>
-            <!--End of Button 2 -->
-            <a class="btn-set-1 btn-set-1__vbtn-1   btn-set-1__vbtn-1--mod" href="#"><svg>
-                <rect x="0" y="0" width="100%" height="100%" fill="none"></rect>
-              </svg>
-              Hover
-            </a>
-            <!--End of Button 3 -->
-            <a class="btn-set-1  btn-set-1__vbtn-2  btn-set-1__vbtn-2--mod " href="#">Hover</a>
-            <!--End of Button 4 -->
-          </p>
+      <!-- ============================================ -->
 
-          <hr>
-          <p>Circle</p>
-          <p class="block-library__bth-container">
-            <a class="btn  btn__hoverable" href="#">
-              <span class="btn__anim"></span>
-              <span>Sample Button</span>
-            </a>
-          </p>
+      <section class="block-library" id="field-radio">
+        <h2 class="block-library__title">Радиокнопки</h2>
+        <p class="attention">Здесь группа радиокнопок на <code>div</code> без <code>fieldset/legend</code></p>
+        <p class="good">Группу радио на <code>ul</code> c <code>fieldset/legend</code> смотри в <a href=" #form"> Форма</a></p>
+        <p>В стилевом файле есть закомментированные фрагменты для замены нативного элемента своим (svg).</p>
 
-          <hr>
-          <p>Flare.</p>
-          <p>Представлен вариант блика с бесконечной анимацией. <br> Элементарно переделывается на блик по ховеру.</p>
-          <p class="block-library__bth-container">
-            <a class="btn  btn--flare" href="#">
-              <span>Sample Button</span>
-            </a>
-          </p>
+        <div class="field-radio">
+          <div class="field-radio__title">Общее необязательное название</div>
+          <div class="field-radio__input-wrap">
+            <label class="field-radio__label">
+              <input class="field-radio__input" type="radio" name="radio-field" value="+" checked>
+              <span class="field-radio__name-text">Радиокнопка с группой, первая</span>
+            </label>
+            <div class="field-radio__help-text">Радиокнопка в группе</div>
+          </div>
 
-          <hr>
-          <p class="block-library__bth-container  block-library__bth-container--bg">
-            <button class="btn-bubbles" style="--content: 'Hover me!';">
-              <div class="btn-bubbles__left"></div>
-              Hover me!
-              <div class="btn-bubbles__right"></div>
-            </button>
-          </p>
+          <div class="field-radio__input-wrap">
+            <label class="field-radio__label">
+              <input class="field-radio__input" type="radio" name="radio-field" value="+">
+              <span class="field-radio__name-text">Радиокнопка с группой, последующая</span>
+            </label>
+            <div class="field-radio__help-text">Радиокнопка в группе</div>
+          </div>
 
-          <hr>
-          <p class="block-library__bth-container">
-            <p>А здесь пример использования библиотеки <a href="https://animista.net" rel="noopener">animista</a>.</p>
-            <p> Также есть библиотека <a href="http://gearmobile.github.io/css/library-animate-css/" rel="noopener">animate.css</a>.</p>
-            <ul>
-              <li>В библиотеке выбрать нужный эффект анимации, скопировать CSS в отдельный класс (модификатор класса), н-р. <code>.elem--rotate-in-center</code>.</li>
-              <li>Далее скриптом <code>animista.js</code> добавлять класс с анимацией к нужному элементу.</li>
+          <div class="field-radio__input-wrap">
+            <label class="field-radio__label">
+              <input class="field-radio__input" type="radio" name="radio-field" value="+">
+              <span class="field-radio__name-text">Радиокнопка с группой, последующая</span>
+            </label>
+            <div class="field-radio__help-text">Радиокнопка в группе</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="field-text">
+        <h2 class="block-library__title">Текстовое поле</h2>
+        <p>Текстовые поля <code>textarea</code> и <code>input</code>.<br> Для <code>textarea</code> полезно использовать <a href="https://github.com/jackmoore/autosize" rel="noopener">autosize</a>.</p>
+
+        <p class=good>Для разметки одиночного инпута используем конструкцию <code>label-input-label</code></p>
+        <div class="attention">
+          <p>Для разметки <strong>групп инпутов</strong> использовать <code>fieldset</code> и <code>legend</code>.</p>
+          <p>А внутри уже ненумерованный список <code>ul>li</code>, и <code>li</code> как обертка для <code>label-input-label</code></p>
+          <a href="https://yoksel.github.io/bad-practices/forms-markup/">Верстка форм - как НЕ надо</a>
+          <p><a href="#form">Шабон группы - как надо</a></p>
+
+        </div>
+        <hr>
+
+        <label class="field-text">
+          <span class="field-text__name">Текстовое поле <code>textarea</code></span>
+          <span class="field-text__input-wrap">
+            <textarea class="field-text__input" name="message" rows="5" placeholder="Подсказка">Текст внутри</textarea>
+            <span class="field-text__help-text">Подсказка под полем</span>
+          </span>
+        </label>
+
+        <label class="field-text">
+          <span class="field-text__name">Текстовое поле <code>input type="text"</code></span>
+          <span class="field-text__input-wrap">
+            <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
+            <span class="field-text__help-text">Подсказка под полем</span>
+          </span>
+        </label>
+
+        <label class="field-text">
+          <span class="field-text__name">Текстовое поле <code>input type="tel"</code></span>
+          <span class="field-text__input-wrap">
+            <input class="field-text__input" type="tel" name="tel" placeholder="Подсказка">
+            <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
+              <use xlink:href="#icon-phone" />
+            </svg>
+            <span class="field-text__help-text">Подсказка под полем</span>
+          </span>
+        </label>
+
+        <div class="field-text  field-text--motion">
+          <input class="field-text__input  field-text__input--motion" type="text" id="text" name="name" required="">
+          <label class="field-text__label  field-text__label--motion" for="text">Текстовое поле с двигающимся label</label>
+        </div>
+
+
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="field-actions">
+        <h2 class="block-library__title">Действия формы</h2>
+
+        <div class="field-actions">
+          <div class="field-actions__help-text">* — обязательные поля</div>
+          <button class="btn" type="submit">Отправить</button>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="form">
+        <h2 class="block-library__title">Форма</h2>
+
+        <form class="form" action="https://echo.htmlacademy.ru" method="post">
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Название1</legend>
+            <label class="field-text">
+              <span class="field-text__name">Текстовое поле input type="text"</span>
+              <span class="field-text__input-wrap">
+                <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
+                <span class="field-text__help-text">Подсказка под полем</span>
+              </span>
+            </label>
+
+            <label class="field-text">
+              <span class="field-text__name">Текстовое поле input type="text"</span>
+              <span class="field-text__input-wrap">
+                <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
+                <span class="field-text__help-text">Подсказка под полем</span>
+              </span>
+            </label>
+          </fieldset>
+
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Название2</legend>
+            <label class="field-text">
+              <span class="field-text__input-wrap">
+                <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
+                <span class="field-text__help-text">Подсказка под полем</span>
+              </span>
+            </label>
+          </fieldset>
+
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Радиокнопки на <code>ul>li</li>
+              </ul></code></legend>
+            <ul class="field-radio" role="none">
+              <div class="field-radio__title">Общее необязательное название</div>
+              <li class="field-radio__input-wrap">
+                <label class="field-radio__label">
+                  <input class="field-radio__input" type="radio" name="radio-field" value="+">
+                  <span class="field-radio__name-text">Радиокнопка с группой, первая</span>
+                </label>
+                <div class="field-radio__help-text">Радиокнопка в группе</div>
+              </li>
+              <li class="field-radio__input-wrap">
+                <label class="field-radio__label">
+                  <input class="field-radio__input" type="radio" name="radio-field" value="+">
+                  <span class="field-radio__name-text">Радиокнопка с группой, вторая</span>
+                </label>
+                <div class="field-radio__help-text">Радиокнопка в группе</div>
+              </li>
+              <li class="field-radio__input-wrap">
+                <label class="field-radio__label">
+                  <input class="field-radio__input" type="radio" name="radio-field" value="+">
+                  <span class="field-radio__name-text">Радиокнопка с группой, третья</span>
+                </label>
+                <div class="field-radio__help-text">Радиокнопка в группе</div>
+              </li>
             </ul>
-            <a class="btn  animista" href="#!"><b>Hover me</b> - animista</a>
-          </p>
-        </section>
+          </fieldset>
 
-        <!-- ============================================ -->
-
-        <section class="block-library" id="mix">
-          <h2 class="block-library__title">Когда создавать модификатор, когда — микс?</h2>
-          <a href="https://ru.bem.info/methodology/faq/#%D0%BA%D0%B0%D0%BA-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9-%D0%B2%D0%B8%D0%B4-%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0" rel="noopener">источник - БЭМ</a>
-          <p>Внешний вид блока можно изменить при помощи модификаторов или миксов.</p>
-          <p><b>Используйте модификаторы</b><br> Если существует вероятность переиспользовать блок в данном оформлении.</p>
-          <p><b>Используйте миксы</b><br> Если блок имеет специфичное оформление только для данного окружения и не будет переиспользован на проекте.</p>
-          <a href="https://ru.bem.info/methodology/faq/#%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C-%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80-%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0--%D0%BC%D0%B8%D0%BA%D1%81" rel="noopener">подробнее</a>
-        </section>
-
-        <!-- ============================================ -->
-
-        <section class="block-library" id="field-checkbox">
-          <h2 class="block-library__title">Флажок/чекбокс</h2>
-          <p class="attention">Здесь группа чекбоксов на <code>div</code> без <code>fieldset/legend</code></p>
-          <p class="good">Группу на <code>ul</code> c <code>fieldset/legend</code> смотри в <a href="#form"> Форма</a></p>
-          <p>В стилевом файле см. реализацию замены нативного элемента своим (svg).</p>
-
-          <div class="field-checkbox  good">
-            <div class="field-checkbox__input-wrap">
-              <label class="field-checkbox__label">
-                <input class="field-checkbox__input" type="checkbox" name="checkbox-field1" value="+">
-                <span class="field-checkbox__name-text">Чекбокс без группы</span>
-              </label>
-
-              <div class="field-checkbox__help-text">Отдельно расположенный чекбокс</div>
-            </div>
-          </div>
-
-          <div class="field-checkbox">
-            <div class="field-checkbox__title">Общее необязательное название</div>
-            <div class="field-checkbox__input-wrap">
-              <label class="field-checkbox__label">
-                <input class="field-checkbox__input" type="checkbox" name="checkbox-field1" value="+" checked>
-                <span class="field-checkbox__name-text">Чекбокс с группой, первый</span>
-              </label>
-              <div class="field-checkbox__help-text">Чекбокс в группе</div>
-            </div>
-
-            <div class="field-checkbox__input-wrap">
-              <label class="field-checkbox__label">
-                <input class="field-checkbox__input" type="checkbox" name="checkbox-field2" value="+">
-                <span class="field-checkbox__name-text">Чекбокс с группой, последующий</span>
-              </label>
-              <div class="field-checkbox__help-text">Чекбокс в группе</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============================================ -->
-
-        <section class="block-library" id="field-radio">
-          <h2 class="block-library__title">Радиокнопки</h2>
-          <p class="attention">Здесь группа радиокнопок на <code>div</code> без <code>fieldset/legend</code></p>
-          <p class="good">Группу радио на <code>ul</code> c <code>fieldset/legend</code> смотри в <a href=" #form"> Форма</a></p>
-          <p>В стилевом файле есть закомментированные фрагменты для замены нативного элемента своим (svg).</p>
-
-          <div class="field-radio">
-            <div class="field-radio__title">Общее необязательное название</div>
-            <div class="field-radio__input-wrap">
-              <label class="field-radio__label">
-                <input class="field-radio__input" type="radio" name="radio-field" value="+" checked>
-                <span class="field-radio__name-text">Радиокнопка с группой, первая</span>
-              </label>
-              <div class="field-radio__help-text">Радиокнопка в группе</div>
-            </div>
-
-            <div class="field-radio__input-wrap">
-              <label class="field-radio__label">
-                <input class="field-radio__input" type="radio" name="radio-field" value="+">
-                <span class="field-radio__name-text">Радиокнопка с группой, последующая</span>
-              </label>
-              <div class="field-radio__help-text">Радиокнопка в группе</div>
-            </div>
-
-            <div class="field-radio__input-wrap">
-              <label class="field-radio__label">
-                <input class="field-radio__input" type="radio" name="radio-field" value="+">
-                <span class="field-radio__name-text">Радиокнопка с группой, последующая</span>
-              </label>
-              <div class="field-radio__help-text">Радиокнопка в группе</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============================================ -->
-
-        <section class="block-library" id="field-text">
-          <h2 class="block-library__title">Текстовое поле</h2>
-          <p>Текстовые поля <code>textarea</code> и <code>input</code>.<br> Для <code>textarea</code> полезно использовать <a href="https://github.com/jackmoore/autosize" rel="noopener">autosize</a>.</p>
-
-          <p class=good>Для разметки одиночного инпута используем конструкцию <code>label-input-label</code></p>
-          <div class="attention">
-            <p>Для разметки <strong>групп инпутов</strong> использовать <code>fieldset</code> и <code>legend</code>.</p>
-            <p>А внутри уже ненумерованный список <code>ul>li</code>, и <code>li</code> как обертка для <code>label-input-label</code></p>
-            <a href="https://yoksel.github.io/bad-practices/forms-markup/">Верстка форм - как НЕ надо</a>
-            <p><a href="#form">Шабон группы - как надо</a></p>
-
-          </div>
-          <hr>
-
-          <label class="field-text">
-            <span class="field-text__name">Текстовое поле <code>textarea</code></span>
-            <span class="field-text__input-wrap">
-              <textarea class="field-text__input" name="message" rows="5" placeholder="Подсказка">Текст внутри</textarea>
-              <span class="field-text__help-text">Подсказка под полем</span>
-            </span>
-          </label>
-
-          <label class="field-text">
-            <span class="field-text__name">Текстовое поле <code>input type="text"</code></span>
-            <span class="field-text__input-wrap">
-              <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
-              <span class="field-text__help-text">Подсказка под полем</span>
-            </span>
-          </label>
-
-          <label class="field-text">
-            <span class="field-text__name">Текстовое поле <code>input type="tel"</code></span>
-            <span class="field-text__input-wrap">
-              <input class="field-text__input" type="tel" name="tel" placeholder="Подсказка">
-              <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
-                <use xlink:href="#icon-phone" />
-              </svg>
-              <span class="field-text__help-text">Подсказка под полем</span>
-            </span>
-          </label>
-
-          <div class="field-text  field-text--motion">
-            <input class="field-text__input  field-text__input--motion" type="text" id="text" name="name" required="">
-            <label class="field-text__label  field-text__label--motion" for="text">Текстовое поле с двигающимся label</label>
-          </div>
-
-
-        </section>
-
-        <!-- ============================================ -->
-
-        <section class="block-library" id="field-actions">
-          <h2 class="block-library__title">Действия формы</h2>
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Чекбоксы на <code>ul>li</code></legend>
+            <ul class="field-checkbox" role="none">
+              <div class="field-checkbox__title">Общее необязательное название</div>
+              <li class="field-checkbox__input-wrap">
+                <label class="field-checkbox__label">
+                  <input class="field-checkbox__input" type="checkbox" name="checkbox-field1" value="+" checked>
+                  <span class="field-checkbox__name-text">Чекбокс с группой, первый</span>
+                </label>
+                <div class="field-checkbox__help-text">Чекбокс в группе</div>
+              </li>
+              <li class="field-checkbox__input-wrap">
+                <label class="field-checkbox__label">
+                  <input class="field-checkbox__input" type="checkbox" name="checkbox-field2" value="+">
+                  <span class="field-checkbox__name-text">Чекбокс с группой, второй</span>
+                </label>
+                <div class="field-checkbox__help-text">Чекбокс в группе</div>
+              </li>
+              <li class="field-checkbox__input-wrap">
+                <label class="field-checkbox__label">
+                  <input class="field-checkbox__input" type="checkbox" name="checkbox-field3" value="+">
+                  <span class="field-checkbox__name-text">Чекбокс с группой, третий</span>
+                </label>
+                <div class="field-checkbox__help-text">Чекбокс в группе</div>
+              </li>
+            </ul>
+          </fieldset>
 
           <div class="field-actions">
             <div class="field-actions__help-text">* — обязательные поля</div>
             <button class="btn" type="submit">Отправить</button>
           </div>
-        </section>
+        </form>
+      </section>
 
-        <!-- ============================================ -->
+      <!-- ============================================ -->
 
-        <section class="block-library" id="form">
-          <h2 class="block-library__title">Форма</h2>
-
-          <form class="form" action="https://echo.htmlacademy.ru" method="post">
-            <fieldset class="form__fieldset">
-              <legend class="form__legend">Название1</legend>
-              <label class="field-text">
-                <span class="field-text__name">Текстовое поле input type="text"</span>
-                <span class="field-text__input-wrap">
-                  <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
-                  <span class="field-text__help-text">Подсказка под полем</span>
-                </span>
-              </label>
-
-              <label class="field-text">
-                <span class="field-text__name">Текстовое поле input type="text"</span>
-                <span class="field-text__input-wrap">
-                  <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
-                  <span class="field-text__help-text">Подсказка под полем</span>
-                </span>
-              </label>
-            </fieldset>
-
-            <fieldset class="form__fieldset">
-              <legend class="form__legend">Название2</legend>
-              <label class="field-text">
-                <span class="field-text__input-wrap">
-                  <input class="field-text__input" type="text" name="text" placeholder="Подсказка">
-                  <span class="field-text__help-text">Подсказка под полем</span>
-                </span>
-              </label>
-            </fieldset>
-
-            <fieldset class="form__fieldset">
-              <legend class="form__legend">Радиокнопки на <code>ul>li</li>
-              </ul></code></legend>
-              <ul class="field-radio" role="none">
-                <div class="field-radio__title">Общее необязательное название</div>
-                <li class="field-radio__input-wrap">
-                  <label class="field-radio__label">
-                    <input class="field-radio__input" type="radio" name="radio-field" value="+">
-                    <span class="field-radio__name-text">Радиокнопка с группой, первая</span>
-                  </label>
-                  <div class="field-radio__help-text">Радиокнопка в группе</div>
-                </li>
-                <li class="field-radio__input-wrap">
-                  <label class="field-radio__label">
-                    <input class="field-radio__input" type="radio" name="radio-field" value="+">
-                    <span class="field-radio__name-text">Радиокнопка с группой, вторая</span>
-                  </label>
-                  <div class="field-radio__help-text">Радиокнопка в группе</div>
-                </li>
-                <li class="field-radio__input-wrap">
-                  <label class="field-radio__label">
-                    <input class="field-radio__input" type="radio" name="radio-field" value="+">
-                    <span class="field-radio__name-text">Радиокнопка с группой, третья</span>
-                  </label>
-                  <div class="field-radio__help-text">Радиокнопка в группе</div>
-                </li>
-              </ul>
-            </fieldset>
-
-            <fieldset class="form__fieldset">
-              <legend class="form__legend">Чекбоксы на <code>ul>li</code></legend>
-              <ul class="field-checkbox" role="none">
-                <div class="field-checkbox__title">Общее необязательное название</div>
-                <li class="field-checkbox__input-wrap">
-                  <label class="field-checkbox__label">
-                    <input class="field-checkbox__input" type="checkbox" name="checkbox-field1" value="+" checked>
-                    <span class="field-checkbox__name-text">Чекбокс с группой, первый</span>
-                  </label>
-                  <div class="field-checkbox__help-text">Чекбокс в группе</div>
-                </li>
-                <li class="field-checkbox__input-wrap">
-                  <label class="field-checkbox__label">
-                    <input class="field-checkbox__input" type="checkbox" name="checkbox-field2" value="+">
-                    <span class="field-checkbox__name-text">Чекбокс с группой, второй</span>
-                  </label>
-                  <div class="field-checkbox__help-text">Чекбокс в группе</div>
-                </li>
-                <li class="field-checkbox__input-wrap">
-                  <label class="field-checkbox__label">
-                    <input class="field-checkbox__input" type="checkbox" name="checkbox-field3" value="+">
-                    <span class="field-checkbox__name-text">Чекбокс с группой, третий</span>
-                  </label>
-                  <div class="field-checkbox__help-text">Чекбокс в группе</div>
-                </li>
-              </ul>
-            </fieldset>
-
-            <div class="field-actions">
-              <div class="field-actions__help-text">* — обязательные поля</div>
-              <button class="btn" type="submit">Отправить</button>
-            </div>
-          </form>
-        </section>
-
-        <!-- ============================================ -->
-
-        <section class="block-library" id="form-validation">
-          <h2 class="block-library__title">Валидация формы, JS.</h2>
-          <span>Почитать: <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Forms/%D0%92%D0%B0%D0%BB%D0%B8%D0%B4%D0%B0%D1%86%D0%B8%D1%8F_%D1%84%D0%BE%D1%80%D0%BC%D1%8B" rel="noopener">MDN</a></span>
-          <p>Скрипт <code>form-validation.js</code></p>
-          <p>Черные квадраты в поле <code>input</code> - заготовки для будущих <code>svg</code>.<br>
-            Эти <code>svg</code> видны постоянно. Можно управлять цветом <code>svg</code> в зависимости от <code>:hover, :focus, active</code>.
-          </p>
-          <p>Важно:<br>
-            <code>
+      <section class="block-library" id="form-validation">
+        <h2 class="block-library__title">Валидация формы, JS.</h2>
+        <span>Почитать: <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Forms/%D0%92%D0%B0%D0%BB%D0%B8%D0%B4%D0%B0%D1%86%D0%B8%D1%8F_%D1%84%D0%BE%D1%80%D0%BC%D1%8B" rel="noopener">MDN</a></span>
+        <p>Скрипт <code>form-validation.js</code></p>
+        <p>Черные квадраты в поле <code>input</code> - заготовки для будущих <code>svg</code>.<br>
+          Эти <code>svg</code> видны постоянно. Можно управлять цветом <code>svg</code> в зависимости от <code>:hover, :focus, active</code>.
+        </p>
+        <p>Важно:<br>
+          <code>
           .field-text__input--name,<br>
           .field-text__input--tel,<br>
          .field-text__input--email</code> - нужны для скрипту <code>form-validation.js</code> для обращения к соответствующим <code>input</code>.
-          </p>
+        </p>
 
-          <form class="form  form--validation" action="https://echo.htmlacademy.ru" method="post">
-            <fieldset class="form__fieldset">
-              <legend class="form__legend">Название1</legend>
-              <label class="field-text">
-                <span class="field-text__name">Текстовое поле input type="text"</span>
-                <span class="field-text__input-wrap  field-text__input-wrap1">
-                  <input class="field-text__input  field-text__input--name" type="text" name="name" placeholder="Имя" required>
-                  <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
-                    <use xlink:href="#icon-phone" />
-                  </svg>
-                  <span class="field-text__help-text  field-text__help-text--name">* - Подсказка под полем - ИМЯ</span>
-                </span>
-              </label>
+        <form class="form  form--validation" action="https://echo.htmlacademy.ru" method="post">
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Название1</legend>
+            <label class="field-text">
+              <span class="field-text__name">Текстовое поле input type="text"</span>
+              <span class="field-text__input-wrap  field-text__input-wrap1">
+                <input class="field-text__input  field-text__input--name" type="text" name="name" placeholder="Имя" required>
+                <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
+                  <use xlink:href="#icon-phone" />
+                </svg>
+                <span class="field-text__help-text  field-text__help-text--name">* - Подсказка под полем - ИМЯ</span>
+              </span>
+            </label>
 
-              <label class="field-text">
-                <span class="field-text__name">Текстовое поле input type="tel"</span>
-                <span class="field-text__input-wrap  field-text__input-wrap2">
-                  <input class="field-text__input  field-text__input--tel" type="tel" name="tel" placeholder="Телефон" required pattern="^[ 0-9]+$">
-                  <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
-                    <use xlink:href="#icon-phone" />
-                  </svg>
-                  <span class="field-text__help-text  field-text__help-text--tel">* - Подсказка под полем - TEL в любом формате </span>
-                </span>
-              </label>
+            <label class="field-text">
+              <span class="field-text__name">Текстовое поле input type="tel"</span>
+              <span class="field-text__input-wrap  field-text__input-wrap2">
+                <input class="field-text__input  field-text__input--tel" type="tel" name="tel" placeholder="Телефон" required pattern="^[ 0-9]+$">
+                <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
+                  <use xlink:href="#icon-phone" />
+                </svg>
+                <span class="field-text__help-text  field-text__help-text--tel">* - Подсказка под полем - TEL в любом формате </span>
+              </span>
+            </label>
 
-              <label class="field-text">
-                <span class="field-text__name">Текстовое поле input type="e-mail"</span>
-                <span class="field-text__input-wrap  field-text__input-wrap3">
-                  <input class="field-text__input  field-text__input--email" type="email" name="email" placeholder="E-mail" required>
-                  <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
-                    <use xlink:href="#icon-phone" />
-                  </svg>
-                  <span class="field-text__help-text  field-text__help-text--email">* - Подсказка под полем - E-MAIL</span>
-                </span>
-              </label>
-            </fieldset>
+            <label class="field-text">
+              <span class="field-text__name">Текстовое поле input type="e-mail"</span>
+              <span class="field-text__input-wrap  field-text__input-wrap3">
+                <input class="field-text__input  field-text__input--email" type="email" name="email" placeholder="E-mail" required>
+                <svg class="field-text__icon" width="25" height="25" aria-hidden="true" role="presentation">
+                  <use xlink:href="#icon-phone" />
+                </svg>
+                <span class="field-text__help-text  field-text__help-text--email">* - Подсказка под полем - E-MAIL</span>
+              </span>
+            </label>
+          </fieldset>
 
-            <div class="field-actions">
-              <div class="field-actions__help-text">* — обязательные поля</div>
-              <button class="btn  btn--validation" type="submit">Отправить</button>
+          <div class="field-actions">
+            <div class="field-actions__help-text">* — обязательные поля</div>
+            <button class="btn  btn--validation" type="submit">Отправить</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="active-pseudo">
+        <h2 class="block-library__title">Доб. псевдоэлемент в пустой <code>input</code>, JS.</h2>
+        <p>Скрипт <code>active-pseudo-to-input.js</code></p>
+        <p>Скрипт добавляет псевдоэлемент в пустое поле <code>input</code>.<br>
+          Если в поле есть значение, псевдоэлемент удаляется.
+        </p>
+
+        <p><b>Принцип:</b></p>
+        <ul>
+          <li> <code>.field-text__input-wrap--1 /2/3...</code> - нужен для навешивания скриптом класса <code>.field-text__input-wrap-pseudo--1</code>. Это класс с псевдоэлементом.</li>
+          <li>
+            <code>.field-text__input--text-ape</code>,<br>
+            <code>.field-text__input--tel-ape</code>,<br>
+            <code>.field-text__input--mail-ape</code> - нужны для отлова focus/blur на соответствующих <code>input</code>.<br>
+            -ape - это аббревиатура для active pseudo element;
+          </li>
+          <li>Далее в скрипте, функция <code>checkInputEmtpiness</code>, отловив focus/blur на соответствующем <code>input</code>, удаляет/добавляет класс с псевдоэлементом <code>.field-text__input-wrap-pseudo--1</code>.</li>
+        </ul>
+
+        <br>
+
+        <label class="field-text">
+          <span class="field-text__name">Текстовое поле <code>input type="text"</code> + <code>::before</code></span>
+          <span class="field-text__input-wrap  field-text__input-wrap--1">
+            <input class="field-text__input  field-text__input--text-ape" type="text" name="name" placeholder="Имя">
+            <span class="field-text__help-text">Подсказка под полем</span>
+          </span>
+        </label>
+
+        <label class="field-text">
+          <span class="field-text__name">Текстовое поле <code>input type="text"</code> + <code>::before</code></span>
+          <span class="field-text__input-wrap  field-text__input-wrap--2">
+            <input class="field-text__input  field-text__input--tel-ape" type="tel" name="tel" placeholder="Телефон" pattern="^[ 0-9]+$">
+            <span class="field-text__help-text">* - Подсказка под полем - TEL в любом формате</span>
+          </span>
+        </label>
+
+        <label class="field-text">
+          <span class="field-text__name">Текстовое поле <code>input type="text"</code> + <code>::before</code></span>
+          <span class="field-text__input-wrap  field-text__input-wrap--3">
+            <input class="field-text__input  field-text__input--email-ape" type="email" name="email" placeholder="E-mail">
+            <span class="field-text__help-text">* - Подсказка под полем - E-MAIL</span>
+          </span>
+        </label>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="input-motion">
+        <h2 class="block-library__title">Как сделать выдвигающийся <code>input</code></h2>
+        <p>Ниже представлен пример реализации.<br>
+          Это не готовый БЭМ-блок, а пример!</p>
+
+        <p>Принцип: по focus анимируется ширина input от 0 до заданного значения.</p>
+
+        <p>input выезжает слева:</p>
+        <div class="input-motion">
+          <form>
+            <div class="input-motion__wrap">
+              <input class="input-motion__input  input-motion__input--left" type="text" placeholder="Искать здесь...">
+              <button class="btn  input-motion__btn  input-motion__btn--left" aria-label="Назначение кнопки">
+                <svg width="15" height="15" role="img">
+                  <use xlink:href="#icon-cart" />
+                </svg>
+              </button>
             </div>
           </form>
-        </section>
+        </div>
 
-        <!-- ============================================ -->
+        <p>input выезжает справа:</p>
+        <div class="input-motion">
+          <form>
+            <div class="input-motion__wrap">
+              <input class="input-motion__input  input-motion__input--right" type="text" placeholder="Искать здесь...">
+              <button class="btn  input-motion__btn  input-motion__btn--right" aria-label="Назначение кнопки">
+                <svg width="15" height="15" role="img">
+                  <use xlink:href="#icon-cart" />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
 
-        <section class="block-library" id="active-pseudo">
-          <h2 class="block-library__title">Доб. псевдоэлемент в пустой <code>input</code>, JS.</h2>
-          <p>Скрипт <code>active-pseudo-to-input.js</code></p>
-          <p>Скрипт добавляет псевдоэлемент в пустое поле <code>input</code>.<br>
-            Если в поле есть значение, псевдоэлемент удаляется.
-          </p>
+      <!-- ============================================ -->
 
-          <p><b>Принцип:</b></p>
-          <ul>
-            <li> <code>.field-text__input-wrap--1 /2/3...</code> - нужен для навешивания скриптом класса <code>.field-text__input-wrap-pseudo--1</code>. Это класс с псевдоэлементом.</li>
-            <li>
-              <code>.field-text__input--text-ape</code>,<br>
-              <code>.field-text__input--tel-ape</code>,<br>
-              <code>.field-text__input--mail-ape</code> - нужны для отлова focus/blur на соответствующих <code>input</code>.<br>
-              -ape - это аббревиатура для active pseudo element;
-            </li>
-            <li>Далее в скрипте, функция <code>checkInputEmtpiness</code>, отловив focus/blur на соответствующем <code>input</code>, удаляет/добавляет класс с псевдоэлементом <code>.field-text__input-wrap-pseudo--1</code>.</li>
-          </ul>
+      <section class="block-library" id="del-bg-click">
+        <h2 class="block-library__title">Как убрать синий фон при клике на элемент?</h2>
+        <p>Применить к проблемным элементам:<br><code>-webkit-tap-highlight-color: rgba(0, 0, 0, 0);</code> </p>
+        <span>Почитать: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-tap-highlight-color" rel="noopener"> MDN</a></span>
+      </section>
 
-          <br>
+      <!-- ============================================ -->
 
-          <label class="field-text">
-            <span class="field-text__name">Текстовое поле <code>input type="text"</code> + <code>::before</code></span>
-            <span class="field-text__input-wrap  field-text__input-wrap--1">
-              <input class="field-text__input  field-text__input--text-ape" type="text" name="name" placeholder="Имя">
-              <span class="field-text__help-text">Подсказка под полем</span>
-            </span>
-          </label>
+      <section class="block-library" id="phone-mailto">
+        <h2 class="block-library__title">Номер телефона и электро-почта</h2>
+        <div>
+          <span class="contacts__text">Phone:</span>
+          <a class="contacts__content" href="tel:880056789011">8 800 567.890.11</a>
+        </div>
 
-          <label class="field-text">
-            <span class="field-text__name">Текстовое поле <code>input type="text"</code> + <code>::before</code></span>
-            <span class="field-text__input-wrap  field-text__input-wrap--2">
-              <input class="field-text__input  field-text__input--tel-ape" type="tel" name="tel" placeholder="Телефон" pattern="^[ 0-9]+$">
-              <span class="field-text__help-text">* - Подсказка под полем - TEL в любом формате</span>
-            </span>
-          </label>
+        <div>
+          <span class="visually-hidden">E-mail</span>
+          <a class="contacts__content  contacts__content--link" href="mailto:support@albedo.com">support@albedo.com</a>
+        </div>
+      </section>
 
-          <label class="field-text">
-            <span class="field-text__name">Текстовое поле <code>input type="text"</code> + <code>::before</code></span>
-            <span class="field-text__input-wrap  field-text__input-wrap--3">
-              <input class="field-text__input  field-text__input--email-ape" type="email" name="email" placeholder="E-mail">
-              <span class="field-text__help-text">* - Подсказка под полем - E-MAIL</span>
-            </span>
-          </label>
-        </section>
+      <!-- ============================================ -->
 
-        <!-- ============================================ -->
-
-        <section class="block-library" id="input-motion">
-          <h2 class="block-library__title">Как сделать выдвигающийся <code>input</code></h2>
-          <p>Ниже представлен пример реализации.<br>
-            Это не готовый БЭМ-блок, а пример!</p>
-
-          <p>Принцип: по focus анимируется ширина input от 0 до заданного значения.</p>
-
-          <p>input выезжает слева:</p>
-          <div class="input-motion">
-            <form>
-              <div class="input-motion__wrap">
-                <input class="input-motion__input  input-motion__input--left" type="text" placeholder="Искать здесь...">
-                <button class="btn  input-motion__btn  input-motion__btn--left" aria-label="Назначение кнопки">
-                  <svg width="15" height="15" role="img">
-                    <use xlink:href="#icon-cart" />
-                  </svg>
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <p>input выезжает справа:</p>
-          <div class="input-motion">
-            <form>
-              <div class="input-motion__wrap">
-                <input class="input-motion__input  input-motion__input--right" type="text" placeholder="Искать здесь...">
-                <button class="btn  input-motion__btn  input-motion__btn--right" aria-label="Назначение кнопки">
-                  <svg width="15" height="15" role="img">
-                    <use xlink:href="#icon-cart" />
-                  </svg>
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-
-        <!-- ============================================ -->
-
-        <section class="block-library" id="del-bg-click">
-          <h2 class="block-library__title">Как убрать синий фон при клике на элемент?</h2>
-          <p>Применить к проблемным элементам:<br><code>-webkit-tap-highlight-color: rgba(0, 0, 0, 0);</code> </p>
-          <span>Почитать: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-tap-highlight-color" rel="noopener"> MDN</a></span>
-        </section>
-
-        <!-- ============================================ -->
-
-        <section class="block-library" id="phone-mailto">
-          <h2 class="block-library__title">Номер телефона и электро-почта</h2>
-          <div>
-            <span class="contacts__text">Phone:</span>
-            <a class="contacts__content" href="tel:880056789011">8 800 567.890.11</a>
-          </div>
-
-          <div>
-            <span class="visually-hidden">E-mail</span>
-            <a class="contacts__content  contacts__content--link" href="mailto:support@albedo.com">support@albedo.com</a>
-          </div>
-        </section>
-
-        <!-- ============================================ -->
-
-        <section class="block-library" id="pseudo">
-          <h2 class="block-library__title">Псевдоэлемент: порядок свойств</h2>
-          <div>
-            <button class="burger" aria-label="Показать пример кода" data-target-id="pseudo-code" data-target-class-toggle="blocks-library__example--shown">
-              <span>Показать что-либо</span>
-            </button>
-          </div>
-          <div class="blocks-library__example" id="pseudo-code">
-            <pre class="code">
+      <section class="block-library" id="pseudo">
+        <h2 class="block-library__title">Псевдоэлемент: порядок свойств</h2>
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="pseudo-code" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="pseudo-code">
+          <pre class="code">
                 <span class="code_inner">
 ::before {
   content: "";
@@ -923,113 +922,113 @@
 }
 </span>
             </pre>
-          </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- ============================================ -->
+      <!-- ============================================ -->
 
-        <section class="block-library" id="grid-IE">
-          <h2 class="block-library__title">Grid для IE</h2>
-          <p>IE11 поддерживает старую спецификацию grid.</p>
-          <p></p>
-          <p>Поэтому:</p>
-          <ul>
-            <li><span>Нужны префиксы. </span></li>
-            <li><span>Нужно отдельно прописывать стили, начиная с самого определения <code>display:gird;</code>
-                <code>и ниже: display: -ms-grid;</code>.</span></li>
-            <li><span>Дублировать все свойства для IE. При этом они могут называться иначе!</span></li>
-            <li><span>Вместо высоты лучше указывать высоту рядов.</span></li>
-            <li><span>IE требует явно прописывать ячейки грида.</span></li>
-            <li><span><b>Важно!</b> IE кладёт все элементы grid-контейнера в самую первую ячейку, то есть значения <code>-ms-grid-column: 1</code> и <code>-ms-grid-row: 1</code> для каждой ячейки в IE стоят по умолчанию.</span></li>
-            <li><span>Для объединения ячеек надо использовать <code>-span</code> в соответствующем виде.</span></li>
-            <li><span><b>Важно!</b> <code>grid</code> + <code>picture</code> + какой-либо полифил, типа <code>object-fit-polyfill</code> или <code>objectFitImages</code>, в IE не работает корректно. <br> Это связано видимо, с рассчетом размеров контейнера, которые IE не может корректно рассчитать. Из-за этого изображения либо нет - полифил <code>object-fit-polyfill</code>) , либо нарушается grid-сетка - полифил <code>objectFitImages</code>. <br> <b>Решение:</b> если нужна grid-сетка для для IE + изображения в ячейках, тогда в ячейках не использовать <code>picture</code>, а ложить изображения фоном.</span></li>
-          </ul>
-          <p><b>Пример grid-сетки для IE:</b></p>
+      <section class="block-library" id="grid-IE">
+        <h2 class="block-library__title">Grid для IE</h2>
+        <p>IE11 поддерживает старую спецификацию grid.</p>
+        <p></p>
+        <p>Поэтому:</p>
+        <ul>
+          <li><span>Нужны префиксы. </span></li>
+          <li><span>Нужно отдельно прописывать стили, начиная с самого определения <code>display:gird;</code>
+              <code>и ниже: display: -ms-grid;</code>.</span></li>
+          <li><span>Дублировать все свойства для IE. При этом они могут называться иначе!</span></li>
+          <li><span>Вместо высоты лучше указывать высоту рядов.</span></li>
+          <li><span>IE требует явно прописывать ячейки грида.</span></li>
+          <li><span><b>Важно!</b> IE кладёт все элементы grid-контейнера в самую первую ячейку, то есть значения <code>-ms-grid-column: 1</code> и <code>-ms-grid-row: 1</code> для каждой ячейки в IE стоят по умолчанию.</span></li>
+          <li><span>Для объединения ячеек надо использовать <code>-span</code> в соответствующем виде.</span></li>
+          <li><span><b>Важно!</b> <code>grid</code> + <code>picture</code> + какой-либо полифил, типа <code>object-fit-polyfill</code> или <code>objectFitImages</code>, в IE не работает корректно. <br> Это связано видимо, с рассчетом размеров контейнера, которые IE не может корректно рассчитать. Из-за этого изображения либо нет - полифил <code>object-fit-polyfill</code>) , либо нарушается grid-сетка - полифил <code>objectFitImages</code>. <br> <b>Решение:</b> если нужна grid-сетка для для IE + изображения в ячейках, тогда в ячейках не использовать <code>picture</code>, а ложить изображения фоном.</span></li>
+        </ul>
+        <p><b>Пример grid-сетки для IE:</b></p>
 
-          <div class="projects">
-            <div class="projects__card  projects__card1">
-              <picture>
-                <img class="projects__img" src="img/rastr/image-project_01@1x.jpg" srcset="img/image-project_01@2x.jpg 2x" alt="Notebook">
-              </picture>
-            </div>
-
-            <div class="projects__card  projects__card2">
-              <img class="projects__img" src="img/rastr/image-project_02@1x.jpg" srcset="img/image-project_04@2x.jpg 2x" alt="Badge">
-            </div>
-
-            <div class="projects__card  projects__card3">
-              <img class="projects__img" src="img/rastr/image-project_03@1x.jpg" srcset="img/image-project_03@2x.jpg 2x" alt="Book">
-            </div>
-
-            <div class="projects__card  projects__card4">
-              <img class="projects__img" src="img/rastr/image-project_04@1x.jpg" srcset="img/image-project_04@2x.jpg 2x" alt="Book">
-            </div>
-
-            <div class="projects__card  projects__card5">
-              <img class="projects__img" src="img/rastr/image-project_05@1x.jpg" srcset="img/image-project_05@2x.jpg 2x" alt="Screen phone">
-            </div>
-
-            <div class="projects__card  projects__card6">
-              <img class="projects__img" src="img/rastr/image-project_06@1x.jpg" srcset="img/image-project_06@2x.jpg 2x" alt="Phone">
-            </div>
-          </div>
-        </section>
-
-        <!-- ============================================ -->
-
-        <section class="block-library" id="img-adaptive">
-          <h2 class="block-library__title">Разметка адаптивных контентных изображений</h2>
-          <h2 class="block-library__title"><code>picture</code></h2>
-          <p>Шаблон разметки <b>адаптивных контентных</b> изображений.</p>
-          <p><b>Важно!</b> Использовать <b>picturefill.js</b> для браузеров, которые нe понимают тег <code>picture</code>.</p>
-          <p><code>picturefill.js</code> вписан в Startkit.</p>
-          <p>Это IE, Opera mini, Blackberry Browser, IE Mobile.</p>
-          <p><b>Важно-2!</b> Для правильного маштабирования <code>img</code> в IE, использовать <code>object-fit-images</code>.</p>
-          <p><code>object-fit-images</code> добавлен в Startkit.</p>
-          <p>Почитать здесь: <a href="https://www.npmjs.com/package/object-fit-images" rel="noopener"> object-fit-images</a></p>
-
-          <div class="container">
+        <div class="projects">
+          <div class="projects__card  projects__card1">
             <picture>
-              <source type="image/webp" media="(min-width: 960px)" srcset="img/rastr/panorama-desktop@1x.webp 1x, img/rastr/panorama-desktop@2x.webp 2x">
-              <source type="image/webp" media="(min-width: 660px)" srcset="img/rastr/panorama-tablet@1x.webp 1x, img/rastr/panorama-tablet@2x.webp 2x">
-              <source type="image/webp" srcset="img/rastr/panorama-mobile@1x.webp 1x, img/rastr/panorama-mobile@2x.webp 2x">
-
-              <source media="(min-width: 960px)" srcset="img/rastr/panorama-desktop@1x.jpg 1x, img/rastr/panorama-desktop@2x.jpg 2x">
-              <source media="(min-width: 660px)" srcset="img/rastr/panorama-tablet@1x.jpg 1x, img/rastr/panorama-tablet@2x.jpg 2x">
-              <img class="container__img" src="img/rastr/panorama-mobile@1x.jpg" srcset="img/rastr/panorama-mobile@2x.jpg 2x" alt="Панорама гористой местности.">
+              <img class="projects__img" src="img/rastr/image-project_01@1x.jpg" srcset="img/image-project_01@2x.jpg 2x" alt="Notebook">
             </picture>
           </div>
-        </section>
 
-        <!-- ============================================ -->
+          <div class="projects__card  projects__card2">
+            <img class="projects__img" src="img/rastr/image-project_02@1x.jpg" srcset="img/image-project_04@2x.jpg 2x" alt="Badge">
+          </div>
 
-        <section class="block-library" id="lazyload">
-          <h2 class="block-library__title">lazyload images</h2>
-          <span><b>Почитать здесь:</b></span>
-          <ul>
-            <li>здесь:
-              <a href="https://web.dev/native-lazy-loading/" rel="noopener"> native lazy-loading</a> </li>
-            <li>и здесь:
-              <a href="https://web.dev/use-lazysizes-to-lazyload-images/" rel="noopener"> use lazysizes.js to lazyload images</a></li>
-            <li> демо паттерн:
-              <a href="https://lazy-loading.firebaseapp.com/lazy_loading_native.html" rel="noopener"> demo pattern</a></li>
-          </ul>
+          <div class="projects__card  projects__card3">
+            <img class="projects__img" src="img/rastr/image-project_03@1x.jpg" srcset="img/image-project_03@2x.jpg 2x" alt="Book">
+          </div>
 
-          <p><b>Итак:</b><br>
-            По состоянию на 2019-12-12 только в Хроме есть реализация lazyload в браузере.<br>
-            Остальным нужена JS-библиотека <code> lazysizes.js</code>.
-          </p>
+          <div class="projects__card  projects__card4">
+            <img class="projects__img" src="img/rastr/image-project_04@1x.jpg" srcset="img/image-project_04@2x.jpg 2x" alt="Book">
+          </div>
 
-          <p><b>Поэтому можно использовать такой паттерн:</b><br>
-            Мы можем обнаружить поддержку атрибута loading браузером, а в качестве резервной библиотеки использовать lazysizes.js тогда, когда загрузка не поддерживается.<br>
-            Oбщая схема: </p>
+          <div class="projects__card  projects__card5">
+            <img class="projects__img" src="img/rastr/image-project_05@1x.jpg" srcset="img/image-project_05@2x.jpg 2x" alt="Screen phone">
+          </div>
 
-          <button class="burger" aria-label="Показать пример кода" data-target-id="lazyload-code" data-target-class-toggle="blocks-library__example--shown">
-            <span>Показать что-либо</span>
-          </button>
+          <div class="projects__card  projects__card6">
+            <img class="projects__img" src="img/rastr/image-project_06@1x.jpg" srcset="img/image-project_06@2x.jpg 2x" alt="Phone">
+          </div>
+        </div>
+      </section>
 
-          <div class="blocks-library__example" id="lazyload-code">
-            <pre class="code">
+      <!-- ============================================ -->
+
+      <section class="block-library" id="img-adaptive">
+        <h2 class="block-library__title">Разметка адаптивных контентных изображений</h2>
+        <h2 class="block-library__title"><code>picture</code></h2>
+        <p>Шаблон разметки <b>адаптивных контентных</b> изображений.</p>
+        <p><b>Важно!</b> Использовать <b>picturefill.js</b> для браузеров, которые нe понимают тег <code>picture</code>.</p>
+        <p><code>picturefill.js</code> вписан в Startkit.</p>
+        <p>Это IE, Opera mini, Blackberry Browser, IE Mobile.</p>
+        <p><b>Важно-2!</b> Для правильного маштабирования <code>img</code> в IE, использовать <code>object-fit-images</code>.</p>
+        <p><code>object-fit-images</code> добавлен в Startkit.</p>
+        <p>Почитать здесь: <a href="https://www.npmjs.com/package/object-fit-images" rel="noopener"> object-fit-images</a></p>
+
+        <div class="container">
+          <picture>
+            <source type="image/webp" media="(min-width: 960px)" srcset="img/rastr/panorama-desktop@1x.webp 1x, img/rastr/panorama-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 660px)" srcset="img/rastr/panorama-tablet@1x.webp 1x, img/rastr/panorama-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/rastr/panorama-mobile@1x.webp 1x, img/rastr/panorama-mobile@2x.webp 2x">
+
+            <source media="(min-width: 960px)" srcset="img/rastr/panorama-desktop@1x.jpg 1x, img/rastr/panorama-desktop@2x.jpg 2x">
+            <source media="(min-width: 660px)" srcset="img/rastr/panorama-tablet@1x.jpg 1x, img/rastr/panorama-tablet@2x.jpg 2x">
+            <img class="container__img" src="img/rastr/panorama-mobile@1x.jpg" srcset="img/rastr/panorama-mobile@2x.jpg 2x" alt="Панорама гористой местности.">
+          </picture>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="lazyload">
+        <h2 class="block-library__title">lazyload images</h2>
+        <span><b>Почитать здесь:</b></span>
+        <ul>
+          <li>здесь:
+            <a href="https://web.dev/native-lazy-loading/" rel="noopener"> native lazy-loading</a> </li>
+          <li>и здесь:
+            <a href="https://web.dev/use-lazysizes-to-lazyload-images/" rel="noopener"> use lazysizes.js to lazyload images</a></li>
+          <li> демо паттерн:
+            <a href="https://lazy-loading.firebaseapp.com/lazy_loading_native.html" rel="noopener"> demo pattern</a></li>
+        </ul>
+
+        <p><b>Итак:</b><br>
+          По состоянию на 2019-12-12 только в Хроме есть реализация lazyload в браузере.<br>
+          Остальным нужена JS-библиотека <code> lazysizes.js</code>.
+        </p>
+
+        <p><b>Поэтому можно использовать такой паттерн:</b><br>
+          Мы можем обнаружить поддержку атрибута loading браузером, а в качестве резервной библиотеки использовать lazysizes.js тогда, когда загрузка не поддерживается.<br>
+          Oбщая схема: </p>
+
+        <button class="burger" aria-label="Показать пример кода" data-target-id="lazyload-code" data-target-class-toggle="blocks-library__example--shown">
+          <span>Показать что-либо</span>
+        </button>
+
+        <div class="blocks-library__example" id="lazyload-code">
+          <pre class="code">
                 <span class="code_inner">
     if ('loading' in HTMLImageElement.prototype) {
       // supported in browser
@@ -1038,42 +1037,42 @@
     }
                 </span>
               </pre>
-          </div>
-          <hr>
+        </div>
+        <hr>
 
-          <p>Это работает следующим образом.<br>
-            1. Делаем такую разметку:<br>
-            2. Внизу страницы добавляем скрипт, который загрузит <code>lazysizes.min.js</code> при необходимости.
-          </p>
+        <p>Это работает следующим образом.<br>
+          1. Делаем такую разметку:<br>
+          2. Внизу страницы добавляем скрипт, который загрузит <code>lazysizes.min.js</code> при необходимости.
+        </p>
 
-          <button class="burger" aria-label="Показать пример кода" data-target-id="lazyload-code-pattern" data-target-class-toggle="blocks-library__example--shown">
+        <button class="burger" aria-label="Показать пример кода" data-target-id="lazyload-code-pattern" data-target-class-toggle="blocks-library__example--shown">
+          <span>Показать что-либо</span>
+        </button>
+
+        <div class="blocks-library__example" id="lazyload-code-pattern">
+          <img class="container__img" src="img/rastr/img-lazyload.png" alt="скрипт lazysizes.min.js">
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="bg-adaptive">
+        <h2 class="block-library__title">Adaptive background in CSS</h2>
+        <p>Шаблон css-свойств для адаптивного фона блока.</p>
+        <div class="bg-adaptive"></div>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="background">
+        <h2 class="block-library__title">Background: порядок свойств</h2>
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="background-code" data-target-class-toggle="blocks-library__example--shown">
             <span>Показать что-либо</span>
           </button>
-
-          <div class="blocks-library__example" id="lazyload-code-pattern">
-            <img class="container__img" src="img/rastr/img-lazyload.png" alt="скрипт lazysizes.min.js">
-          </div>
-        </section>
-
-        <!-- ============================================ -->
-
-        <section class="block-library" id="bg-adaptive">
-          <h2 class="block-library__title">Adaptive background in CSS</h2>
-          <p>Шаблон css-свойств для адаптивного фона блока.</p>
-          <div class="bg-adaptive"></div>
-        </section>
-
-        <!-- ============================================ -->
-
-        <section class="block-library" id="background">
-          <h2 class="block-library__title">Background: порядок свойств</h2>
-          <div>
-            <button class="burger" aria-label="Показать пример кода" data-target-id="background-code" data-target-class-toggle="blocks-library__example--shown">
-              <span>Показать что-либо</span>
-            </button>
-          </div>
-          <div class="blocks-library__example" id="background-code">
-            <pre class="code">
+        </div>
+        <div class="blocks-library__example" id="background-code">
+          <pre class="code">
               <span class="code_inner">
 .имя-блока {
   min-height: px;
@@ -1087,46 +1086,45 @@
 }
 </span>
             </pre>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+
+      <section class="block-library" id="drop-shadow">
+        <h2 class="block-library__title">Тень вокруг не-прямоугольного элемента</h2>
+        <h3 class="block-library__title"><code>filter: drop-shadow();</code></h3>
+        <br>
+        <p class="attention">Не поддерживается IE!</p>
+        <p><b>Принцип:</b></p>
+        <ul>
+          <li>Тень по контуру изображения: <code>filter: drop-shadow();</code><br>
+            Почитать:
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow">MDN drop-shadow();</a>
+          </li>
+          <li>Контур, вокруг которого будет тень, может быть любым.<br>
+            В данном примере, контур сделан с помощью<code>clip-path: polygon();</code><br>
+            Почитать:
+            <a href="https://developer.mozilla.org/ru/docs/Web/CSS/clip-path">MDN clip-path</a>
+          </li>
+        </ul>
+
+        <p><b>Как сделать:</b></p>
+        <ul>
+          <li>Задаем блоку нужный контур с помощью <code> clip-path:();</code>, например как этом примере;</li>
+          <li>Обертке блока задаем тень <code>filter: drop-shadow();</code></li>
+        </ul>
+        <p>Генератор clip-path: <a href="https://bennettfeely.com/clippy/" rel="noopener">СSS clip-path maker</a></p>
+
+        <br>
+        <div class="wrap-clip-pach">
+          <div class="wrap-clip-pach__inner">inner
           </div>
-        </section>
+        </div>
 
-        <!-- ============================================ -->
-
-        <section class="block-library" id="drop-shadow">
-          <h2 class="block-library__title">Тень вокруг не-прямоугольного элемента</h2>
-          <h3 class="block-library__title"><code>filter: drop-shadow();</code></h3>
-          <br>
-          <p class="attention">Не поддерживается IE!</p>
-          <p><b>Принцип:</b></p>
-          <ul>
-            <li>Тень по контуру изображения: <code>filter: drop-shadow();</code><br>
-              Почитать:
-              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow">MDN drop-shadow();</a>
-            </li>
-            <li>Контур, вокруг которого будет тень, может быть любым.<br>
-              В данном примере, контур сделан с помощью<code>clip-path: polygon();</code><br>
-              Почитать:
-              <a href="https://developer.mozilla.org/ru/docs/Web/CSS/clip-path">MDN clip-path</a>
-            </li>
-          </ul>
-
-          <p><b>Как сделать:</b></p>
-          <ul>
-            <li>Задаем блоку нужный контур с помощью <code> clip-path:();</code>, например как этом примере;</li>
-            <li>Обертке блока задаем тень <code>filter: drop-shadow();</code></li>
-          </ul>
-          <p>Генератор clip-path: <a href="https://bennettfeely.com/clippy/" rel="noopener">СSS clip-path maker</a></p>
-
-          <br>
-          <div class="wrap-clip-pach">
-            <div class="wrap-clip-pach__inner">inner
-            </div>
-          </div>
-
-          <div class="wrap-clip-pach">
-            <img src="img/vector/firefox-logo.svg" width="150">
-          </div>
-      </div>
+        <div class="wrap-clip-pach">
+          <img src="img/vector/firefox-logo.svg" width="150">
+        </div>
       </section>
 
       <!-- ============================================ -->
@@ -1518,36 +1516,31 @@
 
           <ul class="tabs__links" role="tablist">
             <li class="tabs__link-wrap" role="presentation">
-              <a class="tabs__link" href="#tab00" data-toggle="tab" role="tab">Вкладка ноль</a>
-            </li>
-            <li class="tabs__link-wrap  tabs__link-wrap--active" role="presentation">
-              <a class="tabs__link" href="#tab01" data-toggle="tab" role="tab">Вкладка один</a>
+              <a class="tabs__link" href="#tab00" role="tab">Вкладка ноль</a>
             </li>
             <li class="tabs__link-wrap" role="presentation">
-              <a class="tabs__link" href="#tab02" data-toggle="tab" role="tab">Вкладка два</a>
+              <a class="tabs__link" href="#tab01" role="tab">Вкладка один</a>
             </li>
             <li class="tabs__link-wrap" role="presentation">
-              <a class="tabs__link" href="#tab03" data-toggle="tab" role="tab">Вкладка три</a>
+              <a class="tabs__link" href="#tab02" role="tab">Вкладка два</a>
+            </li>
+            <li class="tabs__link-wrap" role="presentation">
+              <a class="tabs__link" href="#tab03" role="tab">Вкладка три</a>
             </li>
           </ul>
 
           <div class="tabs__content-wrapper">
-            <div class="tabs__content-item" id="tab00" role="tabpanel" data-noscroll>
-              <p>0. Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
+            <div class="tabs__content-item" id="tab00" role="tabpanel">
+              <p>0. Йога, массажи и плавание в море - помогут уставшей спине! Индийские йоги считали, что здоровье человека можно определить по тому, насколько здоров и гибок у него позвоночник.</p>
             </div>
-            <div class="tabs__content-item  tabs__content-item--active" id="tab01" role="tabpanel" data-noscroll>
-              <p>1. За словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
+            <div class="tabs__content-item" id="tab01" role="tabpanel">
+              <p>1. Аюрведа и йога утверждают, что главным источником здоровья нашего организма является здоровый ум.</p>
             </div>
-            <div class="tabs__content-item" id="tab02" role="tabpanel" data-noscroll>
-              <p>2.Словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
+            <div class="tabs__content-item" id="tab02" role="tabpanel">
+              <p>2.Стрессы, жизнь в условиях города, плохая экология, загрязненные продукты и вода, напряженный ритм жизни - все это день ото дня отбирает у нас молодость и хорошее здоровье.</p>
             </div>
-            <div class="tabs__content-item" id="tab03" role="tabpanel" data-noscroll>
-              <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
-              <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
-              <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
-              <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
-              <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
-              <p>3. Горами в стране, гласных и согласных живут рыбные тексты.</p>
+            <div class="tabs__content-item" id="tab03" role="tabpanel">
+              <p>3. есколько лет назад мы разработали специальные программы по йоге и аюрведе - и мы поняли, что они отлично работают - на опыте 530 наших туристов!</p>
             </div>
           </div>
         </div>
@@ -1779,7 +1772,9 @@
         <p>Далее два варианта:</p>
         <hr>
         <p><b>Вариант 1:</b><br> использовать CSS - свойство <code>scroll-behavior: smooth;</code><br>
-          Важно! <code>scroll-behavior: smooth;</code> добавлять контейнеру, внутри которого нужна прокрутка.<br><br>
+          Важно!<br>
+          <b>MDN:</b> <code>scroll-behavior: smooth;</code> добавлять контейнеру, внутри которого нужна прокрутка. - <b>не работает,</b><br>
+          <b>w3schools.com:</b> <code>scroll-behavior: smooth;</code> добавлять на <code>html {scroll-behavior: smooth;}</code> - <b>работает</b>.<br><br>
           <span class="attention">Не работает в IE + EDGE.</span><br> Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
         <hr>
         <p><b>Вариант 2:</b><br> использовать <code>JS</code>.
@@ -2619,7 +2614,7 @@ width: 0;
   <script src="js/modal.js"></script>
   <script src="js/modal-2.js"></script>
 
-  <script src="js/tab.js"></script>
+  <script src="js/tabs.js"></script>
 
   <!--скрипт бургер одинокий -->
   <script src="js/burger.js"></script>
@@ -2631,10 +2626,10 @@ width: 0;
   <script src="js/main-nav.js"></script>
 
   <!--скрипт плавного скрола к якорю -->
-  <script src="js/scroll-anchor.js"></script>
+  <!-- <script src="js/scroll-anchor.js"></script> -->
 
   <!--скрипт ссылки "вверх" -->
-  <script src="js/to-top.js"></script>
+  <!-- <script src="js/to-top.js"></script> -->
 
   <!-- скрипт валидации полей формы -->
   <script src="js/form-validation.js"></script>
@@ -2649,7 +2644,7 @@ width: 0;
   <script src="js/active-pseudo-to-input.js"></script>
 
   <!-- скрипт для Яндекс-карт-->
-  <script src="js/script-map.js"></script>
+  <!-- <script src="js/script-map.js"></script> -->
 
   <!-- скрипт для range-->
   <script src="js/custom-range.js"></script>

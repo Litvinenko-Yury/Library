@@ -1,6 +1,8 @@
 .off-canvas {
   display: flex;
   overflow: hidden;
+
+  scroll-behavior: smooth;
 }
 
 .off-canvas__aside {

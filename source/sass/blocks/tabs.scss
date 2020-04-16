@@ -1,4 +1,7 @@
+/*это табы на JS*/
+
 .tabs__links {
+  /*контейнер вкладок*/
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -7,8 +10,8 @@
   list-style: none;
 }
 
-/*вкладка, */
 .tabs__link-wrap {
+  /*вкладка, класс нужен для возможной стилизации состояний*/
   color: $gray;
   border: 1px solid $border-color;
 
@@ -22,12 +25,13 @@
   }
 }
 
-/*текст вкладки*/
 .tabs__link {
+  /*текст вкладки, класс нужен для стилизации состояний*/
   display: block;
   padding: $field-padding-vertical $field-padding-horizontal;
 
   color: inherit;
+
   text-decoration: none;
   background-color: $gray--light;
 
@@ -44,9 +48,11 @@
 }
 
 .tabs__content-item {
-  display: none;
+  &--hide {
+    display: none;
+  }
 
-  &--active {
+  &--show {
     display: block;
   }
 }
