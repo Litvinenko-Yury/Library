@@ -1195,12 +1195,11 @@
           <li>для <code>.range__input</code> добавляет <code>opacity = '0';</code></li>
           <li>в HTML-файл, после <code>.range__input</code> добавляет разметку с классами:
             <ul>
-
+              <li><code>.range__wrapper</code> и <code>.range__wrap-inner</code>- обертки;</li>
               <li><code>.range__track</code> - фоновая линия ползунка;</li>
               <li><code>.range__progress</code> - линия отображения <code>value</code>;</li>
               <li><code>.range__handle</code> - перемещаемый элемент ползунка, т.е. thumb;</li>
-              <li><code>.range__wrapper</code> и <code>.range__wrap-inner</code>- обертки;</li>
-              <li></li>
+              <li><code>.range__value</code> -используется для вывода значения value. Если не нужен, удалить из скрипта;</li>
             </ul>
           <li>JS-файл <code>custom-range1.js</code> отлавливает значение <code>value</code> у штатного <code>input</code>, <br> изменяет ширину <code>.range__progress</code> и координату по оси X для <code>.range__handle</code>;</li>
           <li>Все.</li>
@@ -2380,22 +2379,22 @@ width: 0;
             <li class="rhombus__list-item  rhombus__list-item--1">
               <div class="rhombus__list-inner">
                 <span class="rhombus__item-text">1</span>
-                </div>
+              </div>
             </li>
             <li class="rhombus__list-item  rhombus__list-item--2">
               <div class="rhombus__list-inner">
                 <span class="rhombus__item-text">2</span>
-                </div>
+              </div>
             </li>
             <li class="rhombus__list-item  rhombus__list-item--3">
               <div class="rhombus__list-inner">
                 <span class="rhombus__item-text">3</span>
-                </div>
+              </div>
             </li>
             <li class="rhombus__list-item  rhombus__list-item--4">
               <div class="rhombus__list-inner">
                 <span class="rhombus__item-text">4</span>
-                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -2557,10 +2556,10 @@ width: 0;
         </div>
       </section>
 
-  </main>
+    </main>
   </div>
 
-   <!--=========================== -->
+  <!--=========================== -->
   <script src="js/ofi.min.js"></script>
   <script>objectFitImages();</script>
 
