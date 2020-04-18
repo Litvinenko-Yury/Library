@@ -13,6 +13,17 @@
   padding-bottom: $field-padding-vertical * 3;
   overflow-y: auto;
   background-color: $gray--darken;
+
+  &--js {
+    //background-color: #d4b830;
+    //background-color: #e6a329;
+    //background-color: #b88220; ок
+    //background-color: #a1721c;
+    background-color: #5c4110;
+    //background-color: #45300c;
+    //background-color: #2e2008;
+    //background-color: #f58233;
+  }
 }
 
 .off-canvas__menu {
@@ -23,10 +34,6 @@
 }
 
 .off-canvas__menu-item {
-  &--second {
-    padding-top: 50px;
-  }
-
   &--separator {
     margin-bottom: 10px;
     padding-bottom: 10px;
@@ -49,11 +56,30 @@
     background-color: $gray;
   }
 
-  &--personal {
+  &--fixed-1 {
     position: fixed;
-    width: 250px;
-    padding-bottom: $field-padding-vertical * 4;
+    width: 235px;
     color: #00dbe1;
     background-color: $gray--darken;
+  }
+
+  &--fixed-2 {
+    position: fixed;
+    margin-top: 34px;
+    width: 235px;
+    color: lighten($color-active, 25%);
+    background-color: $gray--darken;
+  }
+
+  &--fixed-3 {
+    position: fixed;
+    margin-top: 68px;
+    width: 235px;
+    color: lighten($color-active, 25%);
+    background-color: $gray--darken;
+  }
+
+  &--second {
+    padding-top: 120px;
   }
 }
