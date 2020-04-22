@@ -2,7 +2,6 @@
 /*script  script-map.js*/
 /*author  https://github.com/Litvinenko-Yury*/
 /*=============================*/
-/*!!!!*/
 /*!!!!!   если скрипт не работает, заменить let на var*/
 
 'use strict'
