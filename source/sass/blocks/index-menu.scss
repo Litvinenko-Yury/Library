@@ -43,25 +43,3 @@
     color: $gray;
   }
 }
-
-.index-menu__wrap {
-  outline: 1px dotted red;
-
-  position: absolute;
-  top: 70%;
-  right: 10%;
-  width: 30%;
-}
-
-.index-menu__link-text {
-  margin-bottom: 1em;
-  text-align: justify;
-  font-size: $font-size;
-  font-weight: 700;
-  //color: red;
-  color: lighten($color-active, 10%);
-
-  &--js {
-    color: #e6a329;
-  }
-}
