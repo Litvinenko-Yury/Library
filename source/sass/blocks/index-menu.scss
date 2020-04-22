@@ -1,13 +1,9 @@
 .index-menu {
-  outline: 2px dashed darkblue;
-
   margin-bottom: 0;
   padding-left: 0;
 }
 
 .index-menu__item {
-  outline: 1px dotted green;
-
   position: fixed;
   top: 0;
 
@@ -18,17 +14,15 @@
 
   &:first-child {
     left: 0;
+    border-right: 1px solid $gray--light;
   }
 
   &:last-child {
     right: 0;
-    border-right: 1px solid $gray--light;
   }
 }
 
 .index-menu__link {
-  outline: 1px dotted coral;
-
   display: flex;
   height: 100%;
   justify-content: center;
@@ -47,5 +41,27 @@
 
   &:active {
     color: $gray;
+  }
+}
+
+.index-menu__wrap {
+  outline: 1px dotted red;
+
+  position: absolute;
+  top: 70%;
+  right: 10%;
+  width: 30%;
+}
+
+.index-menu__link-text {
+  margin-bottom: 1em;
+  text-align: justify;
+  font-size: $font-size;
+  font-weight: 700;
+  //color: red;
+  color: lighten($color-active, 10%);
+
+  &--js {
+    color: #e6a329;
   }
 }

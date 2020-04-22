@@ -1,6 +1,12 @@
 .page-main {
-  outline: 1px dotted blue;
-
-  padding: 1em;
   margin-left: 250px;
+  padding: 1em;
+
+  &--index {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
 }
