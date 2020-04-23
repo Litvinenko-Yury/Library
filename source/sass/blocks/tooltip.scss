@@ -1,0 +1,27 @@
+[data-tooltip] {
+  position: relative; /* Относительное позиционирование */
+  color: red;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip); /* Выводим текст */
+  position: absolute; /* Абсолютное позиционирование */
+
+  left: 0; /* Положение подсказки */
+  top: 0; /* Положение подсказки */
+  width: 300px; /* Ширина подсказки */
+  padding: 0.5em; /* Поля вокруг текста */
+
+  color: #ffffff; /* Цвет текста */
+  background-color: #303030; /* Синий цвет фона */
+
+  pointer-events: none; /* Предотвращает события мыши и щелчки по элементу. */
+  opacity: 0; /* Подсказка невидима */
+  transition: 1s; /* Время появления подсказки */
+}
+
+[data-tooltip]:hover::after {
+  cursor: pointer;
+  opacity: 1; /* Показываем подсказку */
+  top: 2em; /* Положение подсказки */
+}
