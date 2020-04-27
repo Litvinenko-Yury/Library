@@ -48,6 +48,9 @@
           <a class="off-canvas__menu-link" href="#font">Шрифт</a>
         </li>
         <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" href="#pseudo">Псевдоклассы состояний</a>
+        </li>
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" href="#btn">Кнопка</a>
         </li>
         <li class="off-canvas__menu-item">
@@ -337,6 +340,71 @@
           <li><span>платно: </span><a href="https://www.myfonts.com/" rel="noopener">MyFonts</a></li>
           <li>конвертация tiff → woff2/woff: <a href="https://transfonter.org/" rel="noopener">transfonter</a><br></li>
         </ul>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="pseudo">
+        <h2 class="block-library__title">Псевдоклассы состояний</h2>
+        <br>
+
+        <p>Полный порядок псевдоклассов такой: <code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:active</code> и <code>:focus</code>.</p>
+        <br>
+
+        <p><b>Удобно:<br> миксин Sass(Less), например, для ссылок:</b></p>
+        <div class="blocks-library__example  blocks-library__example--shown">
+          <pre class="code">
+              <span class="code_inner">
+@mixin links {
+    & {
+        color: $цвет1;
+    &:visited {
+          color: $цвет2;
+        }
+    &:hover {
+        color: $цвет3;
+        }
+    &:active, &:focus {
+        color: $цвет4;
+    }
+  }
+}
+</span>
+</pre>
+        </div>
+
+        <p><b>Использование:<b></b></b></p>
+        <div class="blocks-library__example  blocks-library__example--shown">
+          <pre class="code">
+              <span class="code_inner">
+a {
+    @include links;
+}
+</span>
+</pre>
+        </div>
+        <br>
+        <br>
+
+        <p><b>:link</b></p>
+        <p>Псевдокласс <code>:link</code> представляет нормальное состояние ссылок и используется для выделения ссылок, которые до сих пор не посещены. В стилях рекомендуется объявлять этот псевдокласс перед всеми остальными классами этой категории. Этот псевдокласс можно пропустить.</p>
+        <br>
+
+        <p><b>:visited</b></p>
+        <p>Используется для стилизации ссылок, уже посещенных пользователем.</p>
+        <br>
+
+        <p><b>:hover</b></p>
+        <p>используется для стилизации элемента, на который в данный момент наведен курсор. Это может быть любой элемент, хотя применение этого псевдокласса для ссылок является самым распространенным случаем.</p>
+        <br>
+
+        <p><b>:active</b></p>
+        <p>Используется для стилизации “активированных” элементов, путем нажатия мыши или касания к экрану. Активация также может производиться и с клавиатуры, также как в случае с псевдоклассом <code>:focus</code>.</p>
+        <br>
+
+        <p><b>:focus</b></p>
+        <p>Используется для стилизации элемента, получившего фокус с помощью курсора, касания или нажатия на клавиатуре. Он часто используется в элементах форм.</p>
+
+
       </section>
 
       <!-- ============================================ -->
@@ -1934,23 +2002,23 @@ width: 0;
         <h2 class="block-library__title">Меню в виде указателей на столбе.</h2>
         <br>
         <br>
-          <ul class="pointers">
-            <li class="pointers__item  pointers__item--right">
-              <span class="pointers__inner  pointers__inner--right-anim">gaterings</span>
-            </li>
+        <ul class="pointers">
+          <li class="pointers__item  pointers__item--right">
+            <span class="pointers__inner  pointers__inner--right-anim">gaterings</span>
+          </li>
 
-            <li class="pointers__item  pointers__item--left">
-              <span class="pointers__inner  pointers__inner--left-anim">attire</span>
-            </li>
+          <li class="pointers__item  pointers__item--left">
+            <span class="pointers__inner  pointers__inner--left-anim">attire</span>
+          </li>
 
-            <li class="pointers__item  pointers__item--right">
-              <span class="pointers__inner  pointers__inner--right-anim">beginnings</span>
-            </li>
+          <li class="pointers__item  pointers__item--right">
+            <span class="pointers__inner  pointers__inner--right-anim">beginnings</span>
+          </li>
 
-            <li class="pointers__item  pointers__item--left">
-              <span class="pointers__inner  pointers__inner--left-anim">contact</span>
-            </li>
-          </ul>
+          <li class="pointers__item  pointers__item--left">
+            <span class="pointers__inner  pointers__inner--left-anim">contact</span>
+          </li>
+        </ul>
       </section>
 
       <a class="to-top" id="to-top-link" href="#note" aria-label="ссылка вверх страницы">↑</a>
