@@ -3114,6 +3114,60 @@ th {
 #tabs-2__tab4:checked ~ #tabs-2__content-tab4 {
   display: block; }
 
+/*это табы на JS*/
+.tabs__links {
+  /*контейнер вкладок*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.tabs__link-wrap {
+  /*вкладка, класс нужен для возможной стилизации состояний*/
+  color: #8e8e8e;
+  border: 1px solid #8e8e8e; }
+  .tabs__link-wrap:not(:last-child) {
+    border-right: none; }
+  .tabs__link-wrap--active {
+    color: #283645;
+    border-bottom: 1px solid transparent; }
+
+.tabs__link {
+  /*текст вкладки, класс нужен для стилизации состояний*/
+  display: block;
+  padding: 5px 12px;
+  color: inherit;
+  text-decoration: none;
+  background-color: #e1e1e1; }
+  .tabs__link:hover {
+    color: #d22856; }
+
+.tabs__content-wrapper {
+  display: block;
+  margin-top: -2px;
+  padding: 5px 12px;
+  border: 1px solid #8e8e8e; }
+
+.tabs__content-item--hide {
+  display: none; }
+
+.tabs__content-item--show {
+  display: block; }
+
+.timer {
+  font-size: 3rem;
+  line-height: 1.2em; }
+
+.timer__text {
+  font-size: 1.5rem; }
+
 .to-top {
   position: fixed;
   z-index: 99;
@@ -3192,53 +3246,6 @@ th {
   /* Показываем подсказку */
   top: 2em;
   /* Положение подсказки */ }
-
-/*это табы на JS*/
-.tabs__links {
-  /*контейнер вкладок*/
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-
-.tabs__link-wrap {
-  /*вкладка, класс нужен для возможной стилизации состояний*/
-  color: #8e8e8e;
-  border: 1px solid #8e8e8e; }
-  .tabs__link-wrap:not(:last-child) {
-    border-right: none; }
-  .tabs__link-wrap--active {
-    color: #283645;
-    border-bottom: 1px solid transparent; }
-
-.tabs__link {
-  /*текст вкладки, класс нужен для стилизации состояний*/
-  display: block;
-  padding: 5px 12px;
-  color: inherit;
-  text-decoration: none;
-  background-color: #e1e1e1; }
-  .tabs__link:hover {
-    color: #d22856; }
-
-.tabs__content-wrapper {
-  display: block;
-  margin-top: -2px;
-  padding: 5px 12px;
-  border: 1px solid #8e8e8e; }
-
-.tabs__content-item--hide {
-  display: none; }
-
-.tabs__content-item--show {
-  display: block; }
 
 .video {
   position: relative;
