@@ -48,13 +48,16 @@
           <a class="off-canvas__menu-link" href="#field-range-custom-v1">Ползунок - range v1 - JS</a>
         </li>
         <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" href="#timer">Таймер</a>
+        </li>
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" href="#modal-basic">Модальное окно1 - базовый шаблон</a>
         </li>
-        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" href="#modal-form-animalion">Модальное окно2 - форма входа + анимация</a>
         </li>
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
-          <a class="off-canvas__menu-link" href="#tabs-js">Табы на JS</a>
+          <a class="off-canvas__menu-link  warning" href="#tabs-js">Табы на JS</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" href="#burger">Бургер</a>
@@ -92,9 +95,6 @@
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  attention-menu" href="#compare">Ползунок сравнения изображений</a>
-        </li>
-        <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" href="#timer">Таймер</a>
         </li>
       </ul>
     </aside>
@@ -152,6 +152,21 @@
             <input class="range__input" type="range" name="counter" min="50" max="200" value="100" step="25">
           </label>
           <span class="range__help-text">Подсказка</span>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="timer">
+        <h2 class="block-library__title">Таймер обратного отсчета</h2>
+        <p>Конечное время таймера задается в переменной <code>deadline</code></p>
+        <p>При необходимости, значение в переменную можно получить от сервера, или от пользователя.</p>
+        <div class="timer" id="timer-reverse">
+          <span class="timer__hours">18</span>
+          <span class="timer__text">ч</span>
+          <span class="timer__minutes">20</span>
+          <span class="timer__text">мин</span>
+          <span class="timer__seconds">11</span>
+          <span class="timer__text">сек</span>
         </div>
       </section>
 
@@ -238,22 +253,22 @@
       </section>
 
       <!-- ============================================ -->
-      <section class="block-library" id="tabs-js">
+      <section class="block-library  attention" id="tabs-js">
         <h2 class="block-library__title">Табы на JS - <small><code>.tabs</code></small></h2>
         <p>Скрипт <code>tab.js</code>.</p>
         <div class="tabs">
           <ul class="tabs__links" role="tablist">
             <li class="tabs__link-wrap" role="presentation">
-              <a class="tabs__link" href="#tab00" role="tab">Вкладка ноль</a>
+              <button class="tabs__link" role="tab">Вкладка ноль</button>
             </li>
             <li class="tabs__link-wrap" role="presentation">
-              <a class="tabs__link" href="#tab01" role="tab">Вкладка один</a>
+              <a class="tabs__link" href="!#" role="tab">Вкладка один</a>
             </li>
             <li class="tabs__link-wrap" role="presentation">
-              <a class="tabs__link" href="#tab02" role="tab">Вкладка два</a>
+              <a class="tabs__link" href="!#" role="tab">Вкладка два</a>
             </li>
             <li class="tabs__link-wrap" role="presentation">
-              <a class="tabs__link" href="#tab03" role="tab">Вкладка три</a>
+              <a class="tabs__link" href="!#" role="tab">Вкладка три</a>
             </li>
           </ul>
 
@@ -780,21 +795,6 @@
         <p>Как вариант: для <code>img</code> задать <code>object-fit</code></p>
       </section>
 
-      <!-- ============================================ -->
-      <section class="block-library" id="timer">
-        <h2 class="block-library__title">Таймер обратного отсчета</h2>
-        <p>Конечное время таймера задается в переменной <code>deadline</code></p>
-        <p>При необходимости, значение в переменную можно получить от сервера, или от пользователя.</p>
-        <div class="timer" id="timer-reverse">
-          <span class="timer__hours">18</span>
-          <span class="timer__text">ч</span>
-          <span class="timer__minutes">20</span>
-          <span class="timer__text">мин</span>
-          <span class="timer__seconds">11</span>
-          <span class="timer__text">сек</span>
-        </div>
-
-      </section>
     </main>
   </div>
 
