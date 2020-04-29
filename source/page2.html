@@ -76,12 +76,6 @@
           <a class="off-canvas__menu-link" href="#select">Select</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link" href="#scrollbar">scrollbar, hidden</a>
-        </li>
-        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
-          <a class="off-canvas__menu-link" href="#scrollbar-styling">scrollbar, стилизация</a>
-        </li>
-        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" href="#svg-vivus">Vivus.js - анимация для SVG</a>
         </li>
         <li class="off-canvas__menu-item">
@@ -96,6 +90,9 @@
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  attention-menu" href="#compare">Ползунок сравнения изображений</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" href="#timer">Таймер</a>
         </li>
       </ul>
     </aside>
@@ -587,153 +584,6 @@
       </section>
 
       <!-- ============================================ -->
-      <section class="block-library" id="scrollbar">
-        <h2 class="block-library__title">как скрыть scrollbar</h2>
-        <p>Как скрыть ползунок прокрутки, но сохраняя при этом саму прокрутку.</p>
-        <div>
-          <button class="burger" aria-label="Показать пример кода" data-target-id="scrollbar-code" data-target-class-toggle="blocks-library__example--shown">
-            <span>Показать что-либо</span>
-          </button>
-        </div>
-
-        <div class="blocks-library__example" id="scrollbar-code">
-          <pre class="code">
-                <span class="code_inner">
--ms-overflow-style: none; // IE 10+
-scrollbar-width: none; // Firefox
-
-&::-webkit-scrollbar { /* WebKit */
-width: 0;
-}
-                </span>
-              </pre>
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-      <section class="block-library" id="scrollbar-styling">
-        <h2 class="block-library__title">Стилизация скроллбара...</h2>
-        <p>По состоянию на <time>2020-04-09</time> ситуация такова:</p>
-        <p><b>Правильное решение</b> - стилизовать с помощью CSS.<br> Работает в webkit-браузерах (Ghrome / Safari / Opera / Яндекс.Браузер)</p>
-        <p><b>Менее правильное решение</b> - если нужно более кросс-браузерное решение, использовать плагины.</p>
-
-        <hr>
-        <h3><b>Терминология</b></h3>
-        <img src="img/rastr/img-scrollbar@1x.png" width="498" alt="Из чего состоит скроллбар">
-        <p>Скроллбар состоит из семи различных элементов:</p>
-        <ul>
-          <li><code><span><b>::-webkit-scrollbar</b>  { /* 1 - скроллбар */ }</span></code></li>
-          <li><code><span><b>::-webkit-scrollbar-button</b>  { /* 2 - кнопка */ }</span></code></li>
-          <li><code><span><b>::-webkit-scrollbar-track</b>  { /* 3 - трек */ }</span></code></li>
-          <li><code><span><b>::-webkit-scrollbar-track-piece</b>  { /* 4 - видимая часть трека */ }</span></code></li>
-          <li><code><span><b>::-webkit-scrollbar-thumb</b>  { /* 5 - ползунок */ }</span></code></li>
-          <li><code><span><b>::-webkit-scrollbar-corner</b>  { /* 6 - уголок */ }</span></code></li>
-          <li><code><span><b>::-webkit-scrollbar-resizer</b>  { /* 7 - изменение размеров окна */ }</span></code></li>
-        </ul>
-
-        <hr>
-        <h3><b>Литература</b></h3>
-        <ul>
-          <li><a href="http://websketches.ru/blog/kastomizacia-brauzernogo-skrollbara">Хорошая статья на http://websketches.ru</a></li>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars">MDN - немного для Mozila Firefox</a></li>
-          <li><a href="https://css-tricks.com/almanac/properties/s/scrollbar/">css-tricks - scrollbar</a></li>
-          <li><a href="https://css-tricks.com/the-current-state-of-styling-scrollbars/">css-tricks - The Current State of Styling Scrollbars </a></li>
-        </ul>
-
-        <hr>
-        <h3><b>Скрипты</b></h3>
-        <br>
-
-        <h3><b>OverlayScrollbars</b></h3>
-        <ul>
-          <li>Размер js-файла = 353кб;</li>
-          <li><a href="https://github.com/KingSora/OverlayScrollbars">Исходник на npm</a></li>
-          <li><a href="https://kingsora.github.io/OverlayScrollbars/#!overview">Сайт</a></li>
-          <li>Можно ли стилизовать - ДА, полностью;</li>
-          <li>Можно ли использовать на несколько блоков - ДА.</li>
-        </ul>
-        <span><b>Резюме:</b></span>
-        <ul>
-          <li>можно использовать через подключение js-файла внизу страницы / или отдельным js-файлом ( + сборщик проекта);</li>
-          <li>стили в отдельном css-файле;</li>
-        </ul>
-
-        <hr>
-        <h3><b>Smooth Scrollbar</b></h3>
-        <ul>
-          <li>Размер js-файла = 58кб;</li>
-          <li><a href="https://www.npmjs.com/package/smooth-scrollbar/v/8.5.2">Исходник на npm</a></li>
-          <li><a href="https://idiotwu.github.io/smooth-scrollbar/">Как использовать</a></li>
-          <li>Можно ли стилизовать - НЕТ;</li>
-          <li>Можно ли использовать на несколько блоков - ДА.</li>
-        </ul>
-        <span><b>Резюме:</b></span>
-        <ul>
-          <li>можно использовать через подключение js-файла внизу страницы / или отдельным js-файлом ( + сборщик проекта);
-            <div class="blocks-library__example  blocks-library__example--shown">
-              <pre class="code">
-                    <span class="code_inner">
-&lt;script src="smooth-scrollbar.js"&gt;&lt;/script&gt;
-&lt;script&gt; Scrollbar.initAll(); &lt;/script&gt;
-                    </span>
-                  </pre>
-            </div>
-          </li>
-        </ul>
-
-        <hr>
-        <h3><b>Perfect-Scrollbar</b></h3>
-        <ul>
-          <li>Размер js-файла = 35кб;</li>
-          <li><a href="https://www.npmjs.com/package/perfect-scrollbar">Исходник на npm</a></li>
-          <li>Можно ли стилизовать - ДА, полностью;</li>
-          <li>Можно ли использовать на несколько блоков - НЕТ. Только один блок на странице.</li>
-        </ul>
-        <span><b>Резюме:</b></span>
-        <ul>
-          <li>можно использовать через подключение js-файла внизу страницы / или отдельным js-файлом ( + сборщик проекта);</li>
-          <li>удобно стилизовать в отдельном css-файле;</li>
-        </ul>
-      </section>
-
-      <!-- ============================================ -->
-      <section class="block-library" id="logo">
-        <h2 class="block-library__title">Логотип </h2>
-
-        <p>как ссылка с <code>img</code>:</p>
-        <a class="logo  logo--img" href="#!">
-          <img src="img/vector/logo-demo.svg" alt="Logo" width="64" height="15">
-        </a>
-
-        <hr>
-
-        <p>как ссылка с <code>svg > use</code>:</p>
-        <a class="logo  logo--svg" href="#!" aria-label="Переход на главную страницу">
-          <svg width="32" height="32" role="img">
-            <use xlink:href="#icon-cart" />
-          </svg>
-        </a>
-
-        <hr>
-
-        <p>как ссылка с разными <code>svg > use</code> для разных ширин экранов:</p>
-        <a class="logo  logo--svg">
-          <svg class="main-nav__inner-logo-img" width="75" height="22" role="img">
-            <title>Логотип PINK</title>
-            <use xlink:href="#icon-pink-white-mobile" />
-          </svg>
-          <svg class="main-nav__inner-logo-img  main-nav__inner-logo-img--tab" width="147" height="41" role="img">
-            <title>Логотип PINK</title>
-            <use xlink:href="#icon-pink-white-tablet" />
-          </svg>
-          <svg class="main-nav__inner-logo-img  main-nav__inner-logo-img--desk" width="147" height="41" role="img">
-            <title>Логотип PINK</title>
-            <use xlink:href="#icon-pink-white-desktop" />
-          </svg>
-        </a>
-      </section>
-
-      <!-- ============================================ -->
       <section class="block-library" id="svg-vivus">
         <h2 class="block-library__title">Vivus.js - рисование анимации для SVG</h2>
         <p>Начало: <a href="https://maxwellito.github.io/vivus-instant/" rel="noopener">vivus-instant</a></p>
@@ -796,64 +646,6 @@ width: 0;
             </style>
           </svg>
         </div>
-      </section>
-
-      <!-- ============================================ -->
-      <section class="block-library" id="pagination">
-        <h2 class="block-library__title">Пагинация</h2>
-        <div class="pagination" aria-label="Page navigation">
-          <a class="pagination__item" href="#!">1</a>
-          <span class="pagination__item">...</span>
-          <a class="pagination__item" href="#!">4</a>
-          <a class="pagination__item  pagination__item--active" href="#!">5</a>
-          <a class="pagination__item" href="#!">6</a>
-          <span class="pagination__item">...</span>
-          <a class="pagination__item" href="#!">999</a>
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-      <section class="block-library" id="breadcrumbs">
-        <h2 class="block-library__title">Хлебные крошки</h2>
-        <ul class="breadcrumbs" aria-label="Breadcrumb">
-          <li class="breadcrumbs__item">
-            <a href="#!">Главная</a>
-          </li>
-          <li class="breadcrumbs__item">
-            <a href="#!">Услуги</a>
-          </li>
-          <li class="breadcrumbs__item">
-            <span>Контакты</span>
-          </li>
-        </ul>
-      </section>
-
-      <!-- ============================================ -->
-      <section class="block-library" id="table">
-        <h2 class="block-library__title">Таблица</h2>
-        <p>Не адаптивная.</p>
-        <table class="table">
-          <tbody>
-            <tr>
-              <th>Имя</th>
-              <th>Фамилия</th>
-              <th>Отчество</th>
-              <th>Статус</th>
-            </tr>
-            <tr>
-              <td>Иван</td>
-              <td>Иванов</td>
-              <td>Иванович</td>
-              <td>Большой</td>
-            </tr>
-            <tr>
-              <td>Петр</td>
-              <td>Петров</td>
-              <td>Петрович</td>
-              <td>По-меньше</td>
-            </tr>
-          </tbody>
-        </table>
       </section>
 
       <!-- ============================================ -->
@@ -922,130 +714,6 @@ width: 0;
       </section>
 
       <!-- ============================================ -->
-      <section class="block-library" id="card">
-        <h2 class="block-library__title">Карточка товара</h2>
-
-        <div class="cards-list" style="display: flex; flex-wrap: wrap;">
-          <article class="card">
-            <picture>
-              <source type="image/webp" srcset="img/rastr/img-product0@1x.webp 1x, img/rastr/img-product0@2x.webp 2x">
-              <img class="card__img" src="img/rastr/img-product0@1x.jpg" srcset="img/rastr/img-product0@2x.jpg 2x" alt="Товар0">
-            </picture>
-            <div class="card__body">
-              <h3 class="card__title">Card title</h3>
-              <p class="card__descr">ОЧЕНЬ простая карточка товара.</p>
-              <a href="#" class="btn card__buy">Купить</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__inner">
-              <span class="card__img-wrap">
-                <picture>
-                  <source type="image/webp" srcset="img/rastr/img-product1@1x.webp 1x, img/rastr/img-product1@2x.webp 2x">
-                  <img class="card__img" src="img/rastr/img-product1@1x.jpg" srcset="img/rastr/img-product1@2x.jpg 2x" alt="Товар1">
-                </picture>
-              </span>
-              <div class="card__body">
-                <h3 class="card__title">Товар1</h3>
-                <p class="card__descr">Простая карточка товара</p>
-                <p class="card__price">50&nbsp;₽</p>
-              </div>
-            </div>
-            <button class="btn card__buy">Купить</button>
-          </article>
-
-          <article class="card">
-            <div class="card__banner">Новинка!</div>
-            <div class="card__inner">
-              <a class="card__img-wrap" href="good01">
-                <picture>
-                  <source type="image/webp" srcset="img/rastr/img-product2@1x.webp 1x, img/rastr/img-product2@2x.webp 2x">
-                  <img class="card__img" src="img/rastr/img-product2@1x.jpg" srcset="img/rastr/img-product2@2x.jpg 2x" alt="Товар2">
-                </picture>
-              </a>
-              <div class="card__body">
-                <h3 class="card__title">
-                  <a href="good01">Товар2</a>
-                </h3>
-                <p class="card__descr">Карточка товара со ссылкой </p>
-                <p class="card__price">70&nbsp;₽</p>
-              </div>
-            </div>
-            <button class="btn card__buy">Купить</button>
-          </article>
-
-          <article class="card">
-            <div class="card__inner">
-              <span class="card__img-wrap">
-                <picture>
-                  <source type="image/webp" srcset="img/rastr/img-product3@1x.webp 1x, img/rastr/img-product3@2x.webp 2x">
-                  <img class="card__img" src="img/rastr/img-product3@1x.jpg" srcset="img/rastr/img-product2@2x.jpg 2x" alt="Товар3">
-                </picture>
-              </span>
-              <div class="card__overlay">
-                <div class="card__overlay-wrapper">
-                  <p class="card__overlay-title">Вкусно и полезно</p>
-                  <p class="card__overlay-text">Прямые поставки из Н.Зелландии</p>
-                  <div class="card__overlay-wrap">
-                    <button class="card__overlay-btn" type="button" aria-label="Go to ...">
-                      <svg width="25" height="25" role="img">
-                        <use xlink:href="#icon-link" />
-                      </svg>
-                    </button>
-                    <a class="card__overlay-link" href="#!" aria-label="link to view">
-                      <svg width="25" height="25" role="img">
-                        <use xlink:href="#icon-magnifier" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="card__body">
-                <h3 class="card__title">Товар3</h3>
-                <p class="card__descr">Карточка с overlay и кнопками поверх</p>
-                <p class="card__price">50&nbsp;₽</p>
-              </div>
-              <button class="btn card__buy">Купить</button>
-            </div>
-          </article>
-        </div>
-
-        <p><b>Касательно overlay для карточки №3:</b></p>
-        <p>В зависимости от макета, отредактировать поведение и размеры <code>.card__overlay</code>.</p>
-        <p>Простые карточки в bootstrap, примеры разметки: </p>
-        <a href="https://getbootstrap.com/docs/4.0/components/card/" target="_blank" rel="noopener"> сюда</a>
-
-      </section>
-
-      <!-- ============================================ -->
-      <section class="block-library" id="card-preview">
-        <h2 class="block-library__title">Карточка previw - нужна?</h2>
-        <p>вот в чем вопрос...</p>
-      </section>
-
-      <!-- ============================================ -->
-      <section class="block-library" id="svg-use">
-        <h2 class="block-library__title">svg > use</h2>
-        <div class="blocks-library__example  blocks-library__example--shown">
-          <pre class="code">
-                <span class="code_inner">
-&lt;svg width="18" height="24">
-  &lt;use xlink:href="#icon-cart"/>
-&lt;/svg>
-                </span>
-              </pre>
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-      <section class="block-library" id="stylelint">
-        <h2 class="block-library__title">stylelint</h2>
-        <a href="https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configuration.md" rel="noopener">stylelint</a>
-        <p><code>/* stylelint-disable-line */</code></p>
-      </section>
-
-      <!-- ============================================ -->
       <section class="block-library" id="google-map">
         <h2 class="block-library__title">Google Maps</h2>
         <p>Как добавить Google Maps на страницу.</p>
@@ -1111,193 +779,20 @@ width: 0;
       </section>
 
       <!-- ============================================ -->
-      <section class="block-library" id="rhombus">
-        <h2 class="block-library__title">Поток ромбов</h2>
-        <p>Как разметить и стилизовать блоки-ромбы.</p>
-        <p>Принцип прост и понятен из scss для блока .rhombus</p>
-        <p><b class="warning"> ! </b> - В зависимости от поставленной задачи по поведению блоков, добавить нужные стили для расположения блоков.</p>
-        <div class="rhombus__wrap">
-          <ul class="rhombus__list">
-            <li class="rhombus__list-item  rhombus__list-item--1">
-              <div class="rhombus__list-inner">
-                <span class="rhombus__item-text">1</span>
-              </div>
-            </li>
-            <li class="rhombus__list-item  rhombus__list-item--2">
-              <div class="rhombus__list-inner">
-                <span class="rhombus__item-text">2</span>
-              </div>
-            </li>
-            <li class="rhombus__list-item  rhombus__list-item--3">
-              <div class="rhombus__list-inner">
-                <span class="rhombus__item-text">3</span>
-              </div>
-            </li>
-            <li class="rhombus__list-item  rhombus__list-item--4">
-              <div class="rhombus__list-inner">
-                <span class="rhombus__item-text">4</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-      <section class="block-library" id="hexagon">
-        <h2 class="block-library__title">Поток шестиугольников</h2>
-        <p>Как разметить и стилизовать блоки-шестиугоьники.</p>
-        <p>Принцип прост и понятен из scss для блока .hexagon: вращение псевдоэлеменов.</p>
-        <p><b class="warning"> ! </b> - В зависимости от поставленной задачи по поведению блоков, добавить нужные стили для расположения блоков.</p>
-        <p>Так-же, при необходимости, можно создать различные много-угольники.</p>
-        <div class="hexagon">
-          <ul class="hexagon__list">
-            <li class="hexagon__item  hexagon__item--ml">text1<br>useful</li>
-            <li class="hexagon__item">text2</li>
-            <li class="hexagon__item  hexagon__item--mr">text3</li>
-            <li class="hexagon__item">text4</li>
-            <li class="hexagon__item">text5</li>
-            <li class="hexagon__item">text6</li>
-            <li class="hexagon__item">text7</li>
-            <li class="hexagon__item  hexagon__item--ml">text8</li>
-            <li class="hexagon__item">text9</li>
-            <li class="hexagon__item  hexagon__item--mr">text10</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-      <section class="block-library  attention" id="triangle">
-        <h2 class="block-library__title">Поток треугольников</h2>
-        <p>Как разметить и стилизовать блоки-треугольники.</p>
-        <p>Скоро сделаю.</p>
-      </section>
-
-      <!-- ============================================ -->
-      <section class="block-library" id="rubber-height-v.1">
-        <h2 class="block-library__title">Как растянуть блок на всю свободную высоту экрана или блока v.1</h2>
-
-        <p><b>Можно (и нужно) так:</b></p>
-        <button class="burger" aria-label="Показать пример кода" data-target-id="rubber-height-1" data-target-class-toggle="blocks-library__example--shown">
-          <span>Показать что-либо</span>
-        </button>
-        <div class="blocks-library__example" id="rubber-height-1">
-          <pre class="code">
-            <span class="code_inner">
-// .wrap {
-//   height: 100vh; // или нужная высота в px
-//   display: flex;
-//   flex-direction: column;
-// }
-//
-// .wrap__inner2 {
-  //   flex-grow: 1;
-  //   overflow-y: scroll;
-  // }
-//
-// .wrap__inner1,
-// .wrap__inner3 {
-  //  flex-shrink: 0;
-  // }
-            </span>
-          </pre>
-        </div>
-
-        <div class="block-rubber">
-          <div class="block-rubber__1  block-rubber__1--1">header__блока</div>
-          <div class="block-rubber__2  block-rubber__2--1">
-            <p><code>flex-grow: 1;</code></p>
-            <p>всякое разное содержимое блока</p>
-            <p>всякое разное содержимое блока</p>
-            <p>всякое разное содержимое блока</p>
-            <p>всякое разное содержимое блока</p>
-            <p>всякое разное содержимое блока</p>
-            <p>всякое разное содержимое блока</p>
-          </div>
-          <div class="block-rubber__3  block-rubber__3--1">footer__блока</div>
-        </div>
-
-        <hr>
-
-        <p><b>Но можно так:</b></p>
-        <button class="burger" aria-label="Показать пример кода" data-target-id="rubber-height-2" data-target-class-toggle="blocks-library__example--shown">
-          <span>Показать что-либо</span>
-        </button>
-        <div class="blocks-library__example" id="rubber-height-2">
-          <pre class="code">
-            <span class="code_inner">
-// .wrap {
-//   height: 100vh; // или нужная высота в px
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-// }
-//
-// .wrap__inner2 {
-//   height: 100%;
-// }
-            </span>
-          </pre>
-        </div>
-
-        <div class="block-rubber">
-          <div class="block-rubber__1  block-rubber__1--2">header__блока</div>
-          <div class="block-rubber__2  block-rubber__2--2">
-            <p><code>height: 100%;</code></p>
-            <p>всякое разное содержимое блока</p>
-            <p>всякое разное содержимое блока</p>
-            <p>всякое разное содержимое блока</p>
-            <p>всякое разное содержимое блока</p>
-            <p>всякое разное содержимое блока</p>
-            <p>всякое разное содержимое блока</p>
-          </div>
-          <div class="block-rubber__3  block-rubber__3--2">footer__блока</div>
-        </div>
-      </section>
-
-      <!-- ============================================ -->
-      <section class="block-library" id="rubber-height-v.2">
-        <h2 class="block-library__title">Как растянуть блок с блоком внутри на всю свободную высоту экрана или блока - v.2</h2>
-
-        <p>Используем вариант с <code>flex-grow</code> и <code>flex-shrink</code>,+ нюанс в <code>CSS</code> с высотой вложенного блока:</p>
-        <div class="block-rubber-3">
-          <div class="block-rubber-3__wrap-1">
-            header__блока block-rubber-3 / height: 100px;
-          </div>
-
-          <div class="block-rubber-3__wrap-2">
-            <header class="block-rubber-3__1">header вложенного блока / height: 50px;</header>
-            <div class="block-rubber-3__2">
-              <p><code>flex-grow: 1;</code></p>
-              <p><code>height: 0;</code></p>
-              <p>всякое разное содержимое блока</p>
-              <p>всякое разное содержимое блока</p>
-              <p>всякое разное содержимое блока</p>
-              <p>всякое разное содержимое блока</p>
-              <p>всякое разное содержимое блока</p>
-              <p>всякое разное содержимое блока</p>
-              <p>всякое разное содержимое блока</p>
-              <p>всякое разное содержимое блока</p>
-              <p>всякое разное содержимое блока</p>
-              <p>всякое разное содержимое блока</p>
-              <p>всякое разное содержимое блока</p>
-              <p>всякое разное содержимое блока</p>
-            </div>
-            <footer class="block-rubber-3__3">footer вложенного блока / height: 50px;</footer>
-          </div>
+      <section class="block-library" id="timer">
+        <h2 class="block-library__title">Таймер обратного отсчета</h2>
+        <p>Конечное время таймера задается в переменной <code>deadline</code></p>
+        <p>При необходимости, значение в переменную можно получить от сервера, или от пользователя.</p>
+        <div class="timer" id="timer-reverse">
+          <span class="timer__hours">18</span>
+          <span class="timer__text">ч</span>
+          <span class="timer__minutes">20</span>
+          <span class="timer__text">мин</span>
+          <span class="timer__seconds">11</span>
+          <span class="timer__text">сек</span>
         </div>
 
       </section>
-
-      <!-- ============================================ -->
-      <section class="block-library" id="counter-bell">
-        <h2 class="block-library__title">counter + bell</h2>
-        <p>Длительность анимации и амплитуду корректировать в <code>.counter</code>.</p>
-        <br>
-        <div class="counter">
-          <span class="counter__inner">2</span>
-        </div>
-      </section>
-
     </main>
   </div>
 
@@ -1328,6 +823,9 @@ width: 0;
 
   <!-- скрипт custom-select -->
   <script src="js/custom-select.js"></script>
+
+  <!-- скрипт timer -->
+  <script src="js/timer-reverse.js"></script>
 
   <!-- скрипт для Яндекс-карт-->
   <!-- <script src="js/script-map.js"></script> -->
