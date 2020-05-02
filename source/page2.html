@@ -94,6 +94,9 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  attention-menu" href="#compare">Ползунок сравнения изображений</a>
         </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" href="#listener">addEventListener на несколько элементов</a>
+        </li>
       </ul>
     </aside>
 
@@ -791,6 +794,85 @@
 
         <p>И соответственно, продумать, как добавить для всех остальных <code>img</code> эти важные стили.</p>
         <p>Как вариант: для <code>img</code> задать <code>object-fit</code></p>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="listener">
+        <h2 class="block-library__title">Один обработчик события на несколько элементов</h2>
+        <p><b>Элементы должны иметь одинаковый класс.</b></p>
+        <p><b>Вариант простой:</b></p>
+        <ol>
+          <li>Находим нужный блок с элементами, или полностью <code>document</code>;</li>
+          <li>На нужный блок навешиваем обработчик события<br>
+            и по событию проверяем условие: если клик на нужном элементе, выполняем нужный код.</li>
+        </ol>
+        <p>Пример:</p>
+        <div>
+          <button class=" burger" aria-label="Показать пример кода" data-target-id="add-listener-1" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+
+        <div class="blocks-library__example" id="add-listener-1">
+          <pre class="code">
+            <span class="code_inner">
+let infoWrap = document.querySelector('.info'); // находим блок с кнопками
+
+infoWrap.addEventListener('click', function (event) { //один обработчик на весь блок
+    let target = event.target; // где был клик?
+
+    if (target.classList.contains('description-btn')) { //клик на кнопке?
+        console.log('click на .description-btn');
+        modalOpen(); // открыть modal
+    }
+});
+            </span>
+          </pre>
+        </div>
+
+        <br>
+        <br>
+        <p><b>Вариант немного сложнее:</b></p>
+        <p>Используется в <code>burgers-some.js</code></p>
+        <ol>
+          <li>На <code>искомый-блок</code> или полностью <code>document</code> навешиваем обработчик события;</li>
+          <li>Далее в цикле <code>while (target != document (или "искомый-блок"))</code><br>
+            проверяем условие <code>if (target.classList.contains("нужный-класс"))</code></li>
+          <li>Если условие верно, выполняем нужный код и выходим из цикла <code>break;</code>;</li>
+          <li>Если условие не верно, поднимаем <code>target</code> на уровень вверх по иерархии родителей от <code>event.target</code> и выше;</li>
+          <li>Если клик был мимо элемента с нужным классом, цикл дойдет вверх до <code>document</code> (или <code>искомого-блока</code>), и закончит работу.</li>
+        </ol>
+        <p>Пример с <code>document</code>:</p>
+        <div>
+          <button class=" burger" aria-label="Показать пример кода" data-target-id="add-listener-2" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+
+        <div class="blocks-library__example" id="add-listener-2">
+          <pre class="code">
+            <span class="code_inner">
+document.addEventListener('click', function (event) { //1. вешаем единый обработчик на элемент document
+ //это нужно для того, что-бы много burger-ов можно было ставить в любом месте
+ let target = event.target; //2. где был клик?
+
+  while (target != document) {
+   if (target.classList.contains("burger" || "burger--close")) { // 3. на .burger?
+     ...здесь выполняем нужный код...
+     ...здесь выполняем нужный код...
+
+     break;
+   } else {// 4. не на .burger?
+    //5. поднимаем target на уровень вверх по иерархии родителей от event.target и выше
+      target = target.parentNode;
+    }
+ };
+ // 6. Если клик был мимо burger, цикл дойдет вверх до document, и обработчик закончит работу
+ //console.log("вышел из цикла");
+});
+            </span>
+          </pre>
+        </div>
       </section>
 
     </main>
