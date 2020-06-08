@@ -39,8 +39,7 @@ document.addEventListener('click', function (event) { /*1. вешаем един
       //console.log("вывожу target на уровень выше");
       //console.log(target);
     }
-  };
-
+  }
   //console.log("вышел из цикла");
 });
 

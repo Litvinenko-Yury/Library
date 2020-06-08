@@ -2502,6 +2502,8 @@ ul {
   margin: 0;
   padding-left: 0;
   list-style: none; }
+  .off-canvas__menu--js {
+    color: red; }
 
 .off-canvas__menu-item--separator {
   margin-bottom: 10px;
@@ -3128,13 +3130,13 @@ th {
   list-style: none; }
 
 .tabs__link-wrap {
-  /*вкладка, класс нужен для возможной стилизации состояний*/
+  /*обертка вкладки, класс нужен для стилизации состояний*/
   color: #8e8e8e;
   border: 1px solid #8e8e8e; }
   .tabs__link-wrap:not(:last-child) {
     border-right: none; }
   .tabs__link-wrap--active {
-    color: #283645;
+    color: coral;
     border-bottom: 1px solid transparent; }
 
 .tabs__link {

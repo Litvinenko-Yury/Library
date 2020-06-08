@@ -9,7 +9,7 @@
 
 'use strict';
 
-let burger = document.querySelector(".burger");
+const burger = document.querySelector(".burger");
 
 /*=========================*/
 /*события по клику на burger*/
