@@ -9,6 +9,7 @@
   border: none;
   user-select: none;
   cursor: pointer;
+  outline: none;
 
   > span { // stylelint-disable-line  selector-combinator-blacklist
     /*это центральная полоса бургера*/
