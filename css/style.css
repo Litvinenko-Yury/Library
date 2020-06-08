@@ -1094,7 +1094,8 @@ ul {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none; }
   .burger > span {
     /*это центральная полоса бургера*/
     display: inline-block;
