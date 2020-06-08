@@ -20,6 +20,10 @@
   margin: 0;
   padding-left: 0;
   list-style: none;
+
+  &--js {
+    color: red;
+  }
 }
 
 .off-canvas__menu-item {

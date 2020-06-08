@@ -55,7 +55,7 @@
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#modal-form-animalion">Модальное окно2 - форма входа + анимация</a>
         </li>
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
-          <a class="off-canvas__menu-link  warning" href="#tabs-js">Табы на JS</a>
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#tabs-js">Табы на JS</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#burger">Бургер</a>
@@ -254,13 +254,13 @@
       </section>
 
       <!-- ============================================ -->
-      <section class="block-library  attention" id="tabs-js">
+      <section class="block-library" id="tabs-js">
         <h2 class="block-library__title">Табы на JS - <small><code>.tabs</code></small></h2>
-        <p>Скрипт <code>tab.js</code>.</p>
+        <p>Скрипт <code>tabs.js</code>.</p>
         <div class="tabs">
           <ul class="tabs__links" role="tablist">
             <li class="tabs__link-wrap" role="presentation">
-              <button class="tabs__link" role="tab">Вкладка ноль</button>
+              <a class="tabs__link" role="tab">Вкладка ноль</a>
             </li>
             <li class="tabs__link-wrap" role="presentation">
               <a class="tabs__link" href="!#" role="tab">Вкладка один</a>
@@ -284,7 +284,7 @@
               <p>2.Стрессы, жизнь в условиях города, плохая экология, загрязненные продукты и вода, напряженный ритм жизни - все это день ото дня отбирает у нас молодость и хорошее здоровье.</p>
             </div>
             <div class="tabs__content-item" id="tab03" role="tabpanel">
-              <p>3. есколько лет назад мы разработали специальные программы по йоге и аюрведе - и мы поняли, что они отлично работают - на опыте 530 наших туристов!</p>
+              <p>3. Несколько лет назад мы разработали специальные программы по йоге и аюрведе - и мы поняли, что они отлично работают - на опыте 530 наших туристов!</p>
             </div>
           </div>
         </div>
@@ -309,7 +309,7 @@
         </div>
         <div class="blocks-library__example" id="burger-code">
           <pre class="code">
-            <code>var burger = document.querySelector(".burger");</code>
+            <code>const burger = document.querySelector(".burger");</code>
             <small><code> </code></small>
             <small><code>/*события по клику на burger*/</code></small>
             <code>burger.addEventListener("click", function (event) {</code>
@@ -340,8 +340,8 @@
         </div>
         <div class="blocks-library__example" id="burger-code2">
           <pre class="code">
-            <code>var burger = document.querySelector(".burger");</code>
-            <code>var element = document.querySelector(".ИмяКласса");</code>
+            <code>const burger = document.querySelector(".burger");</code>
+            <code>const element = document.querySelector(".ИмяКласса");</code>
             <small><code> </code></small>
             <small><code>/*события по клику на burger*/</code></small>
             <code>burger.addEventListener("click", function (event) {</code>
@@ -802,8 +802,8 @@
         <p><b>Элементы должны иметь одинаковый класс.</b></p>
         <p><b>Вариант простой:</b></p>
         <ol>
-          <li>Находим нужный блок с элементами, или полностью <code>document</code>;</li>
-          <li>На нужный блок навешиваем обработчик события<br>
+          <li>Находим нужный <code>блок с элементами</code>, или полностью <code>document</code>;</li>
+          <li>На нужный <code>блок c элементами</code> навешиваем один обработчик события<br>
             и по событию проверяем условие: если клик на нужном элементе, выполняем нужный код.</li>
         </ol>
         <p>Пример:</p>

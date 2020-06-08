@@ -11,7 +11,7 @@
 }
 
 .tabs__link-wrap {
-  /*вкладка, класс нужен для возможной стилизации состояний*/
+  /*обертка вкладки, класс нужен для стилизации состояний*/
   color: $gray;
   border: 1px solid $border-color;
 
@@ -20,7 +20,7 @@
   }
 
   &--active {
-    color: $color-main;
+    color: coral;
     border-bottom: 1px solid transparent;
   }
 }
