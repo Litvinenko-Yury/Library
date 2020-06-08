@@ -2481,6 +2481,13 @@ ul {
 .modal__overlay--show {
   display: block; }
 
+.noscript {
+  position: fixed;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+  font-size: 36px;
+  color: red; }
+
 .off-canvas {
   display: -webkit-box;
   display: -ms-flexbox;
