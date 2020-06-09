@@ -7,7 +7,7 @@
 
 'use strict'
 
-let burgerMainNav = document.querySelector('.main-nav .burger'),
+const burgerMainNav = document.querySelector('.main-nav .burger'),
   mainNavList = document.querySelector('.main-nav .main-nav__list');
 
 /*=========================*/
