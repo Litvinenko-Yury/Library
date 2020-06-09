@@ -117,7 +117,7 @@
         <h2 class="block-library__title">Ползунок v1 на JS</h2>
         <p>Обязательно проверять кросс-браузерность.<br> В списке подозреваемых: IE и EDGE.</p>
 
-        <p>Все делает скрипт <code>scroll-add-class.js</code>.</p>
+        <p>Cкрипт <code>custom-range.js</code>.</p>
 
         <p><b>Составные части:</b></p>
         <ul>
@@ -139,7 +139,7 @@
               <li><code>.range__handle</code> - перемещаемый элемент ползунка, т.е. thumb;</li>
               <li><code>.range__value</code> -используется для вывода значения value. Если не нужен, удалить из скрипта;</li>
             </ul>
-          <li>JS-файл <code>custom-range1.js</code> отлавливает значение <code>value</code> у штатного <code>input</code>, <br> изменяет ширину <code>.range__progress</code> и координату по оси X для <code>.range__handle</code>;</li>
+          <li>JS-файл <code>custom-range.js</code> отлавливает значение <code>value</code> у штатного <code>input</code>, <br> изменяет ширину <code>.range__progress</code> и координату по оси X для <code>.range__handle</code>;</li>
           <li>Все.</li>
         </ul>
 
@@ -157,28 +157,13 @@
       </section>
 
       <!-- ============================================ -->
-      <section class="block-library" id="timer">
+      <section class="block-library" id='timer'>
         <h2 class="block-library__title">Таймер обратного отсчета</h2>
+        <p>Скрипт <code>timer-reverse.js</code></p>
         <p>Конечное время таймера задается в переменной <code>deadline</code></p>
         <p>При необходимости, значение в переменную можно получить от сервера, или от пользователя.</p>
-        <div class="timer" id="timer-reverse">
-          <span class="timer__hours">18</span>
-          <span class="timer__text">ч</span>
-          <span class="timer__minutes">20</span>
-          <span class="timer__text">мин</span>
-          <span class="timer__seconds">11</span>
-          <span class="timer__text">сек</span>
-        </div>
-      </section>
 
-      <!-- ============================================ -->
-      <section class="block-library">
-        <h2 class="block-library__title">Таймер обратного отсчета v.2</h2>
-        <span class='good'>Этот скрипт красивее и правильнее.</span>
-        <p>Конечное время таймера задается в переменной <code>deadlineV2</code></p>
-        <p>При необходимости, значение в переменную можно получить от сервера, или от пользователя.</p>
-
-        <div class='timer' id='timer-reverse-v2'>
+        <div class='timer' id='timer-reverse'>
           <span class='timer__days' id='days'>18</span>
           <span class='timer__text'>дней</span>
           <span class='timer__hours' id='hours'>18</span>

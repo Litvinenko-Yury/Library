@@ -1,64 +1,79 @@
+'use strict';
+
 /*======================*/
-/*script timer-reverse*/
+/*script timer-reverse-v2*/
 /*author  https://github.com/Litvinenko-Yury*/
 
-/*Таймер обратного отсчета*/
+/*Таймер обратного отсчета v2*/
 /*=============================*/
 
-const deadline = '2020-12-31'; // конечная дата
-//это строка; можем её получить, например от сервера, или от пользователя
+document.addEventListener('DOMContentLoaded', () => {
+  const deadline = '2020-12-31'; // конечная дата
+  //это строка; можем её получить, например от сервера, или от пользователя
 
-//эта функция вычисляет разницу между deadline и текущим временем
-function getTimeRemaining(endtime) {
-  const t = Date.parse(endtime) - Date.parse(new Date()),
-    seconds = Math.floor((t / 1000) % 60), // кол-во целых секунд
-    minutes = Math.floor((t / 1000 / 60) % 60), // кол-во целых минут
-    hours = Math.floor((t / (1000 * 60 * 60))); //кол-во целых часов
+  /*эта функция вычисляет разницу между deadlineV2 и текущим временем*/
+  function getTimeRemaining(endtime) {
+    const total = Date.parse(endtime) - Date.parse(new Date()),
+      totalSeconds = Math.floor((total / 1000) % 60), // кол-во целых секунд
+      totalMinutes = Math.floor((total / (1000 * 60)) % 60), // кол-во целых минут
+      totalHours = Math.floor((total / (1000 * 60 * 60) % 24)), // кол-во целых часов
+      totalDays = Math.floor(total / (1000 * 60 * 60 * 24));// кол-во целых дней
 
-  /*Но! Экспортировать несколько переменных из функции просто так не получится, поэтому мы можем экспортировать объект.*/
-  return {
-    /*это данные, которые нужны в таймере*/
-    'total': t,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
-  };
-}
+    /*Но! Экспортировать несколько переменных из функции просто так не получится, поэтому мы можем экспортировать объект.*/
+    return {
+      'total': total,
+      'days': totalDays,
+      'hours': totalHours,
+      'minutes': totalMinutes,
+      'seconds': totalSeconds
+    };
+  }
 
-/*эта функция устанавливает таймер на страницу*/
-function setClock(id, endTime) {
-  const timer = document.getElementById(id), // сюда записать найденный блок с нужным таймером
-    hours = timer.querySelector('.timer__hours'),
-    minutes = timer.querySelector('.timer__minutes'),
-    seconds = timer.querySelector('.timer__seconds'),
-    timeInterval = setInterval(updateClock, 1000); // запись метода setInterval() в переменную, что-бы таймер можно было остановить в дальнейшем.
-
-
-  /*эта функция выводит готовые значения часов-минут-и т.д. на страницу*/
-  function updateClock() {
-    const t = getTimeRemaining(endTime); // в эту переменную записать результат работы функции  getTimeRemaining();
-    /*каждый раз, когда функция updateClock будет запускаться, она будет создавать внутри себя переменную t*/
-
-    function addZero(num) {
-      /*функция, добавляющая 0 к значению, если значение <=9*/
-      if (num <= 9) {
-        return '0' + num;
-      } else {
-        return num;
-      }
-    }
-
-    hours.textContent = addZero(t.hours); /*в функцию addZero() передаем значение из объекта переменной t.hours*/
-    minutes.textContent = addZero(t.minutes);
-    seconds.textContent = addZero(t.seconds);
-
-    if (t.total <= 0) {
-      clearInterval(timeInterval); /*останавить таймер*/
-      hours.textContent = '00'; /*показать 00, вместо отрицательных значений*/
-      minutes.textContent = '00';
-      seconds.textContent = '00';
+  /*эта функция, добавит 0 к значению, если значение <10*/
+  function addZero(num) {
+    //Если число в заданных пределах, функция добавит 0 перед цифрой.
+    //Это для красоты вывода цифр в таймере.
+    if (num >= 0 && num < 10) {
+      return `0${num}`;
+    } else {
+      return num;
     }
   }
-}
 
-setClock('timer-reverse', deadline); //вызов функции, которой передаются в качестве аргументов: id блока и переменная deadline
+  /*эта функция устанавливает таймер на страницу*/
+  function setClock(selector, endtime) {
+    //находим на странице нужные элементы
+    const timer = document.querySelector(selector), // сюда записать найденный блок с нужным таймером
+      days = timer.querySelector('#days'),
+      hours = timer.querySelector('#hours'),
+      minutes = timer.querySelector('#minutes'),
+      seconds = timer.querySelector('#seconds'),
+      timeInterval = setInterval(updateClock, 1000); // запись метода setInterval() в переменную, что-бы таймер можно было остановить в дальнейшем.
+
+    updateClock(); // однократный запуск, чтобы не было явления, описанного ниже.
+    // Первое обновление таймера setInterval будет через 1сек.
+    // Поэтому на странице будет видно сначала цифры таймера из верстки, а через 1сек - правильное значение. Это не хорошо.
+
+
+    function updateClock() {
+      const t = getTimeRemaining(endtime); // в эту переменную записать результат работы функции  getTimeRemaining();
+
+      days.innerHTML = addZero(t.days);
+      hours.innerHTML = addZero(t.hours);
+      minutes.innerHTML = addZero(t.minutes);
+      seconds.innerHTML = addZero(t.seconds);
+
+      if (t.total <= 0) {
+        // контроль времени остановки таймера
+        clearInterval(timeInterval); // остановить таймер
+        days.innerHTML = '00'; //показать 00, вместо отрицательных значений
+        hours.innerHTML = '00';
+        minutes.innerHTML = '00';
+        seconds.innerHTML = '00';
+      }
+    }
+  }
+
+  setClock('#timer-reverse', deadline);
+  //вызов функции, которой передаются в качестве аргументов: id блока таймером и переменная deadlineV2 конечной датой
+});
