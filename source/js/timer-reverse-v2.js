@@ -8,10 +8,10 @@
 /*=============================*/
 
 document.addEventListener('DOMContentLoaded', () => {
-  const deadlineV2 = '2020-06-10'; // конечная дата
+  const deadline = '2020-12-31'; // конечная дата
   //это строка; можем её получить, например от сервера, или от пользователя
 
-  //эта функция определяет разницу между deadline и текущим временем
+  /*эта функция вычисляет разницу между deadlineV2 и текущим временем*/
   function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date()),
       totalSeconds = Math.floor((total / 1000) % 60), // кол-во целых секунд
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       totalHours = Math.floor((total / (1000 * 60 * 60) % 24)), // кол-во целых часов
       totalDays = Math.floor(total / (1000 * 60 * 60 * 24));// кол-во целых дней
 
+    /*Но! Экспортировать несколько переменных из функции просто так не получится, поэтому мы можем экспортировать объект.*/
     return {
       'total': total,
       'days': totalDays,
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
+  /*эта функция, добавит 0 к значению, если значение <10*/
   function addZero(num) {
     //Если число в заданных пределах, функция добавит 0 перед цифрой.
     //Это для красоты вывода цифр в таймере.
@@ -38,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  //эта функция устанавливает таймер на страницу
+  /*эта функция устанавливает таймер на страницу*/
   function setClock(selector, endtime) {
     //находим на странице нужные элементы
     const timer = document.querySelector(selector), // сюда записать найденный блок с нужным таймером
@@ -47,8 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
       minutes = timer.querySelector('#minutes'),
       seconds = timer.querySelector('#seconds'),
       timeInterval = setInterval(updateClock, 1000); // запись метода setInterval() в переменную, что-бы таймер можно было остановить в дальнейшем.
-
-    console.log(timer);
 
     updateClock(); // однократный запуск, чтобы не было явления, описанного ниже.
     // Первое обновление таймера setInterval будет через 1сек.
@@ -74,5 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  setClock('#timer-reverse-v2', deadlineV2); // запуск определенного таймера с конечной датой
+  setClock('#timer-reverse-v2', deadline);
+  //вызов функции, которой передаются в качестве аргументов: id блока таймером и переменная deadlineV2 конечной датой
 });

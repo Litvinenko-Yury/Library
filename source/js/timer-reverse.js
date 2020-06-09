@@ -5,18 +5,17 @@
 /*Таймер обратного отсчета*/
 /*=============================*/
 
-const deadline = '2020-12-31'; /*это строка; можем её получить, например от сервера, или от пользователя*/
+const deadline = '2020-12-31'; // конечная дата
+//это строка; можем её получить, например от сервера, или от пользователя
 
+//эта функция вычисляет разницу между deadline и текущим временем
 function getTimeRemaining(endtime) {
-  /*эта функция вычисляет остаток времени до deadline*/
-
   const t = Date.parse(endtime) - Date.parse(new Date()),
-    seconds = Math.floor((t / 1000) % 60), /*получаем кол-во секунд из миллисекунд. Но нам нужно не полное количество секунд, о не более 59сек. Т.е. нужен остаток от деления на 60. Это символ "%" */
-    minutes = Math.floor((t / 1000 / 60) % 60), /*получаем кол-во минут*/
-    hours = Math.floor((t / (1000 * 60 * 60))); /*получаем кол-во часов*/
+    seconds = Math.floor((t / 1000) % 60), // кол-во целых секунд
+    minutes = Math.floor((t / 1000 / 60) % 60), // кол-во целых минут
+    hours = Math.floor((t / (1000 * 60 * 60))); //кол-во целых часов
 
   /*Но! Экспортировать несколько переменных из функции просто так не получится, поэтому мы можем экспортировать объект.*/
-
   return {
     /*это данные, которые нужны в таймере*/
     'total': t,
@@ -26,22 +25,28 @@ function getTimeRemaining(endtime) {
   };
 }
 
+/*эта функция устанавливает таймер на страницу*/
 function setClock(id, endTime) {
-  let timer = document.getElementById(id), /*сюда передаем переменную id. Это тот аргумент, который придет из 'timer' при вызове функции. Т.е. сюда попадет блок с id='timer'*/
+  const timer = document.getElementById(id), // сюда записать найденный блок с нужным таймером
     hours = timer.querySelector('.timer__hours'),
     minutes = timer.querySelector('.timer__minutes'),
     seconds = timer.querySelector('.timer__seconds'),
-    timeInterval = setInterval(updateClock, 1000); /*запускаем функцию updateClock() каждые 1000мс*/
+    timeInterval = setInterval(updateClock, 1000); // запись метода setInterval() в переменную, что-бы таймер можно было остановить в дальнейшем.
 
-  function updateClock() { /*эта функция обновляет часы каждую секунду*/
-    let t = getTimeRemaining(endTime); /*сюда передаем deadline. Он приходит в виде аргумента endTime*/
+
+  /*эта функция выводит готовые значения часов-минут-и т.д. на страницу*/
+  function updateClock() {
+    const t = getTimeRemaining(endTime); // в эту переменную записать результат работы функции  getTimeRemaining();
     /*каждый раз, когда функция updateClock будет запускаться, она будет создавать внутри себя переменную t*/
 
-    function addZero(num) { /*функция, добавляющая 0 к значению, если значение <=9*/
+    function addZero(num) {
+      /*функция, добавляющая 0 к значению, если значение <=9*/
       if (num <= 9) {
         return '0' + num;
-      } else return num;
-    };
+      } else {
+        return num;
+      }
+    }
 
     hours.textContent = addZero(t.hours); /*в функцию addZero() передаем значение из объекта переменной t.hours*/
     minutes.textContent = addZero(t.minutes);
@@ -56,4 +61,4 @@ function setClock(id, endTime) {
   }
 }
 
-setClock('timer-reverse', deadline);/*вызов функции, которой передаются в качестве аргументов: id блока и переменная deadline*/
+setClock('timer-reverse', deadline); //вызов функции, которой передаются в качестве аргументов: id блока и переменная deadline
