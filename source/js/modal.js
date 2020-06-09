@@ -5,7 +5,7 @@
 'use strict'
 
 
-let btnModal = document.querySelector(".btn-modal-open"),
+const btnModal = document.querySelector(".btn-modal-open"),
   popup = document.querySelector(".modal__content"),
   modalOverlay = document.querySelector(".modal__overlay"),
   btnModalClose = document.querySelector(".btn-modal-close");

@@ -9,13 +9,15 @@
 
 'use strict';
 
-const burger = document.querySelector(".burger");
+document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.querySelector(".burger");
 
-/*=========================*/
-/*события по клику на burger*/
-burger.addEventListener("click", function (event) {
-  event.preventDefault();
+  /*=========================*/
+  /*события по клику на burger*/
+  burger.addEventListener("click", function (event) {
+    event.preventDefault();
 
-  //*добавляем модификатор на burger, бургер анимируется в крестик
-  burger.classList.toggle("burger--close");
+    //*добавляем модификатор на burger, бургер анимируется в крестик
+    burger.classList.toggle("burger--close");
+  });
 });
