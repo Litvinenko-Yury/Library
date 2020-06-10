@@ -52,7 +52,7 @@
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#modal-basic">Модальное окно1 - базовый шаблон</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#modal-form-animalion">Модальное окно2 - форма входа + анимация</a>
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js  disabled" href="#modal-form-animalion">Модальное окно2 - форма входа + анимация</a>
         </li>
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#tabs-js">Табы на JS</a>
@@ -188,7 +188,9 @@
           <li>При нажатии на клавиатуре Esc.</li>
         </ul>
         <p>В проекте использовать нужный механизм закрытия, лишнее удалить.</p>
-        <button class="btn  btn-modal-open"  data-modal-open>Открыть модальное окно</button>
+        <button class="btn  btn-modal-open" data-modal-open>Открыть модальное окно</button>
+        <button class="btn  btn-modal-open" data-modal-open>Или так открыть модальное окно...</button>
+        <button class="btn  btn-modal-open" data-modal-open>А м.б. так открыть модальное окно?</button>
 
         <div class="modal">
 
@@ -197,7 +199,7 @@
             <h3>Модальное окно</h3>
             <p>Пример модального окна, которое создано с использованием <code>JS</code>.</p>
             <p>Его можно использовать в широком диапазоне, начиная от вывода сообщений и заканчивая формой регистрации.</p>
-            <button class="btn  btn-modal-close"  data-modal-close>Закрыть модальное окно</button>
+            <button class="btn  btn-modal-close" data-modal-close>Закрыть модальное окно</button>
           </div>
         </div>
       </section>
@@ -205,7 +207,8 @@
       <!-- ============================================ -->
       <section class="block-library" id="modal-form-animalion">
         <h2 class="block-library__title">Модальное окно - форма входа</h2>
-        <p>Скрипт <code>modal-2.js</code>.</p>
+        <p>Скрипт <code class='attention'>modal-2.js</code>.</p>
+        <p><code class='attention'>modal-2.js</code> нуждается в рефакторинге. <strong>Не использовать!</strong></p>
         <p>Обычно размещают модальное окно перед закрывающим тегом <code>/body></code>.</p>
         <p>1. При нажатии на кнопку "открыть..." - открывается модальное окно и затеняется фон.</p>
         <p>2. Добавлен фокус на поле ввода.</p>
