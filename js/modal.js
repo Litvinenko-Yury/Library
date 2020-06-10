@@ -4,42 +4,43 @@
 /*=============================*/
 'use strict'
 
+const modalTrigger = document.querySelectorAll('[data-modal-open]'),
+  modalOverlay = document.querySelector('.modal__overlay'),
+  modalContetnt = document.querySelector('.modal__content'),
+  modalCloseBtn = document.querySelector('[data-modal-close]');
 
-const btnModal = document.querySelector(".btn-modal-open"),
-  popup = document.querySelector(".modal__content"),
-  modalOverlay = document.querySelector(".modal__overlay"),
-  btnModalClose = document.querySelector(".btn-modal-close");
-
-/*события по кнопке "открыть модальное окно"*/
-btnModal.addEventListener("click", function (event) {
+function modalOpen() {
   event.preventDefault();
-  popup.classList.add("modal__content--show");
   modalOverlay.classList.add("modal__overlay--show");
-});
+  modalContetnt.classList.add("modal__content--show");
+  document.body.style.overflow = 'hidden';
+}
 
-/*1-Закрыть модальное окно:*/
-/*события по кнопке "закрыть модальное окно"*/
-btnModalClose.addEventListener("click", function (event) {
+function modalClose() {
   event.preventDefault();
-  popup.classList.remove("modal__content--show");
   modalOverlay.classList.remove("modal__overlay--show");
+  modalContetnt.classList.remove("modal__content--show");
+  document.body.style.overflow = ''; // браузер сам подставит дефолтное значение
+}
+
+//открыть модал по кнопке с data-modal-open. Передаем функцию.
+modalTrigger.forEach((item) => {
+  item.addEventListener('click', modalOpen);
 });
 
-/*2-Закрыть модальное окно:*/
-/*события по клику на затененный фон*/
-modalOverlay.addEventListener("click", function (event) {
-  event.preventDefault();
-  popup.classList.remove("modal__content--show");
-  modalOverlay.classList.remove("modal__overlay--show");
+//закрыть модал, способ-1: по кнопке с data-modal-close. Передаю функцию.
+modalCloseBtn.addEventListener('click', modalClose);
+
+//закрыть модал, способ-2:  по клику на темный фон
+modalOverlay.addEventListener('click', (event) => {
+  if (event.target === modalOverlay) {
+    modalClose();
+  }
 });
 
-/*3-Закрыть модальное окно:*/
-/*события по нажатию ESC*/
-window.addEventListener("keydown", function (event) {
-  if (event.keyCode === 27) {
-    if (popup.classList.contains("modal__content--show")) {
-      popup.classList.remove("modal__content--show");
-      modalOverlay.classList.remove("modal__overlay--show");
-    }
+//закрыть, способ-3:  модал по ESC
+window.addEventListener('keydown', (event) => {
+  if (event.code === 'Escape' && modalOverlay.classList.contains('modal__overlay--show')) {
+    modalClose();
   }
 });
