@@ -1,6 +1,324 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Yury Litvinenko, JS-Library</title><!-- <link rel="preload" href="fonts/opensans.woff2" as="font">
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yury Litvinenko, JS-Library</title>
+  <!-- <link rel="preload" href="fonts/opensans.woff2" as="font">
   <link rel="preload" href="fonts/opensansbold.woff2" as="font">
-  <link rel="preload" href="fonts/opensanslight.woff2" as="font"> --><link rel="stylesheet" href="css/style.min.css"><!-- <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900&display=swap" rel="stylesheet"> --><!-- classic-favicon --><link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png"><script>document.createElement("picture");</script><script src="js/picturefill.min.js" async=""></script></head><body><div style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-link" viewBox="0 0 24.625 24.62"><path d="M22.812 1.77a6.208 6.208 0 00-8.743 0L9.348 6.5a7.1 7.1 0 014.908.37l2.454-2.45a2.447 2.447 0 013.46 3.46l-3.085 3.09-2.028 2.02a2.438 2.438 0 01-3.46 0l-2.641 2.65A6.064 6.064 0 0011.035 17a6.237 6.237 0 006.153-.9 4.686 4.686 0 00.511-.46l3.187-3.19 1.926-1.93a6.18 6.18 0 000-8.75zM10.251 17.8l-2.352 2.36a2.447 2.447 0 01-3.46-3.46l5.113-5.12a2.457 2.457 0 013.46 0l2.642-2.64a5.97 5.97 0 00-2.079-1.37 6.206 6.206 0 00-6.426 1.14 3.111 3.111 0 00-.239.23l-5.113 5.11a6.185 6.185 0 008.744 8.75l4.618-4.67c-2.347.54-2.898.48-4.909-.33z"></path></symbol><symbol id="icon-magnifier"><path d="M10.519 3.89a1.3 1.3 0 100 2.59 4.156 4.156 0 013.748 2.31 1.327 1.327 0 001.758.6 1.284 1.284 0 00.607-1.73 6.756 6.756 0 00-6.113-3.77zm14.152 17.8l-4.383-4.32a10.838 10.838 0 002.068-6.36 11.158 11.158 0 10-4.346 8.7l4.335 4.27a1.649 1.649 0 002.326 0 1.6 1.6 0 00.004-2.29zM2.624 11.01a8.552 8.552 0 0117.1 0 8.4 8.4 0 01-3.029 6.42 8.561 8.561 0 01-14.067-6.42z"></path></symbol><symbol id="icon-text-animated" viewBox="0 0 275 70.9"><path d="M.71.71v8.21h24.07v61.28h9v-61.28h24.04v-8.21zm79.91 0v69.49h44.38v-8.2h-35.42v-25.83h35.42v-8.17h-35.42v-19h35.42v-8.29zm64.93 0l22.95 34.76-23.5 34.73h9.78l18.83-28.61 18.39 28.61h10.36l-23.23-35.15 23.27-34.34h-9.82l-18.58 28.23-18.13-28.23zm71.63 0v8.21h24.08v61.28h9v-61.28h24.08v-8.21z" stroke="#ff6347" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill="none" class="rfoHpnBw_0"></path><style data-made-with="vivus-instant">.rfoHpnBw_0{stroke-dasharray:1220 1222;stroke-dashoffset:1221;animation:rfoHpnBw_draw 6666ms ease-in 0ms forwards;}@keyframes rfoHpnBw_draw{100%{stroke-dashoffset:0;}}@keyframes rfoHpnBw_fade{0%{stroke-opacity:1;}97.1830985915493%{stroke-opacity:1;}100%{stroke-opacity:0;}}</style></symbol><symbol id="icon-yes-pink" viewBox="-82.357 4.875 22 16"><path d="M-60.953 5.167a.999.999 0 00-1.414 0L-75.75 18.551l-4.9-4.9a.999.999 0 10-1.414 1.414l5.607 5.607a.997.997 0 001.414 0l14.09-14c.391-.481.391-1.114 0-1.505z"></path></symbol></svg></div><noscript class="noscript">Включите JavaScript для работы с этим сайтом.</noscript><div class="off-canvas" id="off-canvas"><aside class="off-canvas__aside" aria-label="Меню"><ul class="off-canvas__menu" id="off-canvas-menu"><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--fixed-1" href="https://litvinenko-yury.pro" rel="noopener">litvinenko-yury.pro</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--fixed-2" href="index.html" rel="noopener">На главную библиотеки</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--fixed-3" href="page1.html">Перейти в раздел <b>HTML</b></a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--second" href="#note">Напоминание</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#field-range-custom-v1">Ползунок - range v1 - JS</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#timer">Таймер</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#modal-basic">Модальное окно1 - базовый шаблон</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#modal-form-animalion">Модальное окно2 - форма входа + анимация</a></li><li class="off-canvas__menu-item off-canvas__menu-item--separator"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#tabs-js">Табы на JS</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#burger">Бургер</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#main-nav">Главная навигация (меню)</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#aside-nav">Боковое меню</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#scroll-achor">Плавный скролл к якорю</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#scroll-add-class">Доб .class при скролле, JS</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#to-top">Ссылка «вверх»</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#select">Select</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#svg-vivus">Vivus.js - анимация для SVG</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link warning" href="#slider">Слайдер</a></li><li class="off-canvas__menu-item"></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#yandex-map">Яндекс.Карты - JS</a></li><li class="off-canvas__menu-item off-canvas__menu-item--separator"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#google-map">Google Maps - JS</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js attention-menu" href="#compare">Ползунок сравнения изображений</a></li><li class="off-canvas__menu-item"><a class="off-canvas__menu-link off-canvas__menu-link--js" href="#listener">addEventListener на несколько элементов</a></li></ul></aside><main class="page-main"><!-- ============================================ --><section class="block-library good" id="note"><h2 class="block-library__title">Напоминание</h2><br><p class="attention"></p><p>Некоторым скриптам, логичнее находиться рядом с группой элементов, для которых написан этот скрипт.</p><p>Например, скрипт проверки валидации формы, логичнее расположить рядом с формой и элементами формы.</p><p>Такие скрипты находятся в HTML-разделе с суффиксом <b>- JS</b></p><p></p></section><!-- ============================================ --><section class="block-library" id="field-range-custom-v1"><h2 class="block-library__title">Ползунок v1 на JS</h2><p>Обязательно проверять кросс-браузерность.<br>В списке подозреваемых: IE и EDGE.</p><p>Cкрипт <code>custom-range.js</code>.</p><p><b>Составные части:</b></p><ul><li><b>HTML</b> - добавить в проект разметку - скопировать из библиотеки;</li><li><b>CSS</b> - добавить в проект CSS-файл <code>range.scss</code>;</li><li><b>JS</b> - добавить в проект JS-файл <code>custom-range.js</code>;</li><li>Все.</li></ul><p><b>Принцип работы:</b></p><p>JS-файл блока:</p><ul><li>для <code>.range__input</code> добавляет <code>opacity = '0';</code></li><li>в HTML-файл, после <code>.range__input</code> добавляет разметку с классами:<ul><li><code>.range__wrapper</code> и <code>.range__wrap-inner</code>- обертки;</li><li><code>.range__track</code> - фоновая линия ползунка;</li><li><code>.range__progress</code> - линия отображения <code>value</code>;</li><li><code>.range__handle</code> - перемещаемый элемент ползунка, т.е. thumb;</li><li><code>.range__value</code> -используется для вывода значения value. Если не нужен, удалить из скрипта;</li></ul></li><li>JS-файл <code>custom-range.js</code> отлавливает значение <code>value</code> у штатного <code>input</code>,<br>изменяет ширину <code>.range__progress</code> и координату по оси X для <code>.range__handle</code>;</li><li>Все.</li></ul><p>P.S.Ширина <code>.range__progress</code> изменяется от <u>правого</u> края. Это нужно для того, чтобы <code>.range__track</code> можно было дать заливку градиентом, и при изменении <code>value</code> была видна только часть градиента.</p><hr><div class="range" id="range"><span class="range__name">Название</span> <label class="range__label"><input class="range__input" type="range" name="counter" min="50" max="200" value="100" step="25"></label> <span class="range__help-text">Подсказка</span></div></section><!-- ============================================ --><section class="block-library" id="timer"><h2 class="block-library__title">Таймер обратного отсчета</h2><p>Скрипт <code>timer-reverse.js</code></p><p>Конечное время таймера задается в переменной <code>deadline</code></p><p>При необходимости, значение в переменную можно получить от сервера, или от пользователя.</p><div class="timer" id="timer-reverse"><span class="timer__days" id="days">18</span> <span class="timer__text">дней</span> <span class="timer__hours" id="hours">18</span> <span class="timer__text">часов</span> <span class="timer__minutes" id="minutes">20</span> <span class="timer__text">мин</span> <span class="timer__seconds" id="seconds">11</span> <span class="timer__text">сек</span></div></section><!-- ============================================ --><section class="block-library" id="modal-basic"><h2 class="block-library__title">Модальное окно - базовый шаблон</h2><p>Скрипт <code>modal.js</code>.</p><p>Обычно размещают модальное окно перед закрывающим тегом <code>/body></code>.</p><p>1. При нажатии на кнопку "открыть..." - открывается модальное окно и затеняется фон.</p><p>2. Закрытие модального окна:</p><ul><li>Нажатием на кнопку "закрыть..."</li><li>При нажатии свободное пространство (затененный фон).</li><li>При нажатии на клавиатуре Esc.</li></ul><p>В проекте использовать нужный механизм закрытия, лишнее удалить.</p><button class="btn btn-modal-open" data-modal-open="">Открыть модальное окно</button><div class="modal"><div class="modal__overlay"></div><div class="modal__content"><h3>Модальное окно</h3><p>Пример модального окна, которое создано с использованием <code>JS</code>.</p><p>Его можно использовать в широком диапазоне, начиная от вывода сообщений и заканчивая формой регистрации.</p><button class="btn btn-modal-close" data-modal-close="">Закрыть модальное окно</button></div></div></section><!-- ============================================ --><section class="block-library" id="modal-form-animalion"><h2 class="block-library__title">Модальное окно - форма входа</h2><p>Скрипт <code>modal-2.js</code>.</p><p>Обычно размещают модальное окно перед закрывающим тегом <code>/body></code>.</p><p>1. При нажатии на кнопку "открыть..." - открывается модальное окно и затеняется фон.</p><p>2. Добавлен фокус на поле ввода.</p><p>3. Добавлена проверка на пустые поля.</p><p>4. Добавлено хранение данных пользователя в <code>localStorage</code>.</p><p>5. Закрытие модального окна:</p><ul><li>Нажатием на кнопку "закрыть..."</li><li>При нажатии свободное пространство (затененный фон).</li><li>При нажатии на клавиатуре Esc.</li></ul><p>5. Добавлена анимация:.</p><ul><li>Форма опускается сверху вниз</li><li>Тряска формы при вводе пользователем неправильных данных.</li></ul><p class="attention">P.S.<br>При использовании в <code>input</code> атрибута <code>required</code>, форма не будет отправляться,<br>и, на кнопке формы <code>Отправить</code> не будет события <code>submit</code>.<br>Следовательно, скрипт "тряски" не будет работать.<br>Выбираем что-то одно: или скрипт "тряски", или <code>required</code>.</p><div class="modal-2"><button class="btn btn-modal-2-open">Открыть модальное окно</button><div class="modal-2__overlay"></div><div class="modal-2__content"><h3>Модальное окно</h3><p>Пример модального окна, которое создано с использованием <code>JS</code>.</p><p>Его можно использовать в широком диапазоне, начиная от вывода сообщений и заканчивая формой регистрации.</p><form class="form form--modal-2"><fieldset class="form__fieldset"><legend class="form__legend">Название1</legend><label class="field-text"><span class="field-text__input-wrap"><input class="field-text__input" type="text" name="login" placeholder="Логин"> <span class="field-text__help-text">Подсказка под полем</span></span></label> <label class="field-text"><span class="field-text__input-wrap"><input class="field-text__input" type="text" name="password" placeholder="Пароль"> <span class="field-text__help-text">Подсказка под полем</span></span></label></fieldset><!-- <div class="field-actions"> --> <button class="btn" type="submit">Отправить</button><!-- </div> --></form></div></div></section><!-- ============================================ --><section class="block-library" id="tabs-js"><h2 class="block-library__title">Табы на JS - <small><code>.tabs</code></small></h2><p>Скрипт <code>tabs.js</code>.</p><div class="tabs"><ul class="tabs__links" role="tablist"><li class="tabs__link-wrap" role="presentation"><a class="tabs__link" role="tab">Вкладка ноль</a></li><li class="tabs__link-wrap" role="presentation"><a class="tabs__link" href="!#" role="tab">Вкладка один</a></li><li class="tabs__link-wrap" role="presentation"><a class="tabs__link" href="!#" role="tab">Вкладка два</a></li><li class="tabs__link-wrap" role="presentation"><a class="tabs__link" href="!#" role="tab">Вкладка три</a></li></ul><div class="tabs__content-wrapper"><div class="tabs__content-item" id="tab00" role="tabpanel"><p>0. Йога, массажи и плавание в море - помогут уставшей спине! Индийские йоги считали, что здоровье человека можно определить по тому, насколько здоров и гибок у него позвоночник.</p></div><div class="tabs__content-item" id="tab01" role="tabpanel"><p>1. Аюрведа и йога утверждают, что главным источником здоровья нашего организма является здоровый ум.</p></div><div class="tabs__content-item" id="tab02" role="tabpanel"><p>2.Стрессы, жизнь в условиях города, плохая экология, загрязненные продукты и вода, напряженный ритм жизни - все это день ото дня отбирает у нас молодость и хорошее здоровье.</p></div><div class="tabs__content-item" id="tab03" role="tabpanel"><p>3. Несколько лет назад мы разработали специальные программы по йоге и аюрведе - и мы поняли, что они отлично работают - на опыте 530 наших туристов!</p></div></div></div></section><!-- ============================================ --><section class="block-library" id="burger"><h2 class="block-library__title">Бургер</h2><ol><li>На странице может быть один или несколько бургеров.</li><li>Бургер может просто анимироваться или также открывать <i>другой</i> блок по клику на бургер.</li></ol><hr><h3 class="block-library__title">1. Бургер одинокий <small>- один на странице.</small></h3><p><b>Анимированное превращение в крестик по добавлению модификатора:</b></p><p>JS блока <code>burger.js</code> по клику на бургере, добавляет модификатор бургеру.</p><p>По клику на бургер, расположенный ниже, представлен код такого простейшего случая.</p><div><button class="burger" aria-label="Показать пример кода" data-target-id="burger-code" data-target-class-toggle="blocks-library__example--shown"><span>Показать что-либо</span></button></div><div class="blocks-library__example" id="burger-code"><pre class="code">
+  <link rel="preload" href="fonts/opensanslight.woff2" as="font"> -->
+  <link rel="stylesheet" href="css/style.min.css">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900&display=swap" rel="stylesheet"> -->
+
+  <!-- classic-favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <script>
+    document.createElement("picture");
+  </script>
+  <script src="js/picturefill.min.js" async=""></script>
+</head>
+
+<body>
+  <div style="display: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-link" viewBox="0 0 24.625 24.62"><path d="M22.812 1.77a6.208 6.208 0 00-8.743 0L9.348 6.5a7.1 7.1 0 014.908.37l2.454-2.45a2.447 2.447 0 013.46 3.46l-3.085 3.09-2.028 2.02a2.438 2.438 0 01-3.46 0l-2.641 2.65A6.064 6.064 0 0011.035 17a6.237 6.237 0 006.153-.9 4.686 4.686 0 00.511-.46l3.187-3.19 1.926-1.93a6.18 6.18 0 000-8.75zM10.251 17.8l-2.352 2.36a2.447 2.447 0 01-3.46-3.46l5.113-5.12a2.457 2.457 0 013.46 0l2.642-2.64a5.97 5.97 0 00-2.079-1.37 6.206 6.206 0 00-6.426 1.14 3.111 3.111 0 00-.239.23l-5.113 5.11a6.185 6.185 0 008.744 8.75l4.618-4.67c-2.347.54-2.898.48-4.909-.33z"></path></symbol><symbol id="icon-magnifier"><path d="M10.519 3.89a1.3 1.3 0 100 2.59 4.156 4.156 0 013.748 2.31 1.327 1.327 0 001.758.6 1.284 1.284 0 00.607-1.73 6.756 6.756 0 00-6.113-3.77zm14.152 17.8l-4.383-4.32a10.838 10.838 0 002.068-6.36 11.158 11.158 0 10-4.346 8.7l4.335 4.27a1.649 1.649 0 002.326 0 1.6 1.6 0 00.004-2.29zM2.624 11.01a8.552 8.552 0 0117.1 0 8.4 8.4 0 01-3.029 6.42 8.561 8.561 0 01-14.067-6.42z"></path></symbol><symbol id="icon-text-animated" viewBox="0 0 275 70.9"><path d="M.71.71v8.21h24.07v61.28h9v-61.28h24.04v-8.21zm79.91 0v69.49h44.38v-8.2h-35.42v-25.83h35.42v-8.17h-35.42v-19h35.42v-8.29zm64.93 0l22.95 34.76-23.5 34.73h9.78l18.83-28.61 18.39 28.61h10.36l-23.23-35.15 23.27-34.34h-9.82l-18.58 28.23-18.13-28.23zm71.63 0v8.21h24.08v61.28h9v-61.28h24.08v-8.21z" stroke="#ff6347" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill="none" class="rfoHpnBw_0">
+   </path>
+   <style data-made-with="vivus-instant">.rfoHpnBw_0{stroke-dasharray:1220 1222;stroke-dashoffset:1221;animation:rfoHpnBw_draw 6666ms ease-in 0ms forwards;}@keyframes rfoHpnBw_draw{100%{stroke-dashoffset:0;}}@keyframes rfoHpnBw_fade{0%{stroke-opacity:1;}97.1830985915493%{stroke-opacity:1;}100%{stroke-opacity:0;}}</style></symbol><symbol id="icon-yes-pink" viewBox="-82.357 4.875 22 16"><path d="M-60.953 5.167a.999.999 0 00-1.414 0L-75.75 18.551l-4.9-4.9a.999.999 0 10-1.414 1.414l5.607 5.607a.997.997 0 001.414 0l14.09-14c.391-.481.391-1.114 0-1.505z"></path></symbol></svg>
+  </div>
+  <noscript class="noscript">Включите JavaScript для работы с этим сайтом.</noscript>
+
+  <div class="off-canvas" id="off-canvas">
+    <aside class="off-canvas__aside" aria-label="Меню">
+      <ul class="off-canvas__menu" id="off-canvas-menu">
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--fixed-1" href="https://litvinenko-yury.pro" rel="noopener">litvinenko-yury.pro</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--fixed-2" href="index.html" rel="noopener">На главную библиотеки</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--fixed-3" href="page1.html">Перейти в раздел <b>HTML</b></a>
+        </li>
+
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--second" href="#note">Напоминание</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#field-range-custom-v1">Ползунок - range v1 - JS</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#timer">Таймер</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#modal-basic">Модальное окно1 - базовый шаблон</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js  disabled" href="#modal-form-animalion">Модальное окно2 - форма входа + анимация</a>
+        </li>
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#tabs-js">Табы на JS</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#burger">Бургер</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#main-nav">Главная навигация (меню)</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#aside-nav">Боковое меню</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#scroll-achor">Плавный скролл к якорю</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#scroll-add-class">Доб .class при скролле, JS</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#to-top">Ссылка «вверх»</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#select">Select</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#svg-vivus">Vivus.js - анимация для SVG</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  warning" href="#slider">Слайдер</a>
+        </li>
+        <li class="off-canvas__menu-item">
+        </li><li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#yandex-map">Яндекс.Карты - JS</a>
+        </li>
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#google-map">Google Maps - JS</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link    off-canvas__menu-link--js  attention-menu" href="#compare">Ползунок сравнения изображений</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#listener">addEventListener на несколько элементов</a>
+        </li>
+      </ul>
+    </aside>
+
+    <main class="page-main">
+      <!-- ============================================ -->
+      <section class="block-library  good" id="note">
+        <h2 class="block-library__title">Напоминание</h2>
+        <br>
+        <p class="attention">
+        </p><p>Некоторым скриптам, логичнее находиться рядом с группой элементов, для которых написан этот скрипт.</p>
+        <p> Например, скрипт проверки валидации формы, логичнее расположить рядом с формой и элементами формы.</p>
+        <p> Такие скрипты находятся в HTML-разделе с суффиксом <b>- JS</b></p>
+        <p></p>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="field-range-custom-v1">
+        <h2 class="block-library__title">Ползунок v1 на JS</h2>
+        <p>Обязательно проверять кросс-браузерность.<br> В списке подозреваемых: IE и EDGE.</p>
+
+        <p>Cкрипт <code>custom-range.js</code>.</p>
+
+        <p><b>Составные части:</b></p>
+        <ul>
+          <li><b>HTML</b> - добавить в проект разметку - скопировать из библиотеки;</li>
+          <li><b>CSS</b> - добавить в проект CSS-файл <code>range.scss</code>;</li>
+          <li><b>JS</b> - добавить в проект JS-файл <code>custom-range.js</code>;</li>
+          <li>Все.</li>
+        </ul>
+
+        <p><b>Принцип работы:</b></p>
+        <p>JS-файл блока:</p>
+        <ul>
+          <li>для <code>.range__input</code> добавляет <code>opacity = '0';</code></li>
+          <li>в HTML-файл, после <code>.range__input</code> добавляет разметку с классами:
+            <ul>
+              <li><code>.range__wrapper</code> и <code>.range__wrap-inner</code>- обертки;</li>
+              <li><code>.range__track</code> - фоновая линия ползунка;</li>
+              <li><code>.range__progress</code> - линия отображения <code>value</code>;</li>
+              <li><code>.range__handle</code> - перемещаемый элемент ползунка, т.е. thumb;</li>
+              <li><code>.range__value</code> -используется для вывода значения value. Если не нужен, удалить из скрипта;</li>
+            </ul>
+          </li><li>JS-файл <code>custom-range.js</code> отлавливает значение <code>value</code> у штатного <code>input</code>, <br> изменяет ширину <code>.range__progress</code> и координату по оси X для <code>.range__handle</code>;</li>
+          <li>Все.</li>
+        </ul>
+
+        <p>P.S.Ширина <code>.range__progress</code> изменяется от <u>правого</u> края. Это нужно для того, чтобы <code>.range__track</code> можно было дать заливку градиентом, и при изменении <code>value</code> была видна только часть градиента.</p>
+
+        <hr>
+
+        <div class="range" id="range">
+          <span class="range__name">Название</span>
+          <label class="range__label">
+            <input class="range__input" type="range" name="counter" min="50" max="200" value="100" step="25">
+          </label>
+          <span class="range__help-text">Подсказка</span>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="timer">
+        <h2 class="block-library__title">Таймер обратного отсчета</h2>
+        <p>Скрипт <code>timer-reverse.js</code></p>
+        <p>Конечное время таймера задается в переменной <code>deadline</code></p>
+        <p>При необходимости, значение в переменную можно получить от сервера, или от пользователя.</p>
+
+        <div class="timer" id="timer-reverse">
+          <span class="timer__days" id="days">18</span>
+          <span class="timer__text">дней</span>
+          <span class="timer__hours" id="hours">18</span>
+          <span class="timer__text">часов</span>
+          <span class="timer__minutes" id="minutes">20</span>
+          <span class="timer__text">мин</span>
+          <span class="timer__seconds" id="seconds">11</span>
+          <span class="timer__text">сек</span>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="modal-basic">
+        <h2 class="block-library__title">Модальное окно - базовый шаблон</h2>
+        <p>Скрипт <code>modal.js</code>.</p>
+        <p>Обычно размещают модальное окно перед закрывающим тегом <code>/body></code>.</p>
+        <p>1. При нажатии на кнопку "открыть..." - открывается модальное окно и затеняется фон.</p>
+        <p>2. Закрытие модального окна:</p>
+        <ul>
+          <li>Нажатием на кнопку "закрыть..."</li>
+          <li>При нажатии свободное пространство (затененный фон).</li>
+          <li>При нажатии на клавиатуре Esc.</li>
+        </ul>
+        <p>В проекте использовать нужный механизм закрытия, лишнее удалить.</p>
+        <button class="btn  btn-modal-open" data-modal-open="">Открыть модальное окно</button>
+        <button class="btn  btn-modal-open" data-modal-open="">Или так открыть модальное окно...</button>
+        <button class="btn  btn-modal-open" data-modal-open="">А м.б. так открыть модальное окно?</button>
+
+        <div class="modal">
+
+          <div class="modal__overlay"></div>
+          <div class="modal__content">
+            <h3>Модальное окно</h3>
+            <p>Пример модального окна, которое создано с использованием <code>JS</code>.</p>
+            <p>Его можно использовать в широком диапазоне, начиная от вывода сообщений и заканчивая формой регистрации.</p>
+            <button class="btn  btn-modal-close" data-modal-close="">Закрыть модальное окно</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="modal-form-animalion">
+        <h2 class="block-library__title">Модальное окно - форма входа</h2>
+        <p>Скрипт <code class="attention">modal-2.js</code>.</p>
+        <p><code class="attention">modal-2.js</code> нуждается в рефакторинге. <strong>Не использовать!</strong></p>
+        <p>Обычно размещают модальное окно перед закрывающим тегом <code>/body></code>.</p>
+        <p>1. При нажатии на кнопку "открыть..." - открывается модальное окно и затеняется фон.</p>
+        <p>2. Добавлен фокус на поле ввода.</p>
+        <p>3. Добавлена проверка на пустые поля.</p>
+        <p>4. Добавлено хранение данных пользователя в <code>localStorage</code>.</p>
+        <p>5. Закрытие модального окна:</p>
+        <ul>
+          <li>Нажатием на кнопку "закрыть..."</li>
+          <li>При нажатии свободное пространство (затененный фон).</li>
+          <li>При нажатии на клавиатуре Esc.</li>
+        </ul>
+        <p>5. Добавлена анимация:.</p>
+        <ul>
+          <li>Форма опускается сверху вниз</li>
+          <li>Тряска формы при вводе пользователем неправильных данных.</li>
+        </ul>
+
+        <p class="attention">P.S. <br> При использовании в <code>input</code> атрибута <code>required</code>, форма не будет отправляться, <br> и, на кнопке формы <code>Отправить</code> не будет события <code>submit</code>. <br> Следовательно, скрипт "тряски" не будет работать. <br> Выбираем что-то одно: или скрипт "тряски", или <code>required</code>.</p>
+
+        <div class="modal-2">
+          <button class="btn  btn-modal-2-open">Открыть модальное окно</button>
+          <div class="modal-2__overlay"></div>
+          <div class="modal-2__content">
+            <h3>Модальное окно</h3>
+            <p>Пример модального окна, которое создано с использованием <code>JS</code>.</p>
+            <p>Его можно использовать в широком диапазоне, начиная от вывода сообщений и заканчивая формой регистрации.</p>
+            <form class="form  form--modal-2">
+              <fieldset class="form__fieldset">
+                <legend class="form__legend">Название1</legend>
+                <label class="field-text">
+                  <span class="field-text__input-wrap">
+                    <input class="field-text__input" type="text" name="login" placeholder="Логин">
+                    <span class="field-text__help-text">Подсказка под полем</span>
+                  </span>
+                </label>
+
+                <label class="field-text">
+                  <span class="field-text__input-wrap">
+                    <input class="field-text__input" type="text" name="password" placeholder="Пароль">
+                    <span class="field-text__help-text">Подсказка под полем</span>
+                  </span>
+                </label>
+              </fieldset>
+
+              <!-- <div class="field-actions"> -->
+              <button class="btn" type="submit">Отправить</button>
+              <!-- </div> -->
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="tabs-js">
+        <h2 class="block-library__title">Табы на JS - <small><code>.tabs</code></small></h2>
+        <p>Скрипт <code>tabs.js</code>.</p>
+        <div class="tabs">
+          <ul class="tabs__links" role="tablist">
+            <li class="tabs__link-wrap" role="presentation">
+              <a class="tabs__link" role="tab">Вкладка ноль</a>
+            </li>
+            <li class="tabs__link-wrap" role="presentation">
+              <a class="tabs__link" href="!#" role="tab">Вкладка один</a>
+            </li>
+            <li class="tabs__link-wrap" role="presentation">
+              <a class="tabs__link" href="!#" role="tab">Вкладка два</a>
+            </li>
+            <li class="tabs__link-wrap" role="presentation">
+              <a class="tabs__link" href="!#" role="tab">Вкладка три</a>
+            </li>
+          </ul>
+
+          <div class="tabs__content-wrapper">
+            <div class="tabs__content-item" id="tab00" role="tabpanel">
+              <p>0. Йога, массажи и плавание в море - помогут уставшей спине! Индийские йоги считали, что здоровье человека можно определить по тому, насколько здоров и гибок у него позвоночник.</p>
+            </div>
+            <div class="tabs__content-item" id="tab01" role="tabpanel">
+              <p>1. Аюрведа и йога утверждают, что главным источником здоровья нашего организма является здоровый ум.</p>
+            </div>
+            <div class="tabs__content-item" id="tab02" role="tabpanel">
+              <p>2.Стрессы, жизнь в условиях города, плохая экология, загрязненные продукты и вода, напряженный ритм жизни - все это день ото дня отбирает у нас молодость и хорошее здоровье.</p>
+            </div>
+            <div class="tabs__content-item" id="tab03" role="tabpanel">
+              <p>3. Несколько лет назад мы разработали специальные программы по йоге и аюрведе - и мы поняли, что они отлично работают - на опыте 530 наших туристов!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="burger">
+        <h2 class="block-library__title">Бургер</h2>
+        <ol>
+          <li>На странице может быть один или несколько бургеров.</li>
+          <li>Бургер может просто анимироваться или также открывать <i>другой</i> блок по клику на бургер.</li>
+        </ol>
+        <hr>
+        <h3 class="block-library__title">1. Бургер одинокий <small>- один на странице.</small></h3>
+        <p><b>Анимированное превращение в крестик по добавлению модификатора:</b></p>
+        <p>JS блока <code>burger.js</code> по клику на бургере, добавляет модификатор бургеру.</p>
+        <p>По клику на бургер, расположенный ниже, представлен код такого простейшего случая.</p>
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="burger-code" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="burger-code">
+          <pre class="code">
             <code>const burger = document.querySelector(".burger");</code>
             <small><code> </code></small>
             <small><code>/*события по клику на burger*/</code></small>
@@ -10,7 +328,28 @@
             <small><code>/* добавляем модификатор на burger, бургер анимируется в крестик */</code></small>
             <code>  burger.classList.toggle("burger--close");</code>
             <code>});</code>
-            </pre></div><hr><h3 class="block-library__title">2. Бургер одинокий<small> - открывает/закрывает другой блок, н-р. меню или блок с кодом.</small></h3><ol><li><p><b>Анимированное превращение в крестик по добавлению модификатора:</b></p><p>JS блока <code>burger.js</code> по клику на бургере, добавляет модификатор бургеру.</p></li><li><p><b>Открытие другого блока по клику на бургере:</b></p><p>JS блока <code>burger.js</code> по клику на бургере, переключает класс на нужном элементе.<br>По клику на бургер, расположенный ниже, представлен код такого простейшего случая.</p></li></ol><div><button class="burger" aria-label="Показать пример кода" data-target-id="burger-code2" data-target-class-toggle="blocks-library__example--shown"><span>Показать что-либо</span></button></div><div class="blocks-library__example" id="burger-code2"><pre class="code">
+            </pre>
+        </div>
+
+        <hr>
+        <h3 class="block-library__title">2. Бургер одинокий<small> - открывает/закрывает другой блок, н-р. меню или блок с кодом.</small></h3>
+        <ol>
+          <li>
+            <p><b>Анимированное превращение в крестик по добавлению модификатора:</b></p>
+            <p>JS блока <code>burger.js</code> по клику на бургере, добавляет модификатор бургеру.</p>
+          </li>
+          <li>
+            <p><b>Открытие другого блока по клику на бургере:</b></p>
+            <p>JS блока <code>burger.js</code> по клику на бургере, переключает класс на нужном элементе.<br> По клику на бургер, расположенный ниже, представлен код такого простейшего случая.</p>
+          </li>
+        </ol>
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="burger-code2" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="burger-code2">
+          <pre class="code">
             <code>const burger = document.querySelector(".burger");</code>
             <code>const element = document.querySelector(".ИмяКласса");</code>
             <small><code> </code></small>
@@ -23,10 +362,214 @@
             <small><code>/* добавляем модификатор на element, блок ИмяКласса откр/закр */</code></small>
             <code> element.classList.toggle("ИмяКласса--shown");</code>
             <code>});</code>
-            </pre></div><hr><h3 class="block-library__title">3. Бургеров > одного <small>- открывает/закрывает другой блок, н-р. меню или блок с кодом.</small></h3><p>JS блока <code>burger-test.js</code>. Изучаем вдумчиво!</p><p>Так как бугреров > 1, то механизм работы несколько иной.</p><p><b>1. В начале нужно определить, на каком именно бургере произошел клик.</b></p><p>Для этого вешаем единый обработчик на элемент document: <code>document.onclick = function (event) {...}</code><br>Далее проверяем, где произошел клик: <code>if (target.classList.contains("burger" || "burger--close")) {...}</code><br>и если на каком-либо из бургеров, то выполняем следующие действия для <i>этого</i> бургера:<br></p><p><b>2. Анимированное превращение в крестик по добавлению модификатора:</b></p><ul><li><p>Добавляем модификатор для анимации к этому бургеру: <code>target.classList.toggle("burger--close");</code></p></li></ul><p><b>3. Реализация открытия <i>другого</i> блока по клику на бургере.</b></p><p>По клику на бургер, JS блока <code>burger-test.js</code>:</p><ol><li>записывает в переменную-1 идентификатор <code>id</code>, переданный в data-атрибуте <code>data-target-id</code>;</li><li>записывает в переменную-2 имя класса, переданное в data-атрибуте <code>data-target-class-toggle</code>;</li><li>находит в документе элемент с нужным <code>id</code> и переключает (добавляет/удаляет) на этом элементе класс. Имя класса берет из переменной-2.</li></ol><div><button class="burger" aria-label="Показать пример кода" data-target-id="burger-code3" data-target-class-toggle="blocks-library__example--shown"><span>Показать что-либо</span></button></div><div class="blocks-library__example" id="burger-code3"><pre class="code">
+            </pre>
+        </div>
+
+        <hr>
+        <h3 class="block-library__title">3. Бургеров > одного <small> - открывает/закрывает другой блок, н-р. меню или блок с кодом.</small></h3>
+        <p>JS блока <code>burger-test.js</code>. Изучаем вдумчиво!</p>
+        <p>Так как бугреров > 1, то механизм работы несколько иной.</p>
+        <p><b>1. В начале нужно определить, на каком именно бургере произошел клик.</b></p>
+        <p>Для этого вешаем единый обработчик на элемент document: <code>document.onclick = function (event) {...}</code><br> Далее проверяем, где произошел клик: <code>if (target.classList.contains("burger" || "burger--close")) {...}</code><br> и если на каком-либо из бургеров, то выполняем следующие действия для <i> этого</i> бургера:<br></p>
+        <p><b>2. Анимированное превращение в крестик по добавлению модификатора:</b></p>
+        <ul>
+          <li>
+            <p>Добавляем модификатор для анимации к этому бургеру: <code>target.classList.toggle("burger--close");</code></p>
+          </li>
+        </ul>
+        <p><b>3. Реализация открытия <i>другого</i> блока по клику на бургере.</b></p>
+        <p>По клику на бургер, JS блока <code>burger-test.js</code>: </p>
+        <ol>
+          <li>записывает в переменную-1 идентификатор <code>id</code>, переданный в data-атрибуте <code>data-target-id</code>;</li>
+          <li>записывает в переменную-2 имя класса, переданное в data-атрибуте <code>data-target-class-toggle</code>;</li>
+          <li>находит в документе элемент с нужным <code>id</code> и переключает (добавляет/удаляет) на этом элементе класс. Имя класса берет из переменной-2.</li>
+        </ol>
+
+        <div>
+          <button class="burger" aria-label="Показать пример кода" data-target-id="burger-code3" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+        <div class="blocks-library__example" id="burger-code3">
+          <pre class="code">
             <code> /* см. содержимое файла burger-test.js; */</code>
             <code> </code>
-          </pre></div></section><!-- ============================================ --><section class="block-library" id="main-nav"><h2 class="block-library__title">Главная навигация (меню)</h2><p>На малых ширинах преобразуется в мобильный вид, скрывается/показывается по клику на бургер, если JS включен.</p><p><b>Состояние без включенного JS</b>:</p><ul><li>моб.меню - открыто,</li><li>бургер скрыт - в разметке есть <code>.burger--no-js</code>.</li><li>На десктопной ширине бургер - скрыт,<br>меню принимает горизонтальный вид - <code>.main-nav.scss</code>.</li></ul><p><b>Состояние при работе JS</b>:</p><ul><li>моб.меню - скрыто, скрипт добавляет <code>.main-nav__list--js</code>.</li><li>бургер - показан, - скрипт удаляет <code>.burger--no-js</code>.</li><li>по клику на бургер - скрипт изменяет высоту меню и модифицирует бургер.</li><li>На десктопной ширине бургер - скрыт,<br>меню принимает горизонтальный вид - <code>.main-nav.scss</code>.</li></ul><hr><p><b>Блоки в разметке:</b></p><ul><li><code><b>.main-nav</b></code><ul><li><b>html</b>: разметка готова в этом шаблоне <code>"main-nav"</code>.</li><li><b>css</b>: подключить <code>main-nav.scss</code>.</li><li><b>js</b>: подключить <code>main-nav.js</code>.</li></ul></li><li><code><b>.logo</b></code><ul><li><b>html</b>: использовать нужную разметку из шаблона <code>"logo"</code>, в зависимости от макета.</li><li><b>css</b>: подключить <code>logo.scss</code>.</li><li><b>js</b>: нет.</li></ul></li><li><code><b>.burger</b></code><ul><li><b>html</b>: разметка готова в этом шаблоне <code>"main-nav"</code>.</li><li><b>css</b>: подключить <code>burger.scss</code>.</li><li><b>js</b>: <b>нет!; </b>управление анимацией бургера в <code>main-nav.js</code>.</li></ul></li></ul><hr><nav class="main-nav"><div class="main-nav__inner"><a class="logo logo--img" href="#!"><img src="img/vector/logo-demo.svg" alt="Logo" width="64" height="15"> </a><button class="burger burger--no-js" aria-label="Показать главное меню"><span>Показать главное меню</span></button></div><ul class="main-nav__list" id="main-nav__list"><li class="main-nav__item"><a class="main-nav__link" href="#">Пункт меню 1</a></li><li class="main-nav__item"><a class="main-nav__link" href="#">Пункт меню 2</a></li><li class="main-nav__item"><a class="main-nav__link" href="#">Пункт меню 3</a></li><li class="main-nav__item"><a class="main-nav__link" href="#">Пункт меню 4</a></li></ul></nav></section><!-- ============================================ --><section class="block-library" id="aside-nav"><h2 class="block-library__title">Боковое меню</h2><p>По умолчанию скрыто.<br>На декстопной ширине <code>@media (min-width: $desktop-width) {...}</code> постоянно открыто, <code>width: 300px;</code>.</p><p><b>Важно!</b> Можно использовать только в случае дизайна, в котором меню уходит полностью за край видимой области (вьюпорта), т.е. при полноэкранном дизайне.</p><div class="block-library__wrap-aside"><button class="burger" aria-label="Открыть боковое меню" data-target-id="burger-left-menu" data-target-class-toggle="aside-test--shown"><span>Показать что-либо</span></button><aside class="aside-test" aria-label="Меню" id="burger-left-menu"><ul class="aside-test__menu"><li class="aside-test__menu-item"><a class="aside-test__menu-link" href="#">Главная страница</a></li><li class="aside-test__menu-item"><a class="aside-test__menu-link" href="#">Страницы</a></li><li class="aside-test__menu-item"><a class="aside-test__menu-link" href="#">Репозиторий</a></li><li class="aside-test__menu-item"><a class="aside-test__menu-link" href="#">Контакты</a></li></ul></aside></div></section><!-- ============================================ --><section class="block-library" id="scroll-achor"><h2 class="block-library__title">Плавный скролл к якорю.<br>без JS / с JS.</h2><p>Делаем классическую разметку с <code>href="#некий_id"</code> + плюс расставляем в нужных местах эти <code>id</code>.</p><p>Далее два варианта:</p><hr><p><b>Вариант 1:</b><br>использовать CSS - свойство <code>scroll-behavior: smooth;</code><br>Важно!<br><b>MDN:</b> <code>scroll-behavior: smooth;</code> добавлять контейнеру, внутри которого нужна прокрутка. - <b>не работает,</b><br><b>w3schools.com:</b> <code>scroll-behavior: smooth;</code> добавлять на <code>html {scroll-behavior: smooth;}</code> - <b>работает</b>.<br><br><span class="attention">Не работает в IE + EDGE.</span><br>Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p><hr><p><b>Вариант 2:</b><br>использовать <code>JS</code>.<br><span class="good">Работает в IE & EDGE.</span><br>Скрипт: <code>scroll-anchor.js</code></p><p>Как использовать <code>scroll-anchor.js</code>:<br>- разметку делаем как указано выше;<br>- подключаем скрипт;<br>- все.</p></section><!-- ============================================ --><section class="block-library" id="scroll-add-class"><h2 class="block-library__title">Добавить класс при скроле, JS.</h2><p>Все делает скрипт <code>scroll-add-class.js</code>.</p><span>Принцип:</span><ul><li>Отлавливаем событие по скролу.</li><li>Если скролл > ...px, то доб. требуемый класс к нужному элементу.</li><li>Иначе, удаляем этот же класс у элемента.</li><li>Все.</li></ul></section><!-- ============================================ --><section class="block-library" id="to-top"><h2 class="block-library__title">Ссылка "вверх", JS</h2><p>Ссылка «вверх» в нижнем правом углу страницы.</p><p>Cкрипт <code>to-top.js</code> делает невидимой / видимой ссылку «вверх».</p><span>Принцип:</span><ul><li>Делаем классическую разметку для ссылки с <code>href="#некий_id"</code> + плюс расставляем в нужном месте (вверх страницы) этот <code>id</code>. Т.е. скролл вверх делаем средствами <code>CSS</code>.</li><li>Если JS не включен у пользователя, тогда ссылка видна сразу.</li><li>Если JS включен, скрипт добавляет модификатор <code>"*--no--visible"</code> для ссылки (ссылка не видна).</li><li>Далее, скрипт отлавливает событие по скролу.</li><li>Если скролл больше указанного в Javascript-файле блока значения, то скрипт удаляет модификатор <code>"*--no--visible"</code> у ссылки.</li><li>Если скролл меньше указанного в Javascript-файле блока значения, скрипт добавляет этот же класс элементу (т.е. ссылке).</li><li>Все.</li></ul><b>P.S.</b><p>Можно просто сделать ссылку на <code>id</code> + использовать CSS - свойство <code>scroll-behavior: smooth;</code>.<br>Но!<br><span class="attention">"Это не работает в IE + EDGE.</span><br>Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p><a class="to-top" id="to-top-link" href="#note" aria-label="ссылка вверх страницы">↑</a></section><!-- ============================================ --><section class="block-library" id="select"><h2 class="block-library__title">Custom <code>select</code>, JS</h2><p>Стилизация <code>select</code> на JS.</p><p>Автор и исходники: <a href="https://github.com/YuraVolk/Js-Library" rel="noopener">https://github.com/YuraVolk/Js-Library</a></p><p>Cкрипт <code>custom-select.js</code>.</p><p>Принцип:</p><ul><li>Делаем такую разметку:<br><div class="blocks-library__example blocks-library__example--shown"><pre class="code">
+          </pre>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="main-nav">
+        <h2 class="block-library__title">Главная навигация (меню)</h2>
+        <p>На малых ширинах преобразуется в мобильный вид, скрывается/показывается по клику на бургер, если JS включен.</p>
+
+        <p><b>Состояние без включенного JS</b>:</p>
+        <ul>
+          <li>моб.меню - открыто,</li>
+          <li>бургер скрыт - в разметке есть <code>.burger--no-js</code>.</li>
+          <li>На десктопной ширине бургер - скрыт,<br> меню принимает горизонтальный вид - <code>.main-nav.scss</code>.</li>
+        </ul>
+
+        <p><b>Состояние при работе JS</b>:</p>
+        <ul>
+          <li>моб.меню - скрыто, скрипт добавляет <code>.main-nav__list--js</code>.</li>
+          <li>бургер - показан, - скрипт удаляет <code>.burger--no-js</code>.</li>
+          <li>по клику на бургер - скрипт изменяет высоту меню и модифицирует бургер.</li>
+          <li>На десктопной ширине бургер - скрыт,<br> меню принимает горизонтальный вид - <code>.main-nav.scss</code>.</li>
+        </ul>
+
+        <hr>
+        <p><b>Блоки в разметке:</b></p>
+        <ul>
+          <li>
+            <code><b>.main-nav</b></code>
+            <ul>
+              <li><b>html</b>: разметка готова в этом шаблоне <code>"main-nav"</code>.</li>
+              <li><b>css</b>: подключить <code>main-nav.scss</code>.</li>
+              <li><b>js</b>: подключить <code>main-nav.js</code>.</li>
+            </ul>
+          </li>
+          <li>
+            <code><b>.logo</b></code>
+            <ul>
+              <li><b>html</b>: использовать нужную разметку из шаблона <code>"logo"</code>, в зависимости от макета.</li>
+              <li><b>css</b>: подключить <code>logo.scss</code>.</li>
+              <li><b>js</b>: нет.</li>
+            </ul>
+          </li>
+          <li>
+            <code><b>.burger</b></code>
+            <ul>
+              <li><b>html</b>: разметка готова в этом шаблоне <code>"main-nav"</code>.</li>
+              <li><b>css</b>: подключить <code>burger.scss</code>.</li>
+              <li><b>js</b>: <b> нет!; </b> управление анимацией бургера в <code>main-nav.js</code>.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <hr>
+
+        <nav class="main-nav">
+          <div class="main-nav__inner">
+            <a class="logo  logo--img" href="#!">
+              <img src="img/vector/logo-demo.svg" alt="Logo" width="64" height="15">
+            </a>
+
+            <button class="burger  burger--no-js" aria-label="Показать главное меню">
+              <span>Показать главное меню</span>
+            </button>
+          </div>
+
+          <ul class="main-nav__list" id="main-nav__list">
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Пункт меню 1</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Пункт меню 2</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Пункт меню 3</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Пункт меню 4</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="aside-nav">
+        <h2 class="block-library__title">Боковое меню</h2>
+        <p>По умолчанию скрыто. <br>На декстопной ширине <code>@media (min-width: $desktop-width) {...}</code> постоянно открыто, <code>width: 300px;</code>.</p>
+        <p><b>Важно!</b> Можно использовать только в случае дизайна, в котором меню уходит полностью за край видимой области (вьюпорта), т.е. при полноэкранном дизайне.</p>
+
+        <div class="block-library__wrap-aside">
+          <button class="burger" aria-label="Открыть боковое меню" data-target-id="burger-left-menu" data-target-class-toggle="aside-test--shown">
+            <span>Показать что-либо</span>
+          </button>
+          <aside class="aside-test" aria-label="Меню" id="burger-left-menu">
+            <ul class="aside-test__menu">
+              <li class="aside-test__menu-item"><a class="aside-test__menu-link" href="#">Главная страница</a></li>
+              <li class="aside-test__menu-item"><a class="aside-test__menu-link" href="#">Страницы</a></li>
+              <li class="aside-test__menu-item"><a class="aside-test__menu-link" href="#">Репозиторий</a></li>
+              <li class="aside-test__menu-item"><a class="aside-test__menu-link" href="#">Контакты</a></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="scroll-achor">
+        <h2 class="block-library__title">Плавный скролл к якорю.<br> без JS / с JS.</h2>
+        <p>Делаем классическую разметку с <code>href="#некий_id"</code> + плюс расставляем в нужных местах эти <code>id</code>.</p>
+        <p>Далее два варианта:</p>
+        <hr>
+        <p><b>Вариант 1:</b><br> использовать CSS - свойство <code>scroll-behavior: smooth;</code><br>
+          Важно!<br>
+          <b>MDN:</b> <code>scroll-behavior: smooth;</code> добавлять контейнеру, внутри которого нужна прокрутка. - <b>не работает,</b><br>
+          <b>w3schools.com:</b> <code>scroll-behavior: smooth;</code> добавлять на <code>html {scroll-behavior: smooth;}</code> - <b>работает</b>.<br><br>
+          <span class="attention">Не работает в IE + EDGE.</span><br> Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
+        <hr>
+        <p><b>Вариант 2:</b><br> использовать <code>JS</code>.
+          <br><span class="good">Работает в IE & EDGE.</span><br>Скрипт: <code>scroll-anchor.js</code></p>
+        <p>Как использовать <code>scroll-anchor.js</code>: <br>
+          - разметку делаем как указано выше;<br>
+          - подключаем скрипт; <br>
+          - все.
+        </p>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="scroll-add-class">
+        <h2 class="block-library__title">Добавить класс при скроле, JS.</h2>
+        <p>Все делает скрипт <code>scroll-add-class.js</code>.</p>
+        <span>Принцип:</span>
+        <ul>
+          <li>Отлавливаем событие по скролу.</li>
+          <li>Если скролл > ...px, то доб. требуемый класс к нужному элементу.</li>
+          <li>Иначе, удаляем этот же класс у элемента.</li>
+          <li>Все.</li>
+        </ul>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="to-top">
+        <h2 class="block-library__title">Ссылка "вверх", JS</h2>
+        <p>Ссылка «вверх» в нижнем правом углу страницы.</p>
+        <p>Cкрипт <code>to-top.js</code> делает невидимой / видимой ссылку «вверх».</p>
+        <span>Принцип:</span>
+        <ul>
+          <li>Делаем классическую разметку для ссылки с <code>href="#некий_id"</code> + плюс расставляем в нужном месте (вверх страницы) этот <code>id</code>. Т.е. скролл вверх делаем средствами <code>CSS</code>.</li>
+          <li>Если JS не включен у пользователя, тогда ссылка видна сразу.</li>
+          <li>Если JS включен, скрипт добавляет модификатор <code>"*--no--visible"</code> для ссылки (ссылка не видна).</li>
+          <li>Далее, скрипт отлавливает событие по скролу.</li>
+          <li>Если скролл больше указанного в Javascript-файле блока значения, то скрипт удаляет модификатор <code>"*--no--visible"</code> у ссылки.</li>
+          <li>Если скролл меньше указанного в Javascript-файле блока значения, скрипт добавляет этот же класс элементу (т.е. ссылке).</li>
+          <li>Все.</li>
+        </ul>
+        <b>P.S.</b>
+        <p>Можно просто сделать ссылку на <code>id</code> + использовать CSS - свойство <code>scroll-behavior: smooth;</code>.<br>
+          Но!<br>
+          <span class="attention">"Это не работает в IE + EDGE.</span><br>
+          Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
+
+        <a class="to-top" id="to-top-link" href="#note" aria-label="ссылка вверх страницы">↑</a>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="select">
+        <h2 class="block-library__title">Custom <code>select</code>, JS</h2>
+        <p>Стилизация <code>select</code> на JS.</p>
+        <p>Автор и исходники:
+          <a href="https://github.com/YuraVolk/Js-Library" rel="noopener">https://github.com/YuraVolk/Js-Library</a>
+        </p>
+        <p>Cкрипт <code>custom-select.js</code>.</p>
+        <p>Принцип:</p>
+        <ul>
+
+          <li>Делаем такую разметку:<br>
+            <div class="blocks-library__example blocks-library__example--shown">
+              <pre class="code">
 &lt;div class="custom-select"&gt;<br>
   &lt;select name="select"&gt;<br>
     &lt;option value="test1">Test to select...&lt;/option&gt;<br>
@@ -37,7 +580,73 @@
     &lt;option value="test6">Test 6&lt;/option&gt;<br>
     &lt;/select&gt;<br>
 &lt;/div&gt;<br>
-             </pre></div></li><li>далее <code>cuctom-select.js</code> скрывает исходную разметку в html и добавляет новую с другими классами.</li><li>стилизация находится в <code>scss-файле</code> блока.</li></ul><b>P.S.</b><p>Ограничения.</p><p>Все селекты на странице будут:</p><ul><li>стилизованы одинаково</li><li>открываться вниз или вверх</li></ul><hr><br><div class="custom-select"><select name="select"><option value="test1">Test to select...</option><option value="test2">Test 2</option><option value="test3">Test 3</option><option value="test4">Test 4</option><option value="test5">Test 5</option><option value="test6">Test 6</option></select></div></section><!-- ============================================ --><section class="block-library" id="svg-vivus"><h2 class="block-library__title">Vivus.js - рисование анимации для SVG</h2><p>Начало: <a href="https://maxwellito.github.io/vivus-instant/" rel="noopener">vivus-instant</a></p><p>Документация: <a href="https://github.com/maxwellito/vivus" rel="noopener">github.com/maxwellito/vivus</a></p><p>Как использовать <code>vivus-instant</code> для анимированного текста:</p><ul><li><b>в Illustrator:</b><ul><li>набрать нужный текст;</li><li>тексту задать обводку с толщиной линии и цветом;</li><li>заливку тексту задать прозрачную;</li><li>должен получиться контурный текст;</li><li>при экспорте svg указать: шрифт - преобразовать в кривые.</li></ul></li><li><b>в vivus-instant:</b><ul><li>полученный svg-файл закинуть в vivus-instant;</li><li>настроить праметры анимации</li><li>сохранить файл с анимацией в папку проекта;</li></ul></li><li><b>в разметке</b> вставить svg > use c с нужным id.</li></ul><p>Для просмотра анимированного SVG, обновить страницу.</p><p class="attention warning">Ошибка! При встраивании на страницу через svg-sprite не работает.</p><div style="margin-top: 25px; outline: 1px dotted #cccccc;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.8 26.59"><path d="M20.5,7.93H12.27V30.8H8.81V7.93H.6V5.2H20.5Zm18.95,11H27.72v9.14H41.24V30.8h-17V5.2H41V7.93H27.72v8.28H39.45Zm14.12-3.74,6-10h4.18L55.6,17.89l8.3,12.9H59.77L53.63,20.64,47.48,30.8H43.3l8.3-12.9L43.47,5.2h4.15ZM85.4,7.93H77.17V30.8H73.71V7.93H65.5V5.2H85.4Z" transform="translate(-0.1 -4.7)" style="fill: none;stroke: #1d71b8;stroke-linecap: round;stroke-linejoin: round" class="WpClYHnz_0"></path><style data-made-with="vivus-instant">.WpClYHnz_0 {
+             </pre>
+            </div>
+          </li>
+          <li>далее <code>cuctom-select.js</code> скрывает исходную разметку в html и добавляет новую с другими классами.</li>
+          <li>стилизация находится в <code>scss-файле</code> блока.</li>
+        </ul>
+
+        <b>P.S.</b>
+        <p>Ограничения.</p>
+        <p>Все селекты на странице будут:</p>
+        <ul>
+          <li>стилизованы одинаково </li>
+          <li>открываться вниз или вверх </li>
+        </ul>
+
+        <hr>
+        <br>
+
+        <div class="custom-select">
+          <select name="select">
+            <option value="test1">Test to select...</option>
+            <option value="test2">Test 2</option>
+            <option value="test3">Test 3</option>
+            <option value="test4">Test 4</option>
+            <option value="test5">Test 5</option>
+            <option value="test6">Test 6</option>
+          </select>
+        </div>
+
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="svg-vivus">
+        <h2 class="block-library__title">Vivus.js - рисование анимации для SVG</h2>
+        <p>Начало: <a href="https://maxwellito.github.io/vivus-instant/" rel="noopener">vivus-instant</a></p>
+        <p>Документация: <a href="https://github.com/maxwellito/vivus" rel="noopener">github.com/maxwellito/vivus</a></p>
+        <p>Как использовать <code>vivus-instant</code> для анимированного текста:</p>
+
+        <ul>
+          <li><b>в Illustrator:</b>
+            <ul>
+              <li>набрать нужный текст;</li>
+              <li>тексту задать обводку с толщиной линии и цветом;</li>
+              <li>заливку тексту задать прозрачную;</li>
+              <li>должен получиться контурный текст;</li>
+              <li>при экспорте svg указать: шрифт - преобразовать в кривые.</li>
+            </ul>
+          </li>
+          <li><b>в vivus-instant:</b>
+            <ul>
+              <li>полученный svg-файл закинуть в vivus-instant;</li>
+              <li>настроить праметры анимации</li>
+              <li>сохранить файл с анимацией в папку проекта;</li>
+            </ul>
+          </li>
+          <li><b>в разметке</b> вставить svg > use c с нужным id.</li>
+        </ul>
+
+        <p>Для просмотра анимированного SVG, обновить страницу.</p>
+
+        <p class="attention  warning">Ошибка! При встраивании на страницу через svg-sprite не работает.</p>
+
+        <div style="margin-top: 25px; outline: 1px dotted #cccccc;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.8 26.59">
+            <path d="M20.5,7.93H12.27V30.8H8.81V7.93H.6V5.2H20.5Zm18.95,11H27.72v9.14H41.24V30.8h-17V5.2H41V7.93H27.72v8.28H39.45Zm14.12-3.74,6-10h4.18L55.6,17.89l8.3,12.9H59.77L53.63,20.64,47.48,30.8H43.3l8.3-12.9L43.47,5.2h4.15ZM85.4,7.93H77.17V30.8H73.71V7.93H65.5V5.2H85.4Z" transform="translate(-0.1 -4.7)" style="fill: none;stroke: #1d71b8;stroke-linecap: round;stroke-linejoin: round" class="WpClYHnz_0"></path>
+            <style data-made-with="vivus-instant">
+              .WpClYHnz_0 {
                 stroke-dasharray: 442 444;
                 stroke-dashoffset: 443;
                 animation: WpClYHnz_draw 20000ms linear 0ms forwards;
@@ -61,14 +670,161 @@
                 100% {
                   stroke-opacity: 0;
                 }
-              }</style></svg></div></section><!-- ============================================ --><section class="block-library" id="slider"><h2 class="block-library__title">Слайдер</h2><p>Адаптивность делать медиаусловиями.</p><p><b>Состоит из двух ключевых сущностей:</b><br><code><b>.slider</b></code> - "скелет" слайдера. Содержит:</p><ol><li>обертку-контейнер всех кадров слайдера <code>.slider__list</code>;<br>Эта обертка нужна, например, для анимации кадров слайдера перемещением влево-вправо (относительно "окна", которым в таком случае будет являтся <code>.slider</code> + <code>overflow: hidden;</code> ).</li><li>отдельный кадр слайдера <code>.slider__list-item</code>;</li><li>по умолчанию кадры скрыты <code>.slider__list-item {display: none;}</code>, показ кадров при добавлении модификатора <code>.slider__list-item--active {display: block;}</code>;</li><li>две кнопки: "назад" - <code>.slider__prev</code>, и "вперед" - <code>.slider__next</code>;<br>- позиционируются относительно контейнера <code>.slider</code></li><li>обертка-контейнер кнопок-индикаторов "1-2-3-..." <code>.slider__toggles</code>;<br>- позиционируются относительно контейнера <code>.slider</code></li><li>сами кнопки-индикаторы "1-2-3-..." <code>.slider__toggle</code>.</li></ol><p><code><b>.block-content</b></code> - контентный блок страницы, в котором находится слайдер.<br>Стили этого блока задают расположение блока со слайдером, внешний вид и расположение кнопок слайдера.</p><p>Переключение слайдов, при необходимости, делать на JS.</p><section class="block-content"><div class="block-content__slider slider"><h2 class="visually-hidden">Отзывы пользователей</h2><div class="block-content__list slider__list"><div class="block-content__item slider__list-item slider__list-item--active"><p class="block-content__text">Кадр слайдера №1</p><p class="block-content__text">Кадр слайдера №1</p><p class="block-content__text">Кадр слайдера №1</p><p class="block-content__text">Кадр слайдера №1</p></div><div class="block-content__item slider__list-item"><p class="block-content__text">Кадр слайдера №2</p><p class="block-content__text">Кадр слайдера №2</p><p class="block-content__text">Кадр слайдера №2</p></div><div class="block-content__item slider__list-item"><p class="block-content__text">Кадр слайдера №3</p><p class="block-content__text">Кадр слайдера №3</p></div></div><button class="block-content__btn-prev slider__prev" type="button" aria-label="Предыдущий кадр"><svg width="22" height="42" aria-hidden="true"><use xlink:href="#icon-review-arrow-left"></use></svg></button> <button class="block-content__btn-next slider__next" type="button" aria-label="Следующий кадр"><svg width="22" height="42" aria-hidden="true"><use xlink:href="#icon-review-arrow-right"></use></svg></button><div class="block-content__toggles slider__toggles"><button class="block-content__btn-toggles block-content__btn-toggles--active slider__toggle" type="button"><span class="visually-hidden">1</span></button> <button class="block-content__btn-toggles slider__toggle" type="button"><span class="visually-hidden">2</span></button> <button class="block-content__btn-toggles slider__toggle" type="button"><span class="visually-hidden">3</span></button></div></div></section></section><!-- ============================================ --><section class="block-library" id="google-map"><h2 class="block-library__title">Google Maps</h2><p>Как добавить Google Maps на страницу.</p><ul><li><span>если просто карту с дефолтным маркером - использовать <code>iframe</code><br></span><!-- <div> --> <span>Быстрый старт: </span><a href="https://support.google.com/maps/answer/144361?hl=ru&ref_topic=3093585" rel="noopener">Документация Google width iframe</a><!-- </div> --></li><li><span>если карту с кастом-маркером, маштабом и т.д. <code>API-key + JS</code><br></span><span>Быстрый старт: </span><a href="https://developers.google.com/maps/documentation/javascript/tutorial" rel="noopener">Документация Google width API-KEY</a><p><b>Внимание!</b><br>При добавлении Google Maps на страницу, помимо API-key, нужно привязать платежную карту.<br>Поэтому, API-key у владельца сайта должен быть свой.</p></li></ul><div><span>Стилизация: </span><a href="https://mapstyle.withgoogle.com/" rel="noopener">https://mapstyle.withgoogle.com/</a></div></section><!-- ============================================ --><section class="block-library attention" id="compare"><h2 class="block-library__title">Ползунок сравнения изображений</h2><p>Скрипт <code>img-compare.js</code></p><p class="warning">Переделать классы по БЭМ.</p><p>Создание ползунка, сравнивающий два изображения.</p><div class="img-comp-container"><div class="img-comp-img"><img src="img/rastr/img-rock.jpg" width="500" height="300" alt="image1"></div><div class="img-comp-img img-comp-overlay"><img src="img/rastr/img-desert.jpg" width="500" height="300" alt="image2"></div></div><hr><p>Важно!</p><p>Для корректной работы ползунка сравнения, в global.scss нужно закомментировать:</p><div><button class="burger" aria-label="Показать пример кода" data-target-id="img-compare-code" data-target-class-toggle="blocks-library__example--shown"><span>Показать что-либо</span></button></div><div class="blocks-library__example" id="img-compare-code"><pre class="code">
+              }
+            </style>
+          </svg>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="slider">
+        <h2 class="block-library__title">Слайдер</h2>
+        <p>Адаптивность делать медиаусловиями.</p>
+        <p><b>Состоит из двух ключевых сущностей:</b><br><code><b>.slider</b></code> - "скелет" слайдера. Содержит:</p>
+        <ol>
+          <li>обертку-контейнер всех кадров слайдера <code>.slider__list</code>;<br>Эта обертка нужна, например, для анимации кадров слайдера перемещением влево-вправо (относительно "окна", которым в таком случае будет являтся <code>.slider</code> + <code>overflow: hidden;</code> ).</li>
+          <li>отдельный кадр слайдера <code>.slider__list-item</code>;</li>
+          <li>по умолчанию кадры скрыты <code>.slider__list-item {display: none;}</code>, показ кадров при добавлении модификатора <code>.slider__list-item--active {display: block;} </code>;</li>
+          <li>две кнопки: "назад" - <code>.slider__prev</code>, и "вперед" - <code>.slider__next</code>;<br> - позиционируются относительно контейнера <code>.slider</code></li>
+          <li>обертка-контейнер кнопок-индикаторов "1-2-3-..." <code>.slider__toggles</code>;<br> - позиционируются относительно контейнера <code>.slider</code></li>
+          <li>сами кнопки-индикаторы "1-2-3-..." <code>.slider__toggle</code>.</li>
+        </ol>
+        <p><code><b>.block-content</b></code> - контентный блок страницы, в котором находится слайдер.<br>Стили этого блока задают расположение блока со слайдером, внешний вид и расположение кнопок слайдера.</p>
+        <p>Переключение слайдов, при необходимости, делать на JS.</p>
+
+        <section class="block-content">
+          <div class="block-content__slider  slider">
+            <h2 class="visually-hidden">Отзывы пользователей</h2>
+            <div class="block-content__list  slider__list">
+              <div class="block-content__item  slider__list-item  slider__list-item--active">
+                <p class="block-content__text">Кадр слайдера №1</p>
+                <p class="block-content__text">Кадр слайдера №1</p>
+                <p class="block-content__text">Кадр слайдера №1</p>
+                <p class="block-content__text">Кадр слайдера №1</p>
+              </div>
+
+              <div class="block-content__item  slider__list-item">
+                <p class="block-content__text">Кадр слайдера №2</p>
+                <p class="block-content__text">Кадр слайдера №2</p>
+                <p class="block-content__text">Кадр слайдера №2</p>
+              </div>
+
+              <div class="block-content__item  slider__list-item">
+                <p class="block-content__text">Кадр слайдера №3</p>
+                <p class="block-content__text">Кадр слайдера №3</p>
+              </div>
+            </div>
+
+            <button class="block-content__btn-prev  slider__prev" type="button" aria-label="Предыдущий кадр">
+              <svg width="22" height="42" aria-hidden="true">
+                <use xlink:href="#icon-review-arrow-left"></use>
+              </svg>
+            </button>
+            <button class="block-content__btn-next  slider__next" type="button" aria-label="Следующий кадр">
+              <svg width="22" height="42" aria-hidden="true">
+                <use xlink:href="#icon-review-arrow-right"></use>
+              </svg>
+            </button>
+
+            <div class="block-content__toggles  slider__toggles">
+              <button class="block-content__btn-toggles  block-content__btn-toggles--active  slider__toggle" type="button">
+                <span class="visually-hidden">1</span>
+              </button>
+              <button class="block-content__btn-toggles  slider__toggle" type="button">
+                <span class="visually-hidden">2</span>
+              </button>
+              <button class="block-content__btn-toggles  slider__toggle" type="button">
+                <span class="visually-hidden">3</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="google-map">
+        <h2 class="block-library__title">Google Maps</h2>
+        <p>Как добавить Google Maps на страницу.</p>
+
+        <ul>
+          <li>
+            <span>если просто карту с дефолтным маркером - использовать <code>iframe</code><br></span>
+            <!-- <div> -->
+            <span> Быстрый старт: </span>
+            <a href="https://support.google.com/maps/answer/144361?hl=ru&ref_topic=3093585" rel="noopener">Документация Google width iframe</a>
+            <!-- </div> -->
+          </li>
+          <li>
+            <span>если карту с кастом-маркером, маштабом и т.д. <code>API-key + JS</code><br></span>
+            <span>Быстрый старт: </span>
+            <a href="https://developers.google.com/maps/documentation/javascript/tutorial" rel="noopener">Документация Google width API-KEY</a>
+            <p><b>Внимание!</b><br>При добавлении Google Maps на страницу, помимо API-key, нужно привязать платежную карту.<br>Поэтому, API-key у владельца сайта должен быть свой.</p>
+          </li>
+        </ul>
+        <div>
+          <span>Стилизация: </span>
+          <a href="https://mapstyle.withgoogle.com/" rel="noopener">https://mapstyle.withgoogle.com/</a>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library  attention" id="compare">
+        <h2 class="block-library__title">Ползунок сравнения изображений</h2>
+        <p>Скрипт <code>img-compare.js</code> </p>
+        <p class="warning">Переделать классы по БЭМ.</p>
+        <p>Создание ползунка, сравнивающий два изображения.</p>
+
+        <div class="img-comp-container">
+          <div class="img-comp-img">
+            <img src="img/rastr/img-rock.jpg" width="500" height="300" alt="image1">
+          </div>
+          <div class="img-comp-img img-comp-overlay">
+            <img src="img/rastr/img-desert.jpg" width="500" height="300" alt="image2">
+          </div>
+        </div>
+        <hr>
+        <p>Важно!</p>
+        <p>Для корректной работы ползунка сравнения, в global.scss нужно закомментировать:</p>
+        <div>
+          <button class=" burger" aria-label="Показать пример кода" data-target-id="img-compare-code" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+
+        <div class="blocks-library__example" id="img-compare-code">
+          <pre class="code">
             <span class="code_inner">
 // img {
 //   max-width: 100%;
 //   height: auto;
 // }
             </span>
-          </pre></div><p>И соответственно, продумать, как добавить для всех остальных <code>img</code> эти важные стили.</p><p>Как вариант: для <code>img</code> задать <code>object-fit</code></p></section><!-- ============================================ --><section class="block-library" id="listener"><h2 class="block-library__title">Один обработчик события на несколько элементов</h2><p><b>Элементы должны иметь одинаковый класс.</b></p><p><b>Вариант простой:</b></p><ol><li>Находим нужный <code>блок с элементами</code>, или полностью <code>document</code>;</li><li>На нужный <code>блок c элементами</code> навешиваем один обработчик события<br>и по событию проверяем условие: если клик на нужном элементе, выполняем нужный код.</li></ol><p>Пример:</p><div><button class="burger" aria-label="Показать пример кода" data-target-id="add-listener-1" data-target-class-toggle="blocks-library__example--shown"><span>Показать что-либо</span></button></div><div class="blocks-library__example" id="add-listener-1"><pre class="code">
+          </pre>
+        </div>
+
+        <p>И соответственно, продумать, как добавить для всех остальных <code>img</code> эти важные стили.</p>
+        <p>Как вариант: для <code>img</code> задать <code>object-fit</code></p>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="listener">
+        <h2 class="block-library__title">Один обработчик события на несколько элементов</h2>
+        <p><b>Элементы должны иметь одинаковый класс.</b></p>
+        <p><b>Вариант простой:</b></p>
+        <ol>
+          <li>Находим нужный <code>блок с элементами</code>, или полностью <code>document</code>;</li>
+          <li>На нужный <code>блок c элементами</code> навешиваем один обработчик события<br>
+            и по событию проверяем условие: если клик на нужном элементе, выполняем нужный код.</li>
+        </ol>
+        <p>Пример:</p>
+        <div>
+          <button class=" burger" aria-label="Показать пример кода" data-target-id="add-listener-1" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+
+        <div class="blocks-library__example" id="add-listener-1">
+          <pre class="code">
             <span class="code_inner">
 let infoWrap = document.querySelector('.info'); // находим блок с кнопками
 
@@ -81,7 +837,30 @@ infoWrap.addEventListener('click', function (event) { //один обработ�
     }
 });
             </span>
-          </pre></div><br><br><p><b>Вариант немного сложнее:</b></p><p>Используется в <code>burgers-some.js</code></p><ol><li>На <code>искомый-блок</code> или полностью <code>document</code> навешиваем обработчик события;</li><li>Далее в цикле <code>while (target != document (или "искомый-блок"))</code><br>проверяем условие <code>if (target.classList.contains("нужный-класс"))</code></li><li>Если условие верно, выполняем нужный код и выходим из цикла <code>break;</code>;</li><li>Если условие не верно, поднимаем <code>target</code> на уровень вверх по иерархии родителей от <code>event.target</code> и выше;</li><li>Если клик был мимо элемента с нужным классом, цикл дойдет вверх до <code>document</code> (или <code>искомого-блока</code>), и закончит работу.</li></ol><p>Пример с <code>document</code>:</p><div><button class="burger" aria-label="Показать пример кода" data-target-id="add-listener-2" data-target-class-toggle="blocks-library__example--shown"><span>Показать что-либо</span></button></div><div class="blocks-library__example" id="add-listener-2"><pre class="code">
+          </pre>
+        </div>
+
+        <br>
+        <br>
+        <p><b>Вариант немного сложнее:</b></p>
+        <p>Используется в <code>burgers-some.js</code></p>
+        <ol>
+          <li>На <code>искомый-блок</code> или полностью <code>document</code> навешиваем обработчик события;</li>
+          <li>Далее в цикле <code>while (target != document (или "искомый-блок"))</code><br>
+            проверяем условие <code>if (target.classList.contains("нужный-класс"))</code></li>
+          <li>Если условие верно, выполняем нужный код и выходим из цикла <code>break;</code>;</li>
+          <li>Если условие не верно, поднимаем <code>target</code> на уровень вверх по иерархии родителей от <code>event.target</code> и выше;</li>
+          <li>Если клик был мимо элемента с нужным классом, цикл дойдет вверх до <code>document</code> (или <code>искомого-блока</code>), и закончит работу.</li>
+        </ol>
+        <p>Пример с <code>document</code>:</p>
+        <div>
+          <button class=" burger" aria-label="Показать пример кода" data-target-id="add-listener-2" data-target-class-toggle="blocks-library__example--shown">
+            <span>Показать что-либо</span>
+          </button>
+        </div>
+
+        <div class="blocks-library__example" id="add-listener-2">
+          <pre class="code">
             <span class="code_inner">
 document.addEventListener('click', function (event) { //1. вешаем единый обработчик на элемент document
  //это нужно для того, что-бы много burger-ов можно было ставить в любом месте
@@ -102,4 +881,54 @@ document.addEventListener('click', function (event) { //1. вешаем един
  //console.log("вышел из цикла");
 });
             </span>
-          </pre></div></section></main></div><!-- скрипт для range--><script src="js/custom-range.js"></script><!-- скрипт для modal--><script src="js/modal.js"></script><script src="js/modal-2.js"></script><!-- скрипт для tabs--><script src="js/tabs.js"></script><!--скрипт бургер одинокий --><script src="js/burger.js"></script><!--скрипт много бургеров --><script src="js/burgers-some.js"></script><!--скрипт главного меню --><script src="js/main-nav.js"></script><!--скрипт плавного скрола к якорю --><script src="js/scroll-anchor.js"></script><!--скрипт ссылки "вврх" --><script src="js/to-top.js"></script><!-- скрипт custom-select --><script src="js/custom-select.js"></script><!-- скрипт timer --><script src="js/timer-reverse.js"></script><!-- скрипт для Яндекс-карт--><!-- <script src="js/script-map.js"></script> --><!--=========================== --><!--cкрипт для ползунка сравнения --><!--при задании async - не работает! --><script src="js/img-compare.js"></script><!-- запускающая функция для скрипта сравнения изображения, должна быть ниже всех --><script>initComparisons();</script></body></html>
+          </pre>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- скрипт для range-->
+  <script src="js/custom-range.js"></script>
+
+  <!-- скрипт для modal-->
+  <script src="js/modal.js"></script>
+  <script src="js/modal-2.js"></script>
+
+  <!-- скрипт для tabs-->
+  <script src="js/tabs.js"></script>
+
+  <!--скрипт бургер одинокий -->
+  <script src="js/burger.js"></script>
+
+  <!--скрипт много бургеров -->
+  <script src="js/burgers-some.js"></script>
+
+  <!--скрипт главного меню -->
+  <script src="js/main-nav.js"></script>
+
+  <!--скрипт плавного скрола к якорю -->
+  <script src="js/scroll-anchor.js"></script>
+
+  <!--скрипт ссылки "вврх" -->
+  <script src="js/to-top.js"></script>
+
+  <!-- скрипт custom-select -->
+  <script src="js/custom-select.js"></script>
+
+  <!-- скрипт timer -->
+  <script src="js/timer-reverse.js"></script>
+
+  <!-- скрипт для Яндекс-карт-->
+  <!-- <script src="js/script-map.js"></script> -->
+
+  <!--=========================== -->
+  <!--cкрипт для ползунка сравнения -->
+  <!--при задании async - не работает! -->
+  <script src="js/img-compare.js"></script>
+  <!-- запускающая функция для скрипта сравнения изображения, должна быть ниже всех -->
+  <script>
+    initComparisons();
+  </script>
+</body>
+</html>
