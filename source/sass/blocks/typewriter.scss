@@ -1,0 +1,36 @@
+.typewriter {
+  //display: flex;
+  display: inline-flex;
+  //justify-content: center;
+  align-items: center;
+}
+
+.typewriter__text {
+  //margin: 0 auto; /* Дает эффект прокрутки при наборе текста */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  overflow: hidden; /* Гарантирует, что контент не раскрывается до анимации */
+  white-space: nowrap; /* Нам нужна одна строка */
+  letter-spacing: 0.1em; /* При необходимости */
+  animation: typing 5s steps(100, end), blink-caret 0.5s step-end infinite;
+
+  /* Эффект печатания */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  /* Эффект курсора */
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+  }
+}
