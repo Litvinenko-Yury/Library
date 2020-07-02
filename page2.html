@@ -81,7 +81,7 @@
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#select">Select</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#svg-vivus">Vivus.js - анимация для SVG</a>
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#svg-vivus">библиотека <b>Vivus.js</b> - анимация для SVG</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  warning" href="#slider">Слайдер</a>
@@ -98,6 +98,9 @@
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#listener">addEventListener на несколько элементов</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#typed-js">библиотека <b>Typed.js</b></a>
         </li>
       </ul>
     </aside>
@@ -885,6 +888,24 @@ document.addEventListener('click', function (event) { //1. вешаем един
         </div>
       </section>
 
+      <!-- ============================================ -->
+      <section class="block-library" id="typed-js">
+        <h2 class="block-library__title">Библиотека Typed.js</h2>
+        <p>Подходит для много-строчной анимации текста.</p>
+        <a href="https://mattboldt.com/demos/typed-js/">https://mattboldt.com/demos/typed-js/</a><br>
+        <a href="https://www.npmjs.com/package/typed.js">https://www.npmjs.com/package/typed.js</a><br>
+        <a href="https://github.com/mattboldt/typed.js/">https://github.com/mattboldt/typed.js/</a>
+        <br>
+        <br>
+        <div id="typed-strings">
+          <p>Typed.js is a <strong>JavaScript</strong> library.</p>
+          <p>It <em>types</em> out sentences.</p>
+          <p>Очень много разного текста.</p>
+          <p>Очень-очень много разного текста.</p>
+        </div>
+        <span id="typed"></span>
+      </section>
+
     </main>
   </div>
 
@@ -921,6 +942,17 @@ document.addEventListener('click', function (event) { //1. вешаем един
 
   <!-- скрипт для Яндекс-карт-->
   <!-- <script src="js/script-map.js"></script> -->
+
+  <!-- скрипт Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  <script>
+    var typed = new Typed('#typed', {
+      stringsElement: '#typed-strings',
+      typeSpeed: 10,
+      shuffle: true,
+      loop: true
+    });
+  </script>
 
   <!--=========================== -->
   <!--cкрипт для ползунка сравнения -->
