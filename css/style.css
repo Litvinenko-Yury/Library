@@ -3259,6 +3259,54 @@ th {
   top: 2em;
   /* Положение подсказки */ }
 
+.typewriter {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.typewriter__text {
+  border-right: 0.15em solid orange;
+  /* The typwriter cursor */
+  overflow: hidden;
+  /* Гарантирует, что контент не раскрывается до анимации */
+  white-space: nowrap;
+  /* Нам нужна одна строка */
+  letter-spacing: 0.1em;
+  /* При необходимости */
+  -webkit-animation: typing 5s steps(100, end), blink-caret 0.5s step-end infinite;
+          animation: typing 5s steps(100, end), blink-caret 0.5s step-end infinite;
+  /* Эффект печатания */
+  /* Эффект курсора */ }
+
+@-webkit-keyframes typing {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+@keyframes typing {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+@-webkit-keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent; }
+  50% {
+    border-color: orange; } }
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent; }
+  50% {
+    border-color: orange; } }
+
 .video {
   position: relative;
   background-color: #e1e1e1; }
