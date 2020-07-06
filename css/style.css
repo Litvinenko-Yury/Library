@@ -3307,6 +3307,10 @@ th {
   50% {
     border-color: orange; } }
 
+.typewriter-js__text {
+  outline: 2px dotted red;
+  font-size: 48px; }
+
 .video {
   position: relative;
   background-color: #e1e1e1; }
