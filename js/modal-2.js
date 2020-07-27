@@ -4,7 +4,7 @@
 /*=============================*/
 'use strict'
 
-let btnModal_2 = document.querySelector(".btn-modal-2-open"),
+const btnModal_2 = document.querySelector(".btn-modal-2-open"),
   popup_2 = document.querySelector(".modal-2__content"),
   modalOverlay_2 = document.querySelector(".modal-2__overlay"),
   formModal_2 = document.querySelector(".form--modal-2"),

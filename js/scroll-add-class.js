@@ -7,7 +7,7 @@
 
 "use strict";
 
-let header = document.querySelector(".page-header");
+const header = document.querySelector(".page-header");
 
 /*объявление функции с добавлением класса .shadow*/
 function addСlassScroll() {
