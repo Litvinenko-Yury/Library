@@ -1,3 +1,7 @@
+/*=============================*/
+/*script  typewriter.js*/
+/*author  https://github.com/Litvinenko-Yury*/
+
 'use strict';
 
 const text = document.querySelector('.typewriter-js__text'),

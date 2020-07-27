@@ -682,67 +682,47 @@
 
       <!-- ============================================ -->
       <section class="block-library" id="slider">
-        <h2 class="block-library__title">Слайдер</h2>
+        <h2 class="block-library__title">Слайдер со счетчиком</h2>
         <p>Адаптивность делать медиаусловиями.</p>
-        <p><b>Состоит из двух ключевых сущностей:</b><br><code><b>.slider</b></code> - "скелет" слайдера. Содержит:</p>
-        <ol>
-          <li>обертку-контейнер всех кадров слайдера <code>.slider__list</code>;<br>Эта обертка нужна, например, для анимации кадров слайдера перемещением влево-вправо (относительно "окна", которым в таком случае будет являтся <code>.slider</code> + <code>overflow: hidden;</code> ).</li>
-          <li>отдельный кадр слайдера <code>.slider__list-item</code>;</li>
-          <li>по умолчанию кадры скрыты <code>.slider__list-item {display: none;}</code>, показ кадров при добавлении модификатора <code>.slider__list-item--active {display: block;} </code>;</li>
-          <li>две кнопки: "назад" - <code>.slider__prev</code>, и "вперед" - <code>.slider__next</code>;<br> - позиционируются относительно контейнера <code>.slider</code></li>
-          <li>обертка-контейнер кнопок-индикаторов "1-2-3-..." <code>.slider__toggles</code>;<br> - позиционируются относительно контейнера <code>.slider</code></li>
-          <li>сами кнопки-индикаторы "1-2-3-..." <code>.slider__toggle</code>.</li>
-        </ol>
-        <p><code><b>.block-content</b></code> - контентный блок страницы, в котором находится слайдер.<br>Стили этого блока задают расположение блока со слайдером, внешний вид и расположение кнопок слайдера.</p>
-        <p>Переключение слайдов, при необходимости, делать на JS.</p>
+        <p>Переключение слайдов на JS.</p>
+        <p>Количество слайдов не ограничено.</p>
+        <p>Т.к. на странице слайдеров может быть >1, а функционал у них одинаковый, тогда, что-бы они не перепутались, записываем нужные части слайдера в переменные и передаём в виде аргументов в функции.</p>
+        <p> Однако, если слайдер один, можно не передавать в функцию аргументы с массивом слайдов и счетчиком.</p>
 
-        <section class="block-content">
-          <div class="block-content__slider  slider">
-            <h2 class="visually-hidden">Отзывы пользователей</h2>
-            <div class="block-content__list  slider__list">
-              <div class="block-content__item  slider__list-item  slider__list-item--active">
-                <p class="block-content__text">Кадр слайдера №1</p>
-                <p class="block-content__text">Кадр слайдера №1</p>
-                <p class="block-content__text">Кадр слайдера №1</p>
-                <p class="block-content__text">Кадр слайдера №1</p>
-              </div>
 
-              <div class="block-content__item  slider__list-item">
-                <p class="block-content__text">Кадр слайдера №2</p>
-                <p class="block-content__text">Кадр слайдера №2</p>
-                <p class="block-content__text">Кадр слайдера №2</p>
-              </div>
+        <div class="slider">
+          <h2 class="visually-hidden">Отзывы пользователей</h2>
 
-              <div class="block-content__item  slider__list-item">
-                <p class="block-content__text">Кадр слайдера №3</p>
-                <p class="block-content__text">Кадр слайдера №3</p>
-              </div>
+          <div class="slider__counter">
+            <button class="btn  slider__counter-prev" id='slider-prev' aria-label="Назначение кнопки">
+              <svg width="25" height="25" role="img">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>
+            </button>
+            <span class="slider__counter-current" id='slider-current'>03</span>
+            <span class="slider__counter-text">/</span>
+            <span class="slider__counter-total" id='slider-total'>04</span>
+            <button class="btn  slider__counter-next" id='slider-next' aria-label="Назначение кнопки">
+              <svg width="25" height="25" role="img">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </button>
+          </div>
+
+          <div class="slider__list">
+            <div class="slider__list-item  slider__list-item--active">
+              <img src="img\rastr\img-product1@1x.jpg" alt="apple">
             </div>
 
-            <button class="block-content__btn-prev  slider__prev" type="button" aria-label="Предыдущий кадр">
-              <svg width="22" height="42" aria-hidden="true">
-                <use xlink:href="#icon-review-arrow-left" />
-              </svg>
-            </button>
-            <button class="block-content__btn-next  slider__next" type="button" aria-label="Следующий кадр">
-              <svg width="22" height="42" aria-hidden="true">
-                <use xlink:href="#icon-review-arrow-right" />
-              </svg>
-            </button>
+            <div class="slider__list-item">
+              <img src="img\rastr\img-product2@1x.jpg" alt="orange">
+            </div>
 
-            <div class="block-content__toggles  slider__toggles">
-              <button class="block-content__btn-toggles  block-content__btn-toggles--active  slider__toggle" type="button">
-                <span class="visually-hidden">1</span>
-              </button>
-              <button class="block-content__btn-toggles  slider__toggle" type="button">
-                <span class="visually-hidden">2</span>
-              </button>
-              <button class="block-content__btn-toggles  slider__toggle" type="button">
-                <span class="visually-hidden">3</span>
-              </button>
+            <div class="slider__list-item">
+              <img src="img\rastr\img-product3@1x.jpg" alt="kiwi">
             </div>
           </div>
-        </section>
+        </div>
       </section>
 
       <!-- ============================================ -->
@@ -952,6 +932,9 @@ document.addEventListener('click', function (event) { //1. вешаем един
 
   <!-- скрипт timer -->
   <script src="js/timer-reverse.js"></script>
+
+  <!-- скрипт timer -->
+  <script src="js/slider.js"></script>
 
   <!-- скрипт для Яндекс-карт-->
   <!-- <script src="js/script-map.js"></script> -->

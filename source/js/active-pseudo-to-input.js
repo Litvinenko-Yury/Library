@@ -7,7 +7,7 @@
 
 //Скрипт для input - добавляет/убирает символ "*" в поле input
 
-let fieldTextInputWrap1 = document.querySelector('.field-text__input-wrap--1'),
+const fieldTextInputWrap1 = document.querySelector('.field-text__input-wrap--1'),
   fieldTextInputWrap2 = document.querySelector('.field-text__input-wrap--2'),
   fieldTextInputWrap3 = document.querySelector('.field-text__input-wrap--3');
 

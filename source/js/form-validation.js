@@ -7,7 +7,7 @@
 
 /*=============================*/
 /*===Валидация полей формы===*/
-let validForm = document.querySelector(".form--validation"),
+const validForm = document.querySelector(".form--validation"),
   validFieldName = validForm.querySelector(".field-text__input--name"),
   validFieldTel = validForm.querySelector(".field-text__input--tel"),
   validFieldMail = validForm.querySelector(".field-text__input--email"),
@@ -20,7 +20,7 @@ let validForm = document.querySelector(".form--validation"),
 /*Однако это не отключает поддержку API ограничений валидации или применения псевдоклассов CSS :valid, :invalid, :in-range и :out-of-range.*/
 if (!validForm.hasAttribute("novalidate")) {
   validForm.noValidate = true;
-};
+}
 
 /*проверить validFieldName на наличие атрибута required, если он есть, удалить*/
 /*т.е. отменяем встроенную проверку формы, что-бы далее делать проверку на JS*/
@@ -72,7 +72,7 @@ validForm.addEventListener("submit", function (event) {
     validMessageName.innerHTML = "Заполните это поле."; //текст сообщения об ошибке
     validMessageName.classList.add("field-text__help-text--error"); // стилизация сообщения об ошибке
     event.preventDefault(); // И предотвращаем отправку формы путем отмены события
-  };
+  }
 
   /*===Проверка поля TEL===*/
   let validFieldTelValue = validForm.querySelector(".field-text__input--tel").value;
@@ -82,7 +82,7 @@ validForm.addEventListener("submit", function (event) {
     validMessageTel.innerHTML = "Заполните это поле."; //текст сообщения об ошибке
     validMessageTel.classList.add("field-text__help-text--error"); // стилизация сообщения об ошибке
     event.preventDefault();// И предотвращаем отправку формы путем отмены события
-  };
+  }
 
   let validFieldTel = validForm.querySelector(".field-text__input--tel");
   if (!validFieldTel.validity.valid) {
@@ -91,7 +91,7 @@ validForm.addEventListener("submit", function (event) {
     validMessageTel.innerHTML = "Укажите корректный tel"; //текст сообщения об ошибке
     validMessageTel.classList.add("field-text__help-text--error"); // стилизация сообщения об ошибке
     event.preventDefault();// И предотвращаем отправку формы путем отмены события
-  };
+  }
 
   /*===Проверка поля E-MAIL===*/
   let validFieldMailValue = validForm.querySelector(".field-text__input--email").value;
@@ -101,7 +101,7 @@ validForm.addEventListener("submit", function (event) {
     validMessageMail.innerHTML = "Заполните это поле."; //текст сообщения об ошибке
     validMessageMail.classList.add("field-text__help-text--error"); // стилизация сообщения об ошибке
     event.preventDefault();// И предотвращаем отправку формы путем отмены события
-  };
+  }
 
   let validFieldMail = validForm.querySelector(".field-text__input--email");
   if (!validFieldMail.validity.valid) {
@@ -110,6 +110,5 @@ validForm.addEventListener("submit", function (event) {
     validMessageMail.innerHTML = "Укажите корректный E-MAIL"; //текст сообщения об ошибке
     validMessageMail.classList.add("field-text__help-text--error"); // стилизация сообщения об ошибке
     event.preventDefault();// И предотвращаем отправку формы путем отмены события
-  };
-
+  }
 });
