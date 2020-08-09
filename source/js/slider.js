@@ -27,10 +27,10 @@ function showSlides(index, mass) {
   });
 
   mass[sliderIndex1].classList.add('slider__list-item--active');  // показать нужный слайд
-  setCountCurrent(sliderIndex1);
+  setCountCurrent1(sliderIndex1);
 }
 
-function setCountCurrent(index) {
+function setCountCurrent1(index) {
   if (index < 10) {
     countCurrent1.textContent = `0${index + 1}`;
   } else {
@@ -48,7 +48,7 @@ function setCountTotal(mass) {
 
 showSlides(sliderIndex1, slides1);
 setCountTotal(slides1);
-setCountCurrent(sliderIndex1);
+setCountCurrent1(sliderIndex1);
 
 sliderBtnLeft1.addEventListener('click', () => {
   sliderIndex1--;

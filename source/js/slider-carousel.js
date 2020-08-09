@@ -5,29 +5,25 @@
 
 'use strict';
 
-const sliderCrsl = document.querySelector('.slider-carousel'),
-  slidesCrsl = document.querySelectorAll('.slider-carousel__list-item'),
-  sliderBtnLeftCrsl = document.querySelector('#slider-carousel-prev'),
-  sliderBtnRightCrsl = document.querySelector('#slider-carousel-next'),
-  countCurrentCrsl = document.querySelector('#slider-carousel-current'),
-  countTotalCrsl = document.querySelector('#slider-carousel-total'),
-  slidesWrapperCrsl = document.querySelector('.slider-carousel__list'),
-  slidesFieldCrsl = document.querySelector('.slider-carousel__list-inner'),
-  widthCrsl = window.getComputedStyle(slidesWrapperCrsl).width;//ширина "окошка", через который будем смотреть на слайд.
+const slider = document.querySelector('.slider-carousel'),
+  slides = document.querySelectorAll('.slider-carousel__list-item'),
+  sliderBtnLeft = document.querySelector('#slider-carousel-prev'),
+  sliderBtnRight = document.querySelector('#slider-carousel-next'),
+  countCurrent = document.querySelector('#slider-carousel-current'),
+  countTotal = document.querySelector('#slider-carousel-total'),
+  slidesWrapper = document.querySelector('.slider-carousel__list'),
+  slidesField = document.querySelector('.slider-carousel__list-inner'),
+  width = window.getComputedStyle(slidesWrapper).width;//ширина "окошка", через который будем смотреть на слайд.
 
-console.log(widthCrsl);
-console.log(slidesCrsl.length);
-
-
-let sliderIndexCrsl = 1,
-  offsetCrsl = 0; //счетчик отступа слайдов
+let sliderIndex = 1,
+  offset = 0; //счетчик отступа слайдов
 
 //ф-я установки значения countCurrent
-function setCountCurrentCrsl() {
-  if (slidesCrsl.length < 9) {
-    countCurrentCrsl.textContent = `0${sliderIndexCrsl}`;
+function setCountCurrent() {
+  if (slides.length < 9) {
+    countCurrent.textContent = `0${sliderIndex}`;
   } else {
-    countCurrentCrsl.textContent = `${sliderIndexCrsl}`;
+    countCurrent.textContent = `${sliderIndex}`;
   }
 }
 
@@ -35,109 +31,109 @@ function setCountCurrentCrsl() {
 function setStyleDot() {
   dots.forEach(dot => {
     dot.classList.remove('slider-carousel__dot--active');
-    dots[sliderIndexCrsl - 1].classList.add('slider-carousel__dot--active');
+    dots[sliderIndex - 1].classList.add('slider-carousel__dot--active');
   });
 }
 
 
 //инициализация счетчика слайдов
-if (slidesCrsl.length < 10) {
-  countTotalCrsl.textContent = `0${slidesCrsl.length}`;
-  countCurrentCrsl.textContent = `0${sliderIndexCrsl}`;
+if (slides.length < 10) {
+  countTotal.textContent = `0${slides.length}`;
+  countCurrent.textContent = `0${sliderIndex}`;
 } else {
-  countTotalCrsl.textContent = `${sliderIndexCrsl}`;
-  countCurrentCrsl.textContent = `${sliderIndexCrsl}`;
+  countTotal.textContent = `${sliderIndex}`;
+  countCurrent.textContent = `${sliderIndex}`;
 }
 
 //установка начальных параметров
-slidesFieldCrsl.style.width = 100 * slidesCrsl.length + '%'; //задать ширину контейнера для слайдов
-slidesCrsl.forEach(slide => {
-  slide.style.width = widthCrsl; // задать всем слайдам одинаковую ширину
+slidesField.style.width = 100 * slides.length + '%'; //задать ширину контейнера для слайдов
+slides.forEach(slide => {
+  slide.style.width = width; // задать всем слайдам одинаковую ширину
 });
-slidesFieldCrsl.style.display = 'flex'; //стили, но правильнее в CSS
-slidesFieldCrsl.style.transition = '0.5s all'; //стили, но правильнее в CSS
-slidesWrapperCrsl.style.overflow = 'hidden'; //стили, но правильнее в CSS
+slidesField.style.display = 'flex'; //стили, но правильнее в CSS
+slidesField.style.transition = '0.5s all'; //стили, но правильнее в CSS
+slidesWrapper.style.overflow = 'hidden'; //стили, но правильнее в CSS
 
 /**обработчик вправо*/
-sliderBtnRightCrsl.addEventListener('click', () => {
-  //в widthCrsl строка, '500рх', поэтому превращаем строку в число и отсекаем последние два символа
+sliderBtnRight.addEventListener('click', () => {
+  //в width строка, '500рх', поэтому превращаем строку в число и отсекаем последние два символа
 
-  if (offsetCrsl == +widthCrsl.slice(0, widthCrsl.length - 2) * (slidesCrsl.length - 1)) {
-    offsetCrsl = 0;
+  if (offset == +width.slice(0, width.length - 2) * (slides.length - 1)) {
+    offset = 0;
   } else {
-    offsetCrsl += +widthCrsl.slice(0, widthCrsl.length - 2);
+    offset += +width.slice(0, width.length - 2);
   }
-  slidesFieldCrsl.style.transform = `translateX(-${offsetCrsl}px)`; //смещение на величину offsetCrsl
+  slidesField.style.transform = `translateX(-${offset}px)`; //смещение на величину offset
 
   //изменяем счетчик текущего слайда
-  if (sliderIndexCrsl === slidesCrsl.length) {
-    sliderIndexCrsl = 1;
+  if (sliderIndex === slides.length) {
+    sliderIndex = 1;
   } else {
-    sliderIndexCrsl++;
+    sliderIndex++;
   }
 
-  setCountCurrentCrsl();  //изменить значение countCurrent
+  setCountCurrent();  //изменить значение countCurrent
   setStyleDot(); //изменить значение countCurrent
 });
 
 
 /**обработчик влево*/
-sliderBtnLeftCrsl.addEventListener('click', () => {
-  //в widthCrsl строка, '500рх', поэтому превращаем строку в число и отсекаем последние два символа
+sliderBtnLeft.addEventListener('click', () => {
+  //в width строка, '500рх', поэтому превращаем строку в число и отсекаем последние два символа
 
-  if (offsetCrsl == 0) {
-    offsetCrsl = +widthCrsl.slice(0, widthCrsl.length - 2) * (slidesCrsl.length - 1);
+  if (offset == 0) {
+    offset = +width.slice(0, width.length - 2) * (slides.length - 1);
   } else {
-    offsetCrsl -= +widthCrsl.slice(0, widthCrsl.length - 2);
+    offset -= +width.slice(0, width.length - 2);
   }
-  slidesFieldCrsl.style.transform = `translateX(-${offsetCrsl}px)`; //смещение на величину offsetCrsl
+  slidesField.style.transform = `translateX(-${offset}px)`; //смещение на величину offset
 
   //изменяем счетчик текущего слайда
-  if (sliderIndexCrsl === 1) {
-    sliderIndexCrsl = slidesCrsl.length;
+  if (sliderIndex === 1) {
+    sliderIndex = slides.length;
   } else {
-    sliderIndexCrsl--;
+    sliderIndex--;
   }
 
-  setCountCurrentCrsl(); //изменить значение countCurrent
+  setCountCurrent(); //изменить значение countCurrent
   setStyleDot(); //изменить значение countCurrent
 });
 
 
 /**========*/
 /**навигация для слайдов  -  точки-индикаторы*/
-sliderCrsl.style.position = 'relative';
+slider.style.position = 'relative';
 
 const indicatorsWrap = document.createElement('ol'), // создание элемента
   dots = []; // массив для dot-индикаторов
 indicatorsWrap.classList.add('slider-carousel__indicators');
-sliderCrsl.append(indicatorsWrap);
+slider.append(indicatorsWrap);
 
-for (let i = 0; i < slidesCrsl.length; i++) {
+for (let i = 0; i < slides.length; i++) {
   const dot = document.createElement('li'); // создание элемента
   dot.classList.add('slider-carousel__dot');
   dot.setAttribute('data-slide-to', i + 1);
   indicatorsWrap.append(dot);
   dots.push(dot); //записываем в массив каждую точку-индикатор. Получаем массив точек.
 }
-dots[sliderIndexCrsl - 1].classList.add('slider-carousel__dot--active'); // назначение стиля для точки активного слайда
+dots[sliderIndex - 1].classList.add('slider-carousel__dot--active'); // назначение стиля для точки активного слайда
 
 /**========*/
 /**добавление навигации для слайдов по точкам-индикаторам*/
 dots.forEach(dot => {
   dot.addEventListener('click', (event) => {
     const slideTo = event.target.getAttribute('data-slide-to');
-    sliderIndexCrsl = slideTo; // изменяем sliderIndex в соответствии с нажатым dot
-    offsetCrsl = +widthCrsl.slice(0, widthCrsl.length - 2) * (slideTo - 1); // изменить offset
-    slidesFieldCrsl.style.transform = `translateX(-${offsetCrsl}px)`; // задать смещение слайдов
+    sliderIndex = slideTo; // изменяем sliderIndex в соответствии с нажатым dot
+    offset = +width.slice(0, width.length - 2) * (slideTo - 1); // изменить offset
+    slidesField.style.transform = `translateX(-${offset}px)`; // задать смещение слайдов
 
     dots.forEach(dot => {
       //стили для точек-индикаторов
       dot.classList.remove('slider-carousel__dot--active');
-      dots[sliderIndexCrsl - 1].classList.add('slider-carousel__dot--active');
+      dots[sliderIndex - 1].classList.add('slider-carousel__dot--active');
     });
 
     //изменить значение countCurrent
-    setCountCurrentCrsl();
+    setCountCurrent();
   });
 });
