@@ -85,6 +85,8 @@
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#slider">Слайдер</a>
         </li>
         <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#slider-carousel">Слайдер - карусель</a>
+        </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#yandex-map">Яндекс.Карты - JS</a>
         </li>
@@ -726,6 +728,55 @@
       </section>
 
       <!-- ============================================ -->
+      <section class="block-library" id="slider-carousel">
+        <h2 class="block-library__title">Слайдер - карусель, со счетчиком</h2>
+        <p>Cкрипт <code>slider-carousel.js</code>.</p>
+        <p>Адаптивность делать медиаусловиями.</p>
+        <p>Количество слайдов не ограничено.</p>
+        <p>Т.к. на странице слайдеров может быть >1, а функционал у них одинаковый, тогда, что-бы они не перепутались, записываем нужные части слайдера в переменные и передаём в виде аргументов в функции.</p>
+        <p> Однако, если слайдер один, можно не передавать в функцию аргументы с массивом слайдов и счетчиком.</p>
+        <p> Стили слайдам заданы в <code>JS</code>, для примера. Однако, правильнее, эти стили задать в CSS.</p>
+        <br>
+        <p>"Точки-индикаторы" добавляет скрипт.</p>
+
+        <div class="slider-carousel">
+          <h2 class="visually-hidden">Отзывы пользователей</h2>
+
+          <div class="slider-carousel__counter">
+            <button class="btn  slider-carousel__counter-prev" id='slider-carousel-prev' aria-label="Назначение кнопки">
+              <svg width="25" height="25" role="img">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>
+            </button>
+            <span class="slider-carousel__counter-current" id='slider-carousel-current'>03</span>
+            <span class="slider-carousel__counter-text">/</span>
+            <span class="slider-carousel__counter-total" id='slider-carousel-total'>04</span>
+            <button class="btn  slider-carousel__counter-next" id='slider-carousel-next' aria-label="Назначение кнопки">
+              <svg width="25" height="25" role="img">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </button>
+          </div>
+
+          <div class="slider-carousel__list">
+            <div class="slider-carousel__list-inner">
+              <div class="slider-carousel__list-item">
+                <img src="img\rastr\img-product1@1x.jpg" alt="apple">
+              </div>
+
+              <div class="slider-carousel__list-item">
+                <img src="img\rastr\img-product2@1x.jpg" alt="orange">
+              </div>
+
+              <div class="slider-carousel__list-item">
+                <img src="img\rastr\img-product3@1x.jpg" alt="kiwi">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
       <section class="block-library" id="google-map">
         <h2 class="block-library__title">Google Maps</h2>
         <p>Как добавить Google Maps на страницу.</p>
@@ -933,8 +984,11 @@ document.addEventListener('click', function (event) { //1. вешаем един
   <!-- скрипт timer -->
   <script src="js/timer-reverse.js"></script>
 
-  <!-- скрипт timer -->
+  <!-- скрипт slider -->
   <script src="js/slider.js"></script>
+
+  <!-- скрипт slider-carousel.js -->
+  <script src="js/slider-carousel.js"></script>
 
   <!-- скрипт для Яндекс-карт-->
   <!-- <script src="js/script-map.js"></script> -->
