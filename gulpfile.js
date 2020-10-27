@@ -1,21 +1,22 @@
 "use strict";
 
-let gulp = require("gulp");
-var sass = require("gulp-sass");
-var plumber = require("gulp-plumber");
-var sourcemap = require("gulp-sourcemaps");
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var server = require("browser-sync").create();
-var csso = require("gulp-csso");
-var rename = require("gulp-rename");
-var imagemin = require("gulp-imagemin");
-var webp = require("gulp-webp");
-var svgstore = require("gulp-svgstore");
-var posthtml = require("gulp-posthtml");
-var include = require("posthtml-include");
-var del = require("del");
-var htmlmin = require("gulp-htmlmin");
+const gulp = require("gulp");
+const sass = require("gulp-sass");
+const plumber = require("gulp-plumber");
+const sourcemap = require("gulp-sourcemaps");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const server = require("browser-sync").create();
+const csso = require("gulp-csso");
+const rename = require("gulp-rename");
+const imagemin = require("gulp-imagemin");
+const webp = require("gulp-webp");
+const svgstore = require("gulp-svgstore");
+const posthtml = require("gulp-posthtml");
+const include = require("posthtml-include");
+const del = require("del");
+const htmlmin = require("gulp-htmlmin");
+const webpack = require('webpack-stream'); // webpack
 const ghPages = require('gh-pages');
 const path = require('path');
 
@@ -25,7 +26,9 @@ gulp.task("copyFolderBuild", function () {
     "source/favicons/**",
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
-    "source/js/**",
+    //"source/js/**",
+    "source/js/ofi.min.js",
+    "source/js/picturefill.min.js",
     "!source/js/README"
   ], {
     base: "source"
@@ -100,6 +103,14 @@ gulp.task("minify_html", function () {
     .pipe(gulp.dest("build/js"));
 }); */
 
+//webapck
+gulp.task('webpack', function () {
+  return gulp.src('source/js/entry.js')
+    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(gulp.dest('build/js'));
+});
+
+
 //локальный сервер (browser-sync).
 gulp.task("server", function () {
   server.init({
@@ -113,7 +124,8 @@ gulp.task("server", function () {
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
   gulp.watch("source/img/icon-*.svg", gulp.series("svg_sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
-  gulp.watch("source/js/*.js", gulp.series("copyJsBuild", "refresh"));
+  //gulp.watch("source/js/*.js", gulp.series("copyJsBuild", "refresh"));
+  gulp.watch("source/js/**/*.js", gulp.series("webpack", "refresh"));
   //gulp.watch("source/js/*.js", gulp.series("minify_js", "refresh"));
 });
 
@@ -129,7 +141,8 @@ gulp.task("build", gulp.series(
   "css",
   "svg_sprite",
   "html",
-  "minify_html"
+  "minify_html",
+  "webpack"
 ));
 
 gulp.task("start", gulp.series("build", "server"));

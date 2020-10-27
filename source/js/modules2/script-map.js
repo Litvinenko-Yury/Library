@@ -4,7 +4,7 @@
 /*=============================*/
 /*!!!!!   если скрипт не работает, заменить let на var*/
 
-'use strict'
+'use strict';
 
 ymaps.ready(init);
 let myMap,

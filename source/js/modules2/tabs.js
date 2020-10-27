@@ -1,6 +1,7 @@
-'use strict';
+/*script  tabs.js*/
+/*author  https://github.com/Litvinenko-Yury*/
 
-document.addEventListener('DOMContentLoaded', () => {
+function tabs() {
   const tabsParent = document.querySelector('.tabs__links'), //контейнер с закладками
     tabs = tabsParent.querySelectorAll('.tabs__link'), //коллекция закладок.
     tabsWrap = tabsParent.querySelectorAll('.tabs__link-wrap'), //коллекция оберток закладок.
@@ -48,4 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // }
     }
   });
-});
+}
+
+export default tabs;
+
+
+

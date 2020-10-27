@@ -1,10 +1,8 @@
-/**================== */
 /*custom-range.js*/
 /*created by Yuri Litvinenko  https://litvinenko-yury.pro/*/
 /*checking for IE Yuri Volkovsky  https://github.com/YuraVolk*/
-/**================== */
 
-document.addEventListener('DOMContentLoaded', () => {
+function customRange() {
   const range = document.querySelector('#range');
 
   /*добавляем разметку для визуализации трека и ползунка*/
@@ -54,4 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
       rangeHandle.style.left = (((this.value - rangeInputMin) / rangeMinMax) * widthRange - (widthHandle / 2)) + 'px';
     };
   }
-});
+}
+
+export  default customRange;

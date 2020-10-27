@@ -1,5 +1,4 @@
-/*=============================*/
-/*script  burgers-some.js*/
+/*script  burger-some.js*/
 /*author  https://github.com/Litvinenko-Yury*/
 
 /*
@@ -7,10 +6,8 @@
 2. анимирует значек бургера - в "крестик";
 3.переключает класс элементу с нужным ID
     */
-/*=============================*/
 
-'use strict';
-document.addEventListener('DOMContentLoaded', () => {
+function burgerSome() {
   document.addEventListener('click', function (event) { /*1. вешаем единый обработчик на элемент document*/
     /*это нужно для того, что-бы много burger-ов можно было ставить в любом месте*/
     let target = event.target; /*2. где был клик?*/
@@ -44,4 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* 6. Если клик был мимо burger, цикл дойдет вверх до document, и обработчик закончит работу*/
-});
+}
+
+export default burgerSome;

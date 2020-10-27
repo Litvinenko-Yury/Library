@@ -1,9 +1,6 @@
-/*=============================*/
 /*script  img-compare.js*/
-/*=============================*/
-'use strict'
 
-function initComparisons() {
+function imgCompare() {
   let x, i;
   /*найти все элементы с классом "overlay"*/
   x = document.getElementsByClassName("img-comp-overlay");
@@ -107,3 +104,5 @@ function initComparisons() {
     }
   }
 }
+
+export default imgCompare;

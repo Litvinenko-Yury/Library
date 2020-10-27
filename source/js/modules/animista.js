@@ -1,7 +1,6 @@
 /*скрипт для добавления анимаций различных к элементам*/
 
-'use strict';
-document.addEventListener('DOMContentLoaded', () => {
+function animista() {
   const btnAnim = document.querySelector(".animista");
 
   btnAnim.addEventListener("mouseover", function (event) {
@@ -13,4 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     btnAnim.classList.remove("animista--rotate-in-center");
   });
-});
+}
+
+export default animista;

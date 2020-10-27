@@ -1,13 +1,9 @@
-'use strict';
-
-/*======================*/
 /*script timer-reverse-v2*/
 /*author  https://github.com/Litvinenko-Yury*/
 
 /*Таймер обратного отсчета v2*/
-/*=============================*/
 
-document.addEventListener('DOMContentLoaded', () => {
+function timerReverse() {
   const deadline = '2020-12-31'; // конечная дата
   //это строка; можем её получить, например от сервера, или от пользователя
 
@@ -76,4 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setClock('#timer-reverse', deadline);
   //вызов функции, которой передаются в качестве аргументов: id блока таймером и переменная deadlineV2 конечной датой
-});
+}
+
+export default timerReverse;

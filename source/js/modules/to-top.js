@@ -1,13 +1,9 @@
-/*=============================*/
 /*script  to-top.js*/
 /*author  https://github.com/Litvinenko-Yury*/
 
 /*Ссылка «вверх» в нижнем правом углу страницы.*/
-/*=============================*/
 
-"use strict";
-
-document.addEventListener('DOMContentLoaded', () => {
+function toTop() {
   const toTop = document.querySelector(".to-top");
 
   /*При старте скрипта добавить класс .to-top--visible*/
@@ -34,4 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
       addСlassNoVisible();
     }
   });
-});
+}
+
+export default toTop;
