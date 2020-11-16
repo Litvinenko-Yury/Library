@@ -95,15 +95,7 @@ gulp.task("minify_html", function () {
     .pipe(gulp.dest("build"));
 });
 
-//минификация js-файлов
-/* gulp.task("minify_js", function () {
-  return gulp.src("source/js/*.js")
-    .pipe(uglify())
-    .pipe(rename("script.min.js"))
-    .pipe(gulp.dest("build/js"));
-}); */
-
-//webapck
+//webpack
 gulp.task('webpack', function () {
   return gulp.src('source/js/entry.js')
     .pipe(webpack(require('./webpack.config.js')))
@@ -121,6 +113,12 @@ gulp.task("server", function () {
     ui: false
   });
 
+  //используем browser-sync для перезапуска страницы
+  gulp.task("refresh", function (done) {
+    server.reload();
+    done();
+  });
+
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
   gulp.watch("source/img/icon-*.svg", gulp.series("svg_sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
@@ -129,11 +127,7 @@ gulp.task("server", function () {
   //gulp.watch("source/js/*.js", gulp.series("minify_js", "refresh"));
 });
 
-//используем browser-sync для перезапуска страницы
-gulp.task("refresh", function (done) {
-  server.reload();
-  done();
-});
+
 
 gulp.task("build", gulp.series(
   "cleanFolderBuild",
