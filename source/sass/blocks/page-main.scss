@@ -30,4 +30,12 @@
 
 .page-main__subtext {
   font-size: 1.2rem;
+
+  &:visited {
+    color: $gray--light;
+  }
+
+  &:hover {
+    color: $color-hover;
+  }
 }
