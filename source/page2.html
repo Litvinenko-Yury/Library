@@ -9,7 +9,6 @@
   <link rel="preload" href="fonts/opensansbold.woff2" as="font">
   <link rel="preload" href="fonts/opensanslight.woff2" as="font"> -->
   <link rel="stylesheet" href="css/style.min.css">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900&display=swap" rel="stylesheet"> -->
 
   <!-- classic-favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
@@ -41,6 +40,9 @@
 
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--second" href="#note">Напоминание</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#add-elem-on-page">Паттерн - доб. элемент на страницу</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#field-range-custom-v1">Ползунок - range v1 - JS</a>
@@ -118,6 +120,36 @@
         <p> Например, скрипт проверки валидации формы, логичнее расположить рядом с формой и элементами формы.</p>
         <p> Такие скрипты находятся в HTML-разделе с суффиксом <b>- JS</b></p>
         </p>
+      </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id='add-elem-on-page'>
+        <h2 class="block-library__title">Паттерн - добавить элемент на страницу</h2>
+        <p><b>Добавить один элемент:</b></p>
+        <div class="blocks-library__example  blocks-library__example--shown">
+          <pre class="code">
+            <code><b>const ul = document.createElement('ul');</b>> // создать элемент ul</code>
+            <code><b>ul.classList.add('matrix__list');</b> // доб. класс элементу</code>
+            <code><b>matrix.append(ul);</b> // добавить элемент на страницу, в конец блока matrix</code>
+
+            </pre>
+        </div>
+        <br>
+        <p><b>Добавить циклом много элементов:</b></p>
+        <div class="blocks-library__example  blocks-library__example--shown">
+          <pre class="code">
+            <code>const ul = document.createElement('ul'); // создать элемент ul</code>
+           <code>ul.classList.add('matrix__list'); // доб. класс элементу</code>
+            <code>matrix.append(ul);// добавить элемент на страницу, в конец блока matrix</code>
+            <code><b>for (let i = 0; i < 5; i++) {</b></code>
+            <code><b>    const li = document.createElement('li');</b> // создать элемент li</code>
+            <code><b>    li.classList.add('matrix__item');</b> // доб. класс элементу</code>
+            <code><b>    ul.append(li);</b> // добавить элемент на страницу, в ul, т.е. в конец родителя.</code>
+            <code><b>  }</b></code>
+            <code><b>}</b></code>
+            </pre>
+        </div>
+        <p>Т.о. цикл будет добавлять новые элементы в конец блока-родителя, и следовательно, элементы, добавленные первыми, будут вверху.</p>
       </section>
 
       <!-- ============================================ -->
