@@ -1,7 +1,6 @@
 .off-canvas {
   display: flex;
   overflow: hidden;
-
   scroll-behavior: smooth;
 }
 
@@ -16,13 +15,24 @@
 }
 
 .off-canvas__menu {
-  position: relative;
   margin: 0;
+  margin-top: 120px;
   padding-left: 0;
   list-style: none;
+  height: 100%;
 
   &--js {
     color: red;
+  }
+
+  &--top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 233px;
+    overflow-y: hidden;
+    border-bottom: 1px solid $gray;
   }
 }
 
@@ -50,30 +60,17 @@
   }
 
   &--fixed-1 {
-    position: fixed;
-    width: 250px;
     color: #00dbe1;
     background-color: $gray--darken;
   }
 
-  &--fixed-2 {
-    position: fixed;
-    margin-top: 34px;
-    width: 250px;
-    color: lighten($color-active, 25%);
-    background-color: $gray--darken;
-  }
-
-  &--fixed-3 {
-    position: fixed;
-    margin-top: 68px;
-    width: 250px;
+  &--fixed {
     color: lighten($color-active, 25%);
     background-color: $gray--darken;
   }
 
   &--second {
-    padding-top: 120px;
+    padding-top: 20px;
   }
 
   &--js {
