@@ -106,8 +106,11 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#typed-js">библиотека <b>Typed.js</b></a>
         </li>
-        <li class="off-canvas__menu-item">
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#typewriter">Самопечатающийся текст</b></a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#rndInt">Случайное число <b>randomInt</b></a>
         </li>
       </ul>
     </aside>
@@ -983,7 +986,51 @@ document.addEventListener('click', function (event) { //1. вешаем един
         </div>
       </section>
 
-    </main>
+      <!-- ============================================ -->
+      <section class="block-library" id="rndInt">
+        <h2 class="block-library__title">Как правильно генерировать<br><br> СЛУЧАЙНОЕ ЦЕЛОЕ ЧИСЛО от min до max</h2>
+        <br>
+        <br>
+        <p>Взято отюда: <a href="https://learn.javascript.ru/task/random-int-min-max">javascript.ru</a></p>
+        <hr>
+        <p><b>Простое, но неправильное решение:</b></p>
+        <p>Самое простое, но неправильное решение – генерировать случайное число от min до max и округлять его:</p>
+        <div class="blocks-library__example  blocks-library__example--shown">
+          <pre class="code">
+           <code>function randomInteger(min, max) {</code>
+            <code>  let rand = min + Math.random() * (max - min);</code>
+            <code>  return Math.round(rand);</code>
+            <code>}</code>
+            <code>console.log( randomInteger(1, 3) );</code>
+            </pre>
+        </div>
+        <p>Функция будет работать, но неправильно.<br> Вероятность получить min и max значения в 2 раза меньше, чем любое другое число.</p>
+        <p>Это происходит потому, что метод <code>Math.round()</code> получает случайные числа из интервала 1..3 и округляет их следующим образом:</p>
+        <div class="blocks-library__example  blocks-library__example--shown">
+          <pre class="code">
+           <code>число от 1    ... до 1.4999999999  округлится до 1</code>
+            <code>число от 1.5  ... до 2.4999999999  округлится до 2</code>
+            <code>число от 2.5  ... до 2.9999999999  округлится до 3</code>
+            </pre>
+        </div>
+        <p>Теперь становится понятно, что 1 получает в 2 раза меньше значений, чем 2. То же самое с 3.</p>
+        <hr>
+        <p><b>Правильное решение, одно из многих:</b></p>
+        <p>использовать Math.floor для получения случайного числа от min до max+1:</p>
+        <div class="blocks-library__example  blocks-library__example--shown">
+          <pre class="code">
+          <code>function randomInteger(min, max) {</code>
+           <code>   // случайное число от min до (max+1)</code>
+           <code>   let rand = min + Math.random() * (max + 1 - min);</code>
+           <code>   return Math.floor(rand);</code>
+           <code>console.log( randomInteger(1, 3) );</code>
+           </pre>
+        </div>
+  </div>
+
+  </section>
+
+  </main>
   </div>
 
   <!-- скрипт Typed.js -->
