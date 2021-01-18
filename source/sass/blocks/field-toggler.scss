@@ -1,9 +1,6 @@
 .field-toggler {
-  margin-top: 0; //если .field-toggler в виде списка ul
-  margin-bottom: 0; //если .field-toggler в виде списка ul
-  padding-left: 0; //если .field-toggler в виде списка ul
+  margin: 0 0 1em 0;
 
-  margin-bottom: 1em; // для Library
   padding: 1em; // для Library
   border: 2px dashed $gray; // для Library
 }
@@ -13,7 +10,7 @@
   outline: 1px dotted $gray;
 
   margin-bottom: 0.5em; // для Library
-  list-style: none; //если .field-radio в виде списка ul
+  list-style: none; //если .field-toggler в виде списка ul
 }
 
 .field-toggler__title {
@@ -27,7 +24,7 @@
   @include field-help-text;
 }
 
-/*===стилизация radio===*/
+/*===стилизация toggler===*/
 .field-toggler__label {
   /*подготовка места для кастом-toggler = стилизация label*/
   position: relative;
