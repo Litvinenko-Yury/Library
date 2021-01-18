@@ -1524,7 +1524,9 @@ ul {
 .field-checkbox {
   margin-top: 0;
   padding-left: 0;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  padding: 1em;
+  border: 2px dashed #8e8e8e; }
 
 .field-checkbox__input-wrap {
   outline: 1px dotted #8e8e8e;
@@ -1541,68 +1543,179 @@ ul {
   line-height: 1.2em;
   color: #8e8e8e; }
 
+/**************************/
 /*===стилизация чек-бокс===*/
-.field-checkbox__input {
-  /*прячем стандартный чек-бокс без потери доступности*/
-  position: absolute;
-  width: 0;
-  height: 0;
-  opacity: 0; }
-
 .field-checkbox__label {
-  /*подготовка места для кастом-чек-бокса = стилизация label*/
   position: relative;
   display: block;
-  padding-left: 1.5em;
-  cursor: pointer; }
+  padding-left: 1.5em; }
 
-.field-checkbox__label:hover .field-checkbox__name-text::before {
-  /*стилизация фона checkbox по :hover*/
-  border-color: #d22856; }
-
-.field-checkbox__label:active .field-checkbox__name-text::before {
-  /*стилизация фона checkbox в момент клика - :active*/
-  border-color: #2856d2; }
+.field-checkbox__input {
+  position: absolute;
+  opacity: 0; }
 
 .field-checkbox__name-text {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-          user-select: none; }
+          user-select: none;
+  cursor: pointer; }
 
 .field-checkbox__name-text::before {
-  /*стилизация фона checkbox*/
   content: "";
   width: 20px;
   height: 20px;
-  border: 3px solid #8e8e8e;
+  border: 2px solid #8e8e8e;
   border-radius: 5px;
-  background: #ffffff;
+  background: transparent;
   position: absolute;
   top: 5px;
   left: 0; }
 
-/*переключение состояния чек-бокса*/
+/************************/
+/*СТИЛИЗАЦИЯ СОСТОЯНИЙ*/
+/*:hover*/
+.field-checkbox__name-text:hover::before {
+  border-color: #d22856; }
+
+/*:active*/
+.field-checkbox__name-text:active::before {
+  border-color: #2856d2; }
+
+/*disabled*/
+.field-checkbox__input:disabled ~ .field-checkbox__name-text {
+  cursor: not-allowed; }
+
+.field-checkbox__input:disabled ~ .field-checkbox__name-text::before {
+  border-color: #8e8e8e;
+  background-color: #e5e5e5; }
+
+/*checked*/
+.field-checkbox__input:checked ~ .field-checkbox__name-text::before {
+  border-color: #d22856; }
+
 .field-checkbox__input:checked ~ .field-checkbox__name-text::after {
-  /*стилизация активного чек-бокса*/
   content: "";
-  width: 22px;
-  height: 16px;
-  background: url("../img/vector/icon-yes-pink.svg") no-repeat center;
+  width: 20px;
+  height: 12px;
   position: absolute;
   top: 3px;
-  left: 3px; }
+  left: 4px;
+  border-left: 2px solid #d22856;
+  border-bottom: 2px solid #d22856;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-box-shadow: 1px 2px 0 #ffffff, inset 0 -2px 0 #ffffff;
+          box-shadow: 1px 2px 0 #ffffff, inset 0 -2px 0 #ffffff;
+  /*стилизация для использования картинки*/ }
 
-/*делаем чек-бокс доступным с клавиатуры*/
 .field-checkbox__input:focus ~ .field-checkbox__name-text::before {
   border-color: #d22856;
   -webkit-box-shadow: 0 0 7px #000000;
           box-shadow: 0 0 7px #000000; }
 
+.field-toggler {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  margin-bottom: 1em;
+  padding: 1em;
+  border: 2px dashed #8e8e8e; }
+
+.field-toggler__input-wrap {
+  outline: 1px dotted #8e8e8e;
+  margin-bottom: 0.5em;
+  list-style: none; }
+
+.field-toggler__title {
+  margin-bottom: 0.5em;
+  font-weight: bold; }
+
+.field-toggler__help-text {
+  padding-left: 2em;
+  font-size: 12px;
+  line-height: 1.2em;
+  color: #8e8e8e; }
+
+/*===стилизация radio===*/
+.field-toggler__label {
+  /*подготовка места для кастом-toggler = стилизация label*/
+  position: relative;
+  display: block;
+  padding-left: 3em; }
+
+.field-toggler__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; }
+
+.field-toggler__name-text {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer; }
+
+.field-toggler__name-text::before {
+  content: "";
+  width: 40px;
+  height: 20px;
+  border: 1px solid #8e8e8e;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0; }
+
+.field-toggler__name-text::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 1px solid #8e8e8e;
+  background: #cccccc;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 2px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+
+/************************/
+/*СТИЛИЗАЦИЯ СОСТОЯНИЙ*/
+/*===:hover===*/
+.field-toggler__name-text:hover::before {
+  border-color: #d22856; }
+
+/*===:active===*/
+.field-toggler__name-text:active::before {
+  border-color: #2856d2; }
+
+/*===disabled===*/
+.field-toggler__input:disabled ~ .field-toggler__name-text {
+  cursor: not-allowed; }
+
+.field-toggler__input:disabled ~ .field-toggler__name-text::before {
+  border-color: #8e8e8e;
+  background-color: #e5e5e5; }
+
+.field-toggler__input:hover:disabled ~ .field-radio__name-text::before {
+  border-color: #8e8e8e;
+  background-color: #e5e5e5; }
+
+/*===checked===*/
+.field-toggler__input:checked ~ .field-toggler__name-text::after {
+  left: 22px;
+  background-color: #d22856; }
+
 .field-radio {
   margin-top: 0;
   padding-left: 0;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  padding: 1em;
+  border: 2px dashed #8e8e8e; }
 
 .field-radio__input-wrap {
   outline: 1px dotted #8e8e8e;
@@ -1620,39 +1733,59 @@ ul {
   color: #8e8e8e; }
 
 /*===стилизация radio===*/
-.field-radio__input {
-  /*прячем стандартный radio без потери доступности*/
-  position: absolute;
-  opacity: 0; }
-
 .field-radio__label {
   /*подготовка места для кастом-radio = стилизация label*/
   position: relative;
   display: block;
-  padding-left: 1.5em;
+  padding-left: 1.5em; }
+
+.field-radio__input {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0; }
+
+.field-radio__name-text {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer; }
 
 .field-radio__name-text::before {
-  /*стилизация фона radio*/
   content: "";
   width: 20px;
   height: 20px;
   border: 3px solid #8e8e8e;
   border-radius: 10px;
-  background: #ffffff;
+  background: transparent;
   position: absolute;
   top: 5px;
   left: 0; }
 
+/************************/
+/*СТИЛИЗАЦИЯ СОСТОЯНИЙ*/
+/*:hover*/
 .field-radio__name-text:hover::before {
   border-color: #d22856; }
 
+/*:active*/
 .field-radio__name-text:active::before {
   border-color: #2856d2; }
 
-/*переключение состояния radio*/
+/*disabled*/
+.field-radio__input:disabled ~ .field-radio__name-text {
+  cursor: not-allowed; }
+
+.field-radio__input:disabled ~ .field-radio__name-text::before {
+  border-color: #8e8e8e;
+  background-color: #e5e5e5; }
+
+/*checked*/
+.field-radio__input:checked ~ .field-radio__name-text::before {
+  border-color: #d22856; }
+
 .field-radio__input:checked ~ .field-radio__name-text::after {
-  /*стилизация активного radio*/
   content: "";
   width: 8px;
   height: 8px;
@@ -1909,178 +2042,178 @@ ul {
 /* stylelint-disable */
 @-webkit-keyframes glitch-anim-1 {
   0% {
-    clip: rect(23px, 9999px, 112px, 0); }
+    clip: rect(78px, 9999px, 59px, 0); }
   5% {
-    clip: rect(38px, 9999px, 16px, 0); }
+    clip: rect(26px, 9999px, 6px, 0); }
   10% {
-    clip: rect(84px, 9999px, 80px, 0); }
+    clip: rect(93px, 9999px, 119px, 0); }
   15% {
-    clip: rect(44px, 9999px, 14px, 0); }
+    clip: rect(36px, 9999px, 29px, 0); }
   20% {
-    clip: rect(89px, 9999px, 73px, 0); }
+    clip: rect(83px, 9999px, 34px, 0); }
   25% {
-    clip: rect(38px, 9999px, 86px, 0); }
+    clip: rect(72px, 9999px, 97px, 0); }
   30% {
-    clip: rect(31px, 9999px, 106px, 0); }
+    clip: rect(71px, 9999px, 92px, 0); }
   35% {
-    clip: rect(28px, 9999px, 13px, 0); }
+    clip: rect(26px, 9999px, 52px, 0); }
   40% {
-    clip: rect(42px, 9999px, 67px, 0); }
+    clip: rect(106px, 9999px, 118px, 0); }
   45% {
-    clip: rect(98px, 9999px, 91px, 0); }
+    clip: rect(65px, 9999px, 69px, 0); }
   50% {
-    clip: rect(66px, 9999px, 91px, 0); }
+    clip: rect(80px, 9999px, 7px, 0); }
   55% {
-    clip: rect(22px, 9999px, 8px, 0); }
+    clip: rect(59px, 9999px, 7px, 0); }
   60% {
-    clip: rect(119px, 9999px, 100px, 0); }
+    clip: rect(43px, 9999px, 33px, 0); }
   65% {
-    clip: rect(84px, 9999px, 34px, 0); }
+    clip: rect(9px, 9999px, 104px, 0); }
   70% {
-    clip: rect(21px, 9999px, 40px, 0); }
+    clip: rect(48px, 9999px, 39px, 0); }
   75% {
-    clip: rect(78px, 9999px, 101px, 0); }
+    clip: rect(92px, 9999px, 33px, 0); }
   80% {
-    clip: rect(9px, 9999px, 18px, 0); }
+    clip: rect(52px, 9999px, 88px, 0); }
   85% {
-    clip: rect(89px, 9999px, 50px, 0); }
+    clip: rect(83px, 9999px, 89px, 0); }
   90% {
-    clip: rect(17px, 9999px, 74px, 0); }
+    clip: rect(118px, 9999px, 59px, 0); }
   95% {
-    clip: rect(18px, 9999px, 41px, 0); }
+    clip: rect(55px, 9999px, 82px, 0); }
   100% {
-    clip: rect(26px, 9999px, 120px, 0); } }
+    clip: rect(78px, 9999px, 73px, 0); } }
 @keyframes glitch-anim-1 {
   0% {
-    clip: rect(23px, 9999px, 112px, 0); }
+    clip: rect(78px, 9999px, 59px, 0); }
   5% {
-    clip: rect(38px, 9999px, 16px, 0); }
+    clip: rect(26px, 9999px, 6px, 0); }
   10% {
-    clip: rect(84px, 9999px, 80px, 0); }
+    clip: rect(93px, 9999px, 119px, 0); }
   15% {
-    clip: rect(44px, 9999px, 14px, 0); }
+    clip: rect(36px, 9999px, 29px, 0); }
   20% {
-    clip: rect(89px, 9999px, 73px, 0); }
+    clip: rect(83px, 9999px, 34px, 0); }
   25% {
-    clip: rect(38px, 9999px, 86px, 0); }
+    clip: rect(72px, 9999px, 97px, 0); }
   30% {
-    clip: rect(31px, 9999px, 106px, 0); }
+    clip: rect(71px, 9999px, 92px, 0); }
   35% {
-    clip: rect(28px, 9999px, 13px, 0); }
+    clip: rect(26px, 9999px, 52px, 0); }
   40% {
-    clip: rect(42px, 9999px, 67px, 0); }
+    clip: rect(106px, 9999px, 118px, 0); }
   45% {
-    clip: rect(98px, 9999px, 91px, 0); }
+    clip: rect(65px, 9999px, 69px, 0); }
   50% {
-    clip: rect(66px, 9999px, 91px, 0); }
+    clip: rect(80px, 9999px, 7px, 0); }
   55% {
-    clip: rect(22px, 9999px, 8px, 0); }
+    clip: rect(59px, 9999px, 7px, 0); }
   60% {
-    clip: rect(119px, 9999px, 100px, 0); }
+    clip: rect(43px, 9999px, 33px, 0); }
   65% {
-    clip: rect(84px, 9999px, 34px, 0); }
+    clip: rect(9px, 9999px, 104px, 0); }
   70% {
-    clip: rect(21px, 9999px, 40px, 0); }
+    clip: rect(48px, 9999px, 39px, 0); }
   75% {
-    clip: rect(78px, 9999px, 101px, 0); }
+    clip: rect(92px, 9999px, 33px, 0); }
   80% {
-    clip: rect(9px, 9999px, 18px, 0); }
+    clip: rect(52px, 9999px, 88px, 0); }
   85% {
-    clip: rect(89px, 9999px, 50px, 0); }
+    clip: rect(83px, 9999px, 89px, 0); }
   90% {
-    clip: rect(17px, 9999px, 74px, 0); }
+    clip: rect(118px, 9999px, 59px, 0); }
   95% {
-    clip: rect(18px, 9999px, 41px, 0); }
+    clip: rect(55px, 9999px, 82px, 0); }
   100% {
-    clip: rect(26px, 9999px, 120px, 0); } }
+    clip: rect(78px, 9999px, 73px, 0); } }
 
 @-webkit-keyframes glitch-anim-2 {
   0% {
-    clip: rect(37px, 9999px, 41px, 0); }
+    clip: rect(28px, 9999px, 55px, 0); }
   5% {
-    clip: rect(7px, 9999px, 52px, 0); }
+    clip: rect(5px, 9999px, 116px, 0); }
   10% {
-    clip: rect(55px, 9999px, 81px, 0); }
+    clip: rect(49px, 9999px, 102px, 0); }
   15% {
-    clip: rect(83px, 9999px, 10px, 0); }
+    clip: rect(110px, 9999px, 83px, 0); }
   20% {
-    clip: rect(6px, 9999px, 18px, 0); }
+    clip: rect(31px, 9999px, 24px, 0); }
   25% {
-    clip: rect(110px, 9999px, 46px, 0); }
+    clip: rect(45px, 9999px, 29px, 0); }
   30% {
-    clip: rect(46px, 9999px, 92px, 0); }
+    clip: rect(32px, 9999px, 14px, 0); }
   35% {
-    clip: rect(64px, 9999px, 93px, 0); }
+    clip: rect(11px, 9999px, 51px, 0); }
   40% {
-    clip: rect(42px, 9999px, 4px, 0); }
+    clip: rect(76px, 9999px, 88px, 0); }
   45% {
-    clip: rect(106px, 9999px, 5px, 0); }
+    clip: rect(115px, 9999px, 42px, 0); }
   50% {
-    clip: rect(95px, 9999px, 5px, 0); }
+    clip: rect(87px, 9999px, 22px, 0); }
   55% {
-    clip: rect(53px, 9999px, 45px, 0); }
+    clip: rect(62px, 9999px, 57px, 0); }
   60% {
-    clip: rect(73px, 9999px, 27px, 0); }
+    clip: rect(108px, 9999px, 91px, 0); }
   65% {
-    clip: rect(83px, 9999px, 76px, 0); }
+    clip: rect(110px, 9999px, 74px, 0); }
   70% {
-    clip: rect(12px, 9999px, 12px, 0); }
+    clip: rect(54px, 9999px, 53px, 0); }
   75% {
-    clip: rect(42px, 9999px, 88px, 0); }
+    clip: rect(63px, 9999px, 91px, 0); }
   80% {
-    clip: rect(107px, 9999px, 46px, 0); }
+    clip: rect(114px, 9999px, 73px, 0); }
   85% {
-    clip: rect(66px, 9999px, 116px, 0); }
+    clip: rect(22px, 9999px, 38px, 0); }
   90% {
-    clip: rect(33px, 9999px, 67px, 0); }
+    clip: rect(7px, 9999px, 79px, 0); }
   95% {
-    clip: rect(69px, 9999px, 94px, 0); }
+    clip: rect(77px, 9999px, 82px, 0); }
   100% {
-    clip: rect(109px, 9999px, 6px, 0); } }
+    clip: rect(87px, 9999px, 102px, 0); } }
 
 @keyframes glitch-anim-2 {
   0% {
-    clip: rect(37px, 9999px, 41px, 0); }
+    clip: rect(28px, 9999px, 55px, 0); }
   5% {
-    clip: rect(7px, 9999px, 52px, 0); }
+    clip: rect(5px, 9999px, 116px, 0); }
   10% {
-    clip: rect(55px, 9999px, 81px, 0); }
+    clip: rect(49px, 9999px, 102px, 0); }
   15% {
-    clip: rect(83px, 9999px, 10px, 0); }
+    clip: rect(110px, 9999px, 83px, 0); }
   20% {
-    clip: rect(6px, 9999px, 18px, 0); }
+    clip: rect(31px, 9999px, 24px, 0); }
   25% {
-    clip: rect(110px, 9999px, 46px, 0); }
+    clip: rect(45px, 9999px, 29px, 0); }
   30% {
-    clip: rect(46px, 9999px, 92px, 0); }
+    clip: rect(32px, 9999px, 14px, 0); }
   35% {
-    clip: rect(64px, 9999px, 93px, 0); }
+    clip: rect(11px, 9999px, 51px, 0); }
   40% {
-    clip: rect(42px, 9999px, 4px, 0); }
+    clip: rect(76px, 9999px, 88px, 0); }
   45% {
-    clip: rect(106px, 9999px, 5px, 0); }
+    clip: rect(115px, 9999px, 42px, 0); }
   50% {
-    clip: rect(95px, 9999px, 5px, 0); }
+    clip: rect(87px, 9999px, 22px, 0); }
   55% {
-    clip: rect(53px, 9999px, 45px, 0); }
+    clip: rect(62px, 9999px, 57px, 0); }
   60% {
-    clip: rect(73px, 9999px, 27px, 0); }
+    clip: rect(108px, 9999px, 91px, 0); }
   65% {
-    clip: rect(83px, 9999px, 76px, 0); }
+    clip: rect(110px, 9999px, 74px, 0); }
   70% {
-    clip: rect(12px, 9999px, 12px, 0); }
+    clip: rect(54px, 9999px, 53px, 0); }
   75% {
-    clip: rect(42px, 9999px, 88px, 0); }
+    clip: rect(63px, 9999px, 91px, 0); }
   80% {
-    clip: rect(107px, 9999px, 46px, 0); }
+    clip: rect(114px, 9999px, 73px, 0); }
   85% {
-    clip: rect(66px, 9999px, 116px, 0); }
+    clip: rect(22px, 9999px, 38px, 0); }
   90% {
-    clip: rect(33px, 9999px, 67px, 0); }
+    clip: rect(7px, 9999px, 79px, 0); }
   95% {
-    clip: rect(69px, 9999px, 94px, 0); }
+    clip: rect(77px, 9999px, 82px, 0); }
   100% {
-    clip: rect(109px, 9999px, 6px, 0); } }
+    clip: rect(87px, 9999px, 102px, 0); } }
 
 /* stylelint-enable */
 .good {
