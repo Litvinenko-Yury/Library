@@ -1,0 +1,118 @@
+.field-toggler {
+  margin-top: 0; //если .field-radio в виде списка
+  //margin-bottom: 0; //если .field-radio в виде списка ul
+  padding-left: 0; //если .field-radio в виде списка ul
+
+  margin-bottom: 1em; // для Library
+  padding: 1em; // для Library
+  border: 2px dashed $gray; // для Library
+}
+
+
+.field-toggler__input-wrap {
+  outline: 1px dotted $gray;
+
+  margin-bottom: 0.5em; // для Library
+  list-style: none; //если .field-radio в виде списка ul
+}
+
+.field-toggler__title {
+  margin-bottom: 0.5em; // для Library
+  font-weight: bold;
+}
+
+.field-toggler__help-text {
+  padding-left: 2em;
+
+  @include field-help-text;
+}
+
+/*===стилизация radio===*/
+.field-toggler__label {
+  /*подготовка места для кастом-toggler = стилизация label*/
+  position: relative;
+  display: block;
+  padding-left: 3em;
+}
+
+.field-toggler__input {
+  //прячем стандартный checkbox без потери доступности
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  //appearance: none; //  можно и так; не поддерживается IE
+}
+
+.field-toggler__name-text {
+  user-select: none;
+  cursor: pointer;
+}
+
+.field-toggler__name-text::before {
+  //стилизация фона toggler
+  content: "";
+  width: 40px;
+  height: 20px;
+  border: 1px solid $gray;
+  background: transparent;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.field-toggler__name-text::after {
+  //стилизация индикатора toggler
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 1px solid $gray;
+  background: #cccccc;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2px;
+  transition: all 0.3s;
+}
+
+/************************/
+/*СТИЛИЗАЦИЯ СОСТОЯНИЙ*/
+/*===:hover===*/
+.field-toggler__name-text:hover::before {
+  //фон toggle
+  border-color: $color-hover;
+}
+
+/*===:active===*/
+.field-toggler__name-text:active::before {
+  //фон toggle
+  border-color: $color-active;
+}
+
+/*===disabled===*/
+.field-toggler__input:disabled ~ .field-toggler__name-text {
+  //toggle disabled
+  cursor: not-allowed;
+}
+
+.field-toggler__input:disabled ~ .field-toggler__name-text::before {
+  //фон toggle disabled
+  border-color: $gray;
+  background-color: #e5e5e5;
+}
+
+.field-toggler__input:hover:disabled ~ .field-radio__name-text::before {
+  //фон toggle disabled
+  border-color: $gray;
+  background-color: #e5e5e5;
+}
+
+/*===checked===*/
+.field-toggler__input:checked ~ .field-toggler__name-text::after {
+  // toggle checked
+  left: 22px;
+  background-color: $color-hover;
+}

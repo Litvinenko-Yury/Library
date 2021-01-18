@@ -38,8 +38,11 @@
   //прячем стандартный radio без потери доступности
   position: absolute;
   opacity: 0;
+  top: 0;
+  left: 0;
   //appearance: none; //  можно и так; не поддерживается IE
 }
+
 .field-radio__name-text {
   user-select: none;
   cursor: pointer;
@@ -92,7 +95,7 @@
 }
 
 .field-radio__input:checked ~ .field-radio__name-text::after {
-  /*стиль активного radio*/
+  //стиль активного radio
   content: "";
   width: 8px;
   height: 8px;

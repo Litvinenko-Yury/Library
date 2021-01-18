@@ -62,6 +62,9 @@
           <a class="off-canvas__menu-link" href="#field-checkbox">Флажок/чекбокс</a>
         </li>
         <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link" href="#field-toggler">Переключатель</a>
+        </li>
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link" href="#field-radio">Радиокнопки</a>
         </li>
         <li class="off-canvas__menu-item">
@@ -587,6 +590,60 @@ a {
           </div>
         </div>
       </section>
+
+      <!-- ============================================ -->
+      <section class="block-library" id="field-toggler">
+        <h2 class="block-library__title">Переключатель</h2>
+        <p>Здесь группа переключателей на <code>ul>li</code> без <code>fieldset/legend</code></p>
+        <p>Если нужно с <code>fieldset/legend</code>:</b> см. группу checkbox на <code>ul>li</code> c <code>fieldset/legend</code> в <a href="#form"> Форма</a></p>
+        <p>В стилевом файле см. реализацию замены нативного элемента своим (svg).</p>
+
+        <div class="field-toggler  good">
+          <div class="field-toggler__input-wrap">
+            <label class="field-toggler__label">
+              <input class="field-toggler__input" type="checkbox" name="toggler-field1" value="+">
+              <span class="field-toggler__name-text">Переключатель без группы</span>
+            </label>
+
+            <div class="field-toggler__help-text">Это чекбокс, см. разметку и <code>.field-toggler</code></div>
+          </div>
+        </div>
+
+        <hr>
+        <ul>
+          <b>Cкрыть штатный checkbox можно так:</b>
+          <li>с использованием <code>opacity: none;</code>.</b></li>
+          <li>с использованием <code>appearance: none;</code>.</b></li>
+        </ul>
+
+        <div class="field-toggler">
+          <div class="field-toggler__title">Общее необязательное название</div>
+          <div class="field-toggler__input-wrap">
+            <label class="field-toggler__label">
+              <input class="field-toggler__input" type="checkbox" name="toggler-field1" value="+" checked>
+              <span class="field-toggler__name-text">Переключатель с группой, первый</span>
+            </label>
+            <div class="field-toggler__help-text">Это чекбокс, см. разметку и <code>.field-toggler</code></div>
+          </div>
+
+          <div class="field-toggler__input-wrap">
+            <label class="field-toggler__label">
+              <input class="field-toggler__input" type="checkbox" name=toggler-field2" value="+">
+              <span class="field-toggler__name-text">Переключатель с группой, второй</span>
+            </label>
+            <div class="field-toggler__help-text">Это чекбокс, см. разметку</div>
+          </div>
+
+          <div class="field-toggler__input-wrap">
+            <label class="field-toggler__label">
+              <input class="field-toggler__input" type="checkbox" name="toggler-field3" value="+" disabled>
+              <span class="field-toggler__name-text">Переключатель disabled</span>
+            </label>
+            <div class="field-toggler__help-text">Это чекбокс, см. разметку</div>
+          </div>
+        </div>
+      </section>
+
 
       <!-- ============================================ -->
       <section class="block-library" id="field-radio">
