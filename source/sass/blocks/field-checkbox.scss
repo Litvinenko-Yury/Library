@@ -1,6 +1,6 @@
 .field-checkbox {
   margin-top: 0; //если .field-radio в виде списка
-  //margin-bottom: 0; //если .field-radio в виде списка ul
+  margin-bottom: 0; //если .field-radio в виде списка ul
   padding-left: 0; //если .field-radio в виде списка ul
 
   margin-bottom: 1em; // для Library
@@ -61,6 +61,7 @@
   position: absolute;
   top: 5px;
   left: 0;
+
   transition: all 0.3s;
 }
 

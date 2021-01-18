@@ -1,6 +1,6 @@
 .field-radio {
-  margin-top: 0; //если .field-radio в виде списка
-  //margin-bottom: 0; //если .field-radio в виде списка ul
+  margin-top: 0; //если .field-radio в виде списка ul
+  margin-bottom: 0; //если .field-radio в виде списка ul
   padding-left: 0; //если .field-radio в виде списка ul
 
   margin-bottom: 1em; // для Library
@@ -37,9 +37,9 @@
 .field-radio__input {
   //прячем стандартный radio без потери доступности
   position: absolute;
-  opacity: 0;
   top: 0;
   left: 0;
+  opacity: 0;
   //appearance: none; //  можно и так; не поддерживается IE
 }
 
@@ -60,6 +60,8 @@
   position: absolute;
   top: 5px;
   left: 0;
+
+  transition: all 0.3s;
 }
 
 /************************/
