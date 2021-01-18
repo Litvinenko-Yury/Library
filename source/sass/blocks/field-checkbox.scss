@@ -32,6 +32,7 @@
   //подготовка места для кастом-чек-бокса = стилизация label
   position: relative;
   display: block;
+  padding-left: 1.5em;
 }
 
 .field-checkbox__input {
@@ -42,7 +43,6 @@
 }
 
 .field-checkbox__name-text {
-  padding-left: 1.5em;
   user-select: none;
   cursor: pointer;
 }
@@ -102,11 +102,13 @@
   top: 3px;
   left: 4px;
 
-  //background: url("../img/vector/icon-yes-pink.svg") no-repeat center;
   border-left: 2px solid $color-hover;
   border-bottom: 2px solid $color-hover;
   transform: rotate(-45deg);
   box-shadow: 1px 2px 0 #ffffff, inset 0 -2px 0 #ffffff;
+
+  /*стилизация для использования картинки*/
+  //background: url("../img/vector/icon-yes-pink.svg") no-repeat center;
 }
 
 .field-checkbox__input:focus ~ .field-checkbox__name-text::before {

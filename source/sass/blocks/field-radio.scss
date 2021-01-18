@@ -34,40 +34,65 @@
   padding-left: 1.5em;
 }
 
-
 .field-radio__input {
   //прячем стандартный radio без потери доступности
-  //position: absolute;
+  position: absolute;
   opacity: 0;
+  //appearance: none; //  можно и так; не поддерживается IE
+}
+.field-radio__name-text {
+  user-select: none;
+  cursor: pointer;
 }
 
-
-
 .field-radio__name-text::before {
-  /*стилизация фона radio*/
+  //стилизация фона radio
   content: "";
   width: 20px;
   height: 20px;
   border: 3px solid $gray;
   border-radius: 10px;
-  background: #ffffff;
+  background: transparent;
 
   position: absolute;
   top: 5px;
   left: 0;
 }
 
+/************************/
+/*СТИЛИЗАЦИЯ СОСТОЯНИЙ*/
+/*:hover*/
 .field-radio__name-text:hover::before {
+  //фон radio
   border-color: $color-hover;
 }
 
+/*:active*/
 .field-radio__name-text:active::before {
+  //фон radio
   border-color: $color-active;
 }
 
-/*переключение состояния radio*/
+/*disabled*/
+.field-radio__input:disabled ~ .field-radio__name-text {
+  //radio disabled
+  cursor: not-allowed;
+}
+
+.field-radio__input:disabled ~ .field-radio__name-text::before {
+  //фон radio disabled
+  border-color: $gray;
+  background-color: #e5e5e5;
+}
+
+/*checked*/
+.field-radio__input:checked ~ .field-radio__name-text::before {
+  //фон radio checked
+  border-color: $color-hover;
+}
+
 .field-radio__input:checked ~ .field-radio__name-text::after {
-  /*стилизация активного radio*/
+  /*стиль активного radio*/
   content: "";
   width: 8px;
   height: 8px;
