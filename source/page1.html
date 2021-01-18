@@ -201,11 +201,9 @@
       <section class="block-library good" id="note">
         <h2 class="block-library__title">Напоминание</h2>
         <br>
-        <p class="attention">
         <p>Некоторым скриптам, логичнее находиться рядом с группой элементов, для которых написан этот скрипт.</p>
         <p> Например, скрипт проверки валидации формы, логичнее расположить рядом с формой и элементами формы.</p>
         <p> Такие скрипты находятся в HTML-разделе с суффиксом <b>- JS</b></p>
-        </p>
       </section>
 
       <!-- ============================================ -->
@@ -380,7 +378,7 @@
 </pre>
         </div>
 
-        <p><b>Использование:<b></p>
+        <p><b>Использование:</b></p>
         <div class="blocks-library__example  blocks-library__example--shown">
           <pre class="code">
               <span class="code_inner">
@@ -557,10 +555,10 @@ a {
         </div>
 
         <hr>
+        <b>Cкрыть штатный checkbox можно так:</b>
         <ul>
-          <b>Cкрыть штатный checkbox можно так:</b>
-          <li>с использованием <code>opacity: none;</code>.</b></li>
-          <li>с использованием <code>appearance: none;</code>.</b></li>
+          <li>с использованием <code>opacity: none;</code></li>
+          <li>с использованием <code>appearance: none;</code></li>
         </ul>
 
         <div class="field-checkbox">
@@ -595,7 +593,7 @@ a {
       <section class="block-library" id="field-toggler">
         <h2 class="block-library__title">Переключатель</h2>
         <p>Здесь группа переключателей на <code>ul>li</code> без <code>fieldset/legend</code></p>
-        <p>Если нужно с <code>fieldset/legend</code>:</b> см. группу checkbox на <code>ul>li</code> c <code>fieldset/legend</code> в <a href="#form"> Форма</a></p>
+        <p>Если нужно с <code>fieldset/legend</code>: см. группу checkbox на <code>ul>li</code> c <code>fieldset/legend</code> в <a href="#form"> Форма</a></p>
         <p>В стилевом файле см. реализацию замены нативного элемента своим (svg).</p>
 
         <div class="field-toggler  good">
@@ -610,15 +608,15 @@ a {
         </div>
 
         <hr>
+        <b>Cкрыть штатный checkbox можно так:</b>
         <ul>
-          <b>Cкрыть штатный checkbox можно так:</b>
-          <li>с использованием <code>opacity: none;</code>.</b></li>
-          <li>с использованием <code>appearance: none;</code>.</b></li>
+          <li>с использованием <code>opacity: none;</code></li>
+          <li>с использованием <code>appearance: none;</code></li>
         </ul>
 
 
         <div class="field-toggler__title">Общее необязательное название</div>
-        <ul class="field-toggler">Общее необязательное название
+        <ul class="field-toggler">
           <li class="field-toggler__input-wrap">
             <label class="field-toggler__label">
               <input class="field-toggler__input" type="checkbox" name="toggler-field1" value="+" checked>
@@ -629,7 +627,7 @@ a {
 
           <li class="field-toggler__input-wrap">
             <label class="field-toggler__label">
-              <input class="field-toggler__input" type="checkbox" name=toggler-field2" value="+">
+              <input class="field-toggler__input" type="checkbox" name="toggler-field2" value="+">
               <span class="field-toggler__name-text">Переключатель с группой, второй</span>
             </label>
             <div class="field-toggler__help-text">Это чекбокс, см. разметку</div>
@@ -777,8 +775,9 @@ a {
 
           <fieldset class="form__fieldset">
             <legend class="form__legend">Радиокнопки на <code> ul>li </code></legend>
+
+            <span class="field-radio__title">Общее необязательное название</span>
             <ul class="field-radio" role="none">
-              <span class="field-radio__title">Общее необязательное название</span>
               <li class="field-radio__input-wrap">
                 <label class="field-radio__label">
                   <input class="field-radio__input" type="radio" name="radio-field" value="+" checked>
@@ -805,8 +804,9 @@ a {
 
           <fieldset class="form__fieldset">
             <legend class="form__legend">Чекбоксы на <code>ul>li</code></legend>
+
+            <span class="field-checkbox__title">Общее необязательное название</span>
             <ul class="field-checkbox" role="none">
-              <span class="field-checkbox__title">Общее необязательное название</span>
               <li class="field-checkbox__input-wrap">
                 <label class="field-checkbox__label">
                   <input class="field-checkbox__input" type="checkbox" name="checkbox-field1" value="+" checked>
