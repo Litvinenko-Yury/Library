@@ -1,14 +1,15 @@
 .btn-bubbles {
   position: relative;
   padding: 15px 30px;
-  color: $gray--light;
+  color: #ffffff;
   //font-size: 30px;
   //text-transform: uppercase;
   overflow: hidden;
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background: #2856d2;
+  background-color: darken(#2856d2, 20%);
+
   box-shadow: #3a5998 2px 2px 22px;
   outline: none;
 }
