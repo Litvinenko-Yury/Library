@@ -1,95 +1,86 @@
 .btn-bubbles {
   position: relative;
-  padding: 10px 20px;
-  border: none;
-  background: none;
-  cursor: pointer;
-
-  font-family: "Source Code Pro";
-  //font-weight: 900;
-  text-transform: uppercase;
-  font-size: 30px;
-  color: #ffffff;
-
-  background-color: $color-active;
-  box-shadow: $color-fb 2px 2px 22px;
-  border-radius: 5px;
-  z-index: 0;
+  padding: 15px 30px;
+  color: $gray--light;
+  //font-size: 30px;
+  //text-transform: uppercase;
   overflow: hidden;
-
-  &:focus {
-    outline-color: transparent;
-    box-shadow: $color-active 2px 2px 22px;
-  }
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #2856d2;
+  box-shadow: #3a5998 2px 2px 22px;
+  outline: none;
 }
 
-.btn-bubbles__right::after,
-.btn-bubbles::after {
-  content: var(--content);
-  position: absolute;
-  display: block;
-  white-space: nowrap;
-  padding: 40px 40px;
-  pointer-events: none;
+.btn-bubbles__text {
+  position: relative;
+  z-index: 6;
 }
 
-.btn-bubbles::after {
-  font-weight: 200;
-  top: -30px;
-  left: -20px;
-}
-
-.btn-bubbles__right,
 .btn-bubbles__left {
   position: absolute;
-  width: 100%;
+  z-index: 9;
+  width: 50%;
   height: 100%;
   top: 0;
+  left: 0;
+  transform: translateX(-33%);
 }
 
 .btn-bubbles__right {
-  left: 66%;
-}
-
-.btn-bubbles__left {
-  right: 66%;
+  position: absolute;
+  z-index: 5;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateX(133%);
 }
 
 .btn-bubbles__right::after {
-  top: -30px;
-  left: calc(-66% - 20px);
+  position: absolute;
+  z-index: -1;
+  content: "";
+  width: 300%;
+  height: 250%;
+  top: 0;
+  left: 50%;
+  transform: translate(-78%, -100%) rotate(0deg);
+  transition: transform 0.2s ease-out;
 
-  background-color: $gray--darken;
-  color: transparent;
-  transition: transform 0.3s ease-out;
-  transform: translate(0, -90%) rotate(0deg);
+  background-color: #000000;
 }
 
+/*=========================*/
+/*:hover*/
 .btn-bubbles:hover .btn-bubbles__right::after {
-  transform: translate(0, -47%) rotate(0deg);
+  transform: translate(-78%, -77%) rotate(0deg);
 }
 
 .btn-bubbles .btn-bubbles__right:hover::after {
-  transform: translate(0, -50%) rotate(-7deg);
+  transform: translate(-78%, -77%) rotate(-7deg);
 }
 
 .btn-bubbles .btn-bubbles__left:hover ~ .btn-bubbles__right::after {
-  transform: translate(0, -50%) rotate(7deg);
+  transform: translate(-78%, -77%) rotate(7deg);
 }
 
+/*=========================*/
+/*:active*/
+.btn-bubbles:active .btn-bubbles__text {
+  color: $gray;
+}
+
+
+/*=========================*/
 /* bubbles */
 .btn-bubbles::before {
   content: "";
   pointer-events: none;
   opacity: 0.6;
-  background: radial-gradient(
-      circle at 20% 35%,
-      transparent 0,
-      transparent 2px,
-      #ffffff 3px,
-      #ffffff 4px,
-      transparent 4px
-    ),
+  background:
+    radial-gradient(circle at 20% 35%, transparent 0, transparent 2px, #ffffff 3px, #ffffff 4px, transparent 4px),
     radial-gradient(circle at 75% 44%, transparent 0, transparent 2px, #ffffff 3px, #ffffff 4px, transparent 4px),
     radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, #ffffff 5px, #ffffff 6px, transparent 6px);
 

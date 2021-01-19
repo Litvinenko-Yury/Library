@@ -29,13 +29,12 @@
 }
 
 .page-main__subtext {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+
   font-size: 1.2rem;
 
   &:visited {
     color: $gray--light;
-  }
-
-  &:hover {
-    color: $color-hover;
   }
 }
