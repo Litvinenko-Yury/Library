@@ -728,6 +728,7 @@ ul {
   position: relative;
   padding: 15px 30px;
   color: #ffffff;
+  line-height: 1em;
   overflow: hidden;
   cursor: pointer;
   border: none;
@@ -767,7 +768,7 @@ ul {
   content: "";
   width: 300%;
   height: 250%;
-  top: 0;
+  top: -0.1%;
   left: 50%;
   -webkit-transform: translate(-78%, -100%) rotate(0deg);
           transform: translate(-78%, -100%) rotate(0deg);
@@ -1410,104 +1411,6 @@ ul {
     -webkit-transform: translateX(-2px) rotate(1.2deg);
             transform: translateX(-2px) rotate(1.2deg); } }
 
-/*обертка для всей конструкции*/
-.custom-select {
-  position: relative;
-  width: auto; }
-
-/*!!! - ошибка в именовании по БЭМ*/
-.custom-select--open {
-  background-color: #8e8e8e; }
-
-/*скрытие стандартного select*/
-.custom-select > select {
-  display: none; }
-
-/*стили для шапки select*/
-.custom-select__selected {
-  position: relative;
-  padding: 15px;
-  padding-left: 30px;
-  font-size: 16px;
-  color: #ffffff;
-  background: coral;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  cursor: pointer;
-  /*фон псевдоэлемента в шапке*/ }
-  .custom-select__selected::after {
-    outline: 1px solid red;
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 1em;
-    width: 30px;
-    height: 30px;
-    background-image: url("../img/vector/bg-arrow.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    -webkit-transform: translateY(-50%) rotateX(0deg);
-            transform: translateY(-50%) rotateX(0deg);
-    -webkit-transition: -webkit-transform 0.4s;
-    transition: -webkit-transform 0.4s;
-    transition: transform 0.4s;
-    transition: transform 0.4s, -webkit-transform 0.4s; }
-
-/*свойства для псевдоэлемента в шапке при открытом select*/
-.custom-select__selected.custom-select--open::after {
-  -webkit-transform: translateY(-50%) rotateX(180deg);
-          transform: translateY(-50%) rotateX(180deg);
-  -webkit-transition: -webkit-transform 0.4s;
-  transition: -webkit-transform 0.4s;
-  transition: transform 0.4s;
-  transition: transform 0.4s, -webkit-transform 0.4s; }
-
-/*шапке при открытом select*/
-.custom-select__selected.custom-select--open {
-  background-color: darkcyan;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0; }
-
-/*стили для открывающихся пунктов select*/
-.custom-select__item {
-  position: relative;
-  padding: 15px;
-  padding-left: 30px;
-  font-size: 16px;
-  color: #ffffff;
-  border: 1px solid transparent;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none; }
-  .custom-select__item:hover {
-    background-color: rgba(0, 0, 0, 0.1); }
-
-/*стили для списка select*/
-.custom-select__items {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  z-index: 99;
-  margin: 0;
-  padding-left: 0;
-  list-style-type: none;
-  background-color: #8e8e8e;
-  cursor: pointer;
-  opacity: 1;
-  -webkit-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear; }
-  .custom-select__items:last-child {
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px; }
-  .custom-select__items--hidden {
-    z-index: -9999;
-    cursor: default;
-    opacity: 0; }
-
 .disabled {
   color: gray !important;
   /* stylelint-disable-line */ }
@@ -2048,178 +1951,178 @@ ul {
 /* stylelint-disable */
 @-webkit-keyframes glitch-anim-1 {
   0% {
-    clip: rect(61px, 9999px, 87px, 0); }
+    clip: rect(52px, 9999px, 94px, 0); }
   5% {
-    clip: rect(38px, 9999px, 62px, 0); }
+    clip: rect(54px, 9999px, 105px, 0); }
   10% {
-    clip: rect(6px, 9999px, 93px, 0); }
+    clip: rect(80px, 9999px, 50px, 0); }
   15% {
-    clip: rect(72px, 9999px, 54px, 0); }
+    clip: rect(89px, 9999px, 9px, 0); }
   20% {
-    clip: rect(62px, 9999px, 34px, 0); }
+    clip: rect(113px, 9999px, 101px, 0); }
   25% {
-    clip: rect(82px, 9999px, 118px, 0); }
+    clip: rect(53px, 9999px, 44px, 0); }
   30% {
-    clip: rect(71px, 9999px, 31px, 0); }
+    clip: rect(97px, 9999px, 27px, 0); }
   35% {
-    clip: rect(55px, 9999px, 32px, 0); }
+    clip: rect(25px, 9999px, 57px, 0); }
   40% {
-    clip: rect(80px, 9999px, 105px, 0); }
+    clip: rect(32px, 9999px, 20px, 0); }
   45% {
-    clip: rect(114px, 9999px, 120px, 0); }
+    clip: rect(44px, 9999px, 60px, 0); }
   50% {
-    clip: rect(7px, 9999px, 50px, 0); }
+    clip: rect(26px, 9999px, 31px, 0); }
   55% {
-    clip: rect(79px, 9999px, 19px, 0); }
+    clip: rect(89px, 9999px, 6px, 0); }
   60% {
-    clip: rect(17px, 9999px, 18px, 0); }
+    clip: rect(118px, 9999px, 44px, 0); }
   65% {
-    clip: rect(35px, 9999px, 96px, 0); }
+    clip: rect(44px, 9999px, 111px, 0); }
   70% {
-    clip: rect(81px, 9999px, 92px, 0); }
+    clip: rect(45px, 9999px, 8px, 0); }
   75% {
-    clip: rect(32px, 9999px, 29px, 0); }
+    clip: rect(2px, 9999px, 55px, 0); }
   80% {
-    clip: rect(28px, 9999px, 82px, 0); }
+    clip: rect(15px, 9999px, 80px, 0); }
   85% {
-    clip: rect(93px, 9999px, 96px, 0); }
+    clip: rect(36px, 9999px, 80px, 0); }
   90% {
-    clip: rect(65px, 9999px, 101px, 0); }
+    clip: rect(119px, 9999px, 104px, 0); }
   95% {
-    clip: rect(58px, 9999px, 3px, 0); }
+    clip: rect(46px, 9999px, 14px, 0); }
   100% {
-    clip: rect(23px, 9999px, 86px, 0); } }
+    clip: rect(49px, 9999px, 119px, 0); } }
 @keyframes glitch-anim-1 {
   0% {
-    clip: rect(61px, 9999px, 87px, 0); }
+    clip: rect(52px, 9999px, 94px, 0); }
   5% {
-    clip: rect(38px, 9999px, 62px, 0); }
+    clip: rect(54px, 9999px, 105px, 0); }
   10% {
-    clip: rect(6px, 9999px, 93px, 0); }
+    clip: rect(80px, 9999px, 50px, 0); }
   15% {
-    clip: rect(72px, 9999px, 54px, 0); }
+    clip: rect(89px, 9999px, 9px, 0); }
   20% {
-    clip: rect(62px, 9999px, 34px, 0); }
+    clip: rect(113px, 9999px, 101px, 0); }
   25% {
-    clip: rect(82px, 9999px, 118px, 0); }
+    clip: rect(53px, 9999px, 44px, 0); }
   30% {
-    clip: rect(71px, 9999px, 31px, 0); }
+    clip: rect(97px, 9999px, 27px, 0); }
   35% {
-    clip: rect(55px, 9999px, 32px, 0); }
+    clip: rect(25px, 9999px, 57px, 0); }
   40% {
-    clip: rect(80px, 9999px, 105px, 0); }
+    clip: rect(32px, 9999px, 20px, 0); }
   45% {
-    clip: rect(114px, 9999px, 120px, 0); }
+    clip: rect(44px, 9999px, 60px, 0); }
   50% {
-    clip: rect(7px, 9999px, 50px, 0); }
+    clip: rect(26px, 9999px, 31px, 0); }
   55% {
-    clip: rect(79px, 9999px, 19px, 0); }
+    clip: rect(89px, 9999px, 6px, 0); }
   60% {
-    clip: rect(17px, 9999px, 18px, 0); }
+    clip: rect(118px, 9999px, 44px, 0); }
   65% {
-    clip: rect(35px, 9999px, 96px, 0); }
+    clip: rect(44px, 9999px, 111px, 0); }
   70% {
-    clip: rect(81px, 9999px, 92px, 0); }
+    clip: rect(45px, 9999px, 8px, 0); }
   75% {
-    clip: rect(32px, 9999px, 29px, 0); }
+    clip: rect(2px, 9999px, 55px, 0); }
   80% {
-    clip: rect(28px, 9999px, 82px, 0); }
+    clip: rect(15px, 9999px, 80px, 0); }
   85% {
-    clip: rect(93px, 9999px, 96px, 0); }
+    clip: rect(36px, 9999px, 80px, 0); }
   90% {
-    clip: rect(65px, 9999px, 101px, 0); }
+    clip: rect(119px, 9999px, 104px, 0); }
   95% {
-    clip: rect(58px, 9999px, 3px, 0); }
+    clip: rect(46px, 9999px, 14px, 0); }
   100% {
-    clip: rect(23px, 9999px, 86px, 0); } }
+    clip: rect(49px, 9999px, 119px, 0); } }
 
 @-webkit-keyframes glitch-anim-2 {
   0% {
-    clip: rect(118px, 9999px, 42px, 0); }
+    clip: rect(56px, 9999px, 14px, 0); }
   5% {
-    clip: rect(79px, 9999px, 86px, 0); }
+    clip: rect(23px, 9999px, 9px, 0); }
   10% {
-    clip: rect(34px, 9999px, 45px, 0); }
+    clip: rect(110px, 9999px, 84px, 0); }
   15% {
-    clip: rect(64px, 9999px, 14px, 0); }
+    clip: rect(19px, 9999px, 65px, 0); }
   20% {
-    clip: rect(67px, 9999px, 24px, 0); }
+    clip: rect(106px, 9999px, 52px, 0); }
   25% {
-    clip: rect(100px, 9999px, 52px, 0); }
+    clip: rect(9px, 9999px, 101px, 0); }
   30% {
-    clip: rect(57px, 9999px, 103px, 0); }
+    clip: rect(10px, 9999px, 38px, 0); }
   35% {
-    clip: rect(35px, 9999px, 94px, 0); }
+    clip: rect(39px, 9999px, 65px, 0); }
   40% {
-    clip: rect(14px, 9999px, 108px, 0); }
+    clip: rect(50px, 9999px, 89px, 0); }
   45% {
-    clip: rect(49px, 9999px, 26px, 0); }
+    clip: rect(35px, 9999px, 45px, 0); }
   50% {
-    clip: rect(90px, 9999px, 112px, 0); }
+    clip: rect(8px, 9999px, 83px, 0); }
   55% {
-    clip: rect(61px, 9999px, 94px, 0); }
+    clip: rect(11px, 9999px, 5px, 0); }
   60% {
-    clip: rect(9px, 9999px, 58px, 0); }
+    clip: rect(85px, 9999px, 102px, 0); }
   65% {
-    clip: rect(64px, 9999px, 77px, 0); }
+    clip: rect(7px, 9999px, 25px, 0); }
   70% {
-    clip: rect(79px, 9999px, 119px, 0); }
+    clip: rect(97px, 9999px, 41px, 0); }
   75% {
-    clip: rect(111px, 9999px, 110px, 0); }
+    clip: rect(20px, 9999px, 24px, 0); }
   80% {
-    clip: rect(12px, 9999px, 100px, 0); }
+    clip: rect(62px, 9999px, 38px, 0); }
   85% {
-    clip: rect(116px, 9999px, 115px, 0); }
+    clip: rect(46px, 9999px, 44px, 0); }
   90% {
-    clip: rect(105px, 9999px, 26px, 0); }
+    clip: rect(61px, 9999px, 76px, 0); }
   95% {
-    clip: rect(18px, 9999px, 15px, 0); }
+    clip: rect(56px, 9999px, 70px, 0); }
   100% {
-    clip: rect(115px, 9999px, 22px, 0); } }
+    clip: rect(68px, 9999px, 100px, 0); } }
 
 @keyframes glitch-anim-2 {
   0% {
-    clip: rect(118px, 9999px, 42px, 0); }
+    clip: rect(56px, 9999px, 14px, 0); }
   5% {
-    clip: rect(79px, 9999px, 86px, 0); }
+    clip: rect(23px, 9999px, 9px, 0); }
   10% {
-    clip: rect(34px, 9999px, 45px, 0); }
+    clip: rect(110px, 9999px, 84px, 0); }
   15% {
-    clip: rect(64px, 9999px, 14px, 0); }
+    clip: rect(19px, 9999px, 65px, 0); }
   20% {
-    clip: rect(67px, 9999px, 24px, 0); }
+    clip: rect(106px, 9999px, 52px, 0); }
   25% {
-    clip: rect(100px, 9999px, 52px, 0); }
+    clip: rect(9px, 9999px, 101px, 0); }
   30% {
-    clip: rect(57px, 9999px, 103px, 0); }
+    clip: rect(10px, 9999px, 38px, 0); }
   35% {
-    clip: rect(35px, 9999px, 94px, 0); }
+    clip: rect(39px, 9999px, 65px, 0); }
   40% {
-    clip: rect(14px, 9999px, 108px, 0); }
+    clip: rect(50px, 9999px, 89px, 0); }
   45% {
-    clip: rect(49px, 9999px, 26px, 0); }
+    clip: rect(35px, 9999px, 45px, 0); }
   50% {
-    clip: rect(90px, 9999px, 112px, 0); }
+    clip: rect(8px, 9999px, 83px, 0); }
   55% {
-    clip: rect(61px, 9999px, 94px, 0); }
+    clip: rect(11px, 9999px, 5px, 0); }
   60% {
-    clip: rect(9px, 9999px, 58px, 0); }
+    clip: rect(85px, 9999px, 102px, 0); }
   65% {
-    clip: rect(64px, 9999px, 77px, 0); }
+    clip: rect(7px, 9999px, 25px, 0); }
   70% {
-    clip: rect(79px, 9999px, 119px, 0); }
+    clip: rect(97px, 9999px, 41px, 0); }
   75% {
-    clip: rect(111px, 9999px, 110px, 0); }
+    clip: rect(20px, 9999px, 24px, 0); }
   80% {
-    clip: rect(12px, 9999px, 100px, 0); }
+    clip: rect(62px, 9999px, 38px, 0); }
   85% {
-    clip: rect(116px, 9999px, 115px, 0); }
+    clip: rect(46px, 9999px, 44px, 0); }
   90% {
-    clip: rect(105px, 9999px, 26px, 0); }
+    clip: rect(61px, 9999px, 76px, 0); }
   95% {
-    clip: rect(18px, 9999px, 15px, 0); }
+    clip: rect(56px, 9999px, 70px, 0); }
   100% {
-    clip: rect(115px, 9999px, 22px, 0); } }
+    clip: rect(68px, 9999px, 100px, 0); } }
 
 /* stylelint-enable */
 .good {
@@ -3322,6 +3225,122 @@ ul {
 .rhombus__list-inner:hover {
   color: #ffffff;
   background: #303030; }
+
+.form-select {
+  outline: 1px dotted coral;
+  padding: 20px; }
+
+.form-select__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.field-select {
+  /*контейнер для каждого select*/
+  outline: 1px solid pink;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 150px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.field-select__title {
+  /*стили для шапки(заголовка) .field-select__title*/
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  cursor: pointer; }
+
+.field-select__title--hide {
+  /*этот класс скрывает шапку(заголовок) до начала работы скрипта*/
+  display: none; }
+
+.field-select__title:hover {
+  background-color: #3b79a9; }
+
+/*псевдоэлемент в шапке: .field-select__title*/
+.field-select__title::after {
+  outline: 1px solid red;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background-image: url("../../img/vector/bg-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-transform: translateY(-50%) rotateX(0deg);
+          transform: translateY(-50%) rotateX(0deg);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s; }
+
+/*свойства для псевдоэлемента в шапке .field-select__title при открытом .field-select__content*/
+.field-select__title.field-select__title--open::after {
+  -webkit-transform: translateY(-50%) rotateX(180deg);
+          transform: translateY(-50%) rotateX(180deg);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s; }
+
+/*стили для блока с контентом(option)*/
+.field-select__content {
+  position: absolute;
+  top: 100%;
+  /*если нужно открывание ВВЕРХ, указать bottom: 0;*/
+  left: 0;
+  width: 100%;
+  max-height: 1000%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+  -webkit-transition: max-height 0.15s linear;
+  transition: max-height 0.15s linear; }
+
+.field-select__content--hide {
+  max-height: 0; }
+
+.field-select__input-wrap {
+  position: relative; }
+
+.field-select__input {
+  /*прячем стандартный radio без потери доступности*/
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  /*appearance: none; //  можно и так; не поддерживается IE*/ }
+
+.field-select__label {
+  position: relative;
+  display: block;
+  padding: 5px 20px;
+  cursor: pointer;
+  border: 1px solid darkblue;
+  background: #cac8c0; }
+
+/*стилизация состояний*/
+.field-select__label:hover {
+  background-color: #3b79a9; }
+
+.field-select__input:checked ~ .field-select__label {
+  background-color: green; }
+
+.field-select__input:disabled ~ .field-select__label {
+  cursor: default;
+  color: #585d5a;
+  background-color: #7d817e; }
 
 /*===============*/
 .slider {

@@ -97,11 +97,11 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules2_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules2/burger */ "./source/js/modules2/burger.js");
 /* harmony import */ var _modules2_custom_range__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules2/custom-range */ "./source/js/modules2/custom-range.js");
-/* harmony import */ var _modules2_custom_select__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules2/custom-select */ "./source/js/modules2/custom-select.js");
-/* harmony import */ var _modules2_img_compare__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules2/img-compare */ "./source/js/modules2/img-compare.js");
-/* harmony import */ var _modules2_main_nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules2/main-nav */ "./source/js/modules2/main-nav.js");
-/* harmony import */ var _modules2_modal_2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules2/modal-2 */ "./source/js/modules2/modal-2.js");
-/* harmony import */ var _modules2_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules2/modal */ "./source/js/modules2/modal.js");
+/* harmony import */ var _modules2_img_compare__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules2/img-compare */ "./source/js/modules2/img-compare.js");
+/* harmony import */ var _modules2_main_nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules2/main-nav */ "./source/js/modules2/main-nav.js");
+/* harmony import */ var _modules2_modal_2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules2/modal-2 */ "./source/js/modules2/modal-2.js");
+/* harmony import */ var _modules2_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules2/modal */ "./source/js/modules2/modal.js");
+/* harmony import */ var _modules2_select_radio__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules2/select-radio */ "./source/js/modules2/select-radio.js");
 /* harmony import */ var _modules2_slider_carousel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules2/slider-carousel */ "./source/js/modules2/slider-carousel.js");
 /* harmony import */ var _modules2_slider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules2/slider */ "./source/js/modules2/slider.js");
 /* harmony import */ var _modules2_tabs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules2/tabs */ "./source/js/modules2/tabs.js");
@@ -132,20 +132,21 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
   Object(_modules2_custom_range__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  Object(_modules2_modal__WEBPACK_IMPORTED_MODULE_6__["default"])();
-  Object(_modules2_modal_2__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  Object(_modules2_modal__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  Object(_modules2_modal_2__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_modules2_tabs__WEBPACK_IMPORTED_MODULE_9__["default"])();
   Object(_modules2_burger__WEBPACK_IMPORTED_MODULE_0__["default"])();
   Object(_modules_burger_some__WEBPACK_IMPORTED_MODULE_12__["default"])();
-  Object(_modules2_main_nav__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  Object(_modules2_main_nav__WEBPACK_IMPORTED_MODULE_3__["default"])();
   Object(_modules_scroll_anchor__WEBPACK_IMPORTED_MODULE_13__["default"])();
   Object(_modules_to_top__WEBPACK_IMPORTED_MODULE_14__["default"])();
-  Object(_modules2_custom_select__WEBPACK_IMPORTED_MODULE_2__["default"])();
+
   Object(_modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_10__["default"])();
   Object(_modules2_typewriter__WEBPACK_IMPORTED_MODULE_11__["default"])();
+  Object(_modules2_select_radio__WEBPACK_IMPORTED_MODULE_6__["default"])();
   Object(_modules2_slider__WEBPACK_IMPORTED_MODULE_8__["default"])();
   Object(_modules2_slider_carousel__WEBPACK_IMPORTED_MODULE_7__["default"])();
-  Object(_modules2_img_compare__WEBPACK_IMPORTED_MODULE_3__["default"])(); // запускающая функция для скрипта сравнения изображения, должна быть ниже всех
+  Object(_modules2_img_compare__WEBPACK_IMPORTED_MODULE_2__["default"])(); // запускающая функция для скрипта сравнения изображения, должна быть ниже всех
 });
 
 
@@ -441,103 +442,6 @@ function customRange() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (customRange);
-
-
-/***/ }),
-
-/***/ "./source/js/modules2/custom-select.js":
-/*!*********************************************!*\
-  !*** ./source/js/modules2/custom-select.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//Created by Yury Volkovskiy
-//https://github.com/YuraVolk/Js-Library
-
-function customSelect() {
-  const data = {
-    SELECT: 'custom-select',
-    SELECT_CURRENT: 'custom-select__selected',
-    SELECT_OPTIONS: 'custom-select__items',
-    SELECT_OPTIONS_HIDDEN: 'custom-select__items--hidden',
-    SELECT_OPTION_CURRENT: 'custom-select__item--selected',
-    SELECT_OPEN: 'custom-select--open',
-    SELECT_OPTION: 'custom-select__item'
-  };
-
-  const x = document.getElementsByClassName(data.SELECT);
-
-  for (let i = 0; i < x.length; i++) {
-    const select = x[i].querySelector('select');
-
-    x[i].insertAdjacentHTML('beforeend', `\n    <div class=\"${data.SELECT_CURRENT}\">\n${select.options[select.selectedIndex].innerHTML}\n    </div>\n  `);
-    const a = x[i].lastElementChild;
-
-    x[i].insertAdjacentHTML('beforeend', `\n    <ul class=\"${data.SELECT_OPTIONS} ${data.SELECT_OPTIONS_HIDDEN}\"></ul>\n  `);
-    var b = x[i].lastElementChild;
-    for (let j = 1; j < select.length; j++) {
-      b.insertAdjacentHTML('beforeend', `\n    <li class="${data.SELECT_OPTION}">` + select.options[j].innerHTML + "</li>\n    ");
-      let c = b.lastElementChild;
-      c.addEventListener("click", function (event) {
-        if (window.getComputedStyle(event.target.parentNode).getPropertyValue("opacity") == 0) {
-          return;
-        }
-
-        const selectTest = event.target.parentNode.parentNode.querySelectorAll("select")[0];
-        const toTest = event.target.parentNode.previousElementSibling;
-        for (let i = 0; i < selectTest.length; i++) {
-          if (selectTest.options[i].innerHTML == event.target.innerHTML) {
-            selectTest.selectedIndex = i;
-            toTest.innerHTML = event.target.innerHTML;
-            const options = Array.from(event.target.parentNode.querySelectorAll(`.${data.SELECT_OPTION_CURRENT}`));
-            options.forEach((el) => el.classList.remove(data.SELECT_OPTION_CURRENT));
-            event.target.classList.add(data.SELECT_OPTION_CURRENT);
-            break;
-          }
-        }
-      });
-    }
-
-
-    a.addEventListener("click", function (event) {
-      event.stopPropagation();
-      closeAllSelect(event.target);
-      event.target.nextElementSibling.classList.toggle(data.SELECT_OPTIONS_HIDDEN);
-      event.target.classList.toggle(data.SELECT_OPEN);
-    });
-  }
-
-  function closeAllSelect(el) {
-    var x, y, i, arrNo = [];
-    x = document.getElementsByClassName(data.SELECT_OPTIONS);
-    y = document.getElementsByClassName(data.SELECT_CURRENT);
-    for (i = 0; i < y.length; i++) {
-      if (el == y[i]) {
-        arrNo.push(i)
-      } else {
-        y[i].classList.remove(data.SELECT_OPEN);
-      }
-    }
-    for (i = 0; i < x.length; i++) {
-      if (arrNo.indexOf(i)) {
-        x[i].classList.add(data.SELECT_OPTIONS_HIDDEN);
-      }
-    }
-  }
-
-  window.addEventListener('scroll', () => {
-    closeAllSelect();
-  });
-
-  document.addEventListener('click', () => {
-    closeAllSelect();
-  });
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (customSelect);
 
 
 /***/ }),
@@ -862,6 +766,118 @@ function modal() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (modal);
+
+
+/***/ }),
+
+/***/ "./source/js/modules2/select-radio.js":
+/*!********************************************!*\
+  !*** ./source/js/modules2/select-radio.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*select-radio.js*/
+/*created by Yuri Litvinenko  https://litvinenko-yury.pro/*/
+
+function selectRadio() {
+  const formRadio = document.querySelector('#select-radio');
+  const selectAll = formRadio.querySelectorAll('.field-select');
+
+  /*===ФУНКЦИИ===*/
+  /* функция, расставляет data-attr для <label> в селекте*/
+  function setDataAttr(select) {
+    // передаю сюда отдельный select
+    //в этом select найти все input
+    let inputs = select.querySelectorAll('.field-select__input'); // найти  коллекцию inputs в селекте
+
+    inputs.forEach((elem) => {
+      if (elem.checked) {
+        elem.parentElement.lastElementChild.setAttribute('data-state', 'checked'); // находит родителя elem (т.е <li>), далее надит последнего ребенка родителя (т.е <label>), и этому <label> li,добавляет data-attr
+      }
+      if (elem.disabled) {
+        elem.parentElement.lastElementChild.setAttribute('data-state', 'disabled'); // нахоит родителя elem (т.е <li>), далее надит последнего ребенка родителя (т.е <label>), и этому <label> lj,добавляет data-attr
+      }
+    });
+  }
+
+  /* функция для шапки, записать textContent в шапку*/
+  function setTextContent(select) {
+    // передаю сюда отдельный select
+    //в этом select найти все label
+    //пройтись циклом по label, и найти тот, который data-state = 'checked';
+    //далее записать text.content этого label в text.content шапки
+
+    let labels = select.querySelectorAll('.field-select__label'),
+      title = select.querySelector('.field-select__title');
+
+    for (let i = 0; i < labels.length; i++) {
+      if (labels[i].dataset.state == 'checked') {
+        title.textContent = labels[i].textContent;
+        break;
+      }
+    }
+  }
+
+  /* функция для шапки, показать шапку, т.к. шапки изначальнео скрыты*/
+  function showTitle(select) {
+    // передаю сюда отдельный select
+    let title = select.querySelector('.field-select__title');
+    title.classList.remove('field-select__title--hide');
+  }
+
+  /* функция для контента, показать-скрыть блок контента */
+  function contentShowHide(select) {
+    // передаю сюда отдельный select
+    select.querySelector('.field-select__content').classList.toggle('field-select__content--hide');
+  }
+
+  /* функция для конкретной шапки, перекючить стрелку вверx-вниз */
+  function titleToggle(target) {
+    target.classList.toggle('field-select__title--open'); // вращение псевдоэлемента
+  }
+  /*===END ФУНКЦИИ===*/
+
+  /*==================*/
+  /*==================*/
+  selectAll.forEach((item) => {
+    /*начальные действия*/
+    setDataAttr(item); // расставить data-attr
+    setTextContent(item); // textContent от label записать в шапку
+    showTitle(item); // шапку показать
+    contentShowHide(item); // контент скрыть
+
+    /*действия по клику на шапку*/
+    let title = item.querySelector('.field-select__title');
+    title.addEventListener('click', (event) => {
+      titleToggle(event.target); //шапка - перекючить стрелку вверx-вниз
+      contentShowHide(item); // контент скрыть / показать
+    });
+
+    /*действия по клику на option*/
+    let labels = item.querySelectorAll('.field-select__label');
+    labels.forEach((elem) => {
+      elem.addEventListener('click', (event) => {
+        if (event.target.dataset.state !== 'disabled') {
+          title.textContent = event.target.textContent; //записать в шапку textContent от label
+          contentShowHide(item); // контент скрыть / показать
+        }
+      });
+    });
+  });
+
+  /*Reset шапки*/
+  const reset = document.querySelector('.reset');
+  reset.addEventListener('click', () => {
+    selectAll.forEach((item) => {
+      setTextContent(item); //  записать textContent в шапку
+    });
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (selectRadio);
 
 
 /***/ }),
