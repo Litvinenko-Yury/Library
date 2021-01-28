@@ -3,6 +3,7 @@
   padding: 15px 30px;
   color: #ffffff;
   //font-size: 30px;
+  line-height: 1em;
   //text-transform: uppercase;
   overflow: hidden;
   cursor: pointer;
@@ -45,7 +46,7 @@
   content: "";
   width: 300%;
   height: 250%;
-  top: 0;
+  top: -0.1%; // ?
   left: 50%;
   transform: translate(-78%, -100%) rotate(0deg);
   transition: transform 0.2s ease-out;
