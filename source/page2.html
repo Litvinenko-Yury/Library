@@ -80,7 +80,10 @@
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#to-top">Ссылка «вверх»</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#select">Select</a>
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#select-radio">Select - radio</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#select-checkbox">MultiSelect - checkbox</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#svg-vivus">библиотека <b>Vivus.js</b> - анимация для SVG</a>
@@ -550,10 +553,12 @@
           Важно!<br>
           <b>MDN:</b> <code>scroll-behavior: smooth;</code> добавлять контейнеру, внутри которого нужна прокрутка. - <b>не работает,</b><br>
           <b>w3schools.com:</b> <code>scroll-behavior: smooth;</code> добавлять на <code>html {scroll-behavior: smooth;}</code> - <b>работает</b>.<br><br>
-          <span class="attention">Не работает в IE + EDGE.</span><br> Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
+          <span class="attention">Не работает в IE + EDGE.</span><br> Т.е. в IE + EDGE не будет плавной прокрутки к якорю.
+        </p>
         <hr>
         <p><b>Вариант 2:</b><br> использовать <code>JS</code>.
-          <br><span class="good">Работает в IE & EDGE.</span><br>Скрипт: <code>scroll-anchor.js</code></p>
+          <br><span class="good">Работает в IE & EDGE.</span><br>Скрипт: <code>scroll-anchor.js</code>
+        </p>
         <p>Как использовать <code>scroll-anchor.js</code>: <br>
           - разметку делаем как указано выше;<br>
           - подключаем скрипт; <br>
@@ -593,40 +598,21 @@
         <p>Можно просто сделать ссылку на <code>id</code> + использовать CSS - свойство <code>scroll-behavior: smooth;</code>.<br>
           Но!<br>
           <span class="attention">"Это не работает в IE + EDGE.</span><br>
-          Т.е. в IE + EDGE не будет плавной прокрутки к якорю.</p>
+          Т.е. в IE + EDGE не будет плавной прокрутки к якорю.
+        </p>
 
         <a class="to-top" id="to-top-link" href="#note" aria-label="ссылка вверх страницы">↑</a>
       </section>
 
       <!-- ============================================ -->
-      <section class="block-library" id="select">
-        <h2 class="block-library__title">Custom <code>select</code>, JS</h2>
+      <section class="block-library" id="select-radio">
+        <h2 class="block-library__title">Custom <code>select</code>, на radio + JS</h2>
         <p>Стилизация <code>select</code> на JS.</p>
-        <p>Автор и исходники:
-          <a href="https://github.com/YuraVolk/Js-Library" rel="noopener">https://github.com/YuraVolk/Js-Library</a>
-        </p>
-        <p>Cкрипт <code>custom-select.js</code>.</p>
         <p>Принцип:</p>
         <ul>
-
-          <li>Делаем такую разметку:<br>
-            <div class="blocks-library__example blocks-library__example--shown">
-              <pre class="code">
-&lt;div class="custom-select"&gt;<br>
-  &lt;select name="select"&gt;<br>
-    &lt;option value="test1">Test to select...&lt;/option&gt;<br>
-    &lt;option value="test2">Test 2&lt;/option&gt;<br>
-    &lt;option value="test3">Test 3&lt;/option&gt;<br>
-    &lt;option value="test4">Test 4&lt;/option&gt;<br>
-    &lt;option value="test5">Test 5&lt;/option&gt;<br>
-    &lt;option value="test6">Test 6&lt;/option&gt;<br>
-    &lt;/select&gt;<br>
-&lt;/div&gt;<br>
-             </pre>
-            </div>
-          </li>
-          <li>далее <code>cuctom-select.js</code> скрывает исходную разметку в html и добавляет новую с другими классами.</li>
+          <li>Копируем разметку с этой страницы</li>
           <li>стилизация находится в <code>scss-файле</code> блока.</li>
+          <li>логика находится в <code>js-файле</code> блока: <code>select-custom.js</code>.</li>
         </ul>
 
         <b>P.S.</b>
@@ -638,18 +624,108 @@
         </ul>
 
         <hr>
-        <br>
+        <form class="form-select" action="https://echo.htmlacademy.ru" method="post" id='select-radio'>
+          <button type="reset" class="reset" value="Clear form">Очистить форму</button>
 
-        <div class="custom-select">
-          <select name="select">
-            <option value="test1">Test to select...</option>
-            <option value="test2">Test 2</option>
-            <option value="test3">Test 3</option>
-            <option value="test4">Test 4</option>
-            <option value="test5">Test 5</option>
-            <option value="test6">Test 6</option>
-          </select>
-        </div>
+          <div class="form-select__wrapper">
+            <div class="field-select">
+              <span class="field-select__title  field-select__title--hide">Option 0</span>
+
+              <ul class="field-select__content " role="none">
+                <li class="field-select__input-wrap">
+                  <input id="select0-0" class="field-select__input" type="radio" name="select-field-0" value="0">
+                  <label for="select0-0" class="field-select__label">Option 0</label>
+                </li>
+
+                <li class="field-select__input-wrap">
+                  <input id="select0-1" class="field-select__input" type="radio" name="select-field-0" value="1" checked>
+                  <label for="select0-1" class="field-select__label">Option 1</label>
+                </li>
+
+                <li class="field-select__input-wrap">
+                  <input id="select0-2" class="field-select__input" type="radio" name="select-field-0" value="2">
+                  <label for="select0-2" class="field-select__label">Option 2</label>
+                </li>
+
+                <li class="field-select__input-wrap">
+                  <input id="select0-3" class="field-select__input" type="radio" name="select-field-0" value="3">
+                  <label for="select0-3" class="field-select__label">Option 3</label>
+                </li>
+
+                <li class="field-select__input-wrap">
+                  <input id="select0-4" class="field-select__input" type="radio" name="select-field-0" value="4" disabled>
+                  <label for="select0-4" class="field-select__label">Option 4</label>
+                </li>
+              </ul>
+            </div>
+
+            <div class="field-select">
+              <!-- <div class="field-select_wrap-title"> -->
+              <span class="field-select__title  field-select__title--hide">Option 0</span>
+              <!-- </div> -->
+
+              <ul class="field-select__content" role="none">
+                <li class="field-select__input-wrap">
+                  <input id="select1-0" class="field-select__input" type="radio" name="select-field-1" value="0" checked>
+                  <label for="select1-0" class="field-select__label">Option 0</label>
+                </li>
+
+                <li class="field-select__input-wrap">
+                  <input id="select1-1" class="field-select__input" type="radio" name="select-field-1" value="1">
+                  <label for="select1-1" class="field-select__label">Option 1</label>
+                </li>
+
+                <li class="field-select__input-wrap">
+                  <input id="select1-2" class="field-select__input" type="radio" name="select-field-1" value="2">
+                  <label for="select1-2" class="field-select__label">Option 2</label>
+                </li>
+
+                <li class="field-select__input-wrap">
+                  <input id="select1-3" class="field-select__input" type="radio" name="select-field-1" value="3" disabled>
+                  <label for="select1-3" class="field-select__label">Option 3</label>
+                </li>
+
+                <li class="field-select__input-wrap">
+                  <input id="select1-4" class="field-select__input" type="radio" name="select-field-1" value="4">
+                  <label for="select1-4" class="field-select__label">Option 4</label>
+                </li>
+              </ul>
+            </div>
+
+            <div class="field-select">
+              <span class="field-select__title  field-select__title--hide">Option 0</span>
+
+              <ul class="field-select__content" role="none">
+                <li class="field-select__input-wrap">
+                  <input id="select2-0" class="field-select__input" type="radio" name="select-field-2" value="0">
+                  <label for="select2-0" class="field-select__label">Option 0</label>
+                </li>
+
+                <li class="field-select__input-wrap">
+                  <input id="select2-1" class="field-select__input" type="radio" name="select-field-2" value="1" disabled>
+                  <label for="select2-1" class="field-select__label">Option 1</label>
+                </li>
+
+                <li class="field-select__input-wrap">
+                  <input id="select2-2" class="field-select__input" type="radio" name="select-field-2" value="2">
+                  <label for="select2-2" class="field-select__label">Option 2</label>
+                </li>
+
+                <li class="field-select__input-wrap">
+                  <input id="select2-3" class="field-select__input" type="radio" name="select-field-2" value="3">
+                  <label for="select2-3" class="field-select__label">Option 3</label>
+                </li>
+
+                <li class="field-select__input-wrap">
+                  <input id="select2-4" class="field-select__input" type="radio" name="select-field-2" value="4" checked>
+                  <label for="select2-4" class="field-select__label">Option 4</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <button type="submit">Отправить</button>
+        </form>
 
       </section>
 
