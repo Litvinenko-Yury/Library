@@ -1,0 +1,78 @@
+.form-select-multi__wrapper {
+  border: 2px solid firebrick;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-select-multi {
+  border: 2px dotted yellow;
+
+  padding: 20px;
+  font-size: 24px;
+}
+
+.field-select-multi {
+  /*контейнер для каждого select*/
+  border: 3px solid pink;
+
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px; /*при необходимости*/
+
+  user-select: none;
+}
+
+/*стили для блока с контентом(option)*/
+.field-select-multi__content {
+  margin: 0;
+  padding: 0;
+  /*height: 150px; /*при необходимости*/
+
+  /*overflow-Y: scroll; /*при необходимости*/
+
+  list-style-type: none;
+
+  transition: max-height 0.15s linear;
+}
+
+.field-select__input-wrap {
+  position: relative; /*нужно для абсолютного позиционирования .field-select-multi__input */
+}
+
+.field-select-multi__input {
+  /*прячем стандартный radio без потери доступности*/
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  opacity: 0;
+
+  /*appearance: none; //  можно и так; не поддерживается IE*/
+}
+
+.field-select-multi__label {
+  position: relative;
+  display: block;
+  padding: 5px 20px;
+  cursor: pointer;
+
+  border: 1px solid darkblue;
+  background: #cac8c0;
+}
+
+/*стилизация состояний*/
+.field-select-multi__label:hover {
+  background-color: #3b79a9;
+}
+
+.field-select-multi__input:checked ~ .field-select-multi__label {
+  background-color: green;
+}
+
+.field-select-multi__input:disabled ~ .field-select-multi__label {
+  cursor: default;
+  color: #585d5a;
+  background-color: #7d817e;
+}
