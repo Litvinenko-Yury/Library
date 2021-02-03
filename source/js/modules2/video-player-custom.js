@@ -79,7 +79,7 @@ function videoPlayerCustom() {
     const progressValue = videoControls.querySelector('.video__progress-value');
 
     videoSource.addEventListener('timeupdate', () => {
-      if (!progress.getAttribute('max')) { progress.setAttribute('max', videoSource.duration); } // добавить атирибут max со значением videoSource.duration
+      if (!progress.getAttribute('max')) { progress.setAttribute('max', videoSource.duration); } // добавить атирибут max со значением === videoSource.duration
       progress.value = videoSource.currentTime; // установить value
       progressValue.style.width = ((progress.value / progress.max) * 100) + `%`; // изменяем ширину .video__progress-value
     });
