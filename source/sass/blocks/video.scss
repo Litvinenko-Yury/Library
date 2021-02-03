@@ -1,28 +1,83 @@
 .video {
   position: relative;
+  width: 60%;
   background-color: $gray--light;
 }
 
-.video__title-wrap {
-  padding: 25px 30px;
-}
-
-.video__wrap {
-  display: block;
-  width: 100%;
-}
-
 .video__container {
-  position: relative;
+  outline: 2px dotted coral;
+
+  margin: 0;
+}
+
+.video__descr {
+  padding: 10px 0;
 }
 
 .video__source {
-  display: block;
+  outline: 4px dotted darkviolet;
   width: 100%;
-  height: 511px; /*нужно указать высоту видеоролика при определенной ширине в макете*/
-  border: 3px solid $color-active;
+  //object-fit: cover; /*для маcштабирования poster по размерам video__source*/
 }
 
+/*===controlls====*/
+.video__controls {
+  display: none;
+  margin: 0;
+  padding-left: 0;
+
+  list-style: none;
+}
+
+.video__btn:hover {
+  background-color: greenyellow;
+}
+
+/*===progress====*/
+.video__progress-wrap {
+  position: relative; /*необх для позиционирования progress-bar и progress-value*/
+  width: 500px;
+  height: 50px;
+}
+
+.video__progress {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.video__progress-bar {
+  /*этот элемент добавит скрипт*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #0095b3;
+  border: 1px solid red;
+  border-radius: 20px;
+}
+
+.video__progress-value {
+  /*этот элемент добавит скрипт*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  box-sizing: border-box;
+  background: green;
+}
+
+/*м.б. полезно, если кнопки управления плеера без текста, и c svg*/
+/*
 .video__btn {
   position: absolute;
   width: auto;
@@ -35,10 +90,12 @@
   border: none;
   cursor: pointer;
 
+  /*
   &:hover {
     background: transparent;
-  }
+  }*/
 
+/*
   & > svg {
     margin: auto;
     $width: 75px; // переменная, чтобы можно было увеличить ширину на 20%
@@ -56,14 +113,5 @@
       height: $height * 1.15;
       transition: 0s;
     }
-  }
-}
-
-.video__body {
-  padding: 10px 30px;
-}
-
-.video__descr {
-  margin-bottom: 25px;
-  padding-right: 10px;
-}
+  } */
+/*}*/

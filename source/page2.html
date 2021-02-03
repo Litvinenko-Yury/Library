@@ -106,8 +106,11 @@
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#typewriter">Самопечатающийся текст</b></a>
         </li>
-        <li class="off-canvas__menu-item">
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#rndInt">Случайное число <b>randomInt</b></a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#video">Видео-плеер</b></a>
         </li>
       </ul>
     </aside>
@@ -971,11 +974,51 @@ document.addEventListener('click', function (event) { //1. вешаем един
            <code>console.log( randomInteger(1, 3) );</code>
            </pre>
         </div>
-  </div>
+      </section>
 
-  </section>
+      <!-- ============================================ -->
+      <section class="block-library" id="video">
+        <h2 class="block-library__title">Видео-плеер c custom controls.</h2>
+        <p>Cкрипт <code>video-player-custom.js</code>.</p>
+        <br>
 
-  </main>
+        <article class="video">
+
+          <figure class="video__container">
+            <figcaption class="video__descr">Заголовок или подпись. Заголовок м.б первым.Подпись м.б. последней</figcaption>
+            <video class="video__source" controls poster="img/video/video__poster.jpg">
+              <!-- <source src="img/video/video__test.webm" type="video/webm"> -->
+              <source src="img/video/video__test.mp4" type="video/mp4">
+              <!-- <source src="img/video/video__test.ogg" type="video/ogg"> -->
+              Элемент video не поддерживается вашим браузером.
+            </video>
+
+            <ul class="video__controls">
+              <li>
+                <button class="video__btn  video__playpause" type="button" aria-label="Воспроизвести видеоролик">Play/Pause</button>
+              </li>
+              <!--   <li>
+                Если в кнопке иконке, разметка будет такой:
+                <button class="video__btn  video__playpause" type="button" aria-label="Воспроизвести видеоролик">
+                  <svg width="75" height="75" role="img">
+                    <use xlink:href="#icon-play" />
+                  </svg>
+                </button>
+              </li> -->
+              <li><button class="video__btn  video__stop" type="button" aria-label="Остановить видеоролик">Stop</button></li>
+              <li class="video__progress-wrap">
+                <progress class="video__progress" value="0" min="0"></progress>
+              </li>
+              <li><button class="video__btn  video__mute" type="button" aria-label="Убрать/восстановить громкость">Mute/Unmute</button></li>
+              <li><button class="video__btn  video__volup" type="button" aria-label="Громкость больше">Vol+</button></li>
+              <li><button class="video__btn  video__voldown" type="button" aria-label="Громкость меньше">Vol-</button></li>
+              <li><button class="video__btn  video__fs" type="button" aria-label="Развернуть на полный экран">Fullscreen</button></li>
+            </ul>
+          </figure>
+        </article>
+      </section>
+
+    </main>
   </div>
 
   <!-- скрипт Typed.js -->

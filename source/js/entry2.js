@@ -11,6 +11,7 @@ import slider from './modules2/slider';
 import tabs from './modules2/tabs';
 import timerReverse from './modules2/timer-reverse';
 import typewriter from './modules2/typewriter';
+import videoPlayerCustom from './modules2/video-player-custom';
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
@@ -25,4 +26,5 @@ window.addEventListener('DOMContentLoaded', () => {
   tabs();
   timerReverse();
   typewriter();
+  videoPlayerCustom();
 });
