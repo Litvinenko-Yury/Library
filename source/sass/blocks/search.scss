@@ -1,0 +1,22 @@
+.search {
+  outline: 2px dotted deepskyblue;
+  width: 200px; // ширина задана только для примера в библиотеке
+}
+
+.search__form {
+  position: relative;
+  width: 100%;
+}
+
+.search__input {
+  width: 100%;
+  padding: 1em;
+  padding-right: 3em;
+}
+
+.search__btn {
+  position: absolute;
+  top: 50%;
+  right: 0.5em;
+  transform: translateY(-50%);
+}
