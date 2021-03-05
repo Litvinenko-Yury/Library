@@ -1,0 +1,52 @@
+.dropdown1 {
+  outline: 2px dotted deepskyblue;
+
+  position: relative;
+  width: 150px; // ширина только для примера в библиотеке
+}
+
+.dropdown1__btn {
+  width: 100%; // ширина только для примера в библиотеке
+  background-color: deepskyblue;
+}
+
+.dropdown1__list {
+  position: absolute;
+  z-index: 10;
+  top: 110%;
+  right: 0;
+  max-height: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+  transition: max-height 0.2s linear;
+
+  &--show {
+    max-height: 750%;
+  }
+}
+
+.dropdown1__link-wrap {
+  &:not(:last-child) {
+    border-bottom: 1px solid lighten(#3f51b5, 20%);
+  }
+}
+
+.dropdown1__link {
+  display: block;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #3f51b5;
+
+  &:focus,
+  &:hover {
+    background-color: lighten(#3f51b5, 15%);
+    transition: background-color, 0.2s;
+  }
+
+  &:active {
+    background-color: darken(#3f51b5, 10%);
+  }
+}
