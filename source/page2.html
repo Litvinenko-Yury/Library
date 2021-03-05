@@ -722,6 +722,20 @@
         <p> Стили слайдам заданы в <code>JS</code>, для примера. Однако, правильнее, эти стили задать в CSS.</p>
         <br>
         <p>"Точки-индикаторы" добавляет скрипт.</p>
+        <p>!!!</p>
+        <p>!!!</p>
+        <p>!!!</p>
+        <p>!!!</p>
+        <p>Нам нужна ширина "окошка", через которое смотрим на слайд, т.е. ширина .slider-carousel__window</p>
+        <p>Получаем эту ширину так:</p>
+        <p>const slidesWindow = document.querySelector('.slider-carousel__window');</p>
+        <p>widthWindowString = window.getComputedStyle(slidesWindow).width;</p>
+        <p>В переменной widthWindowString хранится строка, т.е н-р "500px"</p>
+        <p>Нам нужна цифра без "px". Поэтому делаем такой финт ушами:</p>
+        <p>widthWindowNum = +widthWindowString.slice(0, widthWindowString.length - 2)</p>
+        <p>Что здесь делается:</p>
+        <p>Метод slice() извлекает часть строки и возвращает новую строку без изменения оригинальной строки. </p>
+        <p>А унарный "+" преобразует строку в число.</p>
 
         <div class="slider-carousel">
           <h2 class="visually-hidden">Отзывы пользователей</h2>

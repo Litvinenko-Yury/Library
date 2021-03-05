@@ -1,0 +1,23 @@
+.text-transparent {
+  outline: 2px solid darkcyan;
+
+  display: block;
+  margin: 0;
+  padding: 0.1em;
+
+  text-align: center;
+  font-size: 280px;
+  line-height: 1em;
+  font-weight: 700;
+
+  /*===СУТЬ===*/
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  /*=========*/
+
+  background-image: url("../../img/rastr/img-product3@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
