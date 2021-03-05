@@ -107,7 +107,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules2/timer-reverse */ "./source/js/modules2/timer-reverse.js");
 /* harmony import */ var _modules2_typewriter__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules2/typewriter */ "./source/js/modules2/typewriter.js");
 /* harmony import */ var _modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules2/video-player-custom */ "./source/js/modules2/video-player-custom.js");
+/* harmony import */ var _modules2_dropdown1__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules2/dropdown1 */ "./source/js/modules2/dropdown1.js");
 /**Entry points for scripts for page2.html */
+
 
 
 
@@ -136,6 +138,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_9__["default"])();
   Object(_modules2_typewriter__WEBPACK_IMPORTED_MODULE_10__["default"])();
   Object(_modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_11__["default"])();
+  Object(_modules2_dropdown1__WEBPACK_IMPORTED_MODULE_12__["default"])();
 });
 
 
@@ -239,6 +242,46 @@ function customRange() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (customRange);
+
+
+/***/ }),
+
+/***/ "./source/js/modules2/dropdown1.js":
+/*!*****************************************!*\
+  !*** ./source/js/modules2/dropdown1.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*dropdown1.js*/
+/*created by Yuri Litvinenko  https://litvinenko-yury.pro/*/
+
+
+function dropdown1() {
+  const dropdown1All = document.querySelectorAll('.dropdown1');
+
+  dropdown1All.forEach((item) => {
+    const btn = item.querySelector('.dropdown1__btn'),
+      list = item.querySelector('.dropdown1__list'),
+      links = list.querySelectorAll('.dropdown1__link');
+
+    /*действия по клику на кнопку*/
+    btn.addEventListener('click', () => {
+      list.classList.toggle('dropdown1__list--show'); //открыть/закрыть список
+    });
+
+    links.forEach((element) => {
+      element.addEventListener('click', (event) => {
+        btn.textContent = event.target.textContent; // записать содержимое в кнопку
+        list.classList.toggle('dropdown1__list--show'); //закрыть список
+      });
+    });
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (dropdown1);
 
 
 /***/ }),
