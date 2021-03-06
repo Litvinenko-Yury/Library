@@ -20,13 +20,18 @@ const webpack = require('webpack-stream'); // webpack
 const ghPages = require('gh-pages');
 const path = require('path');
 
+//удаляем папку build.
+gulp.task("cleanFolderBuild", function () {
+  return del("build");
+});
+
 //копируем папки из папки source в папку build.
 gulp.task("copyFolderBuild", function () {
   return gulp.src([
     "source/favicons/**",
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
-    //"source/js/**",
+    //"source/js/**", // это в отдельном task
     "source/js/ofi.min.js",
     "source/js/picturefill.min.js",
     "!source/js/README"
@@ -36,12 +41,7 @@ gulp.task("copyFolderBuild", function () {
     .pipe(gulp.dest("build"));
 });
 
-//удаляем папку build.
-gulp.task("cleanFolderBuild", function () {
-  return del("build");
-});
-
-//копируем папку JS  из папки source в папку build.
+//копируем папку JS из папки source в папку build.
 gulp.task("copyJsBuild", function () {
   return gulp.src([
     "source/js/**",
@@ -102,7 +102,6 @@ gulp.task('webpack', function () {
     .pipe(gulp.dest('build/js'));
 });
 
-
 //локальный сервер (browser-sync).
 gulp.task("server", function () {
   server.init({
@@ -127,8 +126,7 @@ gulp.task("server", function () {
   //gulp.watch("source/js/*.js", gulp.series("minify_js", "refresh"));
 });
 
-
-
+//----------------------------------------------------------------
 gulp.task("build", gulp.series(
   "cleanFolderBuild",
   "copyFolderBuild",
