@@ -13,6 +13,7 @@ import timerReverse from './modules2/timer-reverse';
 import typewriter from './modules2/typewriter';
 import videoPlayerCustom from './modules2/video-player-custom';
 import dropdown1 from './modules2/dropdown1';
+import dropdown2 from './modules2/dropdown2';
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
@@ -29,4 +30,5 @@ window.addEventListener('DOMContentLoaded', () => {
   typewriter();
   videoPlayerCustom();
   dropdown1();
+  dropdown2();
 });

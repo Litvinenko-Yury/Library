@@ -1,3 +1,119 @@
 .dropdown2 {
-  
+  outline: 2px dotted deepskyblue;
+
+  width: 300px; // ширина только для примера в библиотеке
+}
+
+.dropdown2__list {
+  //z-index: 0;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.dropdown2__item {
+  position: relative;
+  margin-bottom: 5px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.dropdown2__link {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  padding-left: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  background-color: #515151;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  &::before {
+    //"+" - горизонтальный элемент
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 2px;
+    background-color: #ffffff;
+    opacity: 0.6;
+  }
+
+  &::after {
+    //"+" - вертикальный элемент
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 21px;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 14px;
+    background-color: #ffffff;
+    opacity: 0.6;
+    transition: all 0.2s;
+  }
+
+  &--show {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &--rotate-pseudo {
+    //вращение вертикального элемента значка "+"
+    &::after {
+      top: 35.4%;
+      transform: rotate(-90deg);
+      transition: all 0.2s;
+    }
+  }
+}
+
+.dropdown2__list-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #616161;
+
+  max-height: 0;
+  padding-left: 0;
+  list-style: none;
+  overflow: hidden;
+  opacity: 0;
+
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  &--show {
+    max-height: 200px;
+    opacity: 1;
+    transition: max-height 0.2s;
+  }
+}
+
+.dropdown2__link-submenu {
+  display: block;
+  padding: 0.75em;
+  color: #ffffff;
+  opacity: 0.4;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
 }
