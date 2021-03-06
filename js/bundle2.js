@@ -108,7 +108,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules2_typewriter__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules2/typewriter */ "./source/js/modules2/typewriter.js");
 /* harmony import */ var _modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules2/video-player-custom */ "./source/js/modules2/video-player-custom.js");
 /* harmony import */ var _modules2_dropdown1__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules2/dropdown1 */ "./source/js/modules2/dropdown1.js");
+/* harmony import */ var _modules2_dropdown2__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules2/dropdown2 */ "./source/js/modules2/dropdown2.js");
 /**Entry points for scripts for page2.html */
+
 
 
 
@@ -139,6 +141,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules2_typewriter__WEBPACK_IMPORTED_MODULE_10__["default"])();
   Object(_modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_11__["default"])();
   Object(_modules2_dropdown1__WEBPACK_IMPORTED_MODULE_12__["default"])();
+  Object(_modules2_dropdown2__WEBPACK_IMPORTED_MODULE_13__["default"])();
 });
 
 
@@ -282,6 +285,62 @@ function dropdown1() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (dropdown1);
+
+
+/***/ }),
+
+/***/ "./source/js/modules2/dropdown2.js":
+/*!*****************************************!*\
+  !*** ./source/js/modules2/dropdown2.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*dropdown2.js*/
+/*created by Yuri Litvinenko  https://litvinenko-yury.pro/*/
+
+
+function dropdown2() {
+  const mainItems = document.querySelectorAll('.dropdown2__item');
+
+  mainItems.forEach(element => {
+    const mainLink = element.querySelector('.dropdown2__link'),
+      subList = element.querySelector('.dropdown2__list-submenu'),
+      subLinks = subList.querySelectorAll('.dropdown2__link-submenu');
+
+    mainLink.addEventListener('click', (event) => {
+      event.preventDefault(); // отменить стандартное поведение
+      subList.classList.toggle('dropdown2__list-submenu--show'); // открыть/закрыть список
+      mainLink.classList.toggle('dropdown2__link--show'); //изменить border-radius
+      mainLink.classList.toggle('dropdown2__link--rotate-pseudo'); //по клику вращать псевдоэлемент
+    });
+
+    //по клику на subLink закрыть основное меню.
+    subLinks.forEach(element => {
+      element.addEventListener('click', () => {
+        // что сделать по клику на внутр ссылку
+        subList.classList.toggle('dropdown2__list-submenu--show'); // открыть/закрыть список
+        mainLink.classList.toggle('dropdown2__link--show'); //изменить border-radius
+        mainLink.classList.toggle('dropdown2__link--rotate-pseudo'); //по клику вращать
+      });
+    });
+
+    function setZindex() {
+      let i = mainItems.length;
+
+      mainItems.forEach(item => {
+        item.style.zIndex = i;
+        i--;
+      });
+    }
+
+    setZindex();
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (dropdown2);
 
 
 /***/ }),
