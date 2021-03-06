@@ -502,6 +502,7 @@ function selectRadio() {
 
   /*===ФУНКЦИИ===*/
   /* функция, расставляет data-attr для <label> в селекте*/
+  //весело: зачем расставлять data-attr...
   function setDataAttr(select) {
     // передаю сюда отдельный select
     //в этом select найти все input
@@ -509,7 +510,7 @@ function selectRadio() {
 
     inputs.forEach((elem) => {
       if (elem.checked) {
-        elem.parentElement.lastElementChild.setAttribute('data-state', 'checked'); // находит родителя elem (т.е <li>), далее надит последнего ребенка родителя (т.е <label>), и этому <label> li,добавляет data-attr
+        elem.parentElement.lastElementChild.setAttribute('data-state', 'checked'); // находит родителя elem (т.е <li>), далее находит последнего ребенка родителя (т.е <label>), и этому <label> li,добавляет data-attr
       }
       if (elem.disabled) {
         elem.parentElement.lastElementChild.setAttribute('data-state', 'disabled'); // нахоит родителя elem (т.е <li>), далее надит последнего ребенка родителя (т.е <label>), и этому <label> lj,добавляет data-attr
@@ -558,7 +559,7 @@ function selectRadio() {
   /*==================*/
   selectAll.forEach((item) => {
     /*начальные действия*/
-    setDataAttr(item); // расставить data-attr
+    //setDataAttr(item); // расставить data-attr
     setTextContent(item); // textContent от label записать в шапку
     showTitle(item); // шапку показать
     contentShowHide(item); // контент скрыть
