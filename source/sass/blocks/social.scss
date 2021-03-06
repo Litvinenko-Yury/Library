@@ -14,21 +14,21 @@
   &:not(:last-child) {
     margin-right: 10px;
   }
-
-  &--fb {
-    background-color: $color-fb;
-  }
 }
 
 .social__link {
   display: block;
-  padding: 5px;
-}
+  padding: 10px;
 
-.social svg {
-  display: block;
-  width: 16px;
-  height: 16px;
-  fill: #ffffff;
-  background: #000000;
+  &:hover svg {
+    fill: coral;
+  }
+
+  & svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+    background: #000000;
+  }
 }
