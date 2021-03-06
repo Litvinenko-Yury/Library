@@ -1068,22 +1068,22 @@ document.addEventListener('click', function (event) { //1. вешаем един
         <p>Cкрипт <code>video-player-custom.js</code>.</p>
         <br>
 
-        <div class="video">
+        <div class="video-wrap-for-library">
+          <div class="video">
+            <figure class="video__container">
+              <figcaption class="video__descr">Заголовок или подпись. Заголовок м.б первым. Подпись м.б. последней</figcaption>
+              <video class="video__source" controls poster="img/video/video__poster.jpg">
+                <!-- <source src="img/video/video__test.webm" type="video/webm"> -->
+                <source src="img/video/video__test.mp4" type="video/mp4">
+                <!-- <source src="img/video/video__test.ogg" type="video/ogg"> -->
+                Элемент video не поддерживается вашим браузером.
+              </video>
 
-          <figure class="video__container">
-            <figcaption class="video__descr">Заголовок или подпись. Заголовок м.б первым.Подпись м.б. последней</figcaption>
-            <video class="video__source" controls poster="img/video/video__poster.jpg">
-              <!-- <source src="img/video/video__test.webm" type="video/webm"> -->
-              <source src="img/video/video__test.mp4" type="video/mp4">
-              <!-- <source src="img/video/video__test.ogg" type="video/ogg"> -->
-              Элемент video не поддерживается вашим браузером.
-            </video>
-
-            <ul class="video__controls">
-              <li>
-                <button class="video__btn  video__playpause" type="button" aria-label="Воспроизвести видеоролик">Play/Pause</button>
-              </li>
-              <!--   <li>
+              <ul class="video__controls">
+                <li>
+                  <button class="video__btn  video__playpause" type="button" aria-label="Воспроизвести видеоролик">Play/Pause</button>
+                </li>
+                <!--   <li>
                 Если в кнопке иконке, разметка будет такой:
                 <button class="video__btn  video__playpause" type="button" aria-label="Воспроизвести видеоролик">
                   <svg width="75" height="75" role="img">
@@ -1091,16 +1091,51 @@ document.addEventListener('click', function (event) { //1. вешаем един
                   </svg>
                 </button>
               </li> -->
-              <li><button class="video__btn  video__stop" type="button" aria-label="Остановить видеоролик">Stop</button></li>
-              <li class="video__progress-wrap">
-                <progress class="video__progress" value="0"></progress>
-              </li>
-              <li><button class="video__btn  video__mute" type="button" aria-label="Убрать/восстановить громкость">Mute/Unmute</button></li>
-              <li><button class="video__btn  video__volup" type="button" aria-label="Громкость больше">Vol+</button></li>
-              <li><button class="video__btn  video__voldown" type="button" aria-label="Громкость меньше">Vol-</button></li>
-              <li><button class="video__btn  video__fs" type="button" aria-label="Развернуть на полный экран">Fullscreen</button></li>
-            </ul>
-          </figure>
+                <li><button class="video__btn  video__stop" type="button" aria-label="Остановить видеоролик">Stop</button></li>
+                <li class="video__progress-wrap">
+                  <progress class="video__progress" value="0"></progress>
+                </li>
+                <li><button class="video__btn  video__mute" type="button" aria-label="Убрать/восстановить громкость">Mute/Unmute</button></li>
+                <li><button class="video__btn  video__volup" type="button" aria-label="Громкость больше">Vol+</button></li>
+                <li><button class="video__btn  video__voldown" type="button" aria-label="Громкость меньше">Vol-</button></li>
+                <li><button class="video__btn  video__fs" type="button" aria-label="Развернуть на полный экран">Fullscreen</button></li>
+              </ul>
+            </figure>
+          </div>
+
+          <div class="video">
+            <figure class="video__container">
+              <figcaption class="video__descr">Заголовок или подпись. Заголовок м.б первым. Подпись м.б. последней</figcaption>
+              <video class="video__source" controls poster="img/video/Xandria-poster.jpg">
+                <!-- <source src="img/video/video__test.webm" type="video/webm"> -->
+                <source src="img/video/Xandria.mp4" type="video/mp4">
+                <!-- <source src="img/video/video__test.ogg" type="video/ogg"> -->
+                Элемент video не поддерживается вашим браузером.
+              </video>
+
+              <ul class="video__controls">
+                <li>
+                  <button class="video__btn  video__playpause" type="button" aria-label="Воспроизвести видеоролик">Play/Pause</button>
+                </li>
+                <!--   <li>
+                Если в кнопке иконке, разметка будет такой:
+                <button class="video__btn  video__playpause" type="button" aria-label="Воспроизвести видеоролик">
+                  <svg width="75" height="75" role="img">
+                    <use xlink:href="#icon-play" />
+                  </svg>
+                </button>
+              </li> -->
+                <li><button class="video__btn  video__stop" type="button" aria-label="Остановить видеоролик">Stop</button></li>
+                <li class="video__progress-wrap">
+                  <progress class="video__progress" value="0"></progress>
+                </li>
+                <li><button class="video__btn  video__mute" type="button" aria-label="Убрать/восстановить громкость">Mute/Unmute</button></li>
+                <li><button class="video__btn  video__volup" type="button" aria-label="Громкость больше">Vol+</button></li>
+                <li><button class="video__btn  video__voldown" type="button" aria-label="Громкость меньше">Vol-</button></li>
+                <li><button class="video__btn  video__fs" type="button" aria-label="Развернуть на полный экран">Fullscreen</button></li>
+              </ul>
+            </figure>
+          </div>
         </div>
       </section>
 
