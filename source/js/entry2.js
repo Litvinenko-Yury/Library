@@ -12,7 +12,7 @@ import slider from './modules2/slider';
 import sliderCarouselV3 from './modules2/slider-carousel-v3';
 
 import tabs from './modules2/tabs';
-import timerReverse from './modules2/timer-reverse';
+import timerReverse from './modules2/timer-reverse-v2';
 import typewriter from './modules2/typewriter';
 import videoPlayerCustom from './modules2/video-player-custom';
 import dropdown1 from './modules2/dropdown1';

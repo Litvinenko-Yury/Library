@@ -11,7 +11,6 @@ function videoPlayerCustom() {
 
   if (supportsVideo) {
     const videoAll = document.querySelectorAll('.video');
-    console.log(videoAll);
 
     videoAll.forEach(item => {
       const videoContainer = item.querySelector('.video__container'),

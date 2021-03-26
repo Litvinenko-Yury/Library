@@ -32,18 +32,18 @@ function scv3() {
       /**установить начальное положение slidesContainer*/
       let offset = setSlidesContainerStart();
 
-      /**рассчет крайних точек оффсет*/
-      const offsetLeftEnd = (widthWindow / 2) - (slideWidth / 2); // оффсет для левой стороны
-      const offsetRightEnd = slidesContainerWidth - widthWindow + ((widthWindow / 2) - (slideWidth / 2)); //оффсет для правой стороны
+      /**рассчитать крайние точки оффсет*/
+      const temp = calcEndOffset(); // в эту переменную запишем объект, который вернула функция
+
 
       /**=========== */
       /**обработчик вправо*/
       btnRight.addEventListener('click', () => {
-        if (offset >= offsetRightEnd) { //если офсет в крайней правой позиции, тогда:
-          offset = offsetLeftEnd; // установить офсет в левую позицию
+        if (offset >= temp.offsetRightEnd) { //если офсет в крайней правой позиции, тогда:
+          offset = temp.offsetLeftEnd; // установить офсет в левую позицию
           slidesContainer.style.transform = `translateX(${offset}px)`; // смещение на величину offset
         } else {
-          if (offset == offsetLeftEnd) { // если оффет в крайней левой позиции, то:
+          if (offset == temp.offsetLeftEnd) { // если оффет в крайней левой позиции, то:
             offset = -offset; // меняем знак на противоположный
           }
 
@@ -54,8 +54,8 @@ function scv3() {
 
       /**обработчик влево*/
       btnLeft.addEventListener('click', () => {
-        if (offset <= offsetLeftEnd) { // если оффет крайней левой позиции, тогда:
-          offset = offsetRightEnd; // установить оффсет правую позицию
+        if (offset <= temp.offsetLeftEnd) { // если оффет крайней левой позиции, тогда:
+          offset = temp.offsetRightEnd; // установить оффсет правую позицию
           slidesContainer.style.transform = `translateX(-${offset}px)`; //смещение на величину offset
         } else {
           offset -= slideWidth;
@@ -97,7 +97,6 @@ function scv3() {
         return slideWidth;
       }
 
-
       function setSlidesContainerStart() {
         /**установить начальное (среднее) положение slidesContainer*/
         const offsetStart = (slidesContainerWidth / 2) - (widthWindow / 2);
@@ -105,6 +104,18 @@ function scv3() {
         slidesContainer.style.transform = `translateX(-${offsetStart}px)`; //смещение на величину offsetStart
 
         return offset;
+      }
+
+      function calcEndOffset() {
+        //рассчет крайних точек оффсет
+        const offsetLeftEnd = (widthWindow / 2) - (slideWidth / 2); // оффсет для левой стороны
+        const offsetRightEnd = slidesContainerWidth - widthWindow + ((widthWindow / 2) - (slideWidth / 2)); //оффсет для правой стороны
+
+        /*Экспортировать несколько переменных из функции просто так не получится, поэтому мы можем экспортировать объект.*/
+        return {
+          'offsetLeftEnd': offsetLeftEnd,
+          'offsetRightEnd': offsetRightEnd
+        };
       }
     });
   }
