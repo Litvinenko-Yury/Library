@@ -7,7 +7,7 @@ function selectRadio() {
 
   /*===ФУНКЦИИ===*/
   /* функция, расставляет data-attr для <label> в селекте*/
-  //весело: зачем расставлять data-attr...
+  //data-attr на <label> нужны, чтобы потом из них установить textContent для .field-select__title, т.е. для шапки выпадающего списка
   function setDataAttr(select) {
     // передаю сюда отдельный select
     //в этом select найти все input
@@ -64,7 +64,7 @@ function selectRadio() {
   /*==================*/
   selectAll.forEach((item) => {
     /*начальные действия*/
-    //setDataAttr(item); // расставить data-attr
+    setDataAttr(item); // расставить data-attr
     setTextContent(item); // textContent от label записать в шапку
     showTitle(item); // шапку показать
     contentShowHide(item); // контент скрыть
