@@ -1,5 +1,6 @@
 /**Entry points for scripts for page2.html */
 import burger from './modules2/burger';
+import burgerSome from './modules/burger-some';
 import customRange from './modules2/custom-range';
 import imgCompare from './modules2/img-compare';
 import mainNav from './modules2/main-nav';
@@ -20,6 +21,7 @@ import dropdown2 from './modules2/dropdown2';
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
   burger();
+  burgerSome();
   imgCompare(); // запускающая функция для скрипта сравнения изображения, должна быть ниже всех
   customRange();
   mainNav();
