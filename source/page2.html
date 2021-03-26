@@ -88,18 +88,25 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#svg-vivus">библиотека <b>Vivus.js</b> - анимация для SVG</a>
         </li>
-        <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#slider">Слайдер</a>
-        </li>
-        <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#slider-carousel">Слайдер - карусель+индикаторы</a>
-        </li>
+
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#yandex-map">Яндекс.Карты - JS</a>
         </li>
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#google-map">Google Maps - JS</a>
         </li>
+
+
+        <!--  -->
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#slider">Слайдер</a>
+        </li>
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#slider-carousel">Слайдер - карусель+индикаторы</a>
+        </li>
+        <!--  -->
+
+
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link    off-canvas__menu-link--js  attention-menu" href="#compare">Ползунок сравнения изображений</a>
         </li>
@@ -736,6 +743,33 @@
         </div>
       </section>
 
+
+      <!-- ============================================ -->
+      <section class="block-library" id="google-map">
+        <h2 class="block-library__title">Google Maps</h2>
+        <p>Как добавить Google Maps на страницу.</p>
+
+        <ul>
+          <li>
+            <span>если просто карту с дефолтным маркером - использовать <code>iframe</code><br></span>
+            <!-- <div> -->
+            <span> Быстрый старт: </span>
+            <a href="https://support.google.com/maps/answer/144361?hl=ru&ref_topic=3093585" rel="noopener">Документация Google width iframe</a>
+            <!-- </div> -->
+          </li>
+          <li>
+            <span>если карту с кастом-маркером, маштабом и т.д. <code>API-key + JS</code><br></span>
+            <span>Быстрый старт: </span>
+            <a href="https://developers.google.com/maps/documentation/javascript/tutorial" rel="noopener">Документация Google width API-KEY</a>
+            <p><b>Внимание!</b><br>При добавлении Google Maps на страницу, помимо API-key, нужно привязать платежную карту.<br>Поэтому, API-key у владельца сайта должен быть свой.</p>
+          </li>
+        </ul>
+        <div>
+          <span>Стилизация: </span>
+          <a href="https://mapstyle.withgoogle.com/" rel="noopener">https://mapstyle.withgoogle.com/</a>
+        </div>
+      </section>
+
       <!-- ============================================ -->
       <section class="block-library" id="slider">
         <h2 class="block-library__title">Слайдер со счетчиком</h2>
@@ -795,9 +829,6 @@
         <br>
         <p>"Точки-индикаторы" добавляет скрипт.</p>
         <p>!!!</p>
-        <p>!!!</p>
-        <p>!!!</p>
-        <p>!!!</p>
         <p>Нам нужна ширина "окошка", через которое смотрим на слайд, т.е. ширина .slider-carousel__window</p>
         <p>Получаем эту ширину так:</p>
         <p>const slidesWindow = document.querySelector('.slider-carousel__window');</p>
@@ -846,36 +877,14 @@
         </div>
       </section>
 
-      <!-- ============================================ -->
-      <section class="block-library" id="google-map">
-        <h2 class="block-library__title">Google Maps</h2>
-        <p>Как добавить Google Maps на страницу.</p>
 
-        <ul>
-          <li>
-            <span>если просто карту с дефолтным маркером - использовать <code>iframe</code><br></span>
-            <!-- <div> -->
-            <span> Быстрый старт: </span>
-            <a href="https://support.google.com/maps/answer/144361?hl=ru&ref_topic=3093585" rel="noopener">Документация Google width iframe</a>
-            <!-- </div> -->
-          </li>
-          <li>
-            <span>если карту с кастом-маркером, маштабом и т.д. <code>API-key + JS</code><br></span>
-            <span>Быстрый старт: </span>
-            <a href="https://developers.google.com/maps/documentation/javascript/tutorial" rel="noopener">Документация Google width API-KEY</a>
-            <p><b>Внимание!</b><br>При добавлении Google Maps на страницу, помимо API-key, нужно привязать платежную карту.<br>Поэтому, API-key у владельца сайта должен быть свой.</p>
-          </li>
-        </ul>
-        <div>
-          <span>Стилизация: </span>
-          <a href="https://mapstyle.withgoogle.com/" rel="noopener">https://mapstyle.withgoogle.com/</a>
-        </div>
-      </section>
+
 
       <!-- ============================================ -->
       <section class="block-library  attention" id="compare">
         <h2 class="block-library__title">Ползунок сравнения изображений</h2>
         <p>Скрипт <code>img-compare.js</code> </p>
+        <p class="warning">Сделать скрит по новому, т.е. нормально, а не эта каша...</p>
         <p class="warning">Переделать классы по БЭМ.</p>
         <p>Создание ползунка, сравнивающий два изображения.</p>
 

@@ -7,7 +7,7 @@ function imgCompare() {
 
   for (i = 0; i < x.length; i++) {
     /*один раз для каждого "overlay"-элемента:
-    передать элемент "overlay" в качестве параметра при выполнении функции compareImages:
+    передать элемент "overlay" в качестве параметра при выполнении функции compareImages()
     */
     compareImages(x[i]);
   }
