@@ -106,7 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules2_slider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules2/slider */ "./source/js/modules2/slider.js");
 /* harmony import */ var _modules2_slider_carousel_v3__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules2/slider-carousel-v3 */ "./source/js/modules2/slider-carousel-v3.js");
 /* harmony import */ var _modules2_tabs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules2/tabs */ "./source/js/modules2/tabs.js");
-/* harmony import */ var _modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules2/timer-reverse */ "./source/js/modules2/timer-reverse.js");
+/* harmony import */ var _modules2_timer_reverse_v2__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules2/timer-reverse-v2 */ "./source/js/modules2/timer-reverse-v2.js");
 /* harmony import */ var _modules2_typewriter__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules2/typewriter */ "./source/js/modules2/typewriter.js");
 /* harmony import */ var _modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules2/video-player-custom */ "./source/js/modules2/video-player-custom.js");
 /* harmony import */ var _modules2_dropdown1__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules2/dropdown1 */ "./source/js/modules2/dropdown1.js");
@@ -144,7 +144,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules2_slider__WEBPACK_IMPORTED_MODULE_8__["default"])();
   Object(_modules2_slider_carousel_v3__WEBPACK_IMPORTED_MODULE_9__["default"])();
   Object(_modules2_tabs__WEBPACK_IMPORTED_MODULE_10__["default"])();
-  Object(_modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_11__["default"])();
+  Object(_modules2_timer_reverse_v2__WEBPACK_IMPORTED_MODULE_11__["default"])();
   Object(_modules2_typewriter__WEBPACK_IMPORTED_MODULE_12__["default"])();
   Object(_modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_13__["default"])();
   Object(_modules2_dropdown1__WEBPACK_IMPORTED_MODULE_14__["default"])();
@@ -778,18 +778,18 @@ function scv3() {
       /**установить начальное положение slidesContainer*/
       let offset = setSlidesContainerStart();
 
-      /**рассчет крайних точек оффсет*/
-      const offsetLeftEnd = (widthWindow / 2) - (slideWidth / 2); // оффсет для левой стороны
-      const offsetRightEnd = slidesContainerWidth - widthWindow + ((widthWindow / 2) - (slideWidth / 2)); //оффсет для правой стороны
+      /**рассчитать крайние точки оффсет*/
+      const temp = calcEndOffset(); // в эту переменную запишем объект, который вернула функция
+
 
       /**=========== */
       /**обработчик вправо*/
       btnRight.addEventListener('click', () => {
-        if (offset >= offsetRightEnd) { //если офсет в крайней правой позиции, тогда:
-          offset = offsetLeftEnd; // установить офсет в левую позицию
+        if (offset >= temp.offsetRightEnd) { //если офсет в крайней правой позиции, тогда:
+          offset = temp.offsetLeftEnd; // установить офсет в левую позицию
           slidesContainer.style.transform = `translateX(${offset}px)`; // смещение на величину offset
         } else {
-          if (offset == offsetLeftEnd) { // если оффет в крайней левой позиции, то:
+          if (offset == temp.offsetLeftEnd) { // если оффет в крайней левой позиции, то:
             offset = -offset; // меняем знак на противоположный
           }
 
@@ -800,8 +800,8 @@ function scv3() {
 
       /**обработчик влево*/
       btnLeft.addEventListener('click', () => {
-        if (offset <= offsetLeftEnd) { // если оффет крайней левой позиции, тогда:
-          offset = offsetRightEnd; // установить оффсет правую позицию
+        if (offset <= temp.offsetLeftEnd) { // если оффет крайней левой позиции, тогда:
+          offset = temp.offsetRightEnd; // установить оффсет правую позицию
           slidesContainer.style.transform = `translateX(-${offset}px)`; //смещение на величину offset
         } else {
           offset -= slideWidth;
@@ -843,7 +843,6 @@ function scv3() {
         return slideWidth;
       }
 
-
       function setSlidesContainerStart() {
         /**установить начальное (среднее) положение slidesContainer*/
         const offsetStart = (slidesContainerWidth / 2) - (widthWindow / 2);
@@ -851,6 +850,18 @@ function scv3() {
         slidesContainer.style.transform = `translateX(-${offsetStart}px)`; //смещение на величину offsetStart
 
         return offset;
+      }
+
+      function calcEndOffset() {
+        //рассчет крайних точек оффсет
+        const offsetLeftEnd = (widthWindow / 2) - (slideWidth / 2); // оффсет для левой стороны
+        const offsetRightEnd = slidesContainerWidth - widthWindow + ((widthWindow / 2) - (slideWidth / 2)); //оффсет для правой стороны
+
+        /*Экспортировать несколько переменных из функции просто так не получится, поэтому мы можем экспортировать объект.*/
+        return {
+          'offsetLeftEnd': offsetLeftEnd,
+          'offsetRightEnd': offsetRightEnd
+        };
       }
     });
   }
@@ -1162,10 +1173,10 @@ function tabs() {
 
 /***/ }),
 
-/***/ "./source/js/modules2/timer-reverse.js":
-/*!*********************************************!*\
-  !*** ./source/js/modules2/timer-reverse.js ***!
-  \*********************************************/
+/***/ "./source/js/modules2/timer-reverse-v2.js":
+/*!************************************************!*\
+  !*** ./source/js/modules2/timer-reverse-v2.js ***!
+  \************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1177,7 +1188,7 @@ __webpack_require__.r(__webpack_exports__);
 /*Таймер обратного отсчета v2*/
 
 function timerReverse() {
-  const deadline = '2020-12-31'; // конечная дата
+  const deadline = '2021-05-15'; // конечная дата
   //это строка; можем её получить, например от сервера, или от пользователя
 
   /*эта функция вычисляет разницу между deadlineV2 и текущим временем*/
@@ -1353,7 +1364,6 @@ function videoPlayerCustom() {
 
   if (supportsVideo) {
     const videoAll = document.querySelectorAll('.video');
-    console.log(videoAll);
 
     videoAll.forEach(item => {
       const videoContainer = item.querySelector('.video__container'),
