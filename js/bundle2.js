@@ -103,13 +103,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules2_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules2/modal */ "./source/js/modules2/modal.js");
 /* harmony import */ var _modules2_slider_carousel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules2/slider-carousel */ "./source/js/modules2/slider-carousel.js");
 /* harmony import */ var _modules2_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules2/slider */ "./source/js/modules2/slider.js");
-/* harmony import */ var _modules2_tabs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules2/tabs */ "./source/js/modules2/tabs.js");
-/* harmony import */ var _modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules2/timer-reverse */ "./source/js/modules2/timer-reverse.js");
-/* harmony import */ var _modules2_typewriter__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules2/typewriter */ "./source/js/modules2/typewriter.js");
-/* harmony import */ var _modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules2/video-player-custom */ "./source/js/modules2/video-player-custom.js");
-/* harmony import */ var _modules2_dropdown1__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules2/dropdown1 */ "./source/js/modules2/dropdown1.js");
-/* harmony import */ var _modules2_dropdown2__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules2/dropdown2 */ "./source/js/modules2/dropdown2.js");
+/* harmony import */ var _modules2_slider_carousel_v3__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules2/slider-carousel-v3 */ "./source/js/modules2/slider-carousel-v3.js");
+/* harmony import */ var _modules2_tabs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules2/tabs */ "./source/js/modules2/tabs.js");
+/* harmony import */ var _modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules2/timer-reverse */ "./source/js/modules2/timer-reverse.js");
+/* harmony import */ var _modules2_typewriter__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules2/typewriter */ "./source/js/modules2/typewriter.js");
+/* harmony import */ var _modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules2/video-player-custom */ "./source/js/modules2/video-player-custom.js");
+/* harmony import */ var _modules2_dropdown1__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules2/dropdown1 */ "./source/js/modules2/dropdown1.js");
+/* harmony import */ var _modules2_dropdown2__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules2/dropdown2 */ "./source/js/modules2/dropdown2.js");
 /**Entry points for scripts for page2.html */
+
+
 
 
 
@@ -136,12 +139,13 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules2_modal__WEBPACK_IMPORTED_MODULE_5__["default"])();
   Object(_modules2_slider_carousel__WEBPACK_IMPORTED_MODULE_6__["default"])();
   Object(_modules2_slider__WEBPACK_IMPORTED_MODULE_7__["default"])();
-  Object(_modules2_tabs__WEBPACK_IMPORTED_MODULE_8__["default"])();
-  Object(_modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_9__["default"])();
-  Object(_modules2_typewriter__WEBPACK_IMPORTED_MODULE_10__["default"])();
-  Object(_modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_11__["default"])();
-  Object(_modules2_dropdown1__WEBPACK_IMPORTED_MODULE_12__["default"])();
-  Object(_modules2_dropdown2__WEBPACK_IMPORTED_MODULE_13__["default"])();
+  Object(_modules2_slider_carousel_v3__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  Object(_modules2_tabs__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  Object(_modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  Object(_modules2_typewriter__WEBPACK_IMPORTED_MODULE_11__["default"])();
+  Object(_modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_12__["default"])();
+  Object(_modules2_dropdown1__WEBPACK_IMPORTED_MODULE_13__["default"])();
+  Object(_modules2_dropdown2__WEBPACK_IMPORTED_MODULE_14__["default"])();
 });
 
 
@@ -363,7 +367,7 @@ function imgCompare() {
 
   for (i = 0; i < x.length; i++) {
     /*один раз для каждого "overlay"-элемента:
-    передать элемент "overlay" в качестве параметра при выполнении функции compareImages:
+    передать элемент "overlay" в качестве параметра при выполнении функции compareImages()
     */
     compareImages(x[i]);
   }
@@ -665,6 +669,132 @@ function modal() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (modal);
+
+
+/***/ }),
+
+/***/ "./source/js/modules2/slider-carousel-v3.js":
+/*!**************************************************!*\
+  !*** ./source/js/modules2/slider-carousel-v3.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*script  slider-carousel-v3.js*/
+/*author  https://github.com/Litvinenko-Yury*/
+
+function scv3() {
+  //найти все слайдеры
+  const sliderCarouselAll = document.querySelectorAll('.scv3');
+
+  setSliderFunctionality(); //отработает старте скрипта
+  window.addEventListener('resize', function () {
+    //отработает при изменении размеров окна
+    setSliderFunctionality();
+  });
+
+
+  function setSliderFunctionality() {
+    sliderCarouselAll.forEach(item => {
+      let slidesWindow = item.querySelector('.scv3__window'), // это "окошко", через которое будем смотреть на отдельный слайд
+        widthWindowTemp = window.getComputedStyle(slidesWindow).width, //сейчас здесь хранится строка.
+        widthWindow = +widthWindowTemp.slice(0, widthWindowTemp.length - 2), // а здесь теперь число
+        slidesContainer = item.querySelector('.scv3__container'), //длинный контейнер со слайдами
+        slides = item.querySelectorAll('.scv3__item'), // коллекция слайдов
+        btnLeft = item.querySelector('.scv3__btn-prev'),
+        btnRight = item.querySelector('.scv3__btn-next');
+
+
+      /**============================== */
+      /**установка начальных параметров*/
+      const slideWidth = setSlidesWidth(); // ширина каждого слайда
+      slidesContainer.style.width = slideWidth * slides.length + 'px'; //задать ширину контейнера для слайдов
+      let slidesContainerWidth = slidesContainer.offsetWidth; // ширина контейнера для слайдов, в переменную
+
+      /**установить начальное положение slidesContainer*/
+      let offset = setSlidesContainerStart();
+
+      /**рассчет крайних точек оффсет*/
+      const offsetLeftEnd = (widthWindow / 2) - (slideWidth / 2); // оффсет для левой стороны
+      const offsetRightEnd = slidesContainerWidth - widthWindow + ((widthWindow / 2) - (slideWidth / 2)); //оффсет для правой стороны
+
+      /**=========== */
+      /**обработчик вправо*/
+      btnRight.addEventListener('click', () => {
+        if (offset >= offsetRightEnd) { //если офсет в крайней правой позиции, тогда:
+          offset = offsetLeftEnd; // установить офсет в левую позицию
+          slidesContainer.style.transform = `translateX(${offset}px)`; // смещение на величину offset
+        } else {
+          if (offset == offsetLeftEnd) { // если оффет в крайней левой позиции, то:
+            offset = -offset; // меняем знак на противоположный
+          }
+
+          offset += slideWidth; // изменяем оффсет
+          slidesContainer.style.transform = `translateX(-${offset}px)`; //смещение на величину offset
+        }
+      });
+
+      /**обработчик влево*/
+      btnLeft.addEventListener('click', () => {
+        if (offset <= offsetLeftEnd) { // если оффет крайней левой позиции, тогда:
+          offset = offsetRightEnd; // установить оффсет правую позицию
+          slidesContainer.style.transform = `translateX(-${offset}px)`; //смещение на величину offset
+        } else {
+          offset -= slideWidth;
+
+          if (offset < 0) {
+            offset = -offset; // меняем знак на противоположный
+            slidesContainer.style.transform = `translateX(${offset}px)`; //смещение на величину offset
+          } else {
+            slidesContainer.style.transform = `translateX(-${offset}px)`; //смещение на величину offset
+          }
+        }
+      });
+
+      /**=========== */
+      /** Функции*/
+      function setSlidesWidth() {
+        //задать ширину слайдов в зависимости от ширины вьюпорта
+        let slideWidth = 0;
+
+        if (widthWindow <= 500) {
+          slides.forEach(item => {
+            item.style.width = `${widthWindow}px`; // задать всем слайдам одинаковую ширину - т.е. ширину контейнера
+          });
+          slideWidth = widthWindow; // эта переменная будет нужна далее, для вычисления ширины slidesContainer
+        }
+        else if (widthWindow > 500 && widthWindow <= 800) {
+          slides.forEach(item => {
+            item.style.width = `500px`; // задать всем слайдам одинаковую ширину
+          });
+          slideWidth = 500; // эта переменная будет нужна далее, для вычисления ширины slidesContainer
+        }
+        else {
+          slides.forEach(item => {
+            item.style.width = `600px`; // задать всем слайдам одинаковую ширину
+          });
+          slideWidth = 600; // эта переменная будет нужна далее, для вычисления ширины slidesContainer
+        }
+
+        return slideWidth;
+      }
+
+
+      function setSlidesContainerStart() {
+        /**установить начальное (среднее) положение slidesContainer*/
+        const offsetStart = (slidesContainerWidth / 2) - (widthWindow / 2);
+        const offset = offsetStart;
+        slidesContainer.style.transform = `translateX(-${offsetStart}px)`; //смещение на величину offsetStart
+
+        return offset;
+      }
+    });
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (scv3);
 
 
 /***/ }),

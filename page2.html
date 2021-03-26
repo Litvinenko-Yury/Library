@@ -90,18 +90,28 @@
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#svg-vivus">библиотека <b>Vivus.js</b> - анимация для SVG</a>
         </li>
-        <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#slider">Слайдер</a>
-        </li>
-        <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#slider-carousel">Слайдер - карусель+индикаторы</a>
-        </li>
+
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#yandex-map">Яндекс.Карты - JS</a>
         </li>
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#google-map">Google Maps - JS</a>
         </li>
+
+
+        <!--  -->
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#slider">Слайдер</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#slider-carousel">Слайдер - карусель+индикаторы</a>
+        </li>
+        <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#slider-carousel-v3">Сл.-карусель - центр расп. слайда</a>
+        </li>
+        <!--  -->
+
+
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link    off-canvas__menu-link--js  attention-menu" href="#compare">Ползунок сравнения изображений</a>
         </li>
@@ -738,10 +748,39 @@
         </div>
       </section>
 
+
+      <!-- ============================================ -->
+      <section class="block-library" id="google-map">
+        <h2 class="block-library__title">Google Maps</h2>
+        <p>Как добавить Google Maps на страницу.</p>
+
+        <ul>
+          <li>
+            <span>если просто карту с дефолтным маркером - использовать <code>iframe</code><br></span>
+            <!-- <div> -->
+            <span> Быстрый старт: </span>
+            <a href="https://support.google.com/maps/answer/144361?hl=ru&ref_topic=3093585" rel="noopener">Документация Google width iframe</a>
+            <!-- </div> -->
+          </li>
+          <li>
+            <span>если карту с кастом-маркером, маштабом и т.д. <code>API-key + JS</code><br></span>
+            <span>Быстрый старт: </span>
+            <a href="https://developers.google.com/maps/documentation/javascript/tutorial" rel="noopener">Документация Google width API-KEY</a>
+            <p><b>Внимание!</b><br>При добавлении Google Maps на страницу, помимо API-key, нужно привязать платежную карту.<br>Поэтому, API-key у владельца сайта должен быть свой.</p>
+          </li>
+        </ul>
+        <div>
+          <span>Стилизация: </span>
+          <a href="https://mapstyle.withgoogle.com/" rel="noopener">https://mapstyle.withgoogle.com/</a>
+        </div>
+      </section>
+
       <!-- ============================================ -->
       <section class="block-library" id="slider">
-        <h2 class="block-library__title">Слайдер со счетчиком</h2>
+        <h2 class="block-library__title  attention">Слайдер со счетчиком</h2>
+        <p class="attention">Это устаревший вариант разметки и скрипта!</p>
         <p>Cкрипт <code>slider.js</code>.</p>
+
         <p>Адаптивность делать медиаусловиями.</p>
         <p><b>!</b> - Если кнопки нужны tоp: 50% от родителя, позиционировать каждую (без контейнера кнопок) абсолютно относительно общего контейнера. </p>
         <p>Количество слайдов не ограничено.</p>
@@ -785,8 +824,9 @@
       </section>
 
       <!-- ============================================ -->
-      <section class="block-library" id="slider-carousel">
+      <section class="block-library  attention" id="slider-carousel">
         <h2 class="block-library__title">Слайдер - карусель, со счетчиком</h2>
+        <p>Это устаревший вариант разметки и скрипта!</p>
         <p>Cкрипт <code>slider-carousel.js</code>.</p>
         <p>Адаптивность делать медиаусловиями.</p>
         <p><b>!</b> - Если кнопки нужны tоp: 50% от родителя, позиционировать каждую (без контейнера кнопок) абсолютно относительно общего контейнера. </p>
@@ -796,9 +836,6 @@
         <p> Стили слайдам заданы в <code>JS</code>, для примера. Однако, правильнее, эти стили задать в CSS.</p>
         <br>
         <p>"Точки-индикаторы" добавляет скрипт.</p>
-        <p>!!!</p>
-        <p>!!!</p>
-        <p>!!!</p>
         <p>!!!</p>
         <p>Нам нужна ширина "окошка", через которое смотрим на слайд, т.е. ширина .slider-carousel__window</p>
         <p>Получаем эту ширину так:</p>
@@ -849,35 +886,96 @@
       </section>
 
       <!-- ============================================ -->
-      <section class="block-library" id="google-map">
-        <h2 class="block-library__title">Google Maps</h2>
-        <p>Как добавить Google Maps на страницу.</p>
-
+      <section class="block-library" id="slider-carousel-v3">
+        <h2 class="block-library__title">Слайдер - карусель, центральное расположение слайда</h2>
+        <p><b>Cкрипт</b><code>slider-carousel-v3.js</code>.</p>
+        <p><b>Основное:</b></p>
         <ul>
+          <li><b>Ширину слайда</b> можно указать:</li>
+          <ul>
+            <li>100% по ширине окна слайдера, или меньше, тогда будут видны соседние слайды.</li>
+            <li>В скрипте можно изменить размер слайда в зависимости от разрешения экрана.<br>
+              Это делает функция <code>setSlidesWidth()</code><br>В этой функции указать нужные ширины.</li>
+          </ul>
           <li>
-            <span>если просто карту с дефолтным маркером - использовать <code>iframe</code><br></span>
-            <!-- <div> -->
-            <span> Быстрый старт: </span>
-            <a href="https://support.google.com/maps/answer/144361?hl=ru&ref_topic=3093585" rel="noopener">Документация Google width iframe</a>
-            <!-- </div> -->
-          </li>
-          <li>
-            <span>если карту с кастом-маркером, маштабом и т.д. <code>API-key + JS</code><br></span>
-            <span>Быстрый старт: </span>
-            <a href="https://developers.google.com/maps/documentation/javascript/tutorial" rel="noopener">Документация Google width API-KEY</a>
-            <p><b>Внимание!</b><br>При добавлении Google Maps на страницу, помимо API-key, нужно привязать платежную карту.<br>Поэтому, API-key у владельца сайта должен быть свой.</p>
+            <p><strong>Важно!</strong><br> <b>Количество</b> слайдов должно быть <strong>не четным</strong>.<br> Иначе, как расположить слайд по середине окна, если он меньше окна?</p>
           </li>
         </ul>
-        <div>
-          <span>Стилизация: </span>
-          <a href="https://mapstyle.withgoogle.com/" rel="noopener">https://mapstyle.withgoogle.com/</a>
+        <p><b>Общее:</b></p>
+        <ul>
+          <li>
+            <p><b>Названия классов сокращены, для удобства восприятия:</b><br>
+              <code>.scv3</code> - сокращение от <code>.slider-carousel-v3</code><br>
+              <code>.scv3-content</code> - сокращение от <code>.slider-carousel-v3-content</code>
+            </p>
+          </li>
+          <li>
+            <p>Если нужны "точки-индикаторы", при необходимости, дописать скрипт.<br> Исходник можно посмотреть <a href="#slider-carousel">в блоке выше</a> </p>
+          </li>
+        </ul>
+        <p><b>Дополнительно:</b></p>
+        <ul>
+          <li>
+            Можно добавить счетчик, показывающий текущий слайд.<br>
+            Это позволит не только показывать счетчик,<br>
+            но и выделять текущий слайд, например, применив к нему <code>transition</code>, <br>
+            или применить <code>opacity</code> для всех слайдов, кроме текущего, что-бы выделить текущий слайд.
+          </li>
+        </ul>
+        <hr>
+
+        <div class="scv3">
+          <h2 class="scv3__title">TITLE</h2>
+
+          <button class="btn scv3__btn-prev" id="scv3-prev" aria-label="carousel prev">
+            <svg width="30" height="30" role="img">
+              <use xlink:href="#icon-arrow-left">
+              </use>
+            </svg>
+          </button>
+          <button class="btn scv3__btn-next" id="scv3-next" aria-label="carousel next">
+            <svg width="30" height="30" role="img">
+              <use xlink:href="#icon-arrow-right">
+              </use>
+            </svg>
+          </button>
+
+          <div class="scv3__window">
+            <ul class="scv3__container">
+              <li class="scv3__item">
+                <div class="scv3-content">
+                  <img class="scv3-content__img" src="img/rastr/img-product0@1x.jpg" alt="Ананас" loading="lazy">
+                </div>
+              </li>
+              <li class="scv3__item">
+                <div class="scv3-content">
+                  <img class="scv3-content__img" src="img/rastr/img-product1@1x.jpg" alt="Яблоки" loading="lazy">
+                </div>
+              </li>
+              <li class="scv3__item">
+                <div class="scv3-content">
+                  <img class="scv3-content__img" src="img/rastr/img-product2@1x.jpg" alt="Апельсины" loading="lazy">
+              </div></li>
+              <li class="scv3__item">
+                <div class="scv3-content">
+                  <img class="scv3-content__img" src="img/rastr/img-product3@1x.jpg" alt="Киви" loading="lazy">
+              </div></li>
+              
+              <li class="scv3__item">
+                <div class="scv3-content">
+                  <img class="scv3-content__img" src="img/rastr/img-product4@1x.jpg" alt="Клубника" loading="lazy">
+              </div></li>
+          </ul></div>
+          
         </div>
       </section>
+
 
       <!-- ============================================ -->
       <section class="block-library  attention" id="compare">
         <h2 class="block-library__title">Ползунок сравнения изображений</h2>
         <p>Скрипт <code>img-compare.js</code> </p>
+        <p class="warning">Сделать скрит по новому, т.е. нормально, а не эта каша...</p>
         <p class="warning">Переделать классы по БЭМ.</p>
         <p>Создание ползунка, сравнивающий два изображения.</p>
 
