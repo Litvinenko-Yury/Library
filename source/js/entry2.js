@@ -8,6 +8,8 @@ import modal from './modules2/modal';
 
 import sliderCarousel from './modules2/slider-carousel';
 import slider from './modules2/slider';
+import sliderCarouselV3 from './modules2/slider-carousel-v3';
+
 import tabs from './modules2/tabs';
 import timerReverse from './modules2/timer-reverse';
 import typewriter from './modules2/typewriter';
@@ -25,6 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
   modal();
   sliderCarousel();
   slider();
+  sliderCarouselV3();
   tabs();
   timerReverse();
   typewriter();
