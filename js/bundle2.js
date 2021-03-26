@@ -96,21 +96,23 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules2_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules2/burger */ "./source/js/modules2/burger.js");
-/* harmony import */ var _modules2_custom_range__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules2/custom-range */ "./source/js/modules2/custom-range.js");
-/* harmony import */ var _modules2_img_compare__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules2/img-compare */ "./source/js/modules2/img-compare.js");
-/* harmony import */ var _modules2_main_nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules2/main-nav */ "./source/js/modules2/main-nav.js");
-/* harmony import */ var _modules2_modal_2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules2/modal-2 */ "./source/js/modules2/modal-2.js");
-/* harmony import */ var _modules2_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules2/modal */ "./source/js/modules2/modal.js");
-/* harmony import */ var _modules2_slider_carousel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules2/slider-carousel */ "./source/js/modules2/slider-carousel.js");
-/* harmony import */ var _modules2_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules2/slider */ "./source/js/modules2/slider.js");
-/* harmony import */ var _modules2_slider_carousel_v3__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules2/slider-carousel-v3 */ "./source/js/modules2/slider-carousel-v3.js");
-/* harmony import */ var _modules2_tabs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules2/tabs */ "./source/js/modules2/tabs.js");
-/* harmony import */ var _modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules2/timer-reverse */ "./source/js/modules2/timer-reverse.js");
-/* harmony import */ var _modules2_typewriter__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules2/typewriter */ "./source/js/modules2/typewriter.js");
-/* harmony import */ var _modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules2/video-player-custom */ "./source/js/modules2/video-player-custom.js");
-/* harmony import */ var _modules2_dropdown1__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules2/dropdown1 */ "./source/js/modules2/dropdown1.js");
-/* harmony import */ var _modules2_dropdown2__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules2/dropdown2 */ "./source/js/modules2/dropdown2.js");
+/* harmony import */ var _modules_burger_some__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/burger-some */ "./source/js/modules/burger-some.js");
+/* harmony import */ var _modules2_custom_range__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules2/custom-range */ "./source/js/modules2/custom-range.js");
+/* harmony import */ var _modules2_img_compare__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules2/img-compare */ "./source/js/modules2/img-compare.js");
+/* harmony import */ var _modules2_main_nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules2/main-nav */ "./source/js/modules2/main-nav.js");
+/* harmony import */ var _modules2_modal_2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules2/modal-2 */ "./source/js/modules2/modal-2.js");
+/* harmony import */ var _modules2_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules2/modal */ "./source/js/modules2/modal.js");
+/* harmony import */ var _modules2_slider_carousel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules2/slider-carousel */ "./source/js/modules2/slider-carousel.js");
+/* harmony import */ var _modules2_slider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules2/slider */ "./source/js/modules2/slider.js");
+/* harmony import */ var _modules2_slider_carousel_v3__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules2/slider-carousel-v3 */ "./source/js/modules2/slider-carousel-v3.js");
+/* harmony import */ var _modules2_tabs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules2/tabs */ "./source/js/modules2/tabs.js");
+/* harmony import */ var _modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules2/timer-reverse */ "./source/js/modules2/timer-reverse.js");
+/* harmony import */ var _modules2_typewriter__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules2/typewriter */ "./source/js/modules2/typewriter.js");
+/* harmony import */ var _modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules2/video-player-custom */ "./source/js/modules2/video-player-custom.js");
+/* harmony import */ var _modules2_dropdown1__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules2/dropdown1 */ "./source/js/modules2/dropdown1.js");
+/* harmony import */ var _modules2_dropdown2__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules2/dropdown2 */ "./source/js/modules2/dropdown2.js");
 /**Entry points for scripts for page2.html */
+
 
 
 
@@ -132,21 +134,81 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
   Object(_modules2_burger__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  Object(_modules2_img_compare__WEBPACK_IMPORTED_MODULE_2__["default"])(); // запускающая функция для скрипта сравнения изображения, должна быть ниже всех
-  Object(_modules2_custom_range__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  Object(_modules2_main_nav__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  Object(_modules2_modal_2__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  Object(_modules2_modal__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  Object(_modules2_slider_carousel__WEBPACK_IMPORTED_MODULE_6__["default"])();
-  Object(_modules2_slider__WEBPACK_IMPORTED_MODULE_7__["default"])();
-  Object(_modules2_slider_carousel_v3__WEBPACK_IMPORTED_MODULE_8__["default"])();
-  Object(_modules2_tabs__WEBPACK_IMPORTED_MODULE_9__["default"])();
-  Object(_modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_10__["default"])();
-  Object(_modules2_typewriter__WEBPACK_IMPORTED_MODULE_11__["default"])();
-  Object(_modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_12__["default"])();
-  Object(_modules2_dropdown1__WEBPACK_IMPORTED_MODULE_13__["default"])();
-  Object(_modules2_dropdown2__WEBPACK_IMPORTED_MODULE_14__["default"])();
+  Object(_modules_burger_some__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  Object(_modules2_img_compare__WEBPACK_IMPORTED_MODULE_3__["default"])(); // запускающая функция для скрипта сравнения изображения, должна быть ниже всех
+  Object(_modules2_custom_range__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  Object(_modules2_main_nav__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  Object(_modules2_modal_2__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  Object(_modules2_modal__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  Object(_modules2_slider_carousel__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  Object(_modules2_slider__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  Object(_modules2_slider_carousel_v3__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  Object(_modules2_tabs__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  Object(_modules2_timer_reverse__WEBPACK_IMPORTED_MODULE_11__["default"])();
+  Object(_modules2_typewriter__WEBPACK_IMPORTED_MODULE_12__["default"])();
+  Object(_modules2_video_player_custom__WEBPACK_IMPORTED_MODULE_13__["default"])();
+  Object(_modules2_dropdown1__WEBPACK_IMPORTED_MODULE_14__["default"])();
+  Object(_modules2_dropdown2__WEBPACK_IMPORTED_MODULE_15__["default"])();
 });
+
+
+/***/ }),
+
+/***/ "./source/js/modules/burger-some.js":
+/*!******************************************!*\
+  !*** ./source/js/modules/burger-some.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*script  burger-some.js*/
+/*author  https://github.com/Litvinenko-Yury*/
+
+/*
+1. определяет, на каком бургере был клик;
+2. анимирует значек бургера - в "крестик";
+3.переключает класс элементу с нужным ID
+    */
+
+function burgerSome() {
+  document.addEventListener('click', function (event) { /*1. вешаем единый обработчик на элемент document*/
+    /*это нужно для того, что-бы много burger-ов можно было ставить в любом месте*/
+    let target = event.target; /*2. где был клик?*/
+    //console.log(target);
+
+    while (target != document) {
+      if (target.classList.contains("burger" || false)) { /* 3. на .burger? то, что надо!*/
+        //console.log("клик на бургер");
+        target.classList.toggle("burger--close");
+
+        let burgerDataID = target.getAttribute("data-target-id"); /*7. из переменной target читаем значение атрибута data-target-id*/
+        //console.log("нашел data-target-id = " + burgerDataID);
+
+        let burgerDataClassToggle = target.getAttribute("data-target-class-toggle"); /*8. из переменной target читаем значение атрибута data-target-class-toggle*/
+        //console.log("нашел data-target-class-toggle = " + burgerDataClassToggle);
+
+        let elementClassToggle = document.getElementById(burgerDataID); /* 9. находим элемент с нужным ID*/
+        //console.log("нашел элемент с нужным ID = " + elementClassToggle);
+
+        elementClassToggle.classList.toggle(burgerDataClassToggle);/* 10. Элементу с нужным ID меняем класс на переданный в data-target-class-toggle*/
+
+        break;
+      } else {/* 4. не на .burger? нет, не подходит... */
+        //console.log("промазал");
+        target = target.parentNode; /*5. поднимаем target на уровень вверх по иерархии родителей от event.target и выше*/
+        //console.log("вывожу target на уровень выше");
+        //console.log(target);
+      }
+    }
+    //console.log("вышел из цикла");
+  });
+
+  /* 6. Если клик был мимо burger, цикл дойдет вверх до document, и обработчик закончит работу*/
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (burgerSome);
 
 
 /***/ }),
