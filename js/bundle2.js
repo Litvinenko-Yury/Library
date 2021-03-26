@@ -818,7 +818,7 @@ function scv3() {
       /**=========== */
       /** Функции*/
       function setSlidesWidth() {
-        //задать ширину слайдов в зависимости от ширины вьюпорта
+        /**задать ширину слайдов в зависимости от ширины блока со слайдером*/
         let slideWidth = 0;
 
         if (widthWindow <= 500) {
@@ -853,7 +853,7 @@ function scv3() {
       }
 
       function calcEndOffset() {
-        //рассчет крайних точек оффсет
+        /*рассчет крайних точек оффсет*/
         const offsetLeftEnd = (widthWindow / 2) - (slideWidth / 2); // оффсет для левой стороны
         const offsetRightEnd = slidesContainerWidth - widthWindow + ((widthWindow / 2) - (slideWidth / 2)); //оффсет для правой стороны
 
