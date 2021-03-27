@@ -1,42 +1,30 @@
-/*range-custom-v2.js*/
+/*range-v2.js*/
 /*created by Yuri Litvinenko  https://litvinenko-yury.pro/*/
 
-function rangeCustom() {
-
-  /*проверка на IE - (трюк: он не использует append)*/
-/*   const div = document.createElement('div');
-  try {
-    !!document.body.append(div); // приводим результат к булевому типу (true или false) с помощью приёма двойного отрицания
-  } catch (error) {
-    document.querySelector('.modal').style.display = 'block'; // это модальное окно с сообщением - "Ваш браузер устарел"
-    document.querySelector('.page-main').style.display = 'none';
-    return;
-  } */
-  /*****/
-
-  const rangeAll = document.querySelectorAll('[data-range]');
+function rangeCustomV2() {
+  const rangeAll = document.querySelectorAll('[data-range-v2]');
 
   rangeAll.forEach(item => {
     /*добавляем разметку для визуализации трека и ползунка*/
-    item.insertAdjacentHTML('beforeend', '<div class="range__wrapper"><div class="range__wrap-inner"><div class="range__track"></div><div class="range__progress"></div></div><div class="range__handle"></div></div>');
+    item.insertAdjacentHTML('beforeend', '<div class="range-v2__wrapper"><div class="range-v2__wrap-inner"><div class="range-v2__track"></div><div class="range-v2__progress"></div></div><div class="range-v2__handle"></div></div>');
     /*добавляем разметку отображения значения value*/
-    item.insertAdjacentHTML('beforeend', '<div class="range__value">');
+    item.insertAdjacentHTML('beforeend', '<div class="range-v2__value">');
 
     /*================*/
-    const rangeInput = item.querySelector(".range__input"),
+    const rangeInput = item.querySelector(".range-v2__input"),
       rangeInputMin = rangeInput.min,
       rangeInputMax = rangeInput.max,
       rangeMinMax = rangeInputMax - rangeInputMin; // это значение нужно, что бы корректно вычислять ширину progress и положение handle при input min отличном от 0.
 
 
-    const rangeProgress = item.querySelector(".range__progress"),
-      rangeHandle = item.querySelector(".range__handle"),
-      output = item.querySelector('.range__value');
+    const rangeProgress = item.querySelector(".range-v2__progress"),
+      rangeHandle = item.querySelector(".range-v2__handle"),
+      output = item.querySelector('.range-v2__value');
 
     output.innerHTML = rangeInput.value; //вывоим начальное значение value
 
-    const widthRange = item.querySelector('.range__wrap-inner').offsetWidth; //узнать ширину range
-    const widthHandle = item.querySelector('.range__handle').offsetWidth; // узнать ширину .range__handle
+    const widthRange = item.querySelector('.range-v2__wrap-inner').offsetWidth; //узнать ширину range
+    const widthHandle = item.querySelector('.range-v2__handle').offsetWidth; // узнать ширину .range__handle
 
     rangeInput.style.opacity = '0'; // задать стандартному input "opacity: 0;"
 
@@ -53,4 +41,4 @@ function rangeCustom() {
   });
 }
 
-export default rangeCustom;
+export default rangeCustomV2;

@@ -1,7 +1,10 @@
 /**Entry points for scripts for page2.html */
 import burger from './modules2/burger';
 import burgerSome from './modules/burger-some';
+
 import rangeCustom from './modules2/range-custom';
+import rangeCustomV2 from './modules2/range-v2';
+
 import imgCompare from './modules2/img-compare';
 import mainNav from './modules2/main-nav';
 import modal2 from './modules2/modal-2';
@@ -18,12 +21,15 @@ import videoPlayerCustom from './modules2/video-player-custom';
 import dropdown1 from './modules2/dropdown1';
 import dropdown2 from './modules2/dropdown2';
 
+
+
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
   burger();
   burgerSome();
   imgCompare(); // запускающая функция для скрипта сравнения изображения, должна быть ниже всех
   rangeCustom();
+  rangeCustomV2();
   mainNav();
   modal2();
   modal();
