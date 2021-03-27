@@ -31,7 +31,7 @@ gulp.task("copyFolderBuild", function () {
     "source/favicons/**",
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
-    //"source/js/**", // это в отдельном task
+    //"source/js/*/*", // это было в отдельном task
     "source/js/ofi.min.js",
     "source/js/picturefill.min.js",
     "!source/js/README"
@@ -44,12 +44,12 @@ gulp.task("copyFolderBuild", function () {
 //копируем папку JS из папки source в папку build.
 gulp.task("copyJsBuild", function () {
   return gulp.src([
-    "source/js/**",
-    "!source/js/README"
+    "source/js/modules2/check-browser.js"
+    //"!source/js/README"
   ], {
-    base: "source"
+    base: "source/js/modules2"
   })
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("build/js"));
 });
 
 /*делаем из scss-файлов css-файл (gulp-sass), далее расставляем префиксы (postcss + autoprefixer), далее минифицируем css-файл (gulp-csso), переименовываем (gulp-rename) его в "style.min.css", и сохраняем в build/css.*/
@@ -130,6 +130,7 @@ gulp.task("server", function () {
 gulp.task("build", gulp.series(
   "cleanFolderBuild",
   "copyFolderBuild",
+  'copyJsBuild',
   "css",
   "svg_sprite",
   "html",

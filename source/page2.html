@@ -44,10 +44,16 @@
           <a class="off-canvas__menu-link  off-canvas__menu-link--second" href="#note">Напоминание</a>
         </li>
         <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#check-old-browser">Проверка на IE</a>
+        </li>
+        <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#add-elem-on-page">Паттерн - доб. элемент на страницу</a>
         </li>
         <li class="off-canvas__menu-item">
-          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#field-range-custom-v1">Ползунок - range v1 - JS</a>
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#field-range-custom-v1">Ползунок - range v1 - одиночный</a>
+        </li>
+        <li class="off-canvas__menu-item">
+          <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#field-range-custom-v2">Ползунок - range v2 - несколько</a>
         </li>
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#timer">Таймер</a>
@@ -95,9 +101,6 @@
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#google-map">Google Maps - JS</a>
         </li>
-
-
-        <!--  -->
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js  disabled" href="#slider">Слайдер</a>
         </li>
@@ -107,9 +110,6 @@
         <li class="off-canvas__menu-item  off-canvas__menu-item--separator">
           <a class="off-canvas__menu-link  off-canvas__menu-link--js" href="#slider-carousel-v3">Сл.-карусель - центр расп. слайда</a>
         </li>
-        <!--  -->
-
-
         <li class="off-canvas__menu-item">
           <a class="off-canvas__menu-link    off-canvas__menu-link--js  attention-menu" href="#compare">Ползунок сравнения изображений</a>
         </li>
@@ -143,12 +143,40 @@
       </section>
 
       <!-- ============================================ -->
+      <section class="block-library" id="check-browser">
+        <h2 class="block-library__title">Проверка на устаревший браузер</h2>
+        <p>Проверка на IE - трюк: он не использует <code>append</code>. Этим и воспользуемся.</p>
+        <p><b>Составные части:</b></p>
+        <ul>
+          <li><b>HTML</b> - добавить в проект разметку блока модального окна <code>#checkBrowser</code>.<br>
+            Он находится в библиотеке, на странице <code>index.html</code>.<br>
+            Добавлять его перед закрывающим тегом <code>body</code>.
+          </li>
+          <li><b>CSS</b> - добавить в проект CSS-файл <code>check-browser.scss</code>;</li>
+          <li><b>JS</b> - добавить в проект JS-файл <code>check-browser.js</code>;</li>
+        </ul>
+
+        <p><b>Важно:</b></p>
+        <ul>
+          <li>Если собираем в проекте <code>js-модули</code> на <code>webpack</code>необходимо использовать <code>Babel</code><br>
+          </li>
+          <li>Если желания использовать <code>Babel</code> нет,<br>
+            тогда необходимо копировать файл <code>check-browser.js</code> из папки <code>src</code> в папку <code>build</code>.<br>
+            Сделать это можно, н-р., с помощью <code>Gulp</code>. Так сделано в библиотеке.<br>
+            И не забыть подключить этот скопированный файл к html-странице.<br>
+            Так сделано в библиотеке для страницы <code>index.html</code>.
+          </li>
+        </ul>
+
+      </section>
+
+      <!-- ============================================ -->
       <section class="block-library" id='add-elem-on-page'>
         <h2 class="block-library__title">Паттерн - добавить элемент на страницу</h2>
         <p><b>Добавить один элемент:</b></p>
         <div class="blocks-library__example  blocks-library__example--shown">
           <pre class="code">
-            <code><b>const ul = document.createElement('ul');</b>> // создать элемент ul</code>
+            <code><b>const ul = document.createElement('ul');</b> // создать элемент ul</code>
             <code><b>ul.classList.add('matrix__list');</b> // доб. класс элементу</code>
             <code><b>matrix.append(ul);</b> // добавить элемент на страницу, в конец блока matrix</code>
             </pre>
@@ -176,13 +204,16 @@
         <h2 class="block-library__title">Ползунок v1 на JS</h2>
         <p>Обязательно проверять кросс-браузерность.<br> В списке подозреваемых: IE и EDGE.</p>
 
-        <p>Cкрипт <code>custom-range.js</code>.</p>
+        <p>Cкрипт <code>range-custom.js</code>.</p>
 
         <p><b>Составные части:</b></p>
         <ul>
-          <li><b>HTML</b> - добавить в проект разметку - скопировать из библиотеки;</li>
+          <li><b>HTML</b> - добавить в проект разметку - скопировать из библиотеки;<br>
+            <strong>Важно!</strong> Для блока <code>.range</code> devtools покажет разметку, в которую скрипт уже добавил блок <code>.range__wrapper</code>.<br>
+            Блок <code>.range__wrapper</code> <b>для первоначальной разметки не нужен!</b>
+          </li>
           <li><b>CSS</b> - добавить в проект CSS-файл <code>range.scss</code>;</li>
-          <li><b>JS</b> - добавить в проект JS-файл <code>custom-range.js</code>;</li>
+          <li><b>JS</b> - добавить в проект JS-файл <code>range-custom.js</code>;</li>
           <li>Все.</li>
         </ul>
 
@@ -213,6 +244,69 @@
           </label>
           <span class="range__help-text">Подсказка</span>
         </div>
+      </section>
+
+
+      <!-- ============================================ -->
+      <section class="block-library" id="field-range-custom-v2">
+        <h2 class="block-library__title">Ползунки (несколько) v2 на JS</h2>
+        <p>Обязательно проверять кросс-браузерность.<br> В списке подозреваемых: IE и EDGE.</p>
+        <p>Cкрипт <code>range-custom-v2.js</code>.</p>
+        <p><b>Составные части:</b></p>
+        <ul>
+          <li><b>HTML</b> - добавить в проект разметку - скопировать из библиотеки;<br>
+            <strong>Важно!</strong> Для блока <code>.range-v2</code> devtools покажет разметку, в которую скрипт уже добавил блок <code>.range-v2__wrapper</code>.<br>
+            Блок <code>.range-v2__wrapper</code> <b>для первоначальной разметки не нужен!</b>
+          </li>
+          <li><b>CSS</b> - добавить в проект CSS-файл <code>range-v2.scss</code>;</li>
+          <li><b>JS</b> - добавить в проект JS-файл <code>range-custom-v2.js</code>;</li>
+          <li>Все.</li>
+        </ul>
+
+        <p><b>Принцип работы:</b></p>
+        <p>JS-файл блока:</p>
+        <ul>
+          <li>для <code>.range-v2__input</code> добавляет <code>opacity = '0';</code></li>
+          <li>в HTML-файл, после <code>.range-v2__input</code> добавляет разметку с классами:
+            <ul>
+              <li><code>.range-v2__wrapper</code> и <code>.range-v2__wrap-inner</code>- обертки;</li>
+              <li><code>.range-v2__track</code> - фоновая линия ползунка;</li>
+              <li><code>.range-v2__progress</code> - линия отображения <code>value</code>;</li>
+              <li><code>.range-v2__handle</code> - перемещаемый элемент ползунка, т.е. thumb;</li>
+              <li><code>.range-v2__value</code> -используется для вывода значения value. Если не нужен, удалить из скрипта;</li>
+            </ul>
+          <li>JS-файл <code>custom-range-v2.js</code> отлавливает значение <code>value</code> у штатного <code>input</code>, <br> изменяет ширину <code>.range-v2__progress</code> и координату по оси X для <code>.range-v2__handle</code>;</li>
+          <li>Все.</li>
+        </ul>
+
+
+        <div>
+          <h2>Ползунки</h2>
+          <div class="range-v2" data-range>
+            <span class="range-v2__name">Сдвиг по X / <b>offset-x</b></span>
+            <label class="range-v2__label">
+              <input class="range-v2__input" type="range" min="-50" max="50" value="3" step="1" data-options="offsetX">
+            </label>
+          </div>
+
+          <div class="range-v2" data-range>
+            <span class="range-v2__name">Сдвиг по Y / <b>offset-y</b></span>
+            <label class="range-v2__label">
+              <input class="range-v2__input" type="range" min="-50" max="50" value="5" step="1" data-options="offsetY">
+            </label>
+          </div>
+
+          <div class="range-v2" data-range>
+            <span class="range-v2__name">Размытие / <b>blur-radius</b></span>
+            <label class="range-v2__label">
+              <input class="range-v2__input" type="range" min="0" max="50" value="15" step="1" data-options="blur">
+            </label>
+          </div>
+
+
+        </div>
+
+
       </section>
 
       <!-- ============================================ -->
@@ -1252,13 +1346,4 @@ document.addEventListener('click', function (event) { //1. вешаем един
   </script>
 
   <script src="js/bundle2.js"></script>
-
-  <!--=========================== -->
-  <!--cкрипт для ползунка сравнения -->
-  <!--при задании async - не работает! -->
-  <!-- <script src="js/img-compare.js"></script> -->
-  <!-- запускающая функция для скрипта сравнения изображения, должна быть ниже всех -->
-  <!-- <script>
-    initComparisons();
-  </script> -->
 </body>

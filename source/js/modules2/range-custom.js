@@ -23,16 +23,13 @@ function customRange() {
   output.innerHTML = rangeInput.value; //вывоим начальное значение value
 
   const widthRange = document.querySelector('.range__wrap-inner').offsetWidth; //узнать ширину range
-  //console.log('widthRange = ' + widthRange);
   const widthHandle = document.querySelector('.range__handle').offsetWidth; // узнать ширину .range__handle
 
   rangeInput.style.opacity = '0'; // задать стандартному input "opacity: 0;"
 
   rangeProgress.style.width = ((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange + 'px'; // установить начальную ширину progress
-  //console.log(((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange + 'px');
 
   rangeHandle.style.left = (widthRange - (((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange) - (widthHandle / 2)) + 'px'; // установить начальную точку handle
-  //console.log((((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange - (widthHandle / 2)) + 'px');
 
   // Изменить ширину .range__progress и координату handle (каждый раз когда двигаетм ползунок)  oninput/onchange
   let ua = window.navigator.userAgent,
