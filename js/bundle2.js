@@ -97,7 +97,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules2_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules2/burger */ "./source/js/modules2/burger.js");
 /* harmony import */ var _modules_burger_some__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/burger-some */ "./source/js/modules/burger-some.js");
-/* harmony import */ var _modules2_custom_range__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules2/custom-range */ "./source/js/modules2/custom-range.js");
+/* harmony import */ var _modules2_range_custom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules2/range-custom */ "./source/js/modules2/range-custom.js");
 /* harmony import */ var _modules2_img_compare__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules2/img-compare */ "./source/js/modules2/img-compare.js");
 /* harmony import */ var _modules2_main_nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules2/main-nav */ "./source/js/modules2/main-nav.js");
 /* harmony import */ var _modules2_modal_2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules2/modal-2 */ "./source/js/modules2/modal-2.js");
@@ -136,7 +136,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules2_burger__WEBPACK_IMPORTED_MODULE_0__["default"])();
   Object(_modules_burger_some__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_modules2_img_compare__WEBPACK_IMPORTED_MODULE_3__["default"])(); // запускающая функция для скрипта сравнения изображения, должна быть ниже всех
-  Object(_modules2_custom_range__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  Object(_modules2_range_custom__WEBPACK_IMPORTED_MODULE_2__["default"])();
   Object(_modules2_main_nav__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_modules2_modal_2__WEBPACK_IMPORTED_MODULE_5__["default"])();
   Object(_modules2_modal__WEBPACK_IMPORTED_MODULE_6__["default"])();
@@ -241,76 +241,6 @@ function burger() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (burger);
-
-
-/***/ }),
-
-/***/ "./source/js/modules2/custom-range.js":
-/*!********************************************!*\
-  !*** ./source/js/modules2/custom-range.js ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/*custom-range.js*/
-/*created by Yuri Litvinenko  https://litvinenko-yury.pro/*/
-/*checking for IE Yuri Volkovsky  https://github.com/YuraVolk*/
-
-function customRange() {
-  const range = document.querySelector('#range');
-
-  /*добавляем разметку для визуализации трека и ползунка*/
-  range.insertAdjacentHTML('beforeend', '<div class="range__wrapper"><div class="range__wrap-inner"><div class="range__track"></div><div class="range__progress"></div></div><div class="range__handle"></div></div>');
-  /*добавляем разметку отображения значения value*/
-  range.insertAdjacentHTML('beforeend', '<div class="range__value">');
-
-  /*================*/
-  const rangeInput = document.querySelector(".range__input"),
-    rangeInputMin = rangeInput.min,
-    rangeInputMax = rangeInput.max,
-    rangeMinMax = rangeInputMax - rangeInputMin; // это значение нужно, что бы корректно вычислять ширину progress и положение handle при input min отличном от 0.
-
-
-  const rangeProgress = document.querySelector(".range__progress"),
-    rangeHandle = document.querySelector(".range__handle"),
-    output = document.querySelector('.range__value');
-  output.innerHTML = rangeInput.value; //вывоим начальное значение value
-
-  const widthRange = document.querySelector('.range__wrap-inner').offsetWidth; //узнать ширину range
-  //console.log('widthRange = ' + widthRange);
-  const widthHandle = document.querySelector('.range__handle').offsetWidth; // узнать ширину .range__handle
-
-  rangeInput.style.opacity = '0'; // задать стандартному input "opacity: 0;"
-
-  rangeProgress.style.width = ((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange + 'px'; // установить начальную ширину progress
-  //console.log(((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange + 'px');
-
-  rangeHandle.style.left = (widthRange - (((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange) - (widthHandle / 2)) + 'px'; // установить начальную точку handle
-  //console.log((((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange - (widthHandle / 2)) + 'px');
-
-  // Изменить ширину .range__progress и координату handle (каждый раз когда двигаетм ползунок)  oninput/onchange
-  let ua = window.navigator.userAgent,
-    isIE = /MSIE|Trident/.test(ua);
-
-  if (isIE) {
-    rangeInput.onchange = function () {
-      output.innerHTML = rangeInput.value;
-      rangeProgress.style.width = ((1 - ((rangeInput.value - rangeInputMin) / rangeMinMax)) * widthRange) + 'px';
-      rangeHandle.style.left = (((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange - (widthHandle / 2)) + 'px';
-    };
-
-  } else {
-    rangeInput.oninput = function () {
-      output.innerHTML = this.value;
-      rangeProgress.style.width = (1 - ((this.value - rangeInputMin) / rangeMinMax)) * widthRange + 'px';
-      rangeHandle.style.left = (((this.value - rangeInputMin) / rangeMinMax) * widthRange - (widthHandle / 2)) + 'px';
-    };
-  }
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (customRange);
 
 
 /***/ }),
@@ -731,6 +661,73 @@ function modal() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (modal);
+
+
+/***/ }),
+
+/***/ "./source/js/modules2/range-custom.js":
+/*!********************************************!*\
+  !*** ./source/js/modules2/range-custom.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*custom-range.js*/
+/*created by Yuri Litvinenko  https://litvinenko-yury.pro/*/
+/*checking for IE Yuri Volkovsky  https://github.com/YuraVolk*/
+
+function customRange() {
+  const range = document.querySelector('#range');
+
+  /*добавляем разметку для визуализации трека и ползунка*/
+  range.insertAdjacentHTML('beforeend', '<div class="range__wrapper"><div class="range__wrap-inner"><div class="range__track"></div><div class="range__progress"></div></div><div class="range__handle"></div></div>');
+  /*добавляем разметку отображения значения value*/
+  range.insertAdjacentHTML('beforeend', '<div class="range__value">');
+
+  /*================*/
+  const rangeInput = document.querySelector(".range__input"),
+    rangeInputMin = rangeInput.min,
+    rangeInputMax = rangeInput.max,
+    rangeMinMax = rangeInputMax - rangeInputMin; // это значение нужно, что бы корректно вычислять ширину progress и положение handle при input min отличном от 0.
+
+
+  const rangeProgress = document.querySelector(".range__progress"),
+    rangeHandle = document.querySelector(".range__handle"),
+    output = document.querySelector('.range__value');
+  output.innerHTML = rangeInput.value; //вывоим начальное значение value
+
+  const widthRange = document.querySelector('.range__wrap-inner').offsetWidth; //узнать ширину range
+  const widthHandle = document.querySelector('.range__handle').offsetWidth; // узнать ширину .range__handle
+
+  rangeInput.style.opacity = '0'; // задать стандартному input "opacity: 0;"
+
+  rangeProgress.style.width = ((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange + 'px'; // установить начальную ширину progress
+
+  rangeHandle.style.left = (widthRange - (((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange) - (widthHandle / 2)) + 'px'; // установить начальную точку handle
+
+  // Изменить ширину .range__progress и координату handle (каждый раз когда двигаетм ползунок)  oninput/onchange
+  let ua = window.navigator.userAgent,
+    isIE = /MSIE|Trident/.test(ua);
+
+  if (isIE) {
+    rangeInput.onchange = function () {
+      output.innerHTML = rangeInput.value;
+      rangeProgress.style.width = ((1 - ((rangeInput.value - rangeInputMin) / rangeMinMax)) * widthRange) + 'px';
+      rangeHandle.style.left = (((rangeInput.value - rangeInputMin) / rangeMinMax) * widthRange - (widthHandle / 2)) + 'px';
+    };
+
+  } else {
+    rangeInput.oninput = function () {
+      output.innerHTML = this.value;
+      rangeProgress.style.width = (1 - ((this.value - rangeInputMin) / rangeMinMax)) * widthRange + 'px';
+      rangeHandle.style.left = (((this.value - rangeInputMin) / rangeMinMax) * widthRange - (widthHandle / 2)) + 'px';
+    };
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (customRange);
 
 
 /***/ }),
