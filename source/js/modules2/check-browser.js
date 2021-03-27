@@ -8,3 +8,4 @@ try {
   document.getElementById('checkBrowser').style.display = 'block'; // это модальное окно с сообщением - "Ваш браузер устарел"
   //return
 }
+
