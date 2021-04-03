@@ -375,14 +375,18 @@
 @mixin links {
     & {
         color: $цвет1;
+        color: $link-color;
     &:visited {
           color: $цвет2;
+          color: $link-color--visited;
         }
-    &:hover {
+    &:hover, &:focus {
         color: $цвет3;
+        color: $link-color--hover;
         }
-    &:active, &:focus {
+    &:active {
         color: $цвет4;
+        color: $link-color--active;
     }
   }
 }
@@ -529,12 +533,25 @@ a {
         <hr>
         <div>
           <p>А здесь пример использования библиотеки <a href="https://animista.net" rel="noopener">animista</a>.</p>
-          <p> Также есть библиотека <a href="http://gearmobile.github.io/css/library-animate-css/" rel="noopener">animate.css</a>.</p>
           <ul>
             <li>В библиотеке выбрать нужный эффект анимации, скопировать CSS в отдельный класс (модификатор класса), н-р. <code>.elem--rotate-in-center</code>.</li>
             <li>Далее скриптом <code>animista.js</code> добавлять класс с анимацией к нужному элементу.</li>
           </ul>
-          <a class="btn  animista" href="#!"><b>Hover me</b> - animista</a>
+          <p>Пример анимации с <b>animista.net</b>
+            <btn class="btn  animista" href="#!"><b>Hover me</b> - animista</btn>
+          </p>
+
+          <br>
+          <p> Также есть библиотека <a href="http://gearmobile.github.io/css/library-animate-css/" rel="noopener">animate.css</a>.</p>
+          <p> Адрес с примерами: <a href="https://animate.style/" rel="noopener">animate.style</a>.</p>
+          <ul>
+            <li>В библиотеке выбрать нужный эффект анимации, напомнить название анимации.</li>
+            <li>В репозитории <a href="https://github.com/animate-css/animate.css/tree/main/source" rel="noopener">ссылка на GitHub</a> найти файл с нужной анимацией.</li>
+            <li>В папке с проектом создать sass-файл с этой анимацией.</li>
+            <li>Далее, js-скриптом, добавлять класс с анимацией к нужному элементу в нужный момент.</li>
+            <li>Или в разметке просто добавить класс с анимацией к нужному элементу.<br>
+              В таком случае анимация сработает сразу после загрузки страницы</li>
+          </ul>
         </div>
       </section>
 
